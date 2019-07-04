@@ -1,0 +1,8 @@
+[package]
+name = "natural_number_game"
+version = "0.1"
+lean_version = "3.4.2"
+path = "src"
+
+[dependencies]
+mathlib = {git = "https://github.com/leanprover-community/mathlib", rev = "ae9615c84bd34c149bd242dfcea1982412bd78e3"}
