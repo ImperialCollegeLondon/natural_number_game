@@ -1,4 +1,4 @@
-import world2_multiplication_core
+import world2_multiplication_solutions
 
 -- ***first goal should be ordered_comm_monoid***
 

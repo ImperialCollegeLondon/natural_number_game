@@ -52,14 +52,13 @@ namespace mynat
 /-
  Collectibles in this level:
 
-add_comm_monoid
   add_monoid
-    add_semigroup
-    --add_assoc
+  --add_assoc
   --zero_add
   --add_zero
-  add_comm_semigroup α
-    (add_semigroup)
+
+add_comm_monoid
+  (add_monoid)
   --add_comm
 -/
 
