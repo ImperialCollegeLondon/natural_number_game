@@ -48,7 +48,7 @@ begin
   {
     rw mul_succ,
     rw hd,
-    exact add_one d,
+    exact add_one_eq_succ d,
   }
 end
 

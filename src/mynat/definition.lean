@@ -43,7 +43,6 @@ all_goals `[
   try {change mynat.zero with (0 : mynat) at *}
   ]
 
-
 -- end of definition of naturals
 
 end mynat

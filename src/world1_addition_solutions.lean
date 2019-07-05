@@ -144,6 +144,17 @@ instance : add_comm_monoid mynat := by structure_helper
 
 -- extra stuff which will not give us any 
 
+-- TODO PR
+attribute [symm] ne.symm
+
+theorem succ_ne_zero : ∀ {{a : mynat}}, succ a ≠ 0 := 
+begin
+  intro a,
+  symmetry,
+  exact zero_ne_succ a,
+end
+
+
 theorem eq_iff_succ_eq_succ (a b : mynat) : succ a = succ b ↔ a = b :=
 begin
   split,
@@ -151,30 +162,54 @@ begin
   { intro H,
     rw' H,
     refl,
-    }
+  }
 end
 
-theorem add_cancel_right (a b t : mynat) :  a = b ↔ a + t = b + t :=
+theorem add_left_cancel ⦃ a b c : mynat⦄ : a + b = a + c → b = c :=
+begin
+  intro h,
+  rw' add_comm at h,
+  rw' add_comm a at h,
+  revert b c,
+  induction a with d hd,
+  change mynat.zero with 0 at *,
+  { intros b c,
+    intro h,
+    rw add_zero at h,
+    rw add_zero at h,
+    assumption
+  },
+  { intros b c,
+    intro h,
+    rw add_succ at h,
+    rw add_succ at h,
+    rw ←succ_add at h,
+    rw ←succ_add at h,
+    apply succ_inj,
+    exact hd h
+  }
+end
+
+theorem add_right_cancel ⦃a b c : mynat⦄ : a + b = c + b → a = c :=
+begin
+  intro h,
+  rw add_comm at h,
+  rw add_comm c at h,
+  exact add_left_cancel h
+end
+
+
+theorem add_right_cancel_iff (a b t : mynat) :  a = b ↔ a + t = b + t :=
 begin
   split,
   { intro H, -- H : a = b,
     rw' H,
     refl,
   },
-  { intro P,
-    induction t with d Hd,
-    tidy_zeros,
-    { rw [add_zero, add_zero] at P, exact P},
-    { rw add_succ at P,
-      rw add_succ at P,
-      apply Hd,
-      apply succ_inj,
-      assumption
-    }, 
-  }
+  { apply add_right_cancel }
 end
 
--- now used for antisymmetry of ≤
+-- this is used for antisymmetry of ≤
 lemma eq_zero_of_add_right_eq_self {{a b : mynat}} : a + b = a → b = 0 :=
 begin
   intro h,
@@ -211,6 +246,18 @@ begin
   intro H,
   rw' add_comm at H,
   exact add_left_eq_zero H,
+end
+theorem one_eq_succ_zero : (1 : mynat) = succ 0 :=
+begin
+  refl,
+end
+
+theorem add_one_eq_succ (d : mynat) : d + 1 = succ d :=
+begin
+  rw one_eq_succ_zero,
+  rw add_succ,
+  rw' add_zero,
+  refl,
 end
 
 end mynat

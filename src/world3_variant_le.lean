@@ -43,15 +43,7 @@ begin
   refl
 end
 
--- TODO PR
-attribute [symm] ne.symm
 
-theorem succ_ne_zero : ∀ {{a : mynat}}, succ a ≠ 0 := 
-begin
-  intro a,
-  symmetry,
-  exact zero_ne_succ a,
-end
 
 lemma le_zero {a : mynat} : a ≤ 0 → a = 0 :=
 begin
@@ -148,28 +140,17 @@ begin
   exact add_right_eq_zero H,
 end
 
-theorem one_eq_succ_zero : (1 : mynat) = succ 0 :=
-begin
-  refl,
-end
 
-theorem succ_eq_add_one (d : mynat) : succ d = d + 1 :=
-begin
-  rw one_eq_succ_zero,
-  rw add_succ,
-  rw' add_zero,
-  refl,
-end
 
 theorem not_succ_le_self {{d : mynat}} (h : succ d ≤ d) : false :=
 begin
   cases h with c hc,
-  rw succ_eq_add_one at hc,
+  rw ←add_one_eq_succ at hc,
   rw add_assoc at hc,
   rw eq_comm at hc,
   have h := eq_zero_of_add_right_eq_self hc,
   rw add_comm at h,
-  rw ←succ_eq_add_one at h,
+  rw add_one_eq_succ at h,
   apply zero_ne_succ c,
   symmetry,
   assumption,
@@ -300,8 +281,33 @@ end
 
 instance : ordered_comm_monoid mynat := by structure_helper
 
-end mynat #exit
 
+
+--theorem le_of_le_add_left ⦃a b c : mynat ⦄ : a + b ≤ a + c → b ≤ c :=
+--begin
+--  intro h,
+--  cases h with d hd,
+--  use d,
+--  rw add_assoc at hd,
+--  exact add_left_cancel hd
+--end
+
+theorem le_of_add_le_add_left ⦃ a b c : mynat⦄ : a + b ≤ a + c → b ≤ c :=
+begin
+  intro h,
+  cases h with d hd,
+  use d,
+  rw add_assoc at hd,
+  exact add_left_cancel hd
+end
+
+instance : ordered_cancel_comm_monoid mynat := by structure_helper
+
+end mynat
+
+-- who needs bot_le
+
+/-
 instance : canonically_ordered_comm_semiring mynat :=
 { add := (+),
   add_assoc := add_assoc,
@@ -330,5 +336,4 @@ instance : canonically_ordered_comm_semiring mynat :=
   mul_comm := mul_comm,
   zero_ne_one := zero_ne_one,
   mul_eq_zero_iff := mul_eq_zero_iff }
-
-end mynat
+-/
