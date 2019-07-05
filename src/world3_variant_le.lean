@@ -281,17 +281,6 @@ end
 
 instance : ordered_comm_monoid mynat := by structure_helper
 
-
-
---theorem le_of_le_add_left ⦃a b c : mynat ⦄ : a + b ≤ a + c → b ≤ c :=
---begin
---  intro h,
---  cases h with d hd,
---  use d,
---  rw add_assoc at hd,
---  exact add_left_cancel hd
---end
-
 theorem le_of_add_le_add_left ⦃ a b c : mynat⦄ : a + b ≤ a + c → b ≤ c :=
 begin
   intro h,
