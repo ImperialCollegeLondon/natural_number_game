@@ -174,7 +174,8 @@ begin
   }
 end
 
-lemma eq_zero_of_add_right_eq_self (a b : mynat) : a + b = a → b = 0 :=
+-- now used for antisymmetry of ≤
+lemma eq_zero_of_add_right_eq_self {{a b : mynat}} : a + b = a → b = 0 :=
 begin
   intro h,
   induction a with a ha,
@@ -190,5 +191,26 @@ begin
   }
 end
 
+-- now used for antisymmetry of ≤
+lemma add_left_eq_zero {{a b : mynat}} : a + b = 0 → b = 0 :=
+begin
+  intro H,
+  cases b with c,
+  all_goals {try {change mynat.zero with (0 : mynat) at *}},
+  { refl},
+  { rw add_succ at H,
+    exfalso,
+    apply zero_ne_succ (a + c),
+    rw' H,
+    refl,
+  },
+end
+
+lemma add_right_eq_zero {{a b : mynat}} : a + b = 0 → a = 0 :=
+begin
+  intro H,
+  rw' add_comm at H,
+  exact add_left_eq_zero H,
+end
 
 end mynat

@@ -33,6 +33,17 @@ lemma zero_ne_succ (m : mynat) : (0 : mynat) ≠ succ m := λ h, by cases h
 
 lemma succ_inj {m n : mynat} (h : succ m = succ n) : m = n := by cases h; refl
 
+open interactive
+open tactic.interactive
+open interactive.types
+
+meta def induction' (hp : parse cases_arg_p) (ids : parse with_ident_list) : tactic unit :=
+do tactic.interactive.induction hp none ids none,
+all_goals `[
+  try {change mynat.zero with (0 : mynat) at *}
+  ]
+
+
 -- end of definition of naturals
 
 end mynat

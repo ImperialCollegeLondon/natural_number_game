@@ -2,7 +2,7 @@ import mynat.definition
 
 /- 
   mynat/add.lean
-  Supplies: the 
+  
 -/
 namespace mynat
 
