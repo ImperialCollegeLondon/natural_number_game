@@ -1,0 +1,124 @@
+To a mathematician, the fact that the natural numbers are a commutative
+semiring is a theorem. It's a level in a game.
+
+To the computer scientists, it is a definition.
+
+The difference between their opinion and our opinion is what I
+would personally describe as "the boring bit".
+
+Let's get rid of that bit by making a good API for it. Let's
+turn the fact that the natural numbers are a commutative
+semiring back into a theorem.
+
+Proposal on how we can do this using Lean.
+------------------------------------------
+
+We turn the construction of every class for mynat (e.g. comm_ring mynat)
+into only theorems.
+
+We write a mathematician's API to mynat. We tell them we are giving them:
+"0" (actually notation for mynat.zero, which they never see)
+"succ" ( := mynat.succ)
+"+" (notation for mynat.add, which they never see)
+and the BASIC FACTS FOR +, which are:
+add_zero
+add_succ
+
+class1 : add_semigroup mynat
+Theorem which needs to be proved:
+add_assoc. Proof all in tactic mode, using induction,
+intro, whatever.
+class2: add_monoid mynat (extends add_semigroup mynat)
+Only unlocked after add_semigroup mynat is done.
+instance : add_comm_semigroup mynat := by common_sense
+instance : add_comm_monoid mynat := by common_sense
+
+The common_sense tactic can be used to create all
+the classes. Lean simply flags which theorems
+have not yet been proved but could be proved
+using what you have and basic tactics.
+This is an abstract directed graph of Lean definitions
+
+The point is that add_zero and add_succ are true "by definition"
+so we don't worry about them, we can apply them. They are
+"boring classes". They are The Axioms For Addition On The Naturals.
+The Axioms for Addition On The Naturals -- it is our job to offer
+these to the user **FOR FREE**.
+
+So we offer:
+The natural numbers and the Principle Of Mathematical Induction.
+The natural numbers:
+0 is a number.
+If n is a number, then succ(n) is a number.
+
+The principle of mathematical induction:
+If P(0), P(1), P(2), ... are infinitely many
+true-false statements, and if
+H_0 : P(0) is true
+H_succ : For every d, if P(d) is true then P(d+1) is true.
+
+Then P(d) is true for all d.
+
+*****
+
+Thaty's the API.
+
+Induction tactic works on numbers.
+
+RECURSION IS A DIRTY WORD.
+
+Level 1.1 is instance: add_monoid mynat
+To do that level is 
+
+
+shall now refer to as "rthe
+I want to turn it back into a theorem by removing all the interface
+issues, defining all the structures and all the decidability instances
+and completely shielding this to the novice.
+
+In short -- Lean's interface is *too hard for schoolkids*. Let's
+make a better one. We give them all the notation tricks Lean
+allows without ever exposing the underlying `le` stuff; notation must never leak.
+We give them all the structures and some basic facts like
+mynat.add_zero and mynat.add_succ, which 
+
+
+
+We leave the user just with the problem of having to prove
+all of the theorems, in tactic mode, starting with the
+fields of the structures.
+
+Example. The user starts in the following state:
+
+mynat.succ
+
+***
+"0" :: mynat.zero, mynat.has_zero
+"succ" :: mynat.succ
+"+" :: mynat.add, mynat.has_add
+
+
+A world is a tree.
+
+Some initial Lean definitions, e.g.
+1)
+* inductive definition of mynat
+* recursive definition of add
+* theorems such
+
+Level looks like `level4 : mynat.zero_add`
+-- levels are always Props. A level is presented
+-- as some hard-wired unchangeable code containing
+-- at least the definition of some proposition (P : Prop).
+-- (for example P = mynat.zero_add)
+Begin in tactic mode with everything introed.
+At each point there is a "hint" suggesting which tactic to use next.
+This can be turned off.
+
+Help available for 
+Example of a world:
+
+```lean
+definition world1 : comm_ring mynat
+```
+

@@ -1,3 +1,6 @@
+import tactic.modrw -- rw' is rw with no refl at the end
+import tactic.structure_helper
+
 /-
 
   mynat/definition.lean -- definition of mynat.
@@ -6,11 +9,9 @@
   constants zero : mynat and one : mynat
   function S : mynat → mynat
   notation 0 for zero and 1 for one.
+
+The below code will be *invisible to the player*
 -/
-
--- The below code will be *invisible to the player*
-
-import structure_helper
 
 -- definition of "the natural numbers"
 inductive mynat
@@ -20,6 +21,9 @@ inductive mynat
 namespace mynat
 
 instance : has_zero mynat := ⟨mynat.zero⟩
+
+meta def tidy_zeros : tactic unit := do
+`[repeat {all_goals {rw (show mynat.zero = (0 : mynat), from rfl) at *}}]
 
 def one : mynat := succ 0
 
@@ -32,3 +36,4 @@ lemma succ_inj {m n : mynat} (h : succ m = succ n) : m = n := by cases h; refl
 -- end of definition of naturals
 
 end mynat
+
