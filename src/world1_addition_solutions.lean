@@ -149,18 +149,22 @@ begin
   split,
   { exact succ_inj},
   { intro H,
-    rw H}
+    rw' H,
+    refl,
+    }
 end
 
 theorem add_cancel_right (a b t : mynat) :  a = b ↔ a + t = b + t :=
 begin
   split,
   { intro H, -- H : a = b,
-    rw H,
+    rw' H,
+    refl,
   },
   { intro P,
     induction t with d Hd,
-    { exact P},
+    tidy_zeros,
+    { rw [add_zero, add_zero] at P, exact P},
     { rw add_succ at P,
       rw add_succ at P,
       apply Hd,
@@ -174,13 +178,14 @@ lemma eq_zero_of_add_right_eq_self (a b : mynat) : a + b = a → b = 0 :=
 begin
   intro h,
   induction a with a ha,
-  { change 0 + b = 0 at h, -- leakage
-    rw zero_add at h,
+  tidy_zeros,
+  { 
+    rw' zero_add at h,
     assumption
   },
   { apply ha,
     apply succ_inj,
-    rw succ_add at h,
+    rw' succ_add at h,
     assumption,
   }
 end
