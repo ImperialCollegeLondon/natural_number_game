@@ -174,12 +174,77 @@ begin
   cases a with a,
     refl,
   rw add_succ at hab,
-  -- hab : succ (succ a * b + a) = zero
-  cases hab, -- HARD: proof that succ a = 0 -> contradiction
+  exfalso,
+  apply succ_ne_zero hab
 end
 
--- goal is comm_semiring
---set_option pp.all true
+
+theorem mul_eq_zero_iff : ∀ (a b : mynat), a * b = 0 ↔ a = 0 ∨ b = 0 :=
+begin
+  intros a b,
+  split, swap,
+    intro hab, cases hab,
+      rw hab, rw zero_mul,
+    rw hab, rw mul_zero,
+  intro hab,
+  cases a with d,
+    change 0 * b = 0 at hab, -- leak
+    left, refl,
+  cases b with e he,
+    right, refl,
+  exfalso,
+  change succ _ = 0 at hab,
+  -- succ (add (mul (succ d) e) d) = 0 -- aargh
+  exact succ_ne_zero hab,
+end
+
+theorem eq_zero_or_eq_zero_of_mul_eq_zero ⦃a b : mynat⦄ (h : a * b = 0) : a = 0 ∨ b = 0 :=
+begin
+  revert a,
+  induction b with c hc, tidy_zeros,
+  { intros a ha,
+    right, refl,
+  },
+  { intros a ha,
+    rw mul_succ at ha,
+    left,
+    apply add_left_eq_zero ha
+  }
+end
+
 instance : comm_semiring mynat := by structure_helper
+
+theorem mul_left_cancel ⦃a b c : mynat⦄ (ha : a ≠ 0) : a * b = a * c → b = c :=
+begin
+  revert b,
+  induction c with d hd,
+  { intro b,
+    tidy_zeros,
+    rw mul_zero,
+    intro h,
+    cases (eq_zero_or_eq_zero_of_mul_eq_zero h),
+      exfalso,
+      apply ha,
+      assumption,
+    assumption
+  },
+  { intros b hb,
+    cases b with c,
+    tidy_zeros,
+    { rw mul_zero at hb,
+      rw mul_succ at hb,
+      exfalso,
+      apply ha,
+      rw eq_comm at hb,
+      apply add_left_eq_zero hb,
+    },
+    { congr', -- c = d -> succ c = succ d
+      apply hd,
+      rw mul_succ at hb,
+      rw mul_succ at hb,
+      apply add_right_cancel hb
+    }
+  }
+end
 
 end mynat
