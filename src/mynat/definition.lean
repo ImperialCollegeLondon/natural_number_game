@@ -1,4 +1,4 @@
-import tactic.modrw -- rw' is rw with no refl at the end
+import tactic.inductionandcases
 import tactic.structure_helper
 
 /-
@@ -21,9 +21,7 @@ inductive mynat
 namespace mynat
 
 instance : has_zero mynat := ⟨mynat.zero⟩
-
---meta def tidy_zeros : tactic unit := do
---`[repeat {all_goals {rw (show mynat.zero = (0 : mynat), from rfl) at *}}]
+@[leakage] theorem mynat_zero_eq_zero : mynat.zero = 0 := rfl
 
 def one : mynat := succ 0
 
@@ -35,36 +33,6 @@ lemma succ_inj {m n : mynat} (h : succ m = succ n) : m = n := by cases h; refl
 
 end mynat
 
-namespace tactic.interactive
 
-open tactic.interactive interactive.types expr lean lean.parser tactic interactive
-
-meta def induction' (hp : parse cases_arg_p) (ids : parse with_ident_list) : tactic unit :=
-do tactic.interactive.induction hp none ids none,
-all_goals `[
-  try {rw' (show mynat.zero = (0 : mynat), from rfl) at *},
-  try {change mynat.le with (≤) at *}]
---  try {change @mynat.succ with (λ n, n + 1) at *, dsimp only at *}]
-
-meta def cases' : parse cases_arg_p → parse with_ident_list → tactic unit
-| (none,   p) ids := do
-  e ← i_to_expr p,
-  cases_core e ids,
-  all_goals `[
-  try {rw' (show mynat.zero = (0 : mynat), from rfl) at *},
-  try {rw' (show mynat.le = (≤), from rfl) at *}
-  ]
-| (some h, p) ids := do
-  x   ← get_unused_name,
-  generalize h () (p, x),
-  hx  ← get_local x,
-  cases_core hx ids,
-  all_goals `[
-  try {rw' (show mynat.zero = (0 : mynat), from rfl) at *},
-  try {rw' (show mynat.le = (≤), from rfl) at *}]
-
-
-
-end tactic.interactive
 
 attribute [symm] ne.symm
