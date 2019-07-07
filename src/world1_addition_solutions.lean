@@ -70,8 +70,7 @@ end
 
 lemma zero_add (n : mynat) : 0 + n = n :=
 begin
-  induction n with d hd,
-  tidy_zeros,
+  induction' n with d hd,
   {
     rw' add_zero,
     refl,
@@ -84,8 +83,7 @@ end
 
 lemma add_assoc (a b c : mynat) : (a + b) + c = a + (b + c) :=
 begin
-  induction c with d hd,
-  tidy_zeros,
+  induction' c with d hd,
   { -- ⊢ a + b + 0 = a + (b + 0)
     rw' add_zero,
     rw' add_zero,
@@ -109,8 +107,7 @@ instance : add_monoid mynat := by structure_helper
 -- isolate independent useful thing and prove it first
 lemma succ_add (a b : mynat) : succ a + b = succ (a + b) :=
 begin
-  induction b with d hd,
-  tidy_zeros,
+  induction' b with d hd,
   {
     refl
   }, 
@@ -123,8 +120,7 @@ end
 
 lemma add_comm (a b : mynat) : a + b = b + a :=
 begin
-  induction b with d hd,
-  tidy_zeros,
+  induction' b with d hd,
   { -- ⊢ a + 0 = 0 + a,
     rw' zero_add,
     rw' add_zero,
@@ -144,7 +140,6 @@ instance : add_comm_monoid mynat := by structure_helper
 -- extra stuff which will not give us any 
 
 -- TODO PR
-attribute [symm] ne.symm
 
 theorem succ_ne_zero : ∀ {{a : mynat}}, succ a ≠ 0 := 
 begin
@@ -212,8 +207,7 @@ end
 lemma eq_zero_of_add_right_eq_self {{a b : mynat}} : a + b = a → b = 0 :=
 begin
   intro h,
-  induction a with a ha,
-  tidy_zeros,
+  induction' a with a ha,
   { 
     rw' zero_add at h,
     assumption
@@ -229,8 +223,7 @@ end
 lemma add_left_eq_zero {{a b : mynat}} : a + b = 0 → b = 0 :=
 begin
   intro H,
-  cases b with c,
-  all_goals {try {change mynat.zero with (0 : mynat) at *}},
+  cases' b with c,
   { refl},
   { rw add_succ at H,
     exfalso,
