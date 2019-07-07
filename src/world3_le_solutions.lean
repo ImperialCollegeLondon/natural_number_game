@@ -16,13 +16,14 @@ def le (a b : mynat) :=  ∃ (c : mynat), b = a + c
 -- notation
 instance : has_le mynat := ⟨mynat.le⟩
 
--- this attribute must go
-@[_refl_lemma]
 theorem le_refl (a : mynat) : a ≤ a :=
 begin
   use 0,
   rw add_zero,  
 end
+
+-- ignore this; it's making the "refl" tactic work with goals of the form a ≤ a
+attribute [_refl_lemma] le_refl
 
 theorem le_succ {a b : mynat} (h : a ≤ b) : a ≤ (succ b) :=
 begin
@@ -121,10 +122,10 @@ end
 theorem le_total (a b : mynat) : a ≤ b ∨ b ≤ a :=
 begin
   revert a,
-  induction b with c hc,
+  induction' b with c hc,
     intro a, right, apply zero_le,
   intro a,
-  induction a with d hd,
+  induction' a with d hd,
     left, apply zero_le,
   cases hc d with h h,
     left, exact succ_le_succ h,
@@ -137,9 +138,10 @@ instance : linear_order mynat := by structure_helper
 theorem add_le_add_right (a b : mynat) : a ≤ b → ∀ t, (a + t) ≤ (b + t) :=
 begin
   intros h t,
-  induction t with d hd,
+  induction' t with d hd,
   { 
-    exact h
+    rw add_zero, rw add_zero,
+    assumption
   },
   {
     rw add_succ,
@@ -299,8 +301,7 @@ end
 theorem mul_lt_mul_of_pos_left ⦃a b c : mynat⦄ : a < b → 0 < c → c * a < c * b :=
 begin
   intros hab hc,
-  cases hab with hab hba,
-  change a ≤ b at hab, change ¬ b ≤ a at hba,
+  cases' hab with hab hba,
   rw lt_iff_le_and_ne,
   split,
   { cases hab with d hd,

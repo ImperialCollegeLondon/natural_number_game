@@ -139,8 +139,6 @@ instance : add_comm_monoid mynat := by structure_helper
 
 -- extra stuff which will not give us any 
 
--- TODO PR
-
 theorem succ_ne_zero : ∀ {{a : mynat}}, succ a ≠ 0 := 
 begin
   intro a,
@@ -165,8 +163,7 @@ begin
   rw' add_comm at h,
   rw' add_comm a at h,
   revert b c,
-  induction a with d hd,
-  change mynat.zero with 0 at *,
+  induction' a with d hd,
   { intros b c,
     intro h,
     rw add_zero at h,

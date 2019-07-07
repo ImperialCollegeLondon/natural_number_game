@@ -126,21 +126,20 @@ end
 -- turns out I don't actually need this for mul_comm
 lemma add_mul (a b c : mynat) : (a + b) * c = a * c + b * c :=
 begin
-  induction b with d hd,
+  induction' b with d hd,
   { 
-    -- leaky zero
-    show (a + 0) * c = a * c + 0 * c,
     rw zero_mul,
     rw add_zero,
-    rw add_zero,
+    rw' add_zero,
+    refl
   },
   {
     rw add_succ,
---    change succ (a + d) * c = _,
     rw succ_mul,
     rw hd,
     rw succ_mul,
-    rw add_assoc
+    rw' add_assoc,
+    refl
   }
 end
 
@@ -148,9 +147,8 @@ def right_distrib := add_mul -- stupid field name,
 
 lemma mul_comm (a b : mynat) : a * b = b * a :=
 begin
-  induction b with d hd,
-  { -- leakage
-    show a * 0 = 0 * a,
+  induction' b with d hd,
+  { 
     rw zero_mul,
     rw mul_zero,
   },
@@ -187,21 +185,20 @@ begin
       rw hab, rw zero_mul,
     rw hab, rw mul_zero,
   intro hab,
-  cases a with d,
-    change 0 * b = 0 at hab, -- leak
+  cases' a with d,
     left, refl,
   cases b with e he,
     right, refl,
   exfalso,
-  change succ _ = 0 at hab,
-  -- succ (add (mul (succ d) e) d) = 0 -- aargh
+  rw mul_succ at hab,
+  rw add_succ at hab,
   exact succ_ne_zero hab,
 end
 
 theorem eq_zero_or_eq_zero_of_mul_eq_zero ⦃a b : mynat⦄ (h : a * b = 0) : a = 0 ∨ b = 0 :=
 begin
   revert a,
-  induction b with c hc, tidy_zeros,
+  induction' b with c hc,
   { intros a ha,
     right, refl,
   },
@@ -217,9 +214,8 @@ instance : comm_semiring mynat := by structure_helper
 theorem mul_left_cancel ⦃a b c : mynat⦄ (ha : a ≠ 0) : a * b = a * c → b = c :=
 begin
   revert b,
-  induction c with d hd,
+  induction' c with d hd,
   { intro b,
-    tidy_zeros,
     rw mul_zero,
     intro h,
     cases (eq_zero_or_eq_zero_of_mul_eq_zero h),
@@ -229,8 +225,7 @@ begin
     assumption
   },
   { intros b hb,
-    cases b with c,
-    tidy_zeros,
+    cases' b with c,
     { rw mul_zero at hb,
       rw mul_succ at hb,
       exfalso,

@@ -52,7 +52,8 @@ meta def cases' : parse cases_arg_p → parse with_ident_list → tactic unit
   cases_core e ids,
   all_goals `[
   try {rw' (show mynat.zero = (0 : mynat), from rfl) at *},
-  try {change mynat.le with (≤) at *}]
+  try {rw' (show mynat.le = (≤), from rfl) at *}
+  ]
 | (some h, p) ids := do
   x   ← get_unused_name,
   generalize h () (p, x),
@@ -60,7 +61,7 @@ meta def cases' : parse cases_arg_p → parse with_ident_list → tactic unit
   cases_core hx ids,
   all_goals `[
   try {rw' (show mynat.zero = (0 : mynat), from rfl) at *},
-  try {change mynat.le with (≤) at *}]
+  try {rw' (show mynat.le = (≤), from rfl) at *}]
 
 
 
