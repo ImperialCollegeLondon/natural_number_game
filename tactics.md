@@ -47,7 +47,6 @@ refl
 
 The `refl` tactic will close any goal of the form `a = a`, and more generally any goal of the form `x R x` if `R` is a binary relation which is reflexive.
 
-
 induction'
 ----------
 
@@ -107,6 +106,11 @@ Hd : 0 + d = d
 
 Note: Lean's usual tactic is `induction`; this modified tactic is less "leaky" -- you won't see random `zero`'s where you are expecting `0`'s.
 
+cases'
+------
+
+A "weaker" variant of induction, where we do not get an inductive hypothesis; the `cases a with b` tactic simply changes a general `a : mynat` into the two cases `a = 0` and `a = succ b`.
+
 rw'
 ---
 
@@ -115,6 +119,8 @@ Does a "rewrite". If `H : a = b` then `rw' H` changes all `a`'s in the goal to `
 Variant: if you want to change all `b`'s to `a`'s then `rw' ←H` works (use `\l` to get the left arrow)
 
 Variant: if you want to change all `a`'s to `b`'s in hypothesis `H2` then `rw' H at H2` works.
+
+The tactic also works with true/false statements. For example `le_def a b : a ≤ b ↔ ∃ (c : mynat), b = a + c`. That is, `le_def a b` is a proof that `a ≤ b ↔ ∃ (c : mynat), b = a + c`.
 
 Example:
 ```
@@ -128,13 +134,41 @@ Then `rw H` changes the goal to
 ⊢ 0 + (b + 3) = b + 3 + b
 ```
 
+Example: if the goal is
+```
+⊢ a ≤ b
+```
+
+then `rw' le_def` will change the goal to
+
+```
+⊢ ∃ (c : mynat), b = a + c
+```
+
 Note: Lean's `rw` tactic tries to close the goal with `refl` after a rewrite; the modified `rw'` tactic does not do this.
+
+Occasionally, it is necessary to do a slightly more targetted rewrite. For example if you have proved `add_comm x y : x + y = y + x`, if the goal is
+
+```
+⊢ a + b = c + d
+```
+
+and you want to change it into
+
+```
+⊢ a + b = d + c
+```
+
+you can type `rw' add_comm c`. Just typing `rw' add_comm` will rewrite `a + b` to `b + a`.
 
 
 symmetry
 --------
 
 The `symmetry` tactic will change a goal of the form `a = b` to the goal `b = a`. It will also change a goal of the form `a ≠ b` to a goal of the form `b ≠ a`.
+
+Rather annoyingly, `symmetry` only works on the goal. To change `H : a = b` to `H : b = a` try `rw' eq_comm at H`.
+
 
 split
 -----
@@ -268,7 +302,107 @@ then a proof could be
   exact hP
 ```
 
+left
+----
 
+The `left` tactic changes a goal of the form
 
-***
+```
+⊢ P ∨ Q
+```
+
+to
+
+```
+⊢ P
+```
+
+right
+-----
+
+The `right` tactic changes a goal of the form
+
+```
+⊢ P ∨ Q
+```
+
+to
+
+```
+⊢ Q
+```
+
+congr'
+------
+
+The `congr'` tactic changes a goal of the form
+
+```
+⊢ f a = f b
+```
+
+to a goal of the form
+
+```
+⊢ a = b
+```
+
+Note that if `f` is not injective then this tactic can change a goal which is true into one which is false.
+
+Example of usage: if the goal is
+
+```
+⊢ succ a = succ b
+```
+
+then `congr'` changes it to
+
+```
+⊢ a = b
+```
+
+**** le stuff *****
+
+use
+---
+
+The `use` goal works ongoals of the form
+
+```
+⊢ ∃ (c : mynat), f c
+```
+
+For example, if the goal is
+
+```
+⊢ ∃ (c : mynat), c + 2 = 4
+```
+
+then `use 2` will change the goal into
+
+```
+⊢ 2 + 2 = 4
+```
+
+have
+----
+
+If you want to make a new assumption, you can do this with the `have` tactic. For example `have H : 3 + 0 = 3 := add_zero 3` will insert the hypothesis `H : 3 + 0 = 3` into the list of assumptions.
+
+An alternative syntax is `have H : a + b = c,` which then simply adds a new goal `⊢ a + b = c`.
+
+****
+
+Tricks
+------
+
+`rw' [h1, h2, h3]` is the same as
+
+```
+rw' h1,
+rw' h2,
+rw' h3
+```
+
+and `rwa h` is the same as `rw h, assumption`
 

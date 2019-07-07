@@ -14,4 +14,9 @@ begin
 refl
 end
 
+
+lemma mul_zero (m : mynat) : m * 0 = 0 := rfl
+
+lemma mul_succ (m n : mynat) : m * (succ n) = m * n + m := rfl
+
 end mynat

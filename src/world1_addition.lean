@@ -6,6 +6,7 @@ import mynat.definition -- Imports the natural numbers.
   * a type called `mynat`
   * a term `0 : mynat`, interpreted as the number zero.
   * a function `succ : mynat → mynat`, with `succ n` interpreted as "the number after n".
+  * Usual numerical notation 0,1,2,3,4,5 etc.
 
 2) The following axioms:
   * `zero_ne_succ : ∀ (a : mynat), zero ≠ succ(a)`, the statement that zero isn't a successor.
@@ -17,6 +18,13 @@ import mynat.definition -- Imports the natural numbers.
 3) The principle of mathematical induction.
 
   * In practice this means that if you have `n : mynat` then you can use the tactic `induction n`.
+
+4) A few useful extra things:
+
+  * The theorem `one_eq_succ_zero : 1 = succ 0`
+  * The theorem `ne_iff_implies_false : a ≠ b ↔ (a = b) → false`
+
+Note also 
 
 -/
 

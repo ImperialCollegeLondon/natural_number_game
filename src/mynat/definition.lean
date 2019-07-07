@@ -27,12 +27,15 @@ def one : mynat := succ 0
 
 instance : has_one mynat := ⟨mynat.one⟩
 
+theorem one_eq_succ_zero : 1 = succ 0 := rfl
+
 lemma zero_ne_succ (m : mynat) : (0 : mynat) ≠ succ m := λ h, by cases h
 
 lemma succ_inj {m n : mynat} (h : succ m = succ n) : m = n := by cases h; refl
 
 end mynat
 
-
+theorem ne_iff_implies_false ⦃a b : mynat⦄ :
+a ≠ b ↔ (a = b) → false := iff.rfl
 
 attribute [symm] ne.symm

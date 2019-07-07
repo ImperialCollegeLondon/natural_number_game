@@ -3,10 +3,6 @@ import mynat.mul
 
 namespace mynat
 
-lemma mul_zero (m : mynat) : m * 0 = 0 := rfl
-
-lemma mul_succ (m n : mynat) : m * (succ n) = m * n + m := rfl
-
 lemma zero_mul (m : mynat) : 0 * m = 0 :=
 begin
   induction m with d hd,
@@ -165,7 +161,8 @@ begin
   apply succ_ne_zero hab
 end
 
-
+-- this involves a lot of cases. Would be really cool
+-- to have some sort of trickery instead of all the {}s.
 theorem mul_eq_zero_iff : ∀ (a b : mynat), a * b = 0 ↔ a = 0 ∨ b = 0 :=
 begin
   intros a b,
