@@ -15,12 +15,14 @@ ne_iff_implies_false : a ≠ b ↔ (a = b) → false
 
 You also need to know that the principle of mathematical induction works.
 
-To play, you will also need to know the following tactics:
+To play, you will also need to know at least some of the following tactics:
 
+exact
+assumption
 refl
 induction
+cases
 rw (and rw ... at ...)
-exact
 symmetry
 split
 intro

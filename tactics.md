@@ -47,16 +47,14 @@ refl
 
 The `refl` tactic will close any goal of the form `a = a`, and more generally any goal of the form `x R x` if `R` is a binary relation which is reflexive.
 
-induction'
+induction
 ----------
 
-`induction' n with d hd`
+`induction n with d hd`
 
 Does induction on `n`. Assumes that `n` is the kind of thing you can do induction on (for example `n : mynat` would be a great example).
 
-Induction a with d hd
-
-Changes goal from
+Running the tactic `induction a with d hd` changes the goal from
 ```
 1 goal
 P : mynat → Prop,
@@ -104,23 +102,21 @@ Hd : 0 + d = d
 ⊢ 0 + succ d = succ d
 ```
 
-Note: Lean's usual tactic is `induction`; this modified tactic is less "leaky" -- you won't see random `zero`'s where you are expecting `0`'s.
-
-cases'
-------
+cases
+-----
 
 A "weaker" variant of induction, where we do not get an inductive hypothesis; the `cases a with b` tactic simply changes a general `a : mynat` into the two cases `a = 0` and `a = succ b`.
 
-rw'
+rw
 ---
 
-Does a "rewrite". If `H : a = b` then `rw' H` changes all `a`'s in the goal to `b`'s.
+Does a "rewrite". If `H : a = b` then `rw' H` changes all `a`'s in the goal to `b`'s. Note that in contrast to core Lean, it does not try to close the goal with `refl`.
 
 Variant: if you want to change all `b`'s to `a`'s then `rw' ←H` works (use `\l` to get the left arrow)
 
 Variant: if you want to change all `a`'s to `b`'s in hypothesis `H2` then `rw' H at H2` works.
 
-The tactic also works with true/false statements. For example `le_def a b : a ≤ b ↔ ∃ (c : mynat), b = a + c`. That is, `le_def a b` is a proof that `a ≤ b ↔ ∃ (c : mynat), b = a + c`.
+The tactic also works with true/false statements; it will rewrite "iff"s. For example `le_def a b : a ≤ b ↔ ∃ (c : mynat), b = a + c`. That is, `le_def a b` is a proof that `a ≤ b ↔ ∃ (c : mynat), b = a + c`.
 
 Example:
 ```
@@ -139,13 +135,11 @@ Example: if the goal is
 ⊢ a ≤ b
 ```
 
-then `rw' le_def` will change the goal to
+then `rw le_def` will change the goal to
 
 ```
 ⊢ ∃ (c : mynat), b = a + c
 ```
-
-Note: Lean's `rw` tactic tries to close the goal with `refl` after a rewrite; the modified `rw'` tactic does not do this.
 
 Occasionally, it is necessary to do a slightly more targetted rewrite. For example if you have proved `add_comm x y : x + y = y + x`, if the goal is
 
@@ -238,6 +232,13 @@ then `intros a b` turns it into
 a b : ℕ
 ⊢ f a b = g a b
 ```
+
+have
+----
+
+If you want to make a new assumption, you can do this with the `have` tactic. For example `have H : 3 + 0 = 3 := add_zero 3` will insert the hypothesis `H : 3 + 0 = 3` into the list of assumptions.
+
+An alternative syntax is `have H : a + b = c,` which then simply adds a new goal `⊢ a + b = c`.
 
 revert
 ------
@@ -361,12 +362,12 @@ then `congr'` changes it to
 ⊢ a = b
 ```
 
-**** le stuff *****
+-- tactics needed for the \le stuff because of the exists statement
 
 use
 ---
 
-The `use` goal works ongoals of the form
+The `use` goal works ong oals of the form
 
 ```
 ⊢ ∃ (c : mynat), f c
@@ -383,13 +384,6 @@ then `use 2` will change the goal into
 ```
 ⊢ 2 + 2 = 4
 ```
-
-have
-----
-
-If you want to make a new assumption, you can do this with the `have` tactic. For example `have H : 3 + 0 = 3 := add_zero 3` will insert the hypothesis `H : 3 + 0 = 3` into the list of assumptions.
-
-An alternative syntax is `have H : a + b = c,` which then simply adds a new goal `⊢ a + b = c`.
 
 ****
 

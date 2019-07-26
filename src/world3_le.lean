@@ -1,4 +1,4 @@
-import world2_multiplication
+import world2_multiplication_solutions
 
 import mynat.le
 /- Here's what you get from the import:
@@ -29,6 +29,8 @@ begin
   rw add_zero,  
 end
 
+example : one ≤ one := le_refl one
+
 -- ignore this; it's making the "refl" tactic work with goals of the form a ≤ a
 attribute [_refl_lemma] le_refl
 
@@ -37,7 +39,6 @@ begin
   sorry
 end
 
-example : one ≤ one := le_refl one
 
 lemma zero_le (a : mynat) : 0 ≤ a :=
 begin
@@ -56,7 +57,7 @@ end
 
 instance : preorder mynat := by structure_helper
 
--- ignore this
+-- ignore this, it's the definition.
 theorem lt_iff_le_not_le {a b : mynat} : a < b ↔ a ≤ b ∧ ¬ b ≤ a := iff.rfl
 
 theorem le_antisymm : ∀ {{a b : mynat}}, a ≤ b → b ≤ a → a = b :=

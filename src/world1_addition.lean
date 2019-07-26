@@ -72,18 +72,12 @@ add_comm_monoid
 
 lemma zero_add (n : mynat) : 0 + n = n :=
 begin [less_leaky]
-  --cases n with d, -- no leaks
-  induction n with d hd, -- no leaks
-    rw add_zero, -- doesn't close goals.
-    refl,
-  rw add_succ,
-  rw hd,
-  refl,
+  sorry
 end
 -- all compiles
 
 lemma add_assoc (a b c : mynat) : (a + b) + c = a + (b + c) :=
-begin
+begin [less_leaky]
   sorry
 end
 
@@ -96,12 +90,12 @@ instance : add_monoid mynat := by structure_helper
 
 -- isolate independent useful thing and prove it first
 lemma succ_add (a b : mynat) : succ a + b = succ (a + b) :=
-begin
+begin [less_leaky]
   sorry
 end
 
 lemma add_comm (a b : mynat) : a + b = b + a :=
-begin
+begin [less_leaky]
   sorry
 end
 
@@ -111,50 +105,49 @@ instance : add_comm_monoid mynat := by structure_helper
 -- extra stuff which will not give us any more instances
 
 theorem succ_ne_zero : ∀ {{a : mynat}}, succ a ≠ 0 := 
-begin
+begin [less_leaky]
   sorry
 end
 
 theorem eq_iff_succ_eq_succ (a b : mynat) : succ a = succ b ↔ a = b :=
-begin
+begin [less_leaky]
   sorry
 end
 
 theorem add_left_cancel ⦃ a b c : mynat⦄ : a + b = a + c → b = c :=
-begin
+begin [less_leaky]
   sorry
 end
 
 theorem add_right_cancel ⦃a b c : mynat⦄ : a + b = c + b → a = c :=
-begin
+begin [less_leaky]
   sorry
 end
 
-
-theorem add_right_cancel_iff (a b t : mynat) :  a = b ↔ a + t = b + t :=
-begin
+theorem add_right_cancel_iff (a b c : mynat) :  a + b = c + b ↔ a = c :=
+begin [less_leaky]
   sorry
 end
 
 -- this is used for antisymmetry of ≤
 lemma eq_zero_of_add_right_eq_self {{a b : mynat}} : a + b = a → b = 0 :=
-begin
+begin [less_leaky]
   sorry
 end
 
 -- now used for antisymmetry of ≤
 lemma add_left_eq_zero {{a b : mynat}} : a + b = 0 → b = 0 :=
-begin
+begin [less_leaky]
   sorry
 end
 
 lemma add_right_eq_zero {{a b : mynat}} : a + b = 0 → a = 0 :=
-begin
+begin [less_leaky]
   sorry
 end
 
 theorem add_one_eq_succ (d : mynat) : d + 1 = succ d :=
-begin
+begin [less_leaky]
   sorry
 end
 
