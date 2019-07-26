@@ -15,3 +15,10 @@ cd natural_number_game
 leanpkg configure
 update-mathlib
 ```
+
+### Playing the game
+
+At the minute, the only way to play it is to
+(1) read `instructions.txt`
+(2) edit the files `world1_addition.lean` etc
+
