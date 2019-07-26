@@ -72,12 +72,15 @@ add_comm_monoid
 
 lemma zero_add (n : mynat) : 0 + n = n :=
 begin [less_leaky]
-  induction n with d hd,
-  refl,
+  --cases n with d, -- no leaks
+  induction n with d hd, -- no leaks
+    rw add_zero, -- doesn't close goals.
+    refl,
   rw add_succ,
   rw hd,
   refl,
 end
+-- all compiles
 
 lemma add_assoc (a b c : mynat) : (a + b) + c = a + (b + c) :=
 begin
