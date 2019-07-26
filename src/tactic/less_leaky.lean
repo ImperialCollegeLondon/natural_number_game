@@ -8,7 +8,7 @@ meta def copy_decl (d : declaration) : tactic unit :=
 add_decl $ d.update_name $ d.to_name.update_prefix `less_leaky.interactive
 
 @[reducible] meta def filter (d : declaration) : bool :=
-d.to_name ∉ [`tactic.interactive.induction]
+d.to_name ∉ [`tactic.interactive.induction, `tactic.interactive.cases, `tactic.interactive.rw]
 
 meta def copy_decls : tactic unit :=
 do env ← get_env,
@@ -26,6 +26,8 @@ namespace less_leaky
 meta def step {α} (c : less_leaky α) : less_leaky unit := 
 c >> return ()
 
+meta def istep := @tactic.istep
+
 meta def save_info := tactic.save_info
 
 meta def execute (c : less_leaky unit) : less_leaky unit := 
@@ -39,6 +41,12 @@ end less_leaky
 
 meta def less_leaky.interactive.induction
 := tactic.interactive.induction'
+
+meta def less_leaky.interactive.cases
+:= tactic.interactive.cases'
+
+meta def less_leaky.interactive.rw
+:= tactic.interactive.rw'
 
 run_cmd copy_decls
 

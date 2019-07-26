@@ -72,9 +72,11 @@ add_comm_monoid
 
 lemma zero_add (n : mynat) : 0 + n = n :=
 begin [less_leaky]
-  induction n,
-  sorry,
-  sorry
+  induction n with d hd,
+  refl,
+  rw add_succ,
+  rw hd,
+  refl,
 end
 
 lemma add_assoc (a b c : mynat) : (a + b) + c = a + (b + c) :=
@@ -144,11 +146,6 @@ begin
 end
 
 lemma add_right_eq_zero {{a b : mynat}} : a + b = 0 → a = 0 :=
-begin
-  sorry
-end
-
-theorem one_eq_succ_zero : (1 : mynat) = succ 0 :=
 begin
   sorry
 end
