@@ -1,4 +1,5 @@
-import world2_multiplication_core
+import mynat.mul
+import world2_multiplication_solutions
 
 import tactic.linarith
 
@@ -247,29 +248,29 @@ instance : lattice.has_bot mynat := ⟨mynat.bot⟩
 
 def bot_le : ∀ a : mynat, ⊥ ≤ a := zero_le
 
-theorem succ_ne_zero : ∀ {a : mynat}, succ a ≠ 0 := 
-begin
-  intro a, intro ha, cases ha,
-end
+--theorem succ_ne_zero : ∀ {a : mynat}, succ a ≠ 0 := 
+--begin
+--  intro a, intro ha, cases ha,
+--end
 
-theorem mul_eq_zero_iff : ∀ (a b : mynat), a * b = 0 ↔ a = 0 ∨ b = 0 :=
-begin
-  intros a b,
-  split, swap,
-    intro hab, cases hab,
-      rw hab, rw zero_mul,
-    rw hab, rw mul_zero,
-  intro hab,
-  cases a with d,
-    change 0 * b = 0 at hab, -- leak
-    left, refl,
-  cases b with e he,
-    right, refl,
-  exfalso,
-  change succ _ = 0 at hab,
-  -- succ (add (mul (succ d) e) d) = 0 -- aargh
-  exact succ_ne_zero hab,
-end
+--theorem mul_eq_zero_iff : ∀ (a b : mynat), a * b = 0 ↔ a = 0 ∨ b = 0 :=
+--begin
+--  intros a b,
+--  split, swap,
+--    intro hab, cases hab,
+--      rw hab, exact zero_mul b,
+--    rw hab, rw mul_zero,
+--  intro hab,
+--  cases a with d,
+--    change 0 * b = 0 at hab, -- leak
+--    left, refl,
+--  cases b with e he,
+--    right, refl,
+--  exfalso,
+--  change succ _ = 0 at hab,
+--  -- succ (add (mul (succ d) e) d) = 0 -- aargh
+--  exact succ_ne_zero hab,
+--end
 
 -- #check lt_iff_le_not_le
 -- : ?M_3 < ?M_4 ↔ ?M_3 ≤ ?M_4 ∧ ¬?M_4 ≤ ?M_3
@@ -365,15 +366,10 @@ begin
   exact le_succ_self _, 
 end
 
-attribute [symm] ne.symm
-
-
-
-
 theorem zero_ne_one : (0 : mynat) ≠ 1 :=
 begin
   intro h, rw eq_comm at h, revert h,
-  exact succ_ne_zero,
+  apply succ_ne_zero,
 end
 
 instance : canonically_ordered_comm_semiring mynat := by structure_helper
