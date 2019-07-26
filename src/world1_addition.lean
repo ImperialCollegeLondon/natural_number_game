@@ -71,7 +71,9 @@ add_comm_monoid
 -/
 
 lemma zero_add (n : mynat) : 0 + n = n :=
-begin
+begin [less_leaky]
+  induction n,
+  sorry,
   sorry
 end
 
