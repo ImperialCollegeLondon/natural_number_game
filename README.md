@@ -23,7 +23,22 @@ all the stuff about setting up a Lean server.
 ### CoCalc
 
 You can play this game online on CoCalc -- I can set
-it to you as an assignment. Ask Kevin for information.
+it to you as an assignment. If I did this, then you
+unfortunately need to do *one thing* before you can
+play; you need to copy the leanpkg.path file to your
+home directory. I am in the process of trying to figure
+out how to automate this. It goes something like this:
+
+1) fire up a terminal (e.g. by going to the + in a circle near the top left, and selecting "linux terminal" -- it's in the top row)
+
+2) type 
+```
+cp Assignments/natural_number_game/leanpkg.path ~
+```
+
+3) Now open the file browser, surf to Assignments/natural_number_game/my_solutions/world1_addition.lean
+
+and fill in the sorries.
 
 ### Installation instructions
 

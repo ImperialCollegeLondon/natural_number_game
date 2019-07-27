@@ -30,10 +30,10 @@ revert
 apply
 exfalso
 
+You can learn about them in the file tactics.md .
 
+Then the idea is that you open the file Assignments/natural_number_game/src/my_solutions/world1_addition.lean
 
-Then the idea is that you just open one of the following files in src:
+(or one of the other files in there if you're interested in exploring more)
 
-world1_addition.lean
-world2_multiplication.lean
-world3_le.lean or world3_le_variant.lean
+and you edit the file and fill in the sorrys. Note that original sorried file is in src/levels and KMB's "official" solutions are in src/solutions.
