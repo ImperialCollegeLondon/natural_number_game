@@ -57,10 +57,11 @@ end less_leaky.interactive
 
 run_cmd copy_decls
 
+--TODO : why is this broken?
+--#print tactic.interactive.rintro
 
-#print tactic.interactive.rintro
+--#exit
 
-#exit
 -- example just to check it's running
 -- example (n : ℕ) : true :=
 -- begin [less_leaky]
