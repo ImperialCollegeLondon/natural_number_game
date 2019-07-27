@@ -24,8 +24,6 @@ import mynat.definition -- Imports the natural numbers.
   * The theorem `one_eq_succ_zero : 1 = succ 0`
   * The theorem `ne_iff_implies_false : a ≠ b ↔ (a = b) → false`
 
-Note also 
-
 -/
 
 import mynat.add -- definition of addition
@@ -60,21 +58,44 @@ namespace mynat
 /-
  Collectibles in this level:
 
-  add_monoid
-  --add_assoc
-  --zero_add
-  --add_zero
+add_comm_monoid -- collectible_02
+  add_monoid [zero_add] -- collectible_01
+    (has_zero)
+    add_semigroup [add_assoc]
+      (has_add)
+  add_comm_semigroup [add_comm]
+    add_semigroup (see above)
+-/
 
-add_comm_monoid
-  (add_monoid)
-  --add_comm
+/-
+Instructions: First carefully explain definition of nat and add. Then
+guide them through the first level. 
+
+"We're going to prove this by induction on n, which is a natural
+thing to do because we defined addition by recursion on n (you
+prove things by induction and define them by recursion).
+
+For the base case, we are going to use the axiom that a + 0 = 0.
+refl closes a goal of the form x = x. how to use add_succ here?
+
+etc.
+
+Full solution to zero_add:
+
+  induction n with d hd,
+    rw add_zero,
+    refl,
+  rw add_succ,
+  rw hd,
+  refl,
+
+"
 -/
 
 lemma zero_add (n : mynat) : 0 + n = n :=
 begin [less_leaky]
   sorry
 end
--- all compiles
 
 lemma add_assoc (a b c : mynat) : (a + b) + c = a + (b + c) :=
 begin [less_leaky]
@@ -82,13 +103,12 @@ begin [less_leaky]
 end
 
 -- first point: needs add_assoc, zero_add, add_zero
-instance : add_monoid mynat := by structure_helper
+def collectible_01 : add_monoid mynat := by structure_helper
+--#print axioms collectible_01 -- prove you got this by uncommenting
 
--- Trying to prove add_comm directly now results in
--- spotting an independent easier lemma which should
--- be proved first.
+-- proving add_comm immediately is still tricky; trying it
+-- reveals a natural intermediate lemma which we prove first.
 
--- isolate independent useful thing and prove it first
 lemma succ_add (a b : mynat) : succ a + b = succ (a + b) :=
 begin [less_leaky]
   sorry
@@ -100,9 +120,11 @@ begin [less_leaky]
 end
 
 -- level up
-instance : add_comm_monoid mynat := by structure_helper
+def collectible_02 : add_comm_monoid mynat := by structure_helper
+--#print axioms collectible_02
 
--- extra stuff which will not give us any more instances
+-- no more collectibles beyond this point in this file, however
+-- stuff below is used in other collectibles in other files.
 
 theorem succ_ne_zero : ∀ {{a : mynat}}, succ a ≠ 0 := 
 begin [less_leaky]
@@ -110,6 +132,11 @@ begin [less_leaky]
 end
 
 theorem eq_iff_succ_eq_succ (a b : mynat) : succ a = succ b ↔ a = b :=
+begin [less_leaky]
+  sorry
+end
+
+lemma add_right_comm (a b c : mynat) : a + b + c = a + c + b :=
 begin [less_leaky]
   sorry
 end
@@ -124,7 +151,7 @@ begin [less_leaky]
   sorry
 end
 
-theorem add_right_cancel_iff (a b c : mynat) :  a + b = c + b ↔ a = c :=
+theorem add_right_cancel_iff (t a b : mynat) :  a + t = b + t ↔ a = b :=
 begin [less_leaky]
   sorry
 end
