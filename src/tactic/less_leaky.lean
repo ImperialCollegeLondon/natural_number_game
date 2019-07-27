@@ -33,26 +33,33 @@ meta def save_info := tactic.save_info
 meta def execute (c : less_leaky unit) : less_leaky unit := 
 c
 
+meta def execute_with := @smt_tactic.execute_with
 --meta def trace_state {α : Type}
+
+meta def solve1 := @tactic.solve1
 
 end less_leaky
 
 --#check tactic.interactive.induction
 
-meta def less_leaky.interactive.induction
+namespace less_leaky.interactive
+
+meta def induction
 := tactic.interactive.induction'
 
-meta def less_leaky.interactive.cases
+meta def cases
 := tactic.interactive.cases'
 
-meta def less_leaky.interactive.rw
+meta def rw
 := tactic.interactive.rw'
+
+end less_leaky.interactive
 
 run_cmd copy_decls
 
-example (n : ℕ) : true :=
-begin [less_leaky]
-  induction n,
-  trace_state,
-    sorry, sorry  
-end
+-- example just to check it's running
+-- example (n : ℕ) : true :=
+-- begin [less_leaky]
+--   induction n,
+--     sorry, sorry  
+-- end

@@ -315,6 +315,11 @@ end
 
 instance : ordered_semiring mynat := by structure_helper
 
+--theorem not_lt_zero (a : mynat) : ¬(a < 0) :=
+--begin
+--  rintro ⟨c,hc⟩
+--end
+
 end mynat
 
 /-

@@ -1,3 +1,6 @@
+-- modded induction', cases', rw'
+-- *TODO* -- waiting for simon PR for symmetry'
+
 import tactic.interactive
 
 run_cmd mk_simp_attr `leakage
@@ -93,6 +96,7 @@ all_goals `[try { dsimp only with leakage at * }]
 --  try {rw' (show mynat.zero = (0 : mynat), from rfl) at *},
 --  try {rw' (show mynat.le = (≤), from rfl) at *}]
 
-
+-- next def is waiting on https://github.com/leanprover-community/mathlib/pull/1269
+--meta def symmetry' := symmetry' -- already there
 
 end tactic.interactive
