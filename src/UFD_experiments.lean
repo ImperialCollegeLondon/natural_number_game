@@ -1,4 +1,6 @@
-import world3_le_solutions
+-- WIP
+
+import solutions.world3_le
 
 namespace mynat
 

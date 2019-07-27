@@ -1,0 +1,3 @@
+-- do I need ints for this?
+-- 1) λ a + μ b = gcd 
+-- 
