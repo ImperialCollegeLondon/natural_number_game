@@ -1,6 +1,6 @@
 -- Many many thanks to Rob Lewis for supplying 99.9% of this file.
 
-import tactic.inductionandcases
+import tactic.modded
 
 open tactic
 
