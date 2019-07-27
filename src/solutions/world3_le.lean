@@ -2,6 +2,8 @@ import mynat.le
 import solutions.world2_multiplication
 import tactic.interactive
 
+#check tactic.interactive.rintro 
+meta def less_leaky.interactive.rintro := tactic.interactive.rintro
 namespace mynat
 
 theorem le_refl (a : mynat) : a ≤ a :=
@@ -328,6 +330,47 @@ begin [less_leaky]
   refl,
 end
 
+#check @nat.lt_succ_iff
+#check @nat.succ_eq_add_one
+/-
+nat.lt_succ_iff : ∀ {m n : ℕ}, m < nat.succ n ↔ m ≤ n
+-/
+theorem lt_succ_iff (m n : mynat) : m < succ n ↔ m ≤ n :=
+begin [less_leaky]
+  rw lt_iff_le_and_ne,
+  split,
+  { rintro ⟨h1, h2⟩,
+    cases h1 with c hc,
+    cases c with d,
+      exfalso,
+      apply h2,
+      rw hc,
+      rw add_zero,refl,
+    use d,
+    apply succ_inj,
+    rw hc,
+    apply add_succ,
+  },
+  { rintro ⟨c, hc⟩,
+    split,
+    { use succ c,
+      rw hc,
+      rw add_succ,
+      refl
+    },
+    { rw hc,
+      apply ne_of_lt,
+      rw lt_iff_le_and_ne,
+      split,
+        use succ c,
+        rw add_succ,
+        refl,
+      intro h,
+      rw succ_eq_add_one
+      rw ←add_zero m at h,
+    }
+  }
+end
 end mynat
 
 /-

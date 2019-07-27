@@ -136,6 +136,11 @@ begin [less_leaky]
   sorry
 end
 
+theorem succ_eq_add_one (n : mynat) : succ n = n + 1 :=
+begin [less_leaky]
+  sorry
+end
+
 lemma add_right_comm (a b c : mynat) : a + b + c = a + c + b :=
 begin [less_leaky]
   sorry
