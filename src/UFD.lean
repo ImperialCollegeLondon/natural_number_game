@@ -20,7 +20,7 @@ begin [less_leaky]
       exfalso,
       exact not_lt_zero hm,
     },
-    {
+    { 
        sorry
     }
   },
