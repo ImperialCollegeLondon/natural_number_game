@@ -110,13 +110,18 @@ A "weaker" variant of induction, where we do not get an inductive hypothesis; th
 rw
 ---
 
-Does a "rewrite". If `H : a = b` then `rw' H` changes all `a`'s in the goal to `b`'s. Note that in contrast to core Lean, it does not try to close the goal with `refl`.
+Does a "rewrite". If `H : a = b` then `rw' H` changes all `a`'s in the goal to `b`'s. Note that in contrast to core Lean, `rw` does not try to close the goal with `refl`.
+If you want Lean 3.4.2's `rw`, use `rewrite`.
 
 Variant: if you want to change all `b`'s to `a`'s then `rw' ←H` works (use `\l` to get the left arrow)
 
 Variant: if you want to change all `a`'s to `b`'s in hypothesis `H2` then `rw' H at H2` works.
 
-The tactic also works with true/false statements; it will rewrite "iff"s. For example `le_def a b : a ≤ b ↔ ∃ (c : mynat), b = a + c`. That is, `le_def a b` is a proof that `a ≤ b ↔ ∃ (c : mynat), b = a + c`.
+The tactic also works with true/false statements; it will rewrite "iff"s. For example `le_def a b : a ≤ b ↔ ∃ (c : mynat), b = a + c`, so `rw le_def` will change `a ≤ b` to `∃ (c : mynat), b = a + c`.
+
+Technical note: in contrast to core Lean, `rw` does not try to close the goal with `refl`.
+If you want Lean 3.4.2's `rw`, use `rewrite`.
+
 
 Example:
 ```
@@ -128,6 +133,20 @@ Then `rw H` changes the goal to
 
 ```
 ⊢ 0 + (b + 3) = b + 3 + b
+```
+
+Example:
+
+If the hypotheses are
+```
+h1 : a = b + 1
+h2 : 1 + a = 7
+```
+
+then `rw h1 at h2` changes `h2` to
+
+```
+h2 : 1 + (b + 1) = 7
 ```
 
 Example: if the goal is
