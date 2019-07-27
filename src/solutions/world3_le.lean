@@ -345,7 +345,7 @@ begin [less_leaky]
     use 1,
     apply succ_eq_add_one,
   intro h,
-
+  exact ne_succ_self n h
 end
 
 theorem lt_succ_iff (m n : mynat) : m < succ n ↔ m ≤ n :=
@@ -379,11 +379,46 @@ begin [less_leaky]
         rw add_succ,
         refl,
       intro h,
-      rw succ_eq_add_one
-      rw ←add_zero m at h,
+      rw [succ_eq_add_one, add_assoc] at h,
+      -- doesn't' work yet
+      -- symmetry at h,
+      rw eq_comm at h,
+      replace h := eq_zero_of_add_right_eq_self h,
+      apply zero_ne_succ c,
+      rw ←h,
+      apply add_one_eq_succ
     }
   }
 end
+
+-- is this right?
+@[elab_as_eliminator]
+theorem strong_induction (P : mynat → Prop)
+  (IH : ∀ m : mynat, (∀ d : mynat, d < m → P d) → P m) :
+  ∀ n, P n :=
+begin [less_leaky]
+  let Q : mynat → Prop := λ m, ∀ d < m, P d,
+  have hQ : ∀ n, Q n,
+  { intro n,
+    induction n with d hd,
+    { intros m hm,
+      exfalso,
+      exact not_lt_zero hm,
+    },
+    { intro m,
+      intro hm,
+      rw lt_succ_iff at hm,
+      apply IH,
+      intros e he,
+      apply hd,
+      exact lt_of_lt_of_le he hm,
+    }
+  },
+  intro n,
+  apply hQ (succ n),
+  apply lt_succ_self
+end
+
 end mynat
 
 /-

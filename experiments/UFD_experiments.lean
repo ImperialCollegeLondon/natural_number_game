@@ -13,23 +13,21 @@ instance : has_dvd mynat := ⟨mynat.divides⟩
 
 def is_prime (n : mynat) : Prop := n ≠ 1 ∧ ∀ d, d ∣ n → d = 1 ∨ d = n
 
--- this should be in world 3
-theorem strong_induction (P : mynat → Prop)
-  (IH : ∀ m : mynat, (∀ d : mynat, d < m → P d) → P m) :
-  ∀ n, P n :=
+theorem has_prime_factor (n : mynat) : 1 < n → ∃ p : mynat, is_prime p ∧ p ∣ n :=
 begin [less_leaky]
-  let Q : mynat → Prop := λ m, ∀ d < m, P d,
-  have hQ : ∀ n, Q n,
-  { intro n,
-    induction n with d hd,
-    { intros m hm,
-      exfalso,
-      exact not_lt_zero hm,
-    },
-    { 
-       sorry
-    }
-  },
+  intro h,
+  cases n with n,
+    exfalso, apply @not_lt_zero 1,
+    exact h,
+  cases n with n,
+    exfalso,
+    rw ←one_eq_succ_zero at h,
+    apply lt_irrefl (1 : mynat),
+    assumption,
+  clear h,
+  revert n,
+  apply strong_induction,
+  -- strong induction successfully applied!
   sorry
 end
 
