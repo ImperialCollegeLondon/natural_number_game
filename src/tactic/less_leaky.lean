@@ -57,6 +57,10 @@ end less_leaky.interactive
 
 run_cmd copy_decls
 
+
+#print tactic.interactive.rintro
+
+#exit
 -- example just to check it's running
 -- example (n : ℕ) : true :=
 -- begin [less_leaky]

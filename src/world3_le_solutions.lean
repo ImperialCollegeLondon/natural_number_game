@@ -1,5 +1,6 @@
 import mynat.le
 import world2_multiplication_solutions
+import tactic.interactive
 
 namespace mynat
 
@@ -315,10 +316,17 @@ end
 
 instance : ordered_semiring mynat := by structure_helper
 
---theorem not_lt_zero (a : mynat) : ¬(a < 0) :=
---begin
---  rintro ⟨c,hc⟩
---end
+theorem not_lt_zero (a : mynat) : ¬(a < 0) :=
+begin [less_leaky]
+--  rintro ⟨ha, hna⟩, -- *TODO* -- rintro doesn't work??
+  intro h,
+  cases h with ha hna,
+  apply hna, clear hna,
+  --apply le_zero at ha,
+  replace ha := le_zero ha,
+  rw ha,
+  refl,
+end
 
 end mynat
 
