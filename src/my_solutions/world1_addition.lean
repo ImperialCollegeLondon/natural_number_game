@@ -183,4 +183,9 @@ begin [less_leaky]
   sorry
 end
 
+def ne_succ_self (n : mynat) : n ≠ succ n :=
+begin [less_leaky]
+  sorry
+end
+
 end mynat

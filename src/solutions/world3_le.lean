@@ -199,6 +199,8 @@ begin
   }
 end
 
+
+
 def succ_lt_succ_iff (a b : mynat) : succ a < succ b ↔ a < b :=
 begin
   rw lt_iff_le_not_le,
@@ -335,6 +337,17 @@ end
 /-
 nat.lt_succ_iff : ∀ {m n : ℕ}, m < nat.succ n ↔ m ≤ n
 -/
+
+theorem lt_succ_self (n : mynat) : n < succ n :=
+begin [less_leaky]
+  rw lt_iff_le_and_ne,
+  split,
+    use 1,
+    apply succ_eq_add_one,
+  intro h,
+
+end
+
 theorem lt_succ_iff (m n : mynat) : m < succ n ↔ m ≤ n :=
 begin [less_leaky]
   rw lt_iff_le_and_ne,

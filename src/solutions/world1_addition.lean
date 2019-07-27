@@ -280,10 +280,20 @@ end
 
 theorem add_one_eq_succ (d : mynat) : d + 1 = succ d :=
 begin [less_leaky]
-  rw one_eq_succ_zero,
-  rw add_succ,
-  rw add_zero,
+  rw succ_eq_add_one,
   refl,
 end
 
+def ne_succ_self (n : mynat) : n ≠ succ n :=
+begin [less_leaky]
+  induction n with d hd,
+    apply zero_ne_succ,
+  intro hs,
+  apply hd,
+  apply succ_inj,
+  assumption
+end
+
 end mynat
+
+--
