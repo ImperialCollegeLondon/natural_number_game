@@ -18,8 +18,7 @@ begin [less_leaky]
     induction n with d hd,
     { intros m hm,
       exfalso,
-      exact not_lt_zero
-      sorry
+      exact not_lt_zero hm,
     },
     {
        sorry

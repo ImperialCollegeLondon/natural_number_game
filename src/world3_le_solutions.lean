@@ -316,7 +316,7 @@ end
 
 instance : ordered_semiring mynat := by structure_helper
 
-theorem not_lt_zero (a : mynat) : ¬(a < 0) :=
+theorem not_lt_zero ⦃a : mynat⦄ : ¬(a < 0) :=
 begin [less_leaky]
 --  rintro ⟨ha, hna⟩, -- *TODO* -- rintro doesn't work??
   intro h,
