@@ -1,3 +1,5 @@
+-- random experiments that predate [less_leaky] approach
+
 import tactic.linarith -- any import is fine
 
 @[derive decidable_eq]

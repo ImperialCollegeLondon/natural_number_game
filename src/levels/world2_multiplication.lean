@@ -1,4 +1,4 @@
-import world1_addition_solutions -- addition lemmas
+import solutions.world1_addition -- addition lemmas
 
 import mynat.mul
 /- Here's what you get from the import:
@@ -57,11 +57,6 @@ end
 -- so perhaps we need add_mul
 -- but add_mul leads to either a+b+c=a+c+b or (a+b)+(c+d)=(a+c)+(b+d)
 -- (depending on whether we do induction on b or c)
-
-lemma add_right_comm (a b c : mynat) : a + b + c = a + c + b :=
-begin [less_leaky]
-  sorry
-end
 
 -- I need this for mul_comm
 lemma succ_mul (a b : mynat) : succ a * b = a * b + b :=

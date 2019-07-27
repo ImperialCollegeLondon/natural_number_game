@@ -1,4 +1,4 @@
-import world2_multiplication_solutions
+import solutions.world2_multiplication
 
 import mynat.le
 /- Here's what you get from the import:

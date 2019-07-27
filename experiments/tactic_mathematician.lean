@@ -1,3 +1,6 @@
+-- this is how structure_helper works. I liked my name
+-- better though -- `i_checked_all_teh_axioms`
+
 namespace tactic.interactive
 open tactic
 

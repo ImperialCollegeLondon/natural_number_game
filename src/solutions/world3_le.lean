@@ -1,7 +1,9 @@
 import mynat.le
-import world2_multiplication_solutions
+import solutions.world2_multiplication
 import tactic.interactive
 
+#check tactic.interactive.rintro 
+meta def less_leaky.interactive.rintro := tactic.interactive.rintro
 namespace mynat
 
 theorem le_refl (a : mynat) : a ≤ a :=
@@ -197,6 +199,8 @@ begin
   }
 end
 
+
+
 def succ_lt_succ_iff (a b : mynat) : succ a < succ b ↔ a < b :=
 begin
   rw lt_iff_le_not_le,
@@ -326,6 +330,93 @@ begin [less_leaky]
   replace ha := le_zero ha,
   rw ha,
   refl,
+end
+
+#check @nat.lt_succ_iff
+#check @nat.succ_eq_add_one
+/-
+nat.lt_succ_iff : ∀ {m n : ℕ}, m < nat.succ n ↔ m ≤ n
+-/
+
+theorem lt_succ_self (n : mynat) : n < succ n :=
+begin [less_leaky]
+  rw lt_iff_le_and_ne,
+  split,
+    use 1,
+    apply succ_eq_add_one,
+  intro h,
+  exact ne_succ_self n h
+end
+
+theorem lt_succ_iff (m n : mynat) : m < succ n ↔ m ≤ n :=
+begin [less_leaky]
+  rw lt_iff_le_and_ne,
+  split,
+  { rintro ⟨h1, h2⟩,
+    cases h1 with c hc,
+    cases c with d,
+      exfalso,
+      apply h2,
+      rw hc,
+      rw add_zero,refl,
+    use d,
+    apply succ_inj,
+    rw hc,
+    apply add_succ,
+  },
+  { rintro ⟨c, hc⟩,
+    split,
+    { use succ c,
+      rw hc,
+      rw add_succ,
+      refl
+    },
+    { rw hc,
+      apply ne_of_lt,
+      rw lt_iff_le_and_ne,
+      split,
+        use succ c,
+        rw add_succ,
+        refl,
+      intro h,
+      rw [succ_eq_add_one, add_assoc] at h,
+      -- doesn't' work yet
+      -- symmetry at h,
+      rw eq_comm at h,
+      replace h := eq_zero_of_add_right_eq_self h,
+      apply zero_ne_succ c,
+      rw ←h,
+      apply add_one_eq_succ
+    }
+  }
+end
+
+-- is this right?
+@[elab_as_eliminator]
+theorem strong_induction (P : mynat → Prop)
+  (IH : ∀ m : mynat, (∀ d : mynat, d < m → P d) → P m) :
+  ∀ n, P n :=
+begin [less_leaky]
+  let Q : mynat → Prop := λ m, ∀ d < m, P d,
+  have hQ : ∀ n, Q n,
+  { intro n,
+    induction n with d hd,
+    { intros m hm,
+      exfalso,
+      exact not_lt_zero hm,
+    },
+    { intro m,
+      intro hm,
+      rw lt_succ_iff at hm,
+      apply IH,
+      intros e he,
+      apply hd,
+      exact lt_of_lt_of_le he hm,
+    }
+  },
+  intro n,
+  apply hQ (succ n),
+  apply lt_succ_self
 end
 
 end mynat

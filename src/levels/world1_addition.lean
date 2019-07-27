@@ -94,32 +94,12 @@ Full solution to zero_add:
 
 lemma zero_add (n : mynat) : 0 + n = n :=
 begin [less_leaky]
-  induction n with d hd,
-  {
-    rw add_zero,
-    refl,
-  },
-  { rw add_succ,
-    rw hd,
-    refl
-  }
+  sorry
 end
 
 lemma add_assoc (a b c : mynat) : (a + b) + c = a + (b + c) :=
 begin [less_leaky]
-  induction c with d hd,
-  { -- ⊢ a + b + 0 = a + (b + 0)
-    rw add_zero,
-    rw add_zero,
-    refl
-  },
-  { -- ⊢ (a + b) + succ d = a + (b + succ d)
-    rw add_succ,
-    rw add_succ,
-    rw add_succ,
-    rw hd,
-    refl,
-  }
+  sorry
 end
 
 -- first point: needs add_assoc, zero_add, add_zero
@@ -131,31 +111,12 @@ def collectible_01 : add_monoid mynat := by structure_helper
 
 lemma succ_add (a b : mynat) : succ a + b = succ (a + b) :=
 begin [less_leaky]
-  induction b with d hd,
-  {
-    refl
-  }, 
-  { rw add_succ,
-    rw hd,
-    rw add_succ,
-    refl
-  }
+  sorry
 end
 
 lemma add_comm (a b : mynat) : a + b = b + a :=
 begin [less_leaky]
-  induction b with d hd,
-  { -- ⊢ a + 0 = 0 + a,
-    rw zero_add,
-    rw add_zero,
-    refl
-  },
-  {
-    rw add_succ,
-    rw hd,
-    rw succ_add,
-    refl
-  }
+  sorry
 end
 
 -- level up
@@ -167,114 +128,64 @@ def collectible_02 : add_comm_monoid mynat := by structure_helper
 
 theorem succ_ne_zero : ∀ {{a : mynat}}, succ a ≠ 0 := 
 begin [less_leaky]
-  intro a,
-  symmetry,
-  exact zero_ne_succ a,
+  sorry
 end
 
 theorem eq_iff_succ_eq_succ (a b : mynat) : succ a = succ b ↔ a = b :=
 begin [less_leaky]
-  split,
-  { exact succ_inj},
-  { intro H,
-    rw H,
-    refl,
-  }
+  sorry
+end
+
+theorem succ_eq_add_one (n : mynat) : succ n = n + 1 :=
+begin [less_leaky]
+  sorry
 end
 
 lemma add_right_comm (a b c : mynat) : a + b + c = a + c + b :=
 begin [less_leaky]
-  rw add_assoc,
-  rw add_comm b c,
-  rw ←add_assoc,
-  refl,
+  sorry
 end
 
 theorem add_left_cancel ⦃ a b c : mynat⦄ : a + b = a + c → b = c :=
 begin [less_leaky]
-  intro h,
-  rw add_comm at h,
-  rw add_comm a at h,
-  revert b c,
-  induction a with d hd,
-  { intros b c,
-    intro h,
-    rw add_zero at h,
-    rw add_zero at h,
-    assumption
-  },
-  { intros b c,
-    intro h,
-    rw add_succ at h,
-    rw add_succ at h,
-    rw ←succ_add at h,
-    rw ←succ_add at h,
-    apply succ_inj,
-    exact hd h
-  }
+  sorry
 end
 
 theorem add_right_cancel ⦃a b c : mynat⦄ : a + b = c + b → a = c :=
 begin [less_leaky]
-  intro h,
-  rw add_comm at h,
-  rw add_comm c at h,
-  exact add_left_cancel h
+  sorry
 end
 
 theorem add_right_cancel_iff (t a b : mynat) :  a + t = b + t ↔ a = b :=
 begin [less_leaky]
-  split,
-  { apply add_right_cancel}, -- done that way already,
-  { intro H, -- H : a = b,
-    rw H,
-    refl,
-  }
+  sorry
 end
 
 -- this is used for antisymmetry of ≤
 lemma eq_zero_of_add_right_eq_self {{a b : mynat}} : a + b = a → b = 0 :=
 begin [less_leaky]
-  intro h,
-  induction a with a ha,
-  { 
-    rw zero_add at h,
-    assumption
-  },
-  { apply ha,
-    apply succ_inj,
-    rw succ_add at h,
-    assumption,
-  }
+  sorry
 end
 
 -- now used for antisymmetry of ≤
 lemma add_left_eq_zero {{a b : mynat}} : a + b = 0 → b = 0 :=
 begin [less_leaky]
-  intro H,
-  cases b with c,
-  { refl},
-  { rw add_succ at H,
-    exfalso,
-    apply zero_ne_succ (a + c),
-    rw H,
-    refl,
-  },
+  sorry
 end
 
 lemma add_right_eq_zero {{a b : mynat}} : a + b = 0 → a = 0 :=
 begin [less_leaky]
-  intro H,
-  rw add_comm at H,
-  exact add_left_eq_zero H,
+  sorry
 end
 
 theorem add_one_eq_succ (d : mynat) : d + 1 = succ d :=
 begin [less_leaky]
-  rw one_eq_succ_zero,
-  rw add_succ,
-  rw add_zero,
-  refl,
+  sorry
+end
+
+def ne_succ_self (n : mynat) : n ≠ succ n :=
+begin [less_leaky]
+  sorry
 end
 
 end mynat
