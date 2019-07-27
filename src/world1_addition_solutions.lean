@@ -63,37 +63,33 @@ add_comm_monoid
 -/
 
 -- 
-example : (1 : mynat) + 1 = 2 :=
-begin
-  refl
-end
 
 lemma zero_add (n : mynat) : 0 + n = n :=
-begin
+begin [less_leaky]
   induction' n with d hd,
   {
-    rw' add_zero,
+    rw add_zero,
     refl,
   },
-  { rw' add_succ,
-    rw' hd,
+  { rw add_succ,
+    rw hd,
     refl
   }
 end
 
 lemma add_assoc (a b c : mynat) : (a + b) + c = a + (b + c) :=
-begin
-  induction' c with d hd,
+begin [less_leaky]
+  induction c with d hd,
   { -- ⊢ a + b + 0 = a + (b + 0)
-    rw' add_zero,
-    rw' add_zero,
+    rw add_zero,
+    rw add_zero,
     refl
   },
   { -- ⊢ (a + b) + succ d = a + (b + succ d)
-    rw' add_succ,
-    rw' add_succ,
-    rw' add_succ,
-    rw' hd,
+    rw add_succ,
+    rw add_succ,
+    rw add_succ,
+    rw hd,
     refl,
   }
 end
@@ -106,30 +102,30 @@ def collectible_01 : add_monoid mynat := by structure_helper
 
 -- isolate independent useful thing and prove it first
 lemma succ_add (a b : mynat) : succ a + b = succ (a + b) :=
-begin
+begin [less_leaky]
   induction' b with d hd,
   {
     refl
   }, 
-  { rw' add_succ,
-    rw' hd,
-    rw' add_succ,
+  { rw add_succ,
+    rw hd,
+    rw add_succ,
     refl
   }
 end
 
 lemma add_comm (a b : mynat) : a + b = b + a :=
-begin
-  induction' b with d hd,
+begin [less_leaky]
+  induction b with d hd,
   { -- ⊢ a + 0 = 0 + a,
-    rw' zero_add,
-    rw' add_zero,
+    rw zero_add,
+    rw add_zero,
     refl
   },
   {
-    rw' add_succ,
-    rw' hd,
-    rw' succ_add,
+    rw add_succ,
+    rw hd,
+    rw succ_add,
     refl
   }
 end
@@ -141,7 +137,7 @@ def collectible_02 : add_comm_monoid mynat := by structure_helper
 -- stuff below is used in other collectibles in other files.
 
 theorem succ_ne_zero : ∀ {{a : mynat}}, succ a ≠ 0 := 
-begin
+begin [less_leaky]
   intro a,
   symmetry,
   exact zero_ne_succ a,
@@ -149,17 +145,25 @@ end
 
 
 theorem eq_iff_succ_eq_succ (a b : mynat) : succ a = succ b ↔ a = b :=
-begin
+begin [less_leaky]
   split,
   { exact succ_inj},
   { intro H,
-    rw' H,
+    rw H,
     refl,
   }
 end
 
+lemma add_right_comm (a b c : mynat) : a + b + c = a + c + b :=
+begin [less_leaky]
+  rw add_assoc,
+  rw add_comm b c,
+  rw ←add_assoc,
+  refl,
+end
+
 theorem add_left_cancel ⦃ a b c : mynat⦄ : a + b = a + c → b = c :=
-begin
+begin [less_leaky]
   intro h,
   rw' add_comm at h,
   rw' add_comm a at h,
@@ -183,7 +187,7 @@ begin
 end
 
 theorem add_right_cancel ⦃a b c : mynat⦄ : a + b = c + b → a = c :=
-begin
+begin [less_leaky]
   intro h,
   rw add_comm at h,
   rw add_comm c at h,
@@ -192,7 +196,7 @@ end
 
 
 theorem add_right_cancel_iff (a b t : mynat) :  a = b ↔ a + t = b + t :=
-begin
+begin [less_leaky]
   split,
   { intro H, -- H : a = b,
     rw' H,
@@ -203,7 +207,7 @@ end
 
 -- this is used for antisymmetry of ≤
 lemma eq_zero_of_add_right_eq_self {{a b : mynat}} : a + b = a → b = 0 :=
-begin
+begin [less_leaky]
   intro h,
   induction' a with a ha,
   { 
@@ -219,7 +223,7 @@ end
 
 -- now used for antisymmetry of ≤
 lemma add_left_eq_zero {{a b : mynat}} : a + b = 0 → b = 0 :=
-begin
+begin [less_leaky]
   intro H,
   cases' b with c,
   { refl},
@@ -232,14 +236,14 @@ begin
 end
 
 lemma add_right_eq_zero {{a b : mynat}} : a + b = 0 → a = 0 :=
-begin
+begin [less_leaky]
   intro H,
   rw' add_comm at H,
   exact add_left_eq_zero H,
 end
 
 theorem add_one_eq_succ (d : mynat) : d + 1 = succ d :=
-begin
+begin [less_leaky]
   rw one_eq_succ_zero,
   rw add_succ,
   rw' add_zero,
