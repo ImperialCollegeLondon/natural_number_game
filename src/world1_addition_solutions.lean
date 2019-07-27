@@ -99,7 +99,7 @@ begin
 end
 
 -- first point: needs add_assoc, zero_add, add_zero
-instance : add_monoid mynat := by structure_helper
+def collectible_01 : add_monoid mynat := by structure_helper
 
 -- failed attempt to prove add_comm because we 
 -- are going too fast.
@@ -135,9 +135,10 @@ begin
 end
 
 -- level up
-instance : add_comm_monoid mynat := by structure_helper
+def collectible_02 : add_comm_monoid mynat := by structure_helper
 
--- extra stuff which will not give us any 
+-- no more collectibles beyond this point in this file, however
+-- stuff below is used in other collectibles in other files.
 
 theorem succ_ne_zero : ∀ {{a : mynat}}, succ a ≠ 0 := 
 begin
@@ -235,10 +236,6 @@ begin
   intro H,
   rw' add_comm at H,
   exact add_left_eq_zero H,
-end
-theorem one_eq_succ_zero : (1 : mynat) = succ 0 :=
-begin
-  refl,
 end
 
 theorem add_one_eq_succ (d : mynat) : d + 1 = succ d :=

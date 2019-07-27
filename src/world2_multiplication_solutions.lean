@@ -196,6 +196,26 @@ begin
 end
 
 instance : comm_semiring mynat := by structure_helper
+-- is that it??
+--comm_semiring []
+--  semiring []
+--  {
+--    add_comm_monoid -- collectible 2
+--    monoid 
+--      semigroup [mul_assoc]
+--        (has_mul)
+  --    (has_one)
+  --  distrib [left_distrib, right_distrib]
+--     (has_mul)
+--     (has_add)
+--    mul_zero_class [zero_mul, mul_zero]
+--     (has_mul)
+--     (has_zero)
+--  }
+--  comm_monoid []
+--    monoid (see above)
+--    comm_semigroup [mul_comm]
+--      semigroup (see above)
 
 theorem mul_left_cancel ⦃a b c : mynat⦄ (ha : a ≠ 0) : a * b = a * c → b = c :=
 begin
