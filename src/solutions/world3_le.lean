@@ -1,5 +1,5 @@
 import mynat.le
-import world2_multiplication_solutions
+import solutions.world2_multiplication
 import tactic.interactive
 
 namespace mynat

@@ -1,4 +1,4 @@
-import world1_addition_solutions
+import solutions.world1_addition
 import mynat.mul
 
 

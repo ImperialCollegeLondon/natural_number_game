@@ -1,5 +1,5 @@
 import mynat.mul
-import world2_multiplication_solutions
+import solutions.world2_multiplication
 
 import tactic.linarith
 
