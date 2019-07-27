@@ -1,4 +1,5 @@
 import mynat.le
+import world2_multiplication_solutions
 
 namespace mynat
 
