@@ -1,3 +1,5 @@
+-- if you're looking for the first level, try "world1_addition.lean"
+
 /- to be written
   (feel free to write it, anyone!)
 
