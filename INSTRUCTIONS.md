@@ -94,3 +94,5 @@ end
 [Shoddy notes of mine](http://wwwf.imperial.ac.uk/~buzzard/xena/html/source/M1F_introduction/prop_exercises.html)
 
 The very wonderful [Theorem Proving In Lean](https://leanprover.github.io/theorem_proving_in_lean/), especially [chapter 5 on tactics](https://leanprover.github.io/theorem_proving_in_lean/tactics.html)
+
+The [blog post](https://xenaproject.wordpress.com/2017/10/31/building-the-non-negative-integers-from-scratch/) which started me thinking about all this.
