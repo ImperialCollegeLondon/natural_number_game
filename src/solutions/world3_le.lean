@@ -419,6 +419,15 @@ begin [less_leaky]
   apply lt_succ_self
 end
 
+lemma lt_irrefl (a : mynat) : ¬ (a < a) :=
+begin
+  intro h,
+  rw lt_iff_le_and_ne at h,
+  cases h with h1 h2,
+  apply h2,
+  refl,
+end
+
 end mynat
 
 /-

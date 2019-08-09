@@ -172,4 +172,9 @@ end
 
 instance : ordered_semiring mynat := by structure_helper
 
+lemma lt_irrefl (a : mynat) : ¬ (a < a) :=
+begin
+  sorry
+end
+
 end mynat
