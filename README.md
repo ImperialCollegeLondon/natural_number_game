@@ -1,37 +1,25 @@
 <h1><span style='color:#ff8c00'> Natural Number Game
 </span></h1>
 
-Building the natural numbers in Lean.
+This is a game about the natural numbers, which are the numbers {0, 1, 2, 3, ...}.
 
-Brief overview: to a mathematician, the fact that the natural numbers are a commutative semiring is a theorem. It's a level in a game.
+The idea of the game is to teach you what actually goes into the *proofs* of all the statements about natural numbers which are presented to us as children and which we are told are "obvious". Examples of such statements are: `a + b = b + a`, or `a * (b + c) = a * b + a * c`.
 
-To the computer scientists, it is a definition.
+If one uses a "geometric" and informal definition of addition, such as "`a + b` is the number of marbles you have, if you have `a` marbles in one hand and `b` in the other", then statements like `a + b = b + a` do become obvious. However such a definition of addition is not appropriate for a computer. Our job in this game is to convince a computer that statements such as `a + b = b + a` are not just "obvious", but actually have *proofs*.
 
-The difference between their opinion and our opinion is a bunch
-of data which it is hard for mathematicians to set up and understand
-This repo just gives it to them, and just leaves the mathematicians
-the job of proving the theorems.
+In this game, we start with the natural numbers and the *principle of mathematical induction*, and induction is the main tool that we will be using. If you are already happy with the principle of mathematical induction then hopefully you will be able to make some progress playing this game, and it might even teach you more about what the principle is.
 
-See INSTRUCTIONS.txt for instructions for Lean-competent people.
-(how do I make this a live link?)
+Computers are currently being taught mathematics by mathematicians, and this game will give you some idea about how one has to think about mathematics in order to teach it to a computer. Computer scientists would like to teach difficult modern research mathematics to a computer, but this is currently extremely hard to do because computers find it very hard to read mathematics written by humans, even with recent advances in machine learning and AI. This is a big stumbling block in training computers to become brilliant mathematicians. The natural numbers game teaches you a language which computers find it much easier to understand. The language we will be using is called Lean. Lean is a piece of free and open source software developed by Leonardo de Moura at Microsoft Research. 
 
-**BETTER INSTRUCTIONS NEED TO BE WRITTEN** as we find out
-what kind of interface Mohammad and Andy can manage, and
-all the stuff about setting up a Lean server.
+# Getting the game working.
 
-### CoCalc
+This game is still very much in beta mode. In the future there will be a much easier interface to playing the game via a web browser without installing anything, but until that point, to play the game there are really only two options.
 
-If you are paying $14 a month for a paid account on CoCalc, you can play
-the game online on CoCalc.
+## Option 1: playing the game on your own computer.
 
-### Installation instructions
+First, you will have to [install Lean, its maths library mathlib, and Visual Studio Code on your computer](https://github.com/leanprover-community/mathlib#installation).
 
-If you want to play offline then you'll have to install the game.
-
-Assuming you have installed Lean and the supporting tools, for example
-by following the installation instructions at https://github.com/leanprover-community/mathlib,
-the installation process for this project is:
-
+Once you have done this, you can clone and compile this repository with the following code:
 ```
 git clone git@github.com:ImperialCollegeLondon/natural_number_game.git
 cd natural_number_game
@@ -39,8 +27,16 @@ leanpkg configure
 update-mathlib
 ```
 
-### Playing the game
+Next, in VS Code, select File -> Open Folder and open the `natural number game` directory.
 
-At the minute, the only way to play it is to
-(1) read `instructions.txt`
-(2) edit the files `world1_addition.lean` etc and replace all the `sorry`s with proofs.
+Finally, open src/my_solutions/world1_addition.lean and now you're playing the game.
+
+## Option 2: playing the game on CoCalc.com
+
+To be written.
+
+# Playing the game
+
+Read the [instructions on how to play the game](INSTRUCTIONS.md).
+
+
