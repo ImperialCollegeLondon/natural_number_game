@@ -3,15 +3,14 @@
 
 Building the natural numbers in Lean.
 
-To a mathematician, the fact that the natural numbers are a commutative
-semiring is a theorem. It's a level in a game.
+Brief overview: to a mathematician, the fact that the natural numbers are a commutative semiring is a theorem. It's a level in a game.
 
 To the computer scientists, it is a definition.
 
 The difference between their opinion and our opinion is a bunch
 of data which it is hard for mathematicians to set up and understand
 This repo just gives it to them, and just leaves the mathematicians
-****the job of proving the theorems.
+the job of proving the theorems.
 
 See INSTRUCTIONS.txt for instructions for Lean-competent people.
 (how do I make this a live link?)
@@ -22,8 +21,8 @@ all the stuff about setting up a Lean server.
 
 ### CoCalc
 
-You can play this game online on CoCalc -- I can set
-it to you as an assignment. Ask Kevin for information.
+If you are paying $14 a month for a paid account on CoCalc, you can play
+the game online on CoCalc.
 
 ### Installation instructions
 
@@ -44,5 +43,4 @@ update-mathlib
 
 At the minute, the only way to play it is to
 (1) read `instructions.txt`
-(2) edit the files `world1_addition.lean` etc
-
+(2) edit the files `world1_addition.lean` etc and replace all the `sorry`s with proofs.

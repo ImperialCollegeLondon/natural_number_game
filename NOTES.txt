@@ -1,6 +1,8 @@
-Looking for instructions on how to play? Try instructions.txt.
+Looking for instructions on how to play? Try INSTRUCTIONS.txt.
 
 **
+
+comments from KB to KB:
 
 The golden rule is that that the user should never have to apply
 recursion, just induction. So results like zero_ne_succ and
@@ -8,6 +10,7 @@ succ_inj, which are basically supplied by the compiler but which
 are proved using recursion, are given to them for free.
 
 We use a modded tactic mode [less_leaky] where we've changed
-rw, cases, induction and we propose changing symmetry
+rw, cases, induction, and we propose changing symmetry at some point.
+
 
 

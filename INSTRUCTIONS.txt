@@ -11,7 +11,7 @@ add_succ : ∀ a b : mynat, a + succ(b) = succ(a + b)
 Some occasionally useful other results are:
 
 one_eq_succ_zero : 1 = succ 0
-ne_iff_implies_false : a ≠ b ↔ (a = b) → false
+ne_iff_implies_false : a ≠ b ↔ ((a = b) → false)
 
 You also need to know that the principle of mathematical induction works.
 
