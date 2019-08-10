@@ -1,9 +1,9 @@
 <h1><span style='color:#ff8c00'> Natural Number Game
 </span></h1>
 
-Warning: this is version 0.0.1beta.
+Warning: this is version 0.0.1beta -- getting it up and running involves installing a lot of technical stuff. 
 
-This is a game about the natural numbers, which are the numbers {0, 1, 2, 3, ...}.
+This is a game about the natural numbers, which are the numbers {0, 1, 2, 3, ...}. It is based on [this blog post](https://xenaproject.wordpress.com/2017/10/31/building-the-non-negative-integers-from-scratch/) but takes it a lot further.
 
 The idea of the game is to teach you what actually goes into the *proofs* of all the statements about natural numbers which are presented to us as children and which we are told are "obvious". Examples of such statements are: `a + b = b + a`, or `a * (b + c) = a * b + a * c`.
 
