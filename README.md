@@ -41,4 +41,9 @@ To be written.
 
 Read the [instructions on how to play the game](INSTRUCTIONS.md).
 
+# Author
 
+Lean stuff: Kevin Buzzard @XenaProject 
+Computery stuff : Maybe Kevin Kappelmann, maybe Mohammad Pedramfar
+
+#naturalnumbergame
