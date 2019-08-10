@@ -19,7 +19,7 @@ This game is still very much in beta mode. In the future there will be a much ea
 
 ## Option 1: playing the game on your own computer.
 
-First, you will have to [install Lean, its maths library mathlib, and Visual Studio Code on your computer](https://github.com/leanprover-community/mathlib#installation).
+First, you will have to [install Lean, its maths library mathlib, and Visual Studio Code on your computer](https://github.com/leanprover-community/mathlib#installation). You will also need git and VS Code, but the Lean/mathlib installation instructions will take you through that. It will be better one day -- I promise.
 
 Once you have done this, you can clone and compile this repository with the following code:
 ```
@@ -43,7 +43,8 @@ Read the [instructions on how to play the game](INSTRUCTIONS.md).
 
 # Author
 
-Lean stuff: Kevin Buzzard @XenaProject 
+Lean stuff: Kevin Buzzard. Find Kevin on [the Zulip Lean chat](https://leanprover.zulipchat.com) or on Twitter at [@XenaProject](
+
 Computery stuff : Maybe Kevin Kappelmann, maybe Mohammad Pedramfar
 
 Twitter #naturalnumbergame
