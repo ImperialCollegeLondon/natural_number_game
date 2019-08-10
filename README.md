@@ -46,4 +46,4 @@ Read the [instructions on how to play the game](INSTRUCTIONS.md).
 Lean stuff: Kevin Buzzard @XenaProject 
 Computery stuff : Maybe Kevin Kappelmann, maybe Mohammad Pedramfar
 
-#naturalnumbergame
+Twitter #naturalnumbergame
