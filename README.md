@@ -1,6 +1,8 @@
 <h1><span style='color:#ff8c00'> Natural Number Game
 </span></h1>
 
+Warning: this is version 0.0.1beta.
+
 This is a game about the natural numbers, which are the numbers {0, 1, 2, 3, ...}.
 
 The idea of the game is to teach you what actually goes into the *proofs* of all the statements about natural numbers which are presented to us as children and which we are told are "obvious". Examples of such statements are: `a + b = b + a`, or `a * (b + c) = a * b + a * c`.
