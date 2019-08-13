@@ -14,3 +14,4 @@ rw, cases, induction, and we propose changing symmetry at some point.
 
 
 
+TODO: add odd/even level. Add other inequality level?
