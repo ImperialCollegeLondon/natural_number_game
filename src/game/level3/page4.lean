@@ -1,7 +1,7 @@
-import game.level2.page3
-import mynat.mul
+import game.level2.page3 -- hide
+import mynat.mul -- hide
 
-namespace mynat
+namespace mynat -- hide
 
 /- Theorem
 Multiplication of two non-zero natural numbers is non-zero.
@@ -65,7 +65,7 @@ begin [less_leaky]
   }
 end
 
-instance : comm_semiring mynat := by structure_helper
+-- instance : comm_semiring mynat := by structure_helper -- hide
 
 /-
 The next theorem may be useful in the next level.
@@ -107,6 +107,11 @@ begin [less_leaky]
   }
 end
 
+/- To come: inequalities! Exponentiation! Odd and even numbers! Congruences!
+Prime numbers! And any other mathematics with the natural numbers that anyone can think of. 
+Suggestions welcome to k.buzzard@imperial.ac.uk . Many many thanks to Mohammad Pedramfar
+for writing the web interface.
 
+-/
 
-end mynat
+end mynat -- hide

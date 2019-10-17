@@ -1,12 +1,13 @@
-import mynat.definition
-import mynat.add
-import game.level1.page2
-namespace mynat
+import mynat.definition -- hide
+import mynat.add -- hide
+import game.level1.page2 -- hide
+namespace mynat -- hide
 
 
 /-
-Proving add_comm immediately is still tricky;
-trying it reveals a natural intermediate lemma which we prove first.
+If you try to prove commutativity directly, you will realise that you
+are missing an intermediate lemma. So let's prove that lemma first.
+It's called `succ_add`.
 -/
 
 /- Lemma
@@ -25,6 +26,11 @@ begin [less_leaky]
     refl
   }
 end
+
+/-
+Hopefully now we have enough to prove commutativity, although it
+is still a little tricky.
+-/
 
 /- Lemma
 On the set of natural numbers, addition is commutative.
@@ -47,8 +53,4 @@ begin [less_leaky]
   }
 end
 
--- level up
-def collectible_02 : add_comm_monoid mynat := by structure_helper
---#print axioms collectible_02
-
-end mynat
+end mynat -- hide

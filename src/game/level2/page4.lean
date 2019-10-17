@@ -1,12 +1,17 @@
-import mynat.definition
-import mynat.add
-import game.level1.page3
-namespace mynat
-
+import mynat.definition -- hide
+import mynat.add -- hide
+import game.level1.page3 -- hide
+namespace mynat -- hide
 
 /-
-No more collectibles beyond this point in this level, however
-stuff below is used in other collectibles in other levels.
+These are some more advanced facts about addition. To be quite
+frank I'm not even sure I've explained enough about Lean for them
+to be possible. Try some of them; let me know which ones are
+really hard, and I'll try to fix them up.
+
+If you just want to skip these and move straight on to multiplication,
+click on "next level" on the top right (and then click on "previous page"
+  a few times to get you back to Level 2 Page 1 -- sorry ;-) )
 -/
 
 /- Theorem

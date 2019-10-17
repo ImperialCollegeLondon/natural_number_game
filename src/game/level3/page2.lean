@@ -1,7 +1,7 @@
-import game.level2.page1
-import mynat.mul
+import game.level2.page1 -- hide
+import mynat.mul -- hide
 
-namespace mynat
+namespace mynat -- hide
 
 /- Lemma
 For any natural number $m$, we have
@@ -79,7 +79,7 @@ begin [less_leaky]
   }
 end
 
-def collectible_4 : monoid mynat := by structure_helper
+--def collectible_4 : monoid mynat := by structure_helper
 --#print axioms collectible_4
 
-end mynat
+end mynat -- hide

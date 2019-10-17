@@ -1,19 +1,11 @@
-import game.level2.page2
-import mynat.mul
+import game.level2.page2 -- hide
+import mynat.mul -- hide
 
-namespace mynat
+namespace mynat -- hide
 
-
-/-
--- goal : mul_comm. 
--- mul_comm leads to ⊢ a * d + a = succ d * a
--- so perhaps we need add_mul
--- but add_mul leads to either a+b+c=a+c+b or (a+b)+(c+d)=(a+c)+(b+d)
--- (depending on whether we do induction on b or c)
--/
 
 /-
-We will need the next lemma for commutivity of multiplication.
+The next lemma might help for commutivity of multiplication.
 -/
 
 /- Lemma
@@ -37,10 +29,6 @@ begin [less_leaky]
     refl,
   }
 end
-
-/-
-Turns out we don't actually need the next lemma for mul_comm.
--/
 
 /- Lemma
 Addition is distributive over multiplication.
@@ -66,9 +54,9 @@ begin [less_leaky]
   }
 end
 
-def right_distrib := add_mul -- stupid field name, -- hide
+--def right_distrib := add_mul -- stupid field name, -- hide
 
-def collectible_05 : semiring mynat := by structure_helper 
+--def collectible_05 : semiring mynat := by structure_helper  -- hide
 
 /- Lemma
 Multiplication is commutative.
@@ -89,7 +77,7 @@ begin [less_leaky]
   }
 end
 
-def collectible_06 : comm_semiring mynat := by structure_helper
+--def collectible_06 : comm_semiring mynat := by structure_helper
 
 
-end mynat
+end mynat -- hide
