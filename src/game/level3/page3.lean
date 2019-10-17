@@ -1,4 +1,4 @@
-import game.level2.page2 -- hide
+import game.level3.page2 -- hide
 import mynat.mul -- hide
 
 namespace mynat -- hide
