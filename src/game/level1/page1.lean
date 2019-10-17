@@ -18,7 +18,7 @@ yet. This is your job.
 
 You're going to prove these theorems using *tactics*. There are four tactics which you must know
 before we start; these tactics are `refl`, `exact`, `rw` (which is short for "rewrite"), and
-`induction`. This introductory level will take you through these four tactics in turn. During
+`induction`. This introductory level will take you through some of these tactics. During
 your proofs, your "goal" (i.e. what you're supposed to be proving) will be displayed with 
 a `⊢` symbol in front of it -- look for this symbol to find out what you're supposed to be
 proving. 
@@ -26,19 +26,20 @@ proving.
 ## Tutorial level, page 1: `refl`
 
 Let's start with the `refl` tactic. `refl` stands for "reflexivity", which is a fancy
-way of saying that it will prove ords, it will prove a goal of the form `x = x`.
-Let's see it in action! Click the button below that says "Click here to prove !" and read on.
+way of saying that it will prove a goal of the form `x = x`.
+Let's see it in action! Click the button below that says "Click here to prove !", then click
+on the word `sorry` and read on.
 
 -/
 /- Lemma
-For all natual numbers $x$, we have $x = x$.
+For all natural numbers $x$, we have $x = x$.
 -/
 lemma example1 (x : mynat) : x = x :=
 begin [less_leaky]
   refl
 end
 /-
-In the box on the right you can see your goal -- the objective of this level. The goal
+When the system finishes being busy, In the box on the right you can see your goal -- the objective of this level. The goal
 in this case is `x = x`. That's a pretty easy goal to prove -- you can just prove
 it with the `refl` tactic. Delete `sorry` and change it to `refl,` (**don't forget the comma**).
 
