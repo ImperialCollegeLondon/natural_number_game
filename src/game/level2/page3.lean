@@ -1,6 +1,6 @@
 import mynat.definition -- hide
 import mynat.add -- hide
-import game.level2.page2
+import game.level2.page2 -- hide
 namespace mynat -- hide
 
 /- 
