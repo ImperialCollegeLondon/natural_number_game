@@ -1,5 +1,6 @@
 import mynat.definition -- hide
 import mynat.add -- hide
+import game.level2.page1
 namespace mynat -- hide
 
 /- 
@@ -45,9 +46,3 @@ Once you have associativity (sub-boss), let's move on to commutativity (boss).
 -/
 end mynat -- hide 
 
-
-
--/
-
-
-end mynat
