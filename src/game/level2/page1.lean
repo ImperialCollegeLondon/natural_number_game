@@ -36,14 +36,16 @@ Now let's see induction in action. We're going to prove
 
   `zero_add : ∀ n : mynat, 0 + n = n`. 
 
-What is going on here? Didn't we already prove that adding zero to n gave us n?
+Wait -- what is going on here? Didn't we already prove that adding zero to n gave us n?
 No we didn't! We proved n + 0 = n -- that was called `add_zero`. We're now
 trying to prove `zero_add`, which says `0 + n = n`. But aren't these two theorems
 the same? No they're not! It is *true* that `x + y = y + x`, but we haven't
 *proved* it yet, and in fact we will need both `add_zero` and `zero_add` in order
 to prove this. In fact `x + y = y + x` is the boss page (note: when we change "page"
   to "level" it will be the boss level) for addition world. `add_zero` is one
-  of Peano's axioms. To prove `zero_add` we need to use induction.
+  of Peano's axioms. To prove `zero_add` we need to use induction. While we're here,
+  note that `zero_add` is about zero add something, and `add_zero` is about something add zero.
+  The names tell you what the theorem is. Anyway, let's prove it.
 -/
 
 /- Lemma
@@ -105,70 +107,30 @@ to rewrite this too! Type
 
 This goal can be solved with the `refl` tactic. After you apply it,
 Lean will inform you that there are no goals left. You are done!
--/
 
+Those four tactics -- 
 
+* `induction`, 
+* `rw`, 
+* `exact`, and
+* `refl`
 
-/-
-Those four tactics -- `induction`, `rw`, `exact` and `refl` will get you quite a long way
-through this game. You'll have trouble with 1.4 but just skip it and go on to 2.1, the
-stuff in 1.4 isn't needed for 2.1 onwards anyway. Oh -- one last thing -- `rw h` replaces
-the left hand side of h in the goal with the right hand side. If you want to replace
-the right hand side with the left hand side, try `rw ←h`. If you get stuck or want
-to know more, ask in `#new members` at https://leanprover.zulipchat.com (I'm sorry
-I can't make these links live, we're working on it, this is still only a preliminary
-version of everything). If you're a first year at Imperial you can on Blackboard in the forum..
+will get you quite a long way through this game. You should be able to do all of
+addition world (although you'll need more tactics to do the bonus levels) and
+also all of multiplication world. If you're interested in seeing more tactics,
+or other ways of applying these tactics, take a look at the [tactic guide]
+(http://wwwf.imperial.ac.uk/~buzzard/xena/html/source/tactics/tacticindex.html)!
 
-Here are some other resources:
+One last thing (which you can learn from the tactic guide) -- `rw h` replaces the left
+hand side of h in the goal with the right hand side.
+If you want to replace the right hand side with the left hand side, try `rw ←h` (you can get
+the left arrow by typing \l).
 
-List of some basic tactics is here:
+If you get stuck or want to know more, ask in `#new members` at
+<https://leanprover.zulipchat.com> (real name preferred)
 
-http://wwwf.imperial.ac.uk/~buzzard/xena/html/source/tactics/tacticindex.html#basic-tactic-list
-
-Preliminary ideas here:
-
-https://xenaproject.wordpress.com/2017/10/31/building-the-non-negative-integers-from-scratch/
-
-might be of some help. The one big difference between that blog post
-and this game is that in this game we make all the definitions for you,
-and just leave you with the fun part of proving the theorems.
-Why not just try playing though, and if you get stuck then ask in the #new members
-thread at the Lean chat at https://leanprover.zulipchat.com (real name preferred).
-
-To prove the next lemma, try using induction on `c`. Once you've done it, 
-you can move on to the next page of this level.
-
--/
-/- Lemma
-On the set of natural numbers, addition is associative.
-In other words, for all natural numbers $a, b$ and $c$, we have
-$$ (a + b) + c = a + (b + c). $$
--/
-lemma add_assoc (a b c : mynat) : (a + b) + c = a + (b + c) :=
-begin [less_leaky]
-  induction c with d hd,
-  { -- ⊢ a + b + 0 = a + (b + 0)
-    rw add_zero,
-    rw add_zero,
-    refl
-  },
-  { -- ⊢ (a + b) + succ d = a + (b + succ d)
-    rw add_succ,
-    rw add_succ,
-    rw add_succ,
-    rw hd,
-    refl,
-  }
-end
-
-/-
-Once you have associativity, let's move on to commutativity! Click "Next Page" in the top right.
--/
-end mynat -- hide 
-
-
+Good luck! 
 
 -/
 
-
-end mynat
+end mynat -- hide
