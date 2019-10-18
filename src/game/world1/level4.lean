@@ -3,7 +3,7 @@ namespace mynat -- hide
 
 /-
 
-## Tutorial level 4: more rewriting.
+## Tutorial world, level 4: more rewriting.
 
 Way back on page 1 we imported a file called `mynat.definition`.
 This gave us the type `mynat` of natural numbers. But it
@@ -22,13 +22,31 @@ the natural numbers. This game is all about seeing how far these
 axioms will take us.
 
 The import also offers us usual numerical notation
-0,1,2,3,4,5 etc, with `1 = succ(0)`, `2=succ(1)` and so on. 
+0,1,2,3,4,5 etc, with `1 = succ(0)`, `2=succ(1)` and so on.
 
 Let's practice our use of the `rw` tactic in the following example.
 Our hypothesis is that `a = succ(b)` and we want to prove that
 `succ(a)=succ(succ(b))`. We know what `a` is so we just want
 to substitute in! This is exactly what the `rw` tactic does.
-See if you can do it -- more explanations are below the example.
+Before you delete the sorry and write
+
+`rw h,`
+
+and hit enter whilst not forgetting the comma, try and guess
+what the goal will become. If you guessed right, you will know
+that the goal is of the form `X = X` (if the goal goes onto a
+second line, resize the window and make it wider by dragging
+the left hand edge). You can prove this goal with
+
+`refl,`
+
+**Important note** : the tactics `rw` and `exact` both expect
+a proof afterwards (e.g. `rw h1,`, `exact h2,`), But `refl,` is just `refl,`.
+Note also that the system sometimes drops brackets when they're not
+necessary, and `succ b` just means `succ(b)`. 
+
+On the next level, the final level of Tutorial World, we will introduce
+addition, and when we've solved it we'll be ready to enter Addition World.
 -/
 
 /- Theorem
@@ -43,16 +61,4 @@ begin [less_leaky]
 
 end
 
-/- Click
-on the button, delete the sorry, replace with `rw h,` (*don't forget the comma*) and
-see how the `a` in the goal changes to `succ b`. Both sides of the equality are
-now exactly the same, so you should now be able to close the goal with `refl,`. 
-
-Notice that the system sometimes drops brackets when they're not necessary.
-`succ a` just means `succ(a)`.
-
-On the next page, the final page of this introductory world, we will introduce
-addition. 
--/
-
-end mynat
+end mynat -- hide
