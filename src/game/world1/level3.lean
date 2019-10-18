@@ -23,23 +23,22 @@ Did you see what happened to the goal? The goal doesn't close,
 but it *changes* from `⊢ x = z` to `⊢ y = z`. We used the proof
 `h1` of `x = y` to replace an `x` by a `y`.
 
-Move your cursor around a bit
-and get try and find the exact place where the goal changes.
-The comma indicates that we are finished with our tactic, so
-the goal changes just before the comma. Without the comma
-the system expects us to write more. If the top left window
-ever goes blank, it might well be because you forgot a comma.
-
 After `rw h1,` our goal
 has now become `⊢ y = z`, which is exactly hypothesis `h2`,
 so we can prove this new goal by writing
 
 `exact h2,`
 
-on the line after `rw h1`. Don't forget the comma, hit
+on the line after `rw h1,`. Don't forget the comma, hit
 enter, and enjoy seeing the "no goals" message in the
-top left window. Before you click "next level" -- can you find a different
-proof of this theorem which uses `refl`? The answer is below the lemma.
+top right window. The other reason you'll know you're
+done is that the bottom right window (the error window)
+becomes empty. 
+
+Before you click "next level" and start to learn about
+Peano's axioms, you might want to read
+the comments underneath the proof, as there are a couple
+of extra things you might want to try.
 -/
 
 /- Lemma
@@ -54,18 +53,35 @@ begin [less_leaky]
 
 
 
-
 end
 
 /-
 
-There is another way we can prove this goal;
-after `rw h1,`, when your goal is `⊢ y = z`, what happens if you try `rw h2,` instead?
-The `y` in the goal changes to a `z` and you can now close the goal with `refl,`.
-Try it to check. There's more than one way to prove a theorem.
+## Extras
 
-In the next example we will see Peano's axioms, and use the `rw` tactic
-on a more complicated goal.
+1) Click on `exact h2,` and then use the arrow keys to move
+your cursor around the proof. You can inspect Lean's "state" at each
+line of the proof (the hypotheses, and the goal).
+Try to figure out the exact place where the goal changes.
+The comma tells Lean "I've finished writing this tactic now,
+please process it." Lean ignores newlines, but pays great
+attention to commas.
+
+2) Can you find a different proof of this theorem which uses
+two rewrites and `refl`? The answer is below.
+
+After `rw h1,`, when your goal is `⊢ y = z`, what happens if you try `rw h2,` instead
+of `exact h2`? 
+The `y` in the goal changes to a `z` and you can now close the goal with `refl,`.
+Try it to check. There's more than one way to prove a theorem. 
+
+In fact here's a third way -- delete your proof
+completely and try starting with `rw ← h2,`. Don't forget etc etc. You get the left arrow by typing `\l`.
+Can you figure out what happened? Here's what's going on. 
+What does the tactic `rw h1,` do to the goal? It replaces occurrences of the left hand
+side of hypothesis `h1` with the right hand side. The ← switches this behaviour -- it makes Lean replace
+occurrences of the right hand side of the hypothesis with the left hand side. There are at least three ways
+to proceed to solve the goal from here -- you might want to try and find them. 
 -/
 
 end mynat -- hide
