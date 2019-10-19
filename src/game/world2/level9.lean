@@ -11,22 +11,22 @@ namespace mynat -- hide
 
 You have these:
 
-  * zero_ne_succ : ∀ (a : mynat), zero ≠ succ(a)
-  * succ_inj : ∀ a b : mynat, succ(a) = succ(b) → a = b
-  * add_zero : ∀ a : mynat, a + 0 = a
-  * add_succ : ∀ a b : mynat, a + succ(b) = succ(a + b)
-  * zero_add : ∀ a : mynat, 0 + a = a`
-  * add_assoc : ∀ a b c : mynat, (a + b) + c = a + (b + c)
-  * succ_add : ∀ a b : mynat, succ a + b = succ (a + b)
-  * add_comm : ∀ a b : mynat, a + b = b + a
+  * `zero_ne_succ : ∀ (a : mynat), zero ≠ succ(a)`
+  * `succ_inj : ∀ a b : mynat, succ(a) = succ(b) → a = b`
+  * `add_zero : ∀ a : mynat, a + 0 = a`
+  * `add_succ : ∀ a b : mynat, a + succ(b) = succ(a + b)`
+  * `zero_add : ∀ a : mynat, 0 + a = a`
+  * `add_assoc : ∀ a b c : mynat, (a + b) + c = a + (b + c)`
+  * `succ_add : ∀ a b : mynat, succ a + b = succ (a + b)`
+  * `add_comm : ∀ a b : mynat, a + b = b + a`
 
-`add_left_cancel` is the theorem that you can cancel on the left
+The theorem `add_left_cancel` is the theorem that you can cancel on the left
 when you're doing addition -- if `a + b = a + c` then `b = c`. 
 You will need to know about `intro`, `revert` and `apply`. 
 Read about them in the 
 <a href="http://wwwf.imperial.ac.uk/~buzzard/xena/html/source/tactics/tacticindex.html" target="blank">tactic guide</a>.
 Briefly: `intro h` changes `⊢ P → Q` to `h : P` and `⊢ Q` -- it's the Lean analogue of "to prove P → Q, assume P is true;
-now we have to prove Q". `revert h` is the opposite; it makes the goal back into `P → Q`. And if `h : P → Q` is a hypothesis
+now we only have to prove Q". `revert h` is the opposite; given `h : P` and a goal `⊢ Q` it deletes `h` and turns the goal back into `⊢ P → Q`. As for `apply` -- if `h : P → Q` is a hypothesis
 and the goal is `⊢ Q`, then `apply h` turns the goal into `P`. There is more information about this
 stuff <a href="http://wwwf.imperial.ac.uk/~buzzard/xena/html/source/ch1_and_or_props/prop_exercises.html" target="blank">here</a>.
 
