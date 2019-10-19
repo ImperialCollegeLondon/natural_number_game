@@ -7,7 +7,7 @@ namespace mynat -- hide
 
 # World 2 -- Addition World
 
-## Level 12 -- `add_left_eq_zero`
+## Level 13 -- `add_left_eq_zero`
 
 You have the usual stuff. 
 

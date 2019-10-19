@@ -29,10 +29,12 @@ If you want to stick with addition world and prove some trickier goals,
 you can, but you'll need to know some more tactics. For
 example the `symmetry` tactic can be used whenever the goal is
 a proposition defined by a symmetric binary relation, such as `=` or `≠`. 
-Remember we already have `zero_ne_succ`. If you want to venture into
-these bonus levels, you will almost certainly need the
-<a href="http://wwwf.imperial.ac.uk/~buzzard/xena/html/source/tactics/tacticindex.html" target="blank">tactic guide</a>.
+Remember we already have `zero_ne_succ`.
 
+If you want to venture further into
+these bonus levels, you will almost certainly need the
+<a href="http://wwwf.imperial.ac.uk/~buzzard/xena/html/source/tactics/tacticindex.html" target="blank">tactic guide</a>,
+but I'll give you some hints along the way.
 
 -/
 
@@ -43,6 +45,8 @@ theorem succ_ne_zero {{a : mynat}} : succ a ≠ 0 :=
 begin [less_leaky]
   symmetry,
   exact zero_ne_succ a,
+
+
 end
 
 end mynat

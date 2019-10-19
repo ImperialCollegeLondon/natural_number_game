@@ -1,4 +1,4 @@
-import game.world2.level16 -- hide
+import game.world2.level6 -- hide
 import mynat.mul
 
 /- 

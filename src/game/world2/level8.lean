@@ -1,13 +1,13 @@
 import mynat.definition -- hide
 import mynat.add -- hide
-import game.world2.level5 -- hide
+import game.world2.level7 -- hide
 namespace mynat -- hide
 
 /-
 
 # World 2 -- Addition World
 
-## Level 6 -- `eq_iff_succ_eq_succ`
+## Level 8 -- `eq_iff_succ_eq_succ`
 
 You have these:
 
