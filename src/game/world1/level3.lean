@@ -2,7 +2,9 @@ import mynat.definition -- hide
 namespace mynat -- hide
 
 /-
-## Tutorial world, level 3: The rewrite (`rw`) tactic.
+# World 1 : Tutorial world
+
+## level 3: The rewrite (`rw`) tactic.
 
 If you have a hypothesis of the form `A = B`, and your
 goal mentions the left hand side `A` somewhere, then

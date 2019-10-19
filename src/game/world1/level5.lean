@@ -3,7 +3,9 @@ import mynat.add -- definition of addition
 namespace mynat -- hide
 
 /-
-## Tutorial world, level 5: addition
+# World 1 : Tutorial world
+
+## Level 5: addition
 
 We have a new import -- the definition of addition.
 

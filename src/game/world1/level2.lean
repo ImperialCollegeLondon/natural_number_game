@@ -4,7 +4,9 @@ namespace mynat -- hide
 
 /-
 
-## Tutorial world, level 2: the `exact` tactic.
+# World 1: Tutorial world
+
+## level 2: the `exact` tactic.
 
 Delete the `sorry` below and let's look at the box
 on the top right. It should look like this:

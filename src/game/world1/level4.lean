@@ -3,7 +3,9 @@ namespace mynat -- hide
 
 /-
 
-## Tutorial world, level 4: more rewriting.
+# World 1 : Tutorial world
+
+## level 4: more rewriting.
 
 Way back on page 1 we imported a file called `mynat.definition`.
 This gave us the type `mynat` of natural numbers. But it
