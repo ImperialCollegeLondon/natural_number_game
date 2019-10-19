@@ -28,14 +28,14 @@ You have, amongst other things, these:
 /- Theorem
 On the set of natural numbers, addition has the right cancellation property.
 In other words, if there are natural numbers $a, b$ and $c$ such that
-$$ a + b = c + b, $$
-then we have $a = c$.
+$$ a + t = b + t, $$
+then we have $a = b$.
 -/
-theorem add_right_cancel ⦃a b c : mynat⦄ : a + b = c + b → a = c :=
+theorem add_right_cancel ⦃a b t : mynat⦄ : a + t = b + t → a = b :=
 begin [less_leaky]
   intro h,
   rw add_comm at h,
-  rw add_comm c at h,
+  rw add_comm b at h,
   exact add_left_cancel h
 end
 

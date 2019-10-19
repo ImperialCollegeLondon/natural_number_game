@@ -22,6 +22,9 @@ You have these:
 
 Here is an `iff` goal. You can split it into two goals (the implications in both
 directions) using the `split` tactic, which you should probably start with.
+You will also need to know the `intro` tactic, which works (only) on a goal
+of the form `P → Q`; given a goal of this form, `intro h` makes `h` a proof
+of `P` and changes the goal to `Q`.
 
 -/
 

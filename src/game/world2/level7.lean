@@ -29,7 +29,9 @@ If you want to stick with addition world and prove some trickier goals,
 you can, but you'll need to know some more tactics. For
 example the `symmetry` tactic can be used whenever the goal is
 a proposition defined by a symmetric binary relation, such as `=` or `≠`. 
-Remember we already have `zero_ne_succ`.
+Remember we already have `zero_ne_succ`, which here should be thought
+of as a *function* which takes
+as input a natural number `m` and outputs a proof that `zero ≠ succ(m)`.
 
 If you want to venture further into
 these bonus levels, you will almost certainly need the

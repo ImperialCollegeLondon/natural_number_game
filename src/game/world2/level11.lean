@@ -26,6 +26,12 @@ of theorems like `add_right_cancel`. Remember that you can use `split`
 to split an ↔ goal into the → goal and the ← goal.
 -/
 
+/- Theorem
+Addition has the left cancellation property.
+In other words, if there are natural numbers $a, b$ and $c$ such that
+$$ a + t = b + t, $$
+then we have $a = b$.
+-/
 theorem add_right_cancel_iff (t a b : mynat) :  a + t = b + t ↔ a = b :=
 begin [less_leaky]
   split,
