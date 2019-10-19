@@ -37,7 +37,7 @@ $$ (a + b) * c = a * c + b * c. $$
 -/
 lemma add_mul (a b c : mynat) : (a + b) * c = a * c + b * c :=
 begin [less_leaky]
-  induction' b with d hd,
+  induction b with d hd,
   { 
     rw zero_mul,
     rw add_zero,
@@ -63,7 +63,7 @@ Multiplication is commutative.
 -/
 lemma mul_comm (a b : mynat) : a * b = b * a :=
 begin [less_leaky]
-  induction' b with d hd,
+  induction b with d hd,
   { 
     rw zero_mul,
     rw mul_zero,
@@ -78,6 +78,5 @@ begin [less_leaky]
 end
 
 --def collectible_06 : comm_semiring mynat := by structure_helper
-
 
 end mynat -- hide

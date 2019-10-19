@@ -15,6 +15,8 @@ begin [less_leaky]
   exact zero_add m,
 end
 
+-- can use succ_eq_add_one here
+
 /- Lemma
 For any natural number $m$, we have
 $$ 1 * m = m. $$
@@ -29,7 +31,8 @@ begin [less_leaky]
   {
     rw mul_succ,
     rw hd,
-    exact add_one_eq_succ d,
+    rw succ_eq_add_one,
+    refl,
   }
 end
 
@@ -50,7 +53,8 @@ begin [less_leaky]
 -- or    show a * (b + d) + _ = _,
     rw hd,
     rw mul_succ,
-    apply add_assoc, -- ;-)
+    rw add_assoc, -- ;-)
+    refl,
   }
 end
 

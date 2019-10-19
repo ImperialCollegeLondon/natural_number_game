@@ -63,7 +63,7 @@ Lean thinks you're in the middle of writing a tactic that you
 think you finished. Did you perhaps forget a comma somewhere?
 
 When you're happy, let's step into world 2, addition world, and
-learn about proof by induction.
+learn about proof by induction. Click on "next world" in the top right.
 -/
 
 /- Theorem

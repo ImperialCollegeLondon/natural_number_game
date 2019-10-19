@@ -7,6 +7,7 @@ namespace mynat -- hide
 # World 2 -- Addition world
 
 ## Level 4 (boss level) : `add_comm`
+
 You are equipped with:
 
   * `zero_ne_succ : ∀ (a : mynat), zero ≠ succ(a)`
@@ -43,7 +44,9 @@ end
 
 /-
 
-If you got this far -- nice! You can try multiplication world next.
-Or there's a whole bunch of extra stuff on page 5 which hasn't been tested properly...
+If you got this far -- nice! You're nearly ready to go onto
+multiplication world. There are just a couple more useful lemmas
+which you should prove first. Press on to level 5.
+
 -/
 end mynat -- hide 

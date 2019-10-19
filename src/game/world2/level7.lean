@@ -7,7 +7,7 @@ namespace mynat -- hide
 
 # World 2 -- Addition World
 
-## Level 7 -- `succ_eq_add_one`
+## Level 7 -- `succ_ne_zero`
 
 You have these:
 
@@ -20,29 +20,29 @@ You have these:
   * succ_add : ∀ a b : mynat, succ a + b = succ (a + b)
   * add_comm : ∀ a b : mynat, a + b = b + a
 
--/
+Levels 7 to 16 are some more advanced facts about addition. 
 
-/-
-Lean knows about 1. The theorem that 1 = succ(0) is called
+If you just want to skip these and move straight on to multiplication,
+click on "next world" on the top right. The four tactics `refl`, `exact`,
+`rw` and `induction` will get you through to the boss, `a * b = b * a`.
+If you want to stick with addition world and prove some trickier goals,
+you can, but you'll need to know some more tactics. For
+example the `symmetry` tactic can be used whenever the goal is
+a proposition defined by a symmetric binary relation, such as `=` or `≠`. 
+Remember we already have `zero_ne_succ`. If you want to venture into
+these bonus levels, you will almost certainly need the
+<a href="http://wwwf.imperial.ac.uk/~buzzard/xena/html/source/tactics/tacticindex.html" target="blank">tactic guide</a>.
 
-`one_eq_succ_zero : 1 = succ(0)`
 
-and you can start with `rw one_eq_succ_zero` to get back
-to `0`. This is a good first move because 0 is easier to
-manipulate than 1 right now, because you have
-more theorems about it.
 -/
 
 /- Theorem
-For any natural number $n$, we have
-$$ \operatorname{succ}(n) = n+1. $$
+Zero is not the successor of any natural number.
 -/
-theorem succ_eq_add_one (n : mynat) : succ n = n + 1 :=
+theorem succ_ne_zero {{a : mynat}} : succ a ≠ 0 := 
 begin [less_leaky]
-  rw one_eq_succ_zero,
-  rw add_succ,
-  rw add_zero,
-  refl,
+  symmetry,
+  exact zero_ne_succ a,
 end
 
-end mynat -- hide
+end mynat

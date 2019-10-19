@@ -9,7 +9,7 @@ namespace mynat -- hide
 
 Welcome to World 2, addition world. If you've only proved *one* lemma from the tutorial world
 with `refl` and you've never heard of the `rw` tactic, then you probably just clicked the wrong button.
-Go back to world 1 using the button in the top left and then click "next level" instead
+Go back to world 1 using the "previous world" button in the top left and then click "next level" instead
 of "next world". If you've done all five levels in tutorial world, then you're in the right place! Here's
 a reminder of what you're now equipped with.
 
@@ -17,9 +17,9 @@ a reminder of what you're now equipped with.
 
   * a type called `mynat`
   * a term `0 : mynat`, interpreted as the number zero.
-  * a function `succ : mynat → mynat`, with `succ n` interpreted as "the number after n".
-  * Usual numerical notation 0,1,2,3,4,5 etc.
-  * Addition (with notation a + b).
+  * a function `succ : mynat → mynat`, with `succ n` interpreted as "the number after `n`".
+  * Usual numerical notation 0,1,2 etc (although 2 onwards will be of no use to us ;-) ).
+  * Addition (with notation `a + b`).
 
 ## Theorems:
 
@@ -95,7 +95,8 @@ begin [less_leaky]
   }
 end
 
-/- We're in the successor case, and your top right box should look
+/-
+We're in the successor case, and your top right box should look
 something like this:
 
 ```
@@ -114,7 +115,7 @@ That's the inductive step. Once we've proved this inductive step, we will have p
 `zero_add` by the principle of mathematical induction.
 
 To prove our goal, we need to use `add_succ`. We know that `add_succ 0 d`
-is the result that 0 + succ d = succ (0 + d), so the first thing
+is the result that `0 + succ d = succ (0 + d)`, so the first thing
 we need to do is to replace the left hand side `0 + succ d` of our
 goal with the right hand side. We do this with the `rw` command. You can write
 
