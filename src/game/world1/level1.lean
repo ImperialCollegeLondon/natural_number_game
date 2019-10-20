@@ -2,7 +2,7 @@ import mynat.definition -- Imports Peano's definition of the natural numbers.
 
 namespace mynat -- hide
 /- 
-# The Natural Number Game
+# The Natural Number Game, version 1.0beta.
 
 ## By Kevin Buzzard and Mohammad Pedramfar. 
 
