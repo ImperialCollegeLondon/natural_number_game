@@ -1,0 +1,30 @@
+/-
+after <=
+
+lemma le_mul (a b c d : mynat) : a ≤ b → c ≤ d → a * c ≤ b * d :=
+begin
+intros hab hcd,
+cases' a with t Ht,
+  rw' [zero_mul],
+  apply zero_le,
+have cz : 0 ≤ c,
+  apply zero_le,
+have bz : 0 ≤ b,
+  apply zero_le,
+apply mul_le_mul hab hcd cz bz,
+end
+
+--End of world 3
+
+lemma pow_le (m n a : mynat) : m ≤ n → m ^ a ≤ n ^ a :=
+begin
+intro h,
+induction' a with t Ht,
+  rw' [pow_zero, pow_zero],
+  refl,
+rw' [pow_succ, pow_succ],
+apply le_mul,
+  assumption,
+assumption,
+end
+-/

@@ -2,6 +2,9 @@ import game.world2.level6 -- hide
 import mynat.mul
 
 /- 
+
+# World 3
+
 A new import! This import gives you the definition of multiplication on your
 natural numbers. It is defined by recursion, just like addition.
 Here are the two new axioms:
@@ -23,6 +26,8 @@ there is a lot more to do. Good luck!
 
 We are given `mul_zero`, and the first thing to prove is `zero_mul`.
 Like `zero_add`, we of course prove it by induction.
+
+## World 3 Level 1 : `zero_mul`
 -/
 
 namespace mynat -- hide

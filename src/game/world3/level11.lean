@@ -5,6 +5,10 @@ import game.world2.level13 -- add_left_eq_zero -- hide
 namespace mynat -- hide
 
 /-
+# Multiplication World
+
+## Level 11: `mul_eq_zero_iff`
+
 Now you have `eq_zero_or_eq_zero_of_mul_eq_zero` this is pretty straightforward.
 -/
 

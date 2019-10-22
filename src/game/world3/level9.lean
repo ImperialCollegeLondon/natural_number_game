@@ -5,6 +5,10 @@ import game.world2.level13 -- add_left_eq_zero -- hide
 namespace mynat -- hide
 
 /-
+# Multiplication World
+
+## Level 9: `mul_pos`
+
 If you do `cases b with n` when `b` is a natural number, it will split into the
 two possibilites, namely `b = 0` and `b = succ(n)`. So `cases` here is like
 a weaker version of induction (you don't get the inductive hypothesis).

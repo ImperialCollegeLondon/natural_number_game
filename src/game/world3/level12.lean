@@ -4,7 +4,13 @@ import game.world2.level13 -- add_left_eq_zero -- hide
 namespace mynat -- hide
 
 /-
+# Multiplication World
+
+## Level 12: `mul_left_cancel`
+
+This is the last but one of the bonus multiplication levels.
 `mul_left_cancel` will be useful in inequality world.
+But before that we have a relatively short power world.
 -/
 
 /- Theorem
@@ -42,10 +48,5 @@ begin [less_leaky]
     }
   }
 end
-
-/- To come: Powers! Inequalities! Odd and even numbers! Congruences!
-Prime numbers! And any other mathematics with the natural numbers that anyone can think of. 
-Suggestions welcome to k.buzzard@imperial.ac.uk or find me on the Lean chat at Zulip.
--/
 
 end mynat -- hide

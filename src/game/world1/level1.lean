@@ -6,8 +6,9 @@ namespace mynat -- hide
 
 ## By Kevin Buzzard and Mohammad Pedramfar. 
 
-Special thanks to Rob Lewis for tactic hackery and the 2019-20 Imperial College
-1st year maths beta tester students for countless suggestions and improvements.
+Special thanks to Rob Lewis for tactic hackery, Sian Carey for power world (world 4),
+and, last but not least, the 2019-20 Imperial College 1st year maths beta tester
+students for countless suggestions and improvements.
 
 ## What is this game?
 
