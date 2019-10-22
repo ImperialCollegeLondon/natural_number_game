@@ -6,7 +6,8 @@ namespace mynat -- hide
 
 ## level 3: The rewrite (`rw`) tactic.
 
-If you have a hypothesis of the form `A = B`, and your
+The rewrite tactic is the way to "substitute in" the value
+of a variable. In general, If you have a hypothesis of the form `A = B`, and your
 goal mentions the left hand side `A` somewhere, then
 the `rewrite` tactic will replace the `A` in your goal with a `B`.
 Below is a theorem which looks obvious, but which cannot be
