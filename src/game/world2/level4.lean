@@ -4,15 +4,17 @@ import game.world2.level3 -- hide
 namespace mynat -- hide
 
 /- 
-## Level 2 -- addition world
+# World 2 -- Addition world
+
+## Level 4 (boss level) : `add_comm`
 
 You are equipped with:
 
   * `zero_ne_succ : ∀ (a : mynat), zero ≠ succ(a)`
   * `succ_inj : ∀ a b : mynat, succ(a) = succ(b) → a = b`
   * `add_zero : ∀ a : mynat, a + 0 = a`
-  * `add_succ : ∀ a b : mynat, a + succ(b) = succ(a + b)`
-  * `zero_add` : ∀ a : mynat, 0 + a = a`
+  * `add_succ : ∀ a b : mynat, a + succ(b) = succ (a + b)`
+  * `zero_add : ∀ a : mynat, 0 + a = a`
   * `add_assoc : ∀ a b c : mynat, (a + b) + c = a + (b + c)`
   * `succ_add : ∀ a b : mynat, succ a + b = succ (a + b)`
 
@@ -42,7 +44,9 @@ end
 
 /-
 
-If you got this far -- nice! You can try multiplication world next.
-Or there's a whole bunch of extra stuff on page 5 which hasn't been tested properly...
+If you got this far -- nice! You're nearly ready to go onto
+multiplication world. There are just a couple more useful lemmas
+which you should prove first. Press on to level 5.
+
 -/
 end mynat -- hide 

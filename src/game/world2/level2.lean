@@ -1,10 +1,12 @@
 import mynat.definition -- hide
 import mynat.add -- hide
-import game.world2.level1
+import game.world2.level1 -- hide
 namespace mynat -- hide
 
 /- 
-## Level 2 -- addition world
+# World 2 -- addition world
+
+## Level 2 -- `add_assoc` -- associativity of addition.
 
 ## Your theorems:
 
@@ -12,11 +14,21 @@ namespace mynat -- hide
   * `succ_inj : ∀ a b : mynat, succ(a) = succ(b) → a = b`
   * `add_zero : ∀ a : mynat, a + 0 = a`
   * `add_succ : ∀ a b : mynat, a + succ(b) = succ(a + b)`
-  * `zero_add` : ∀ a : mynat, 0 + a = a`
+  * `zero_add : ∀ a : mynat, 0 + a = a`
 
-See if you can prove associativity. Hint: because addition was defined
+It's well-known that (1 + 2) + 3 = 1 + (2 + 3) -- if we have three numbers
+to add up, it doesn't matter which of the additions we do first. This fact
+is called *associativity of addition* by mathematicians, and it is *not*
+obvious. For example, subtraction really is not associative: $(6 - 2) - 1$
+is really not equal to $6 - (2 - 1)$. We are going to have to prove
+that addition, as defined the way we've defined it, is associative. 
+ 
+See if you can prove associativity of addition. Hint: because addition was defined
 by recursion on the right-most variable, use induction on the right-most
 variable (try other variables at your peril!)
+
+Reminder: you are done when you see "no goals" in the top right, and an empty
+box (no errors) in the bottom right.
 -/
 
 /- Lemma

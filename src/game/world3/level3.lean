@@ -3,81 +3,51 @@ import mynat.mul -- hide
 
 namespace mynat -- hide
 
-
 /-
-The next lemma might help for commutivity of multiplication.
+# Multiplication World
+
+## Level 3: `one_mul`
+
+Currently our tools for multiplication are the
+following: 
+
+* `mul_zero : ∀ m, m * 0 = 0`
+* `zero_mul : ∀ m, 0 * m = m`
+* `mul_succ : ∀ a b, a * succ b = a * b + b`
+* `mul_one ; ∀ m, m * 1 = 1`
+
+We have also these other facts about 1 (the
+first is just the definition, the second was
+world 2 level 5)
+
+* `one_eq_succ_zero : 1 = succ(0)`
+* `succ_eq_add_one : ∀ a, succ(a) = a + 1` 
+
+We just proved mul_one, now let's prove one_mul. 
+Then we will have proved, in fancy terms,
+that 1 is a "left and right identity"
+for multiplication (just like we showed that
+0 is a left and right identity for addition
+with `add_zero` and `zero_add`).
 -/
 
 /- Lemma
-For all natural numbers $a$ and $b$, we have
-$$ \operatorname{succ}(a) * b = a * b + b. $$
+For any natural number $m$, we have
+$$ 1 * m = m. $$
 -/
-lemma succ_mul (a b : mynat) : succ a * b = a * b + b :=
+lemma one_mul (m : mynat) : 1 * m = m :=
 begin [less_leaky]
-  induction b with d hd,
+  induction m with d hd,
   {
-    refl
-  },
-  {
-    rw mul_succ,
-    rw mul_succ,
---    show (succ a) * d + (succ a) = (a * d + a) + _,
-    rw hd,
-    rw add_succ,
-    rw add_succ,
-    rw add_right_comm,
-    refl,
-  }
-end
-
-/- Lemma
-Addition is distributive over multiplication.
-In other words, for all natural numbers $a$, $b$ and $c$, we have
-$$ (a + b) * c = a * c + b * c. $$
--/
-lemma add_mul (a b c : mynat) : (a + b) * c = a * c + b * c :=
-begin [less_leaky]
-  induction' b with d hd,
-  { 
-    rw zero_mul,
-    rw add_zero,
-    rw add_zero,
-    refl
-  },
-  {
-    rw add_succ,
-    rw succ_mul,
-    rw hd,
-    rw succ_mul,
-    rw add_assoc,
-    refl
-  }
-end
-
---def right_distrib := add_mul -- stupid field name, -- hide
-
---def collectible_05 : semiring mynat := by structure_helper  -- hide
-
-/- Lemma
-Multiplication is commutative.
--/
-lemma mul_comm (a b : mynat) : a * b = b * a :=
-begin [less_leaky]
-  induction' b with d hd,
-  { 
-    rw zero_mul,
     rw mul_zero,
     refl,
   },
   {
-    rw succ_mul,
-    rw ←hd,
     rw mul_succ,
+    rw hd,
+    rw succ_eq_add_one,
     refl,
   }
 end
-
---def collectible_06 : comm_semiring mynat := by structure_helper
-
 
 end mynat -- hide
