@@ -69,7 +69,7 @@ learn about proof by induction. Click on "next world" in the top right.
 /- Theorem
 For all natural numbers `a`, we have `a + succ(0) = succ(a)`.
 -/
-theorem example4 (a : mynat) : a + succ(0) = succ(a) :=
+theorem example5 (a : mynat) : a + succ(0) = succ(a) :=
 begin [less_leaky]
   rw add_succ,
   rw add_zero,

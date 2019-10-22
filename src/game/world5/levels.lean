@@ -28,7 +28,7 @@ begin [less_leaky]
   use 0,
   rw add_zero, 
   refl,
-  
+
 end
 
 example : one ≤ one := le_refl one
@@ -190,8 +190,6 @@ begin [less_leaky]
   refl,
 end
 
-#check @nat.lt_succ_iff
-#check @nat.succ_eq_add_one
 /-
 nat.lt_succ_iff : ∀ {m n : ℕ}, m < nat.succ n ↔ m ≤ n
 -/
