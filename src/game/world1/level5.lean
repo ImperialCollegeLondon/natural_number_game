@@ -54,10 +54,10 @@ When you're happy, let's step into world 2, addition world, and
 learn about proof by induction.
 -/
 
-/- Theorem
+/- Lemma : no-side-bar
 For all natural numbers `a`, we have `a + succ(0) = succ(a)`.
 -/
-theorem example4 (a : mynat) : a + succ(0) = succ(a) :=
+theorem add_succ_zero (a : mynat) : a + succ(0) = succ(a) :=
 begin [less_leaky]
   rw add_succ,
   rw add_zero,

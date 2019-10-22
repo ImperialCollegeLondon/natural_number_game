@@ -35,7 +35,7 @@ in the bottom right goal will disappear. The reason
 this works is that the goal is *exactly h*.
 -/
 
-/- Lemma
+/- Lemma : no-side-bar
 For all natual numbers $a$ and $b$,
 if $a=b$, then $a=b$.
 -/
@@ -46,6 +46,50 @@ begin [less_leaky]
 
 
 end
+
+/- Tactic : exact
+If your goal is a proposition and you have access to a proof
+of that proposition, either because it is a hypothesis `h`
+or because it is a theorem which is already proved, then
+
+`exact h,`
+
+or
+
+`exact <name_of_theorem>,`
+
+will close the goal. 
+
+### Examples
+
+1) If the top right box (the "local context") looks like
+this:
+
+```
+x y : mynat
+h : y = x + 3
+⊢ y = x + 3
+```
+
+then
+
+`exact h,`
+
+will close the goal.
+
+2) (from world 2 onwards) If the top right box looks like this:
+
+```
+a b : mynat
+⊢ a + succ(b) = succ(a + b)
+```
+
+then 
+
+`exact add_succ a b,`
+
+will close the goal.
+-/
 
 /-
 These two tactics, `refl` and `exact`, clearly only

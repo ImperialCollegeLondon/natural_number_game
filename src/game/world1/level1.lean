@@ -44,7 +44,7 @@ level of the tutorial! Click on "next level" in the top left to go onto the seco
 tutorial world, where we'll learn about the `exact` tactic.
 -/
 
-/- Lemma
+/- Lemma : no-side-bar
 For all natural numbers $x$, we have $x = x$.
 -/
 lemma example1 (x : mynat) : x = x :=
@@ -55,7 +55,24 @@ begin [less_leaky]
 
 end
 
-/-
+/- Tactic : refl
+The `refl` tactic will close any goal of the form `A = B`
+where `A` and `B` are *exactly the same thing*.
+
+### Example:
+If it looks like this in the top right hand box:
+```
+x y z : mynat
+⊢ (x + y) * z = (x + y) * z
+```
+
+then
+
+`refl,`
+
+will close the goal and solve the level. Don't forget the comma.
 
 -/
+
 end mynat -- hide 
+

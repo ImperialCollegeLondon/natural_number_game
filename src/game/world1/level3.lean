@@ -42,7 +42,7 @@ top left window. Before you click "next level" -- can you find a different
 proof of this theorem which uses `refl`? The answer is below the lemma.
 -/
 
-/- Lemma
+/- Lemma : no-side-bar
 For all natural numbers $x$, $y$ and $z$, if $x = y$
 and $y = z$ then $x = z$.
 -/
@@ -56,6 +56,29 @@ begin [less_leaky]
 
 
 end
+
+/- Tactic : rw
+The `rw` tactic is a way to do "substituting in".
+If `h : A = B` is a hypothesis (i.e., a proof of `A = B`)
+and your goal contains one or more `A`s, then `rw h`
+will change them all to `B`'s. 
+
+### Example:
+If it looks like this in the top right hand box:
+```
+x y : mynat
+h : x = y + 3
+⊢ 1 + x = y + 4
+```
+
+then
+
+`rw h,`
+
+will change the goal into `⊢ 1 + (y + 3) = y + 4`.
+Note of course that this goal is still far from solved.
+
+-/
 
 /-
 

@@ -49,10 +49,10 @@ On the next level, the final level of Tutorial World, we will introduce
 addition, and when we've solved it we'll be ready to enter Addition World.
 -/
 
-/- Theorem
+/- Lemma : no-side-bar
 If `a = succ(b)`, then `succ(a) = succ(succ(b))`.
 -/
-theorem example4 (a b : mynat) (h : a = succ b) : succ a = succ (succ b) :=
+lemma example4 (a b : mynat) (h : a = succ b) : succ a = succ (succ b) :=
 begin [less_leaky]
   rw h,
   refl,
