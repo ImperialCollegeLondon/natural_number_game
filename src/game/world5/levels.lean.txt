@@ -1,46 +1,16 @@
-import solutions.world2_multiplication
+import game.world5.level1 -- hide
+namespace mynat -- hide
 
-import mynat.le
-/- Here's what you get from the import:
+/-
+# World 5 : Inequality world 
 
-1) The following data:
-  * a binary relation called mynat.le, and notation a ≤ b for this relation.
-
-  The definition is: a ≤ b ↔ ∃ c : mynat, b = a + c
-
-2) The following axiom:
-
-  * `le_def (a b : mynat) : a ≤ b ↔ ∃ (c : mynat), b = a + c`
-
-You can rewrite `le_def`.
-
-If a goal is of the form `∃ c, ...` then to make progress you can use the `use` tactic.
-For example `use 7` will replace all c's in the goal with 7's.
+## Level 2 : `le_succ`
 -/
-
-
-namespace mynat
-
--- example
-theorem le_refl (a : mynat) : a ≤ a :=
-begin [less_leaky]
-  rw le_def,
-  use 0,
-  rw add_zero, 
-  refl,
-
-end
-
-example : one ≤ one := le_refl one
-
--- ignore this; it's making the "refl" tactic work with goals of the form a ≤ a
-attribute [_refl_lemma] le_refl
 
 theorem le_succ {a b : mynat} (h : a ≤ b) : a ≤ (succ b) :=
 begin [less_leaky]
   sorry
 end
-
 
 lemma zero_le (a : mynat) : 0 ≤ a :=
 begin [less_leaky]
