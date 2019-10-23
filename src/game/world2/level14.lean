@@ -10,9 +10,9 @@ namespace mynat -- hide
 ## Level 14 -- `add_right_eq_zero`
 
 You have
-  * add_left_eq_zero : ∀ a b : mynat, a + b = 0 → b = 0
+  * `add_left_eq_zero : ∀ a b : mynat, a + b = 0 → b = 0`
 
-so `add_right_eq_zero` shouldn't be too hard.
+  from level 13, so `add_right_eq_zero` shouldn't be too hard.
 -/
 
 /- Lemma
