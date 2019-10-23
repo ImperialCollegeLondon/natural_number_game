@@ -22,7 +22,7 @@ also gave us some other things, which we'll take a look at now:
 These are the five axioms isolated by Peano, which uniquely characterise
 the natural numbers. If you've not seen them before, I guess they might
 look intimidating, so let's just go through them briefly. Firsty, notice
-that they are all standard statements about the natural numbers {0,1,2,3,...}.
+that they are all standard statements about the natural numbers $\{0,1,2,3,\ldots\}$.
 The first axiom says that 0 is a natural number. The second says that there
 is a `succ` function which eats a number and spits out the number after it,
 so succ(0)=1, succ(1)=2 and so on. Then there are two theorems, both of
