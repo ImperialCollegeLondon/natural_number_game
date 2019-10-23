@@ -115,7 +115,9 @@ To get started on this level, you can `rw le_def`. Once you have proved
 it, the `refl` tactic will close all goals of the form `a ≤ a`.
 -/
 
--- example
+/- Lemma
+For all naturals $a$, $a \leq a$.
+-/
 theorem le_refl (a : mynat) : a ≤ a :=
 begin [less_leaky]
   rw le_def,

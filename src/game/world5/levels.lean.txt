@@ -7,31 +7,11 @@ namespace mynat -- hide
 ## Level 2 : `le_succ`
 -/
 
-theorem le_succ {a b : mynat} (h : a ≤ b) : a ≤ (succ b) :=
-begin [less_leaky]
-  sorry
-end
-
-lemma zero_le (a : mynat) : 0 ≤ a :=
-begin [less_leaky]
-  sorry
-end
-
-lemma le_zero {a : mynat} : a ≤ 0 → a = 0 :=
-begin [less_leaky]
-  sorry
-end
-
-theorem le_trans ⦃a b c : mynat⦄ (hab : a ≤ b) (hbc : b ≤ c) : a ≤ c :=
-begin [less_leaky]
-  sorry
-end
-
-instance : preorder mynat := by structure_helper
 
 -- ignore this, it's the definition.
 theorem lt_iff_le_not_le {a b : mynat} : a < b ↔ a ≤ b ∧ ¬ b ≤ a := iff.rfl
 
+-- level 6
 theorem le_antisymm : ∀ {{a b : mynat}}, a ≤ b → b ≤ a → a = b :=
 begin [less_leaky]
   sorry
