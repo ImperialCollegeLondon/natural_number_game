@@ -5,7 +5,7 @@ namespace mynat -- hide
 
 # World 4 : Power World
 
-## Level 7: `pow_pow`
+## Level 7 of 7: `pow_pow`
 -/
 
 /- Lemma
@@ -24,4 +24,8 @@ begin [less_leaky]
 
 end
 
+/-
+The next world is inequality world, and you will have to learn some
+new tactics to get through this one. 
+-/
 end mynat -- hide

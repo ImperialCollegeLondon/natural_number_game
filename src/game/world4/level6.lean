@@ -5,7 +5,7 @@ namespace mynat -- hide
 
 # World 4 : Power World
 
-## Level 6: `mul_pow`
+## Level 6 of 7: `mul_pow`
 
 You might find `mul_right_comm` useful in this one. Remember `rw mul_right_comm (m ^ t)` will
 rewrite the first occurrence of `(m ^ t) * x * y = (m ^ t) * y * x`.

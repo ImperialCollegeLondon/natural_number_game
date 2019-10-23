@@ -5,7 +5,7 @@ namespace mynat -- hide
 
 # World 4 : Power World
 
-## Level 3 : `pow_one`
+## Level 3 of 7 : `pow_one`
 -/
 
 /- Lemma
