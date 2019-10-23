@@ -22,6 +22,13 @@ we have a hypothesis `h` that `a = b` (think of
 `h` as a *proof* that `a = b`), and our
 goal is to prove that `a = b`. 
 
+Unfortunately `refl` won't work here. `refl` proves things like `3 = 3`.
+The reason why `a = b` is true is *not* because `a` and `b` are exactly the same strings
+of characters in the same order. Here, `a` and `b` are not
+equal by definition, they are equal because of a theorem,
+and the proof of the theorem is `h`.  That's what a hypothesis
+is -- it's a way of saying "imagine we have a proof of this".
+
 We're hence in a situation where we have a hypothesis `h`,
 which is *exactly* equal to the goal we're trying to prove. In
 this situation, the tactic
@@ -32,7 +39,7 @@ will close the goal. Try typing `exact h,` where the `sorry` was, and
 hit enter after the comma to go onto a new line. 
 **Don't forget the `h`** and
 **don't forget the comma.**
-You should see the "no goals" message, and the error
+You should see the "Proof complete!" message, and the error
 in the bottom right goal will disappear. The reason
 this works is that the goal is *exactly h*.
 -/

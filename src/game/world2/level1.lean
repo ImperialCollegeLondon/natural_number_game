@@ -72,11 +72,12 @@ Remember that `add_zero` (the theorem we have already) says that `x + 0 = x`
 change to? Remember to just keep
 focussing on the top goal, ignore the other one for now, it's not changing
 and we're not working on it. You should be able to solve the top goal yourself
-though.
+though. I will remark that another way of solving the goal is `exact add_zero 0`,
+because for any natural number `t`, `add_zero t` is a proof that `t + 0 = t`.
 
-When you solved it, we are now be back down to one goal -- the inductive step.
-Take a look at the
-text below the lemma to see an explanation of this second goal.
+When you solved this base case goal, we are now be back down
+to one goal -- the inductive step. Take a look at the
+text below the lemma to see an explanation of this goal.
 -/
 
 /- Lemma
@@ -85,14 +86,12 @@ For all natual numbers $n$, we have $0 + n = n$.
 lemma zero_add (n : mynat) : 0 + n = n :=
 begin [less_leaky]
   induction n with d hd,
-  {
     rw add_zero,
     refl,
-  },
-  { rw add_succ,
-    rw hd,
-    refl
-  }
+  rw add_succ,
+  rw hd,
+  refl
+
 end
 
 /-

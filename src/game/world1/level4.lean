@@ -31,13 +31,16 @@ And the principle of mathematical induction
 tells us that every natural number can be built by starting at 0 and
 then applying `succ` some finite number of times.
 
-Peano's insight was that these five things alone can be used to build
-a whole bunch of other structure on the natural numbers. 
+Peano's insights were firstly that these axioms completely characterise
+the natural numbers, and secondly that these axioms alone can be used to build
+a whole bunch of other structure on the natural numbers, for example
+addition, multiplication and so on. 
 This game is all about seeing how far these
 axioms of Peano will take us.
 
-The import also offers us usual numerical notation
+The import also gives us usual numerical notation
 0,1,2,3,4,5 etc, with `1 = succ(0)`, `2=succ(1)` and so on.
+`one_eq_succ_zero` is a proof of the theorem that `1 = succ(0)`.
 
 Let's practice our use of the `rw` tactic in the following example.
 Our hypothesis `h` is a proof that `b = succ(a)` and we want to prove that
@@ -68,7 +71,7 @@ On the next level, the final level of Tutorial World, we will introduce
 addition, and when we've solved it we'll be ready to enter Addition World.
 -/
 
-/- lemma : no-side-bar
+/- Lemma : no-side-bar
 If `b = succ(a)`, then `succ(b) = succ(succ(a))`.
 -/
 lemma example4 (a b : mynat) (h : b = succ a) : succ b = succ (succ a) :=

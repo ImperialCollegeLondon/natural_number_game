@@ -6,15 +6,20 @@ namespace mynat -- hide
 /- 
 # World 2 -- addition world
 
-## Level 2 -- `add_assoc` -- associativity of addition.
-
-## Your theorems:
+## Your theorems so far:
 
   * `zero_ne_succ : ∀ (a : mynat), zero ≠ succ(a)`
   * `succ_inj : ∀ a b : mynat, succ(a) = succ(b) → a = b`
   * `add_zero : ∀ a : mynat, a + 0 = a`
   * `add_succ : ∀ a b : mynat, a + succ(b) = succ(a + b)`
   * `zero_add : ∀ a : mynat, 0 + a = a`
+
+The first four results are axioms. As for the theorem `zero_add` which we proved
+in level 1 of addition world -- check out the "theorems" drop-down box on the left
+to see that `zero_add` has been added to it. This is a handy place
+to refresh your memory about exactly which theorems you have proved so far.
+
+## Level 2 -- `add_assoc` -- associativity of addition.
 
 It's well-known that (1 + 2) + 3 = 1 + (2 + 3) -- if we have three numbers
 to add up, it doesn't matter which of the additions we do first. This fact
@@ -27,7 +32,7 @@ See if you can prove associativity of addition. Hint: because addition was defin
 by recursion on the right-most variable, use induction on the right-most
 variable (try other variables at your peril!)
 
-Reminder: you are done when you see "no goals" in the top right, and an empty
+Reminder: you are done when you see "Proof complete!" in the top right, and an empty
 box (no errors) in the bottom right.
 -/
 

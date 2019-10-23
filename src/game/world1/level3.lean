@@ -33,7 +33,7 @@ so we can prove this new goal by writing
 `exact h2,`
 
 on the line after `rw h1,`. Don't forget the comma, hit
-enter, and enjoy seeing the "no goals" message in the
+enter, and enjoy seeing the "Proof complete!" message in the
 top right window. The other reason you'll know you're
 done is that the bottom right window (the error window)
 becomes empty. 
@@ -62,7 +62,8 @@ end
 The `rw` tactic is a way to do "substituting in".
 If `h : A = B` is a hypothesis (i.e., a proof of `A = B`)
 and your goal contains one or more `A`s, then `rw h`
-will change them all to `B`'s. 
+will change them all to `B`'s. If you want to change
+`B`s to `A`s instead, try `rw ←h` (get the arrow with `\l`).
 
 ### Example:
 If it looks like this in the top right hand box:
@@ -86,7 +87,8 @@ Note of course that this goal is still far from solved.
 ## Extras
 
 1) Click on `exact h2,` and then use the arrow keys to move
-your cursor around the proof. You can inspect Lean's "state" at each
+your cursor around the proof. Go up and down and note that
+the goal changes -- indeed you can inspect Lean's "state" at each
 line of the proof (the hypotheses, and the goal).
 Try to figure out the exact place where the goal changes.
 The comma tells Lean "I've finished writing this tactic now,
@@ -108,6 +110,8 @@ What does the tactic `rw h1,` do to the goal? It replaces occurrences of the lef
 side of hypothesis `h1` with the right hand side. The ← switches this behaviour -- it makes Lean replace
 occurrences of the right hand side of the hypothesis with the left hand side. There are at least three ways
 to proceed to solve the goal from here -- you might want to try and find them. 
+
+Remember that you can review the `rw` tactic by looking in the tactic drop-down box on the left.
 -/
 
 end mynat -- hide
