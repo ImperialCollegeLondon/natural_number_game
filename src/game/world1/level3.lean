@@ -49,6 +49,7 @@ lemma example3 (x y z : mynat) (f g : mynat → mynat)
 begin [less_leaky]
   rw h,
   refl
+  
 
 end
 
