@@ -1,4 +1,5 @@
 import mynat.definition -- hide
+import mynat.mul -- hide
 namespace mynat -- hide
 
 /-
@@ -10,28 +11,26 @@ The rewrite tactic is the way to "substitute in" the value
 of a variable. In general, If you have a hypothesis of the form `A = B`, and your
 goal mentions the left hand side `A` somewhere, then
 the `rewrite` tactic will replace the `A` in your goal with a `B`.
-Below is a theorem which looks obvious, but which cannot be
+Below is a theorem which cannot be
 proved using `refl` and `exact` alone -- you need a rewrite.
 
 Delete the sorry and take a look in the top right box at what we have.
-The variables `x`, `y` and `z`
-are natural numbers, and we have functions `f` and `g` from natural numbers
-to natural numbers. We have a proof `h` of `y = f(x)` and our goal
-is to prove that `g(y) = g(f(x))`. This goal is obvious -- we just
-substitute in `y = f(x)` into the goal and we're done. In Lean, we do
+The variables $x$ and $y$ are natural numbers, and we have
+a proof `h` that $y = x + 7$. Our goal
+is to prove that $2y=2(x+7)$. This goal is obvious -- we just
+substitute in $y = x+7$ and we're done. In Lean, we do
 this substitution using the `rw` tactic. So start your proof with 
 
 `rw h,`
 
 and then hit enter. **don't forget the comma.**
 Did you see what happened to the goal? The goal doesn't close,
-but it *changes* from `⊢ g y = g (f x)` to `⊢ g (f x) = g (f x)`
-(note that computer scientists are a bit less liberal with brackets
-than mathematicians!). We can just close this goal with
+but it *changes* from `⊢ 2 * y = 2 * (x + 7)` to `⊢ 2 * (x + 7) = 2 * (x + 7)`.
+We can just close this goal with
 
 `refl,`
 
-written on the line after `rw h,`. Don't forget the comma, hit
+by writing it on the line after `rw h,`. Don't forget the comma, hit
 enter, and enjoy seeing the "Proof complete!" message in the
 top right window. The other reason you'll know you're
 done is that the bottom right window (the error window)
@@ -40,12 +39,10 @@ becomes empty.
 -/
 
 /- Lemma : no-side-bar
-For all natural numbers $x$, $y$ and $z$ and all functions $f$
-and $g$ from the naturals to themselves, if $y = f(x)$
-and then $g(y) = g(f(x))$.
+If $x$ and $y$ are natural numbers, 
+and $y=x+7$, then $2y=2(x+7)$. 
 -/
-lemma example3 (x y z : mynat) (f g : mynat → mynat)
-  (h : y = f(x)) : g(y) = g(f(x)) :=
+lemma example3 (x y z : mynat) (h : y = x + 7) : 2 * y = 2 * (x + 7) :=
 begin [less_leaky]
   rw h,
   refl
@@ -81,7 +78,7 @@ Note of course that this goal is still far from solved.
 
 ## Exploring your proof.
 
-1) Click on `refl,` and then use the arrow keys to move
+Click on `refl,` and then use the arrow keys to move
 your cursor around the proof. Go up and down and note that
 the goal changes -- indeed you can inspect Lean's "state" at each
 line of the proof (the hypotheses, and the goal).

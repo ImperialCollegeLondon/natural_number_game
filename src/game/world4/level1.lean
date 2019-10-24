@@ -2,6 +2,16 @@ import game.world3.level13 -- hide
 import mynat.pow -- new import
 namespace mynat -- hide
 
+-- World name : Power world
+
+/- Axiom : pow_zero
+∀ a : mynat, a ^ 0 = 1
+-/
+
+/- Axiom : pow_succ
+∀ a b : mynat, a ^ succ(b) = a ^ b * b
+-/
+
 /- 
 
 # World 4 : Power World

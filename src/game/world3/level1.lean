@@ -1,6 +1,16 @@
 import game.world2.level6 -- hide
 import mynat.mul
 
+-- World name : Multiplication world
+
+/- Axiom : mul_zero
+∀ a : mynat, a * 0 = 0
+-/
+
+/- Axiom : mul_succ
+∀ a b : mynat, a * succ(b) = a * b + b
+-/
+
 /- 
 
 # World 3

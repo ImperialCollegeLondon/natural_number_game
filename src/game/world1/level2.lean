@@ -1,5 +1,5 @@
 import mynat.definition -- Imports the natural numbers. -- hide
-
+import mynat.mul -- hide
 namespace mynat -- hide
 
 /-
@@ -13,19 +13,20 @@ on the top right. It should look like this:
 
 ```
 a b : mynat,
-h : a = b
-⊢ a = b
+h : 2 * a = b + 7
+⊢ 2 * a = b + 7
 ```
 
 So here `a` and `b` are natural numbers,
-we have a hypothesis `h` that `a = b` (think of
-`h` as a *proof* that `a = b`), and our
-goal is to prove that `a = b`. 
+we have a hypothesis `h` that `2 * a = b + 7` (think of
+`h` as a *proof* that `2 * a = b + 7`), and our
+goal is to prove that `2 * a = b + 7`. 
 
-Unfortunately `refl` won't work here. `refl` proves things like `3 = 3`.
-The reason why `a = b` is true is *not* because `a` and `b` are exactly the same strings
-of characters in the same order. Here, `a` and `b` are not
-equal by definition, they are equal because of a theorem,
+Unfortunately `refl` won't work here. `refl` proves things like `3 = 3` or `x + y = x + y`.
+`refl` works when both sides of an equality are *exactly the same strings of characters
+in the same order*. The reason why `2 * a = b + 7` is true is *not* because `2 * a` and `b + 7`
+are exactly the same strings of characters in the same order. The reason it's true is
+because it's a hypothesis. The numbers `2 * a` and `b + 7` are equal because of a theorem,
 and the proof of the theorem is `h`.  That's what a hypothesis
 is -- it's a way of saying "imagine we have a proof of this".
 
@@ -41,14 +42,14 @@ hit enter after the comma to go onto a new line.
 **don't forget the comma.**
 You should see the "Proof complete!" message, and the error
 in the bottom right goal will disappear. The reason
-this works is that the goal is *exactly h*.
+this works is that `h` is *exactly* a proof of the goal.
 -/
 
 /- Lemma : no-side-bar
-For all natual numbers $a$ and $b$,
-if $a=b$, then $a=b$.
+For all natural numbers $a$ and $b$,
+if $2a=b + 7$, then $2a=b+7$.
 -/
-lemma example2 (a b : mynat) (h : a = b): a = b :=
+lemma example2 (a b : mynat) (h : 2 * a = b + 7): 2 * a = b + 7 :=
 begin [less_leaky]
   exact h
 

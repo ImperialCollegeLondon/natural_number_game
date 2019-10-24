@@ -29,8 +29,8 @@ Level 5 involves the number 1. The theorem that 1 = succ(0) is called
 
 `one_eq_succ_zero : 1 = succ(0)`
 
-and you've had it all along -- we just never saw 1 before so
-I never mentioned it. When you see a 1 in your goal,
+and you've had it all along -- we just never needed it yet.
+When you see a 1 in your goal,
 you can write `rw one_eq_succ_zero` to get back
 to `0`. This is a good move because 0 is easier to
 manipulate than 1 right now, because you have

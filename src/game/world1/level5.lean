@@ -21,6 +21,7 @@ computer scientists call it `add_zero` because it tells you
 what the answer to "a add zero" is. It's a *much* better name than "Lemma 2.1".
 Even better, we can use the rewrite tactic with `add_zero`.
 If you ever see `x + 0` in your goal, `rw add_zero,` should simplify it to `x`.
+This is because `add_zero` is a proof that `x + 0 = x`.
 
 Now here's the inductive step. If you know how to add `d` to `a`, then
 Peano tells you how to add `succ(d)` to `a`. It looks like this:

@@ -1,25 +1,27 @@
-import mynat.definition -- Imports Peano's definition of the natural numbers.
-
+import mynat.definition -- imports the natural numbers {0,1,2,3,4,...}.
+import mynat.add -- imports definition of addition on the natural numbers.
+import mynat.mul -- imports definition of multiplication on the natural numbers.
 namespace mynat -- hide
 /- 
-# The Natural Number Game, version 1.0beta.
+# The Natural Number Game, version 1.0.
 
 ## By Kevin Buzzard and Mohammad Pedramfar. 
 
 Special thanks to Rob Lewis for tactic hackery, Sian Carey for power world (world 4),
 and, last but not least, the 2019-20 Imperial College 1st year maths beta tester
-students for countless suggestions and improvements. The natural number game
-is brought to you by the Xena project, a project based at Imperial College London
+students and Marie-Amélie Lawn for their countless suggestions and improvements.
+The natural number game is brought to you by the Xena project, a project based at Imperial College London
 whose aim is to get mathematics undergraduates using computer theorem provers.
 Lean is a computer theorem prover being developed at Microsoft Research.
 
-## What is this game?
+# What is this game?
 
 Welcome to the natural number game -- a game which shows the power of induction.
 
 In this game, you get own version of the natural numbers, called `mynat`, in a programming
-language called Lean. Your version of the natural numbers satisfies induction, and a couple
-of other axioms (Peano's axioms). Unfortunately, nobody has proved any theorems about these
+language called Lean. Your version of the natural numbers satisfies something called
+the principle of mathematical induction, and a couple
+of other things too (Peano's axioms). Unfortunately, nobody has proved any theorems about these
 natural numbers yet. For example, addition will be defined for you,
 but nobody has proved that `x + y = y + x` yet. This is your job. You're going to
 prove mathematical theorems using the Lean theorem prover. In other words, you're going to solve
@@ -38,17 +40,18 @@ and can move on to the next level in the world you're in.
 Let's start with the `refl` tactic. `refl` stands for "reflexivity", which is a fancy
 way of saying that it will prove any goal of the form `A = A`. It doesn't matter how
 complicated `A` is, all that matters is that the left hand side is *exactly equal* to the
-right hand side (a computer scientist would say "definitionally equal").
+right hand side (a computer scientist would say "definitionally equal"). I really mean
+"press the same buttons on your computer in the same order" equal.
 For example, `x * y + z = x * y + z` can be proved by `refl`, but `x + y = y + x` cannot.
 
 Let's see `refl` in action! At the bottom of the text in this box, there's a lemma,
-which says that if x is a natural number then x = x. Locate this lemma (if you can't
-see the lemma and these instructions, make this box wider by dragging the sides).
-Let's supply the proof. Click on the word `sorry` and then delete it.
+which says that if $x$, $y$ and $z$ are natural numbers then $xy + z = xy + z$.
+Locate this lemma (if you can't see the lemma and these instructions at the same time, make this box wider
+by dragging the sides). Let's supply the proof. Click on the word `sorry` and then delete it.
 When the system finishes being busy, then in the box on the top right
 you can see your goal -- the objective of this level. Remember that the goal is
-the thing with the weird `⊢` thing just before it. The goal in this case is `x = x`,
-where `x` is one of your natural numbers.
+the thing with the weird `⊢` thing just before it. The goal in this case is `x * y + z = x * y + z`,
+where `x`, `y` and `z` are some of your very own natural numbers.
 That's a pretty easy goal to prove -- you can just prove it with the `refl` tactic.
 Where it used to say `sorry`, write
 
@@ -74,9 +77,9 @@ we're not ready for addition world yet]
 -/
 
 /- Lemma : no-side-bar
-For all natural numbers $x$, we have $x = x$.
+For all natural numbers $x$, $y$ and $z$, we have $xy + z = xy + z$.
 -/
-lemma example1 (x : mynat) : x = x :=
+lemma example1 (x y z : mynat) : x * y + z = x * y + z :=
 begin [less_leaky]
   refl
 
@@ -91,8 +94,8 @@ where `A` and `B` are *exactly the same thing*.
 ### Example:
 If it looks like this in the top right hand box:
 ```
-x y z : mynat
-⊢ (x + y) * z = (x + y) * z
+a b c d : mynat
+⊢ (a + b) * (c + d) = (a + b) * (c + d)
 ```
 
 then

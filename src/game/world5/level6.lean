@@ -53,7 +53,7 @@ Congratulations -- you just proved that the natural numbers are a partial order!
 
 To come: about 25 more ≤ levels. But that will have to wait for v1.1.
 If you got this far, and did the world 2 and 3 extra levels, then you have
-beaten the game. Now think of a simple mathematical theorem, and see if you
+beaten v1.0 of the game. Now think of a simple mathematical theorem, and see if you
 can formulate and prove it yourself using the Lean Theorem Prover. Download Lean
 and its maths library
 <a href="https://github.com/leanprover-community/mathlib" target=blank">here</a>

@@ -2,6 +2,62 @@ import mynat.definition -- Imports the natural numbers.
 import mynat.add -- imports addition.
 namespace mynat -- hide
 
+-- World name : Addition world
+
+/- Axiom : add_zero
+∀ a : mynat, a + 0 = a
+-/
+
+/- Axiom : add_succ
+∀ a b : mynat, a + succ(b) = succ(a + b)
+-/
+
+/- Axiom : zero_ne_succ
+∀ (a : mynat), zero ≠ succ(a)
+-/
+
+/- Axiom : succ_inj
+∀ a b : mynat, succ(a) = succ(b) → a = b
+-/
+
+/- Axiom : one_eq_succ_zero
+1 = succ(0)
+-/
+
+/- Tactic : induction
+If you have a natural number `n : mynat` in your context
+(above the `⊢`) then `induction n with d hd` turns your
+goal into two goals, a base case with `n = 0` and
+an inductive step where `hd` is a proof of the `n = d`
+case and your goal is the `n = succ(d)` case.
+
+### Example:
+If this is our local context:
+```
+n : mynat
+⊢ 2 * n = n + n
+```
+
+then
+
+`induction n with d hd`
+
+will give us two goals:
+
+```
+⊢ 2 * 0 = 0 + 0
+```
+
+and
+```
+d : mynat,
+hd : 2 * d = d + d
+⊢ 2 * succ d = succ d + succ d
+```
+
+-/
+
+
 /- 
 # World 2 -- addition world. 
 
@@ -36,7 +92,10 @@ a reminder of what you're now equipped with.
   * `refl` -- proves goals of the form `X = X`
   * `exact h` -- proves a goal if it is exactly equal to a hypothesis h 
   * `rw h` -- if h is a proof of `A = B`, changes all A's in the goal to B's.
-  * `induction n with d hd` -- you're about to see this in action.
+  * `induction n with d hd` -- we're going to learn this right now.
+
+If you want to be reminded of theorem statements and tactics, you can see them
+in the menu on the left.
 
 OK so let's see induction in action. We're going to prove
 
