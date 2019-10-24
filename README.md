@@ -17,7 +17,7 @@ Computers are currently being taught mathematics by mathematicians, and this gam
 
 [Play here.](http://wwwf.imperial.ac.uk/~buzzard/xena/natural_number_game/)
 
-Advantages: no installation, it just works.
+Advantages: no installation, it just works, instructions included in the levels.
 
 Disadvantages: error messages aren't great, you can't make your own levels. 
 
