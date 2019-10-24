@@ -9,7 +9,7 @@ namespace mynat -- hide
 
 ## Level 6 -- `add_right_comm`
 
-You have (amongst other things these:
+You have (amongst other things) these:
 
   * `add_assoc : ∀ a b c : mynat, (a + b) + c = a + (b + c)`
   * `add_comm : ∀ a b : mynat, a + b = b + a`
