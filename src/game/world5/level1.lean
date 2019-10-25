@@ -2,7 +2,7 @@ import game.world4.level7 -- hide
 import mynat.le
 namespace mynat -- hide
 
-/- A new level, a new import. You can take a look at the actual Leo `an files
+/- A new level, a new import. You can take a look at the actual Lean files
 being imported by going to the source code for this game,
 which is available at
 <a href="https://github.com/ImperialCollegeLondon/natural_number_game" target="blank">
