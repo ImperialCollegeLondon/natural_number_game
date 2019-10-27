@@ -16,7 +16,7 @@ You have the usual stuff.
 might be useful for this one.
 
 The following lemma will be useful when we want to prove that $\leq$ is antisymmetric
-somewhere in world 4.
+somewhere in world 5.
 -/
 
 /- Lemma
