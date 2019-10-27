@@ -26,7 +26,7 @@ Pro tip: if `h` is a proof of `A = B`, then `h.symm` is a proof of `B = A`.
 -/
 
 /- Lemma
-For all naturals `a`, if `a ≤ 0` then `a = 0`.
+For all naturals $a$, if $a ≤ 0$ then $a = 0$.
 -/
 lemma le_zero {a : mynat} (h : a ≤ 0) : a = 0 :=
 begin [less_leaky]

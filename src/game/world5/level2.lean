@@ -24,7 +24,7 @@ It's more readable if you put them in, but quicker if you don't.
 -/
 
 /- Lemma
-For all naturals `a`, `b`, if `a ≤ b` then `a ≤ succ(b)`. 
+For all naturals $a$, $b$, if $a \leq b$ then $a ≤ succ(b)$. 
 -/
 theorem le_succ {a b : mynat} (h : a ≤ b) : a ≤ (succ b) :=
 begin [less_leaky]
