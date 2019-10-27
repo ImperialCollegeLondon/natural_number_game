@@ -14,7 +14,7 @@ be too hard.
 /- Lemma
 Addition is distributive over multiplication.
 In other words, for all natural numbers $a$, $b$ and $c$, we have
-$$ (a + b) * t = a * t + b * t. $$
+$$ (a + b) \times t = a \times t + b \times t. $$
 -/
 lemma add_mul (a b t : mynat) : (a + b) * t = a * t + b * t :=
 begin [less_leaky]

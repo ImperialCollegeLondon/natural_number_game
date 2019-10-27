@@ -15,7 +15,7 @@ But before that we have a relatively short power world.
 
 /- Theorem
 If $a \neq 0$, $b$ and $c$ are natural numbers such that
-$$ a * b = a * c, $$
+$$ a \times b = a \times c, $$
 then $b = c$.
 -/
 theorem mul_left_cancel ⦃a b c : mynat⦄ (ha : a ≠ 0) : a * b = a * c → b = c :=

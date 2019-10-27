@@ -33,7 +33,7 @@ with `add_zero` and `zero_add`).
 
 /- Lemma
 For any natural number $m$, we have
-$$ 1 * m = m. $$
+$$ 1 \times m = m. $$
 -/
 lemma one_mul (m : mynat) : 1 * m = m :=
 begin [less_leaky]

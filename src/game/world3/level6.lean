@@ -31,7 +31,7 @@ which we will need to do mathematics "normally".
 
 /- Lemma
 For all natural numbers $a$ and $b$, we have
-$$ \operatorname{succ}(a) * b = a * b + b. $$
+$$ \operatorname{succ}(a) \times b = a \times b + b. $$
 -/
 lemma succ_mul (a b : mynat) : succ a * b = a * b + b :=
 begin [less_leaky]

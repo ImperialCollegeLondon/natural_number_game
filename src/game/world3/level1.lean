@@ -34,7 +34,7 @@ namespace mynat -- hide
 
 /- Lemma
 For all natural numbers $m$, we have
-$$ 0 * m = 0. $$
+$$ 0 \times m = 0. $$
 -/
 lemma zero_mul (m : mynat) : 0 * m = 0 :=
 begin [less_leaky]

@@ -15,7 +15,7 @@ See how few lines you can do it in.
 -/
 
 /- Theorem
-For all $a$, $b$, $c$ natural numbers, $(a * b) * c = (a * c) * b$.
+For all $a$, $b$, $c$ natural numbers, $(a \times b) \times c = (a \times c) \times b$.
 -/
 theorem mul_right_comm (a b c : mynat) : a * b * c = a * c * b :=
 begin [less_leaky]

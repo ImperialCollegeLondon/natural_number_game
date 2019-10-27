@@ -22,7 +22,7 @@ These things above are the tools we need to prove that multiplication is associa
 /- Lemma
 Multiplication is associative.
 In other words, for all natural numbers $a$, $b$ and $c$, we have
-$$ (a * b) * c = a * (b * c). $$
+$$ (a \times b) \times c = a \times (b \times c). $$
 -/
 lemma mul_assoc (a b c : mynat) : (a * b) * c = a * (b * c) :=
 begin [less_leaky]

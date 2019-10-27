@@ -13,7 +13,7 @@ A variant on the previous level.
 -/
 
 /- Theorem
-If $a * b = 0$, then at least one of $a$ or $b$ is equal to zero.
+If $a \times b = 0$, then at least one of $a$ or $b$ is equal to zero.
 -/
 theorem eq_zero_or_eq_zero_of_mul_eq_zero ⦃a b : mynat⦄ (h : a * b = 0) : a = 0 ∨ b = 0 :=
 begin [less_leaky]

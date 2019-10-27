@@ -13,7 +13,7 @@ rewrite the first occurrence of `(m ^ t) * x * y = (m ^ t) * y * x`.
 
 
 /- Lemma
-For all naturals $m$, $n$, $a$, we have $(m * n) ^ a = m ^ a * n ^ a$.
+For all naturals $m$, $n$, $a$, we have $(m \times n) ^ a = m ^ a \times n ^ a$.
 -/
 lemma mul_pow (m n a : mynat) : (m * n) ^ a = m ^ a * n ^ a :=
 begin [less_leaky]
