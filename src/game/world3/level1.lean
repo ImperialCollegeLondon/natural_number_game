@@ -17,7 +17,7 @@ with `a * 0` defined to be `0` and, if we know `a * b`, then `a` times
 the number after `b` is defined to be `a * b + b`. 
 
 You can keep all the theorems you proved about addition, but 
-for multiplication, those two results above are you've got right now.
+for multiplication, those two results above are all you've got right now.
 Like addition, we need to go for the proofs that multiplication
 is commutative and associative, but as well as that we will
 need to prove facts about the relationship between multiplication

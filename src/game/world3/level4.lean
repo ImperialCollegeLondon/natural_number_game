@@ -10,7 +10,7 @@ Currently our tools for multiplication include the
 following: 
 
 * `mul_zero : ∀ m, m * 0 = 0`
-* `zero_mul : ∀ m, 0 * m = m`
+* `zero_mul : ∀ m, 0 * m = 0`
 * `mul_succ : ∀ a b, a * succ b = a * b + b`
 
 but for addition we have `add_comm` and `add_assoc`
