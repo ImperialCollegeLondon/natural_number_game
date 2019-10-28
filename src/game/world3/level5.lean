@@ -13,7 +13,7 @@ following:
 
 * `mul_zero : ∀ m, m * 0 = 0`
 * `zero_mul : ∀ m, 0 * m = 0`
-* `mul_succ : ∀ a b, a * succ b = a * b + b`
+* `mul_succ : ∀ a b, a * succ b = a * b + a`
 * `mul_add : ∀ t a b , t * (a + b) = t * a + t * b`
 
 These things above are the tools we need to prove that multiplication is associative.
