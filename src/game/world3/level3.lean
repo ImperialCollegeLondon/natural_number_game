@@ -14,7 +14,7 @@ following:
 * `mul_zero : ∀ m, m * 0 = 0`
 * `zero_mul : ∀ m, 0 * m = 0`
 * `mul_succ : ∀ a b, a * succ b = a * b + a`
-* `mul_one ; ∀ m, m * 1 = 1`
+* `mul_one ; ∀ m, m * 1 = m`
 
 We have also these other facts about 1 (the
 first is just the definition, the second was
