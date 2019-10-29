@@ -90,7 +90,7 @@ That goal is of the form `X = X`, so you can prove this new goal with
 
 `refl,`
 
-on the line after `rw h`,. Don't forget blah blah blah.
+on the line after `rw h,`. Don't forget blah blah blah.
 
 **Important note** : the tactics `rw` and `exact` both expect
 a proof afterwards (e.g. `rw h1`, `exact h2`). But `refl` is just `refl`.

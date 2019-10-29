@@ -1,14 +1,14 @@
 import game.world2.level6 -- hide
-import mynat.mul
+import mynat.mul -- import the definition of multiplication on mynat
 
 -- World name : Multiplication world
 
-/- Axiom : mul_zero
-∀ a : mynat, a * 0 = 0
+/- Axiom : mul_zero (a : mynat) :
+a * 0 = 0
 -/
 
-/- Axiom : mul_succ
-∀ a b : mynat, a * succ(b) = a * b + b
+/- Axiom : mul_succ (a b : mynat) :
+a * succ(b) = a * b + b
 -/
 
 /- 
@@ -19,8 +19,8 @@ A new import! This import gives you the definition of multiplication on your
 natural numbers. It is defined by recursion, just like addition.
 Here are the two new axioms:
 
-  * `mul_zero : ∀ a : mynat, a * 0 = 0`
-  * `mul_succ : ∀ a b : mynat, a * succ(b) = a * b + b`
+  * `mul_zero (a : mynat) : a * 0 = 0`
+  * `mul_succ (a b : mynat) : a * succ(b) = a * b + b`
 
 In words, we define multiplication by "induction on the second variable",
 with `a * 0` defined to be `0` and, if we know `a * b`, then `a` times

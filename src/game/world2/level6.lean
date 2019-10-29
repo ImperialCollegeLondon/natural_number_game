@@ -23,12 +23,12 @@ by putting these two theorems together.
 
 If you hadn't picked up on this already, `rw add_assoc` will
 change `(x + y) + z` to `x + (y + z)`, but to change it back
-you will need `rw ←add_assoc`. Get the left arrow with \l .
+you will need `rw ← add_assoc`. Get the left arrow with \l .
 Similarly, if `h : a = b` then `rw h` will change `a`'s to `b`'s
-and `rw ←h` will change `b`'s to `a`'s.
+and `rw ← h` will change `b`'s to `a`'s.
 
 Also, you can be (and will need to be, in this level) more precise
-about where to rewrite theorems. `rw add_commm,` will just find the
+about where to rewrite theorems. `rw add_comm,` will just find the
 first `? + ?` it sees and swap it around. You can target more specific
 additions like this: `rw add_comm a` will swap around
 additions of the form `a + ?`, and `rw add_comm a b,` will only
@@ -41,11 +41,12 @@ which won't help for multiplication world and for which you will have
 to learn several new tactics (there are ten bonus levels, levels 7 to 16), or
 
 2) Leave the world now by clicking "next world". This will take you to world 3,
-multiplication world. You won't need to know any new 
+multiplication world. You won't need to know any new tactics to prove
+the big theorem `a * b = b * a`.
 -/
 
 /- Lemma
-For all natural numebrs $a, b$ and $c$, we have
+For all natural numbers $a, b$ and $c$, we have
 $$ a + b + c = a + c + b. $$
 -/
 lemma add_right_comm (a b c : mynat) : a + b + c = a + c + b :=

@@ -18,10 +18,11 @@ this is the base case.
 We will call this theorem `add_zero`. **Note the name of this theorem**.
 Mathematicians sometimes call it "Lemma 2.1" or "Hypothesis P6" or something. But
 computer scientists call it `add_zero` because it tells you
-what the answer to "x add zero" is. It's a *much* better name than "Lemma 2.1".
+what the answer to "$x$ add zero" is. It's a *much* better name than "Lemma 2.1".
 Even better, we can use the rewrite tactic with `add_zero`.
 If you ever see `x + 0` in your goal, `rw add_zero` should simplify it to `x`.
-This is because `add_zero` is a proof that `x + 0 = x`.
+This is because `add_zero` is a proof that `x + 0 = x` (more precisely,
+`add_zero x` is a proof that `x + 0 = x` but Lean can figure out the `x` from the context).
 
 Now here's the inductive step. If you know how to add `d` to `a`, then
 Peano tells you how to add `succ(d)` to `a`. It looks like this:
@@ -33,7 +34,8 @@ defined, and we define `a + succ(d)` to be the number after it.
 **Note the name of this theorem too** -- `add_succ` tells you
 how to add a successor to something. If you ever see `... + succ ...`
 in your goal, you should be able to use `rw add_succ,` to make
-progress. Here is a simple example where we shall see both.
+progress. Here is a simple example where we shall see both. Let's prove
+that $x$ add the number after $0$ is the number after $x$.
 
 Delete `sorry` (don't forget you can widen this box if you can't see the sorry).
 Observe that the goal mentions `... + succ ...`. So type
