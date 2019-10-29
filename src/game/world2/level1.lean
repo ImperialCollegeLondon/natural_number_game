@@ -12,18 +12,6 @@ a + 0 = a
 a + succ(b) = succ(a + b)
 -/
 
-/- Axiom : zero_ne_succ (a : mynat) :
-zero ≠ succ(a)
--/
-
-/- Axiom : succ_inj (a b : mynat) :
-succ(a) = succ(b) → a = b
--/
-
-/- Axiom : one_eq_succ_zero
-1 = succ(0)
--/
-
 /- Tactic : induction
 If you have a natural number `n : mynat` in your context
 (above the `⊢`) then `induction n with d hd` turns your

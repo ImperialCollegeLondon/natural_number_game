@@ -23,7 +23,7 @@ this substitution using the `rw` tactic. So start your proof with
 
 `rw h,`
 
-and then hit enter. **don't forget the comma.**
+and then hit enter. **Don't forget the comma.**
 Did you see what happened to the goal? The goal doesn't close,
 but it *changes* from `⊢ 2 * y = 2 * (x + 7)` to `⊢ 2 * (x + 7) = 2 * (x + 7)`.
 We can just close this goal with

@@ -1,5 +1,5 @@
 /-
-We restarted Lean behind the scenes at the end of level 3,
+We just restarted Lean behind the scenes,
 so let's re-import the natural numbers, but this time without
 addition and multiplication.
 -/
@@ -7,15 +7,25 @@ addition and multiplication.
 import mynat.definition -- import Peano's definition of the natural numbers {0,1,2,3,4,...}
 namespace mynat -- hide
 
+/- Axiom : zero_ne_succ (a : mynat) :
+zero ≠ succ(a)
+-/
+
+/- Axiom : succ_inj (a b : mynat) :
+succ(a) = succ(b) → a = b
+-/
+
+/- Axiom : one_eq_succ_zero
+1 = succ(0)
+-/
 /-
 
 # World 1 : Tutorial world
 
 ## Level 4: Peano's axioms.
 
-Way back on page 1 we imported a file called `mynat.definition`.
-This gave us the type `mynat` of natural numbers. But it
-also gave us some other things, which we'll take a look at now:
+The import above gives us the type `mynat` of natural numbers. But it
+also gives us some other things, which we'll take a look at now:
 
   * a term `0 : mynat`, interpreted as the number zero.
   * a function `succ : mynat → mynat`, with `succ n` interpreted as "the number after $n$".
@@ -29,8 +39,11 @@ also gave us some other things, which we'll take a look at now:
   * The principle of mathematical induction.
 
 These are the axioms isolated by Peano which uniquely characterise
-the natural numbers. If you've not seen them before, I guess they might
-look intimidating, so let's just go through them briefly. Firstly, notice
+the natural numbers. You don't have to learn the theorems off by heart -- they
+are summarised in the "Theorem statements" drop-down box on the left (check
+it now to see that they are there). However if you've not seen these things
+before, I guess they might look intimidating, so let's just go through them briefly.
+Firstly, notice
 that they are all standard statements about the natural numbers $\{0,1,2,3,\ldots\}$.
 The first axiom says that 0 is a natural number. The second says that there
 is a `succ` function which eats a number and spits out the number after it,
@@ -86,7 +99,7 @@ necessary, and `succ b` just means `succ(b)`.
 
 You may be wondering whether we could have just substituted in the definition of `b`
 and proved the goal that way. To do that, we would want to replace the right hand
-side of `h` with the left hand side. You do this in Lean by writing `rw ←h`. You get the
+side of `h` with the left hand side. You do this in Lean by writing `rw ← h`. You get the
 left-arrow by typing `\l` and then a space. You can just edit your proof and try it. 
 
 You may also be wondering why we keep writing `succ(b)` instead of `b+1`. This
