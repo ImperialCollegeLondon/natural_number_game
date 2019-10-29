@@ -31,8 +31,8 @@ I think "mul_add" is much easier to remember than "distributivity".
 
 /- Lemma
 Multiplication is distributive over addition.
-In other words, for all natural numbers $a$, $b$ and $c$, we have
-$$ a * (b + c) = a * b + a * c. $$
+In other words, for all natural numbers $a$, $b$ and $t$, we have
+$$ t(a + b) = ta + tb. $$
 -/
 
 lemma mul_add (t a b : mynat) : t * (a + b) = t * a + t * b :=

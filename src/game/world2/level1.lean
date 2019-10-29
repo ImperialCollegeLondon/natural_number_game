@@ -4,20 +4,20 @@ namespace mynat -- hide
 
 -- World name : Addition world
 
-/- Axiom : add_zero
-∀ a : mynat, a + 0 = a
+/- Axiom : add_zero (a : mynat) :
+a + 0 = a
 -/
 
-/- Axiom : add_succ
-∀ a b : mynat, a + succ(b) = succ(a + b)
+/- Axiom : add_succ (a b : mynat) :
+a + succ(b) = succ(a + b)
 -/
 
-/- Axiom : zero_ne_succ
-∀ (a : mynat), zero ≠ succ(a)
+/- Axiom : zero_ne_succ (a : mynat) :
+zero ≠ succ(a)
 -/
 
-/- Axiom : succ_inj
-∀ a b : mynat, succ(a) = succ(b) → a = b
+/- Axiom : succ_inj (a b : mynat) :
+succ(a) = succ(b) → a = b
 -/
 
 /- Axiom : one_eq_succ_zero
@@ -61,8 +61,6 @@ hd : 2 * d = d + d
 /- 
 # World 2 -- addition world. 
 
-## Level 1: the `induction` tactic.
-
 Welcome to World 2, addition world. If you've only proved *one* lemma from the tutorial world
 with `refl` and you've never heard of the `rw` tactic, then you probably just clicked the wrong button.
 Go back to world 1 using the "previous world" button in the top left and then click "next level" instead
@@ -94,8 +92,15 @@ a reminder of what you're now equipped with.
   * `rw h` -- if h is a proof of `A = B`, changes all A's in the goal to B's.
   * `induction n with d hd` -- we're going to learn this right now.
 
-If you want to be reminded of theorem statements and tactics, you can see them
-in the menu on the left.
+# Important thing: 
+
+This is a *really* good time to learn about the box on the left with the drop down
+menus. All the theorems and all the tactics above are documented there. Have a click around
+and check that you can find statements of the theorems above, and explanations of
+the tactics above. As we go through the game, these lists will grow. The box on the left
+will prove invaluable while you're learning names of basic theorems and tactics.
+
+## Level 1: the `induction` tactic.
 
 OK so let's see induction in action. We're going to prove
 
@@ -131,7 +136,8 @@ Remember that `add_zero` (the theorem we have already) says that `x + 0 = x`
 change to? Remember to just keep
 focussing on the top goal, ignore the other one for now, it's not changing
 and we're not working on it. You should be able to solve the top goal yourself
-though. I will remark that another way of solving the goal is `exact add_zero 0`,
+now with `refl`. I will remark that instead of `rw add_zero,refl,`,
+another way of solving the base case goal `⊢ 0 + 0 = 0` is `exact add_zero 0`,
 because for any natural number `t`, `add_zero t` is a proof that `t + 0 = t`.
 
 When you solved this base case goal, we are now be back down
@@ -155,7 +161,9 @@ end
 
 /-
 We're in the successor case, and your top right box should look
-something like this:
+something like this (make sure you've solved the `0 + 0 = 0` goal or
+your tactics will be acting on that goal instead of the goal we're talking about
+here):
 
 ```
 case mynat.succ
@@ -219,7 +227,7 @@ or other ways of applying the tactics you know, take a look at the
 One last thing (which you can learn from the tactic guide) -- `rw h` replaces the left
 hand side of h in the goal with the right hand side.
 If you want to replace the right hand side with the left hand side, try `rw ←h` (you can get
-the left arrow by typing \l).
+the left arrow by typing `\l` and then a space).
 
 I'm going to stop explaining stuff carefully now. If you get stuck or want
 to know more about Lean (e.g. how to do much harder maths in Lean),

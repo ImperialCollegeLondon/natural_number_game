@@ -11,18 +11,21 @@ namespace mynat -- hide
 
 # World 1 : Tutorial world
 
-## level 4: Peano's axioms.
+## Level 4: Peano's axioms.
 
 Way back on page 1 we imported a file called `mynat.definition`.
 This gave us the type `mynat` of natural numbers. But it
 also gave us some other things, which we'll take a look at now:
 
   * a term `0 : mynat`, interpreted as the number zero.
-  * a function `succ : mynat → mynat`, with `succ n` interpreted as "the number after n".
+  * a function `succ : mynat → mynat`, with `succ n` interpreted as "the number after $n$".
   * The theorem `zero_ne_succ : ∀ a : mynat, zero ≠ succ(a)`.
-    This is the axiom that zero isn't a successor. The name means "zero not equal to succ".
+    The upside-down A means "for all". So this is the axiom that zero isn't the 
+    number after $a$, for any natural numbers $a$. The name means "zero not equal to succ".
   * The theorem `succ_inj : ∀ a b : mynat, succ(a) = succ(b) → a = b`.
     This is the theorem that `succ` is injective, and the theorem name indicates this.
+    A more mundane way of explaining it is: "if the number after $a$ is the number
+    after $b$, then $a=b$."
   * The principle of mathematical induction.
 
 These are the axioms isolated by Peano which uniquely characterise
@@ -93,7 +96,7 @@ we'll be ready to enter Addition World.
 -/
 
 /- Lemma : no-side-bar
-If `succ(a) = b`, then `succ(succ(a)) = succ(b)`.
+If $succ(a) = b$, then $succ(succ(a)) = succ(b)$.
 -/
 lemma example4 (a b : mynat) (h : succ a = b) : succ(succ(a)) = succ(b) :=
 begin [less_leaky]

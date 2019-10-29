@@ -18,9 +18,9 @@ this is the base case.
 We will call this theorem `add_zero`. **Note the name of this theorem**.
 Mathematicians sometimes call it "Lemma 2.1" or "Hypothesis P6" or something. But
 computer scientists call it `add_zero` because it tells you
-what the answer to "a add zero" is. It's a *much* better name than "Lemma 2.1".
+what the answer to "x add zero" is. It's a *much* better name than "Lemma 2.1".
 Even better, we can use the rewrite tactic with `add_zero`.
-If you ever see `x + 0` in your goal, `rw add_zero,` should simplify it to `x`.
+If you ever see `x + 0` in your goal, `rw add_zero` should simplify it to `x`.
 This is because `add_zero` is a proof that `x + 0 = x`.
 
 Now here's the inductive step. If you know how to add `d` to `a`, then
@@ -35,7 +35,8 @@ how to add a successor to something. If you ever see `... + succ ...`
 in your goal, you should be able to use `rw add_succ,` to make
 progress. Here is a simple example where we shall see both.
 
-Delete `sorry`. Observe that the goal mentions `... + succ ...`. So type
+Delete `sorry` (don't forget you can widen this box if you can't see the sorry).
+Observe that the goal mentions `... + succ ...`. So type
 
 `rw add_succ,`
 
@@ -68,7 +69,7 @@ learn about proof by induction. Click on "next world" in the top right.
 -/
 
 /- Lemma : no-side-bar
-For all natural numbers `a`, we have `a + succ(0) = succ(a)`.
+For all natural numbers $a$, we have $a + succ(0) = succ(a)$.
 -/
 lemma add_succ_zero (a : mynat) : a + succ(0) = succ(a) :=
 begin [less_leaky]

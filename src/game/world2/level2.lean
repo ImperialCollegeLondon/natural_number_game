@@ -14,10 +14,11 @@ namespace mynat -- hide
   * `add_succ : ∀ a b : mynat, a + succ(b) = succ(a + b)`
   * `zero_add : ∀ a : mynat, 0 + a = a`
 
-The first four results are axioms. As for the theorem `zero_add` which we proved
-in level 1 of addition world -- check out the "theorems" drop-down box on the left
-to see that `zero_add` has been added to it. This is a handy place
+Check out the "As for the theorem `zero_add` which we proved
+in level 1 of addition world -- check out the "Theorem Statements" drop-down box on the left
+to see that these theorems have been added to it. This is a handy place
 to refresh your memory about exactly which theorems you have proved so far.
+As we go further through the game, more theorems will be added here.
 
 ## Level 2 -- `add_assoc` -- associativity of addition.
 
