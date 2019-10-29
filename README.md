@@ -1,8 +1,6 @@
 <h1><span style='color:#ff8c00'> Natural Number Game
 </span></h1>
 
-Warning: this is version 0.0.1beta -- getting it up and running involves installing a lot of technical stuff. 
-
 This is a game about the natural numbers, which are the numbers {0, 1, 2, 3, ...}. It is based on [this blog post](https://xenaproject.wordpress.com/2017/10/31/building-the-non-negative-integers-from-scratch/) but takes it a lot further.
 
 The idea of the game is to teach you what actually goes into the *proofs* of all the statements about natural numbers which are presented to us as children and which we are told are "obvious". Examples of such statements are: `a + b = b + a`, or `a * (b + c) = a * b + a * c`.
@@ -15,11 +13,17 @@ Computers are currently being taught mathematics by mathematicians, and this gam
 
 # Getting the game working.
 
-This game is still very much in beta mode. In the future there will be a much easier interface to playing the game via a web browser without installing anything, but until that point, to play the game there are really only two options.
+## Option 1: playing online
 
-## Option 1: playing the game on your own computer.
+[Play here.](http://wwwf.imperial.ac.uk/~buzzard/xena/natural_number_game/)
 
-First, you will have to [install Lean, its maths library mathlib, and Visual Studio Code on your computer](https://github.com/leanprover-community/mathlib#installation). You will also need git and VS Code, but the Lean/mathlib installation instructions will take you through that. It will be better one day -- I promise.
+Advantages: no installation, it just works, instructions included in the levels.
+
+Disadvantages: error messages aren't great, you can't make your own levels. 
+
+## Option 2: playing the game on your own computer.
+
+First, you will have to [install Lean, its maths library mathlib, and Visual Studio Code on your computer](https://github.com/leanprover-community/mathlib#installation). You will also need git and VS Code, but the Lean/mathlib installation instructions will take you through that.
 
 Once you have done this, you can clone and compile this repository with the following code:
 ```
@@ -33,7 +37,7 @@ Next, in VS Code, select File -> Open Folder and open the `natural number game` 
 
 Finally, open src/my_solutions/world1_addition.lean and now you're playing the game.
 
-## Option 2: playing the game on CoCalc.com
+## Option 3: playing the game on CoCalc.com
 
 To be written.
 
@@ -45,6 +49,7 @@ Read the [instructions on how to play the game](INSTRUCTIONS.md).
 
 Lean stuff: Kevin Buzzard. Find Kevin on [the Zulip Lean chat](https://leanprover.zulipchat.com) or on Twitter at [@XenaProject](
 
-Computery stuff : Maybe Kevin Kappelmann, maybe Mohammad Pedramfar
+Computery stuff : [Mohammad Pedramfar](https://github.com/mpedramfar). See in particular [Lean game maker](https://github.com/mpedramfar/Lean-game-maker).
 
-Twitter #naturalnumbergame
+#naturalnumbergame
+@XenaProject
