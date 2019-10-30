@@ -11,8 +11,8 @@ namespace mynat -- hide
 
 You have (amongst other things these:
 
-  * `add_assoc : ∀ a b c : mynat, (a + b) + c = a + (b + c)`
-  * `add_comm : ∀ a b : mynat, a + b = b + a`
+  * `add_assoc (a b c : mynat) : (a + b) + c = a + (b + c)`
+  * `add_comm (a b : mynat) : a + b = b + a`
 
 Lean sometimes writes `a + b + c`. What does it mean? The convention is
 that if there are no brackets displayed in an addition formula, the brackets

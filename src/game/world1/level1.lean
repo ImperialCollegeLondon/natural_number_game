@@ -11,8 +11,11 @@ namespace mynat -- hide
 ## By Kevin Buzzard and Mohammad Pedramfar. 
 
 Special thanks to Rob Lewis for tactic hackery, Sian Carey for power world (world 4),
-and, last but not least, the 2019-20 Imperial College 1st year maths beta tester
-students and Marie-Amélie Lawn for their countless suggestions and improvements.
+and, last but not least, all the people who fed back comments, including
+the 2019-20 Imperial College 1st year maths beta tester students, Marie-Amélie Lawn,
+and the people who have been in touch via the <a href="https://leanprover.zulipchat.com/" target="blank">Lean Zulip chat</a>
+ or the <a href="https://xenaproject.wordpress.com/" target="blank">Xena Project blog</a>
+ or via <a href="https://twitter.com/home" target="blank">Twitter</a>.
 The natural number game is brought to you by the Xena project, a project based at Imperial College London
 whose aim is to get mathematics undergraduates using computer theorem provers.
 Lean is a computer theorem prover being developed at Microsoft Research.

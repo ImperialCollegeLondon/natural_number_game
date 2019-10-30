@@ -11,9 +11,9 @@ namespace mynat -- hide
 Currently our tools for multiplication are the
 following: 
 
-* `mul_zero : ∀ m, m * 0 = 0`
-* `zero_mul : ∀ m, 0 * m = m`
-* `mul_succ : ∀ a b, a * succ b = a * b + b`
+* `mul_zero (m : mynat) : m * 0 = 0`
+* `zero_mul (m : mynat) : 0 * m = m`
+* `mul_succ (a b : mynat) : a * succ b = a * b + b`
 
 We also have
 

@@ -16,13 +16,13 @@ are getting the hang of Lean's naming conventions).
 Currently our tools for multiplication include the
 following: 
 
-* `mul_zero : ∀ a, a * 0 = 0`
-* `mul_succ : ∀ a b, a * succ b = a * b + b`
-* `mul_add : ∀ a b c , a * (b + c) = a * b + a * c`
+* `mul_zero a : a * 0 = 0`
+* `mul_succ a b : a * succ b = a * b + b`
+* `mul_add a b c : a * (b + c) = a * b + a * c`
 
 and remember also that we have tools like
 
-* `add_right_comm : ∀ a b c, a + b + c = a + c + b` 
+* `add_right_comm a b c : a + b + c = a + c + b` 
 
 as well as all the addition stuff. These things
 are the tools we need to slowly build up the results

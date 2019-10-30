@@ -11,7 +11,7 @@ namespace mynat -- hide
 
 You have : the usual stuff. 
 
-  * `succ_inj : ∀ a b : mynat, succ(a) = succ(b) → a = b`
+  * `succ_inj (a b : mynat) : succ(a) = succ(b) → a = b`
 
 will be useful for this one. 
 

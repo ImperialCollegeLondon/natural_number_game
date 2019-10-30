@@ -29,13 +29,13 @@ also gives us some other things, which we'll take a look at now:
 
   * a term `0 : mynat`, interpreted as the number zero.
   * a function `succ : mynat → mynat`, with `succ n` interpreted as "the number after $n$".
-  * The theorem `zero_ne_succ : ∀ a : mynat, zero ≠ succ(a)`.
-    The upside-down A means "for all". So this is the axiom that zero isn't the 
-    number after $a$, for any natural numbers $a$. The name means "zero not equal to succ".
-  * The theorem `succ_inj : ∀ a b : mynat, succ(a) = succ(b) → a = b`.
+  * The theorem `zero_ne_succ (a : mynat) : zero ≠ succ(a)`.
+    This is the axiom that for any natural number $a$, zero isn't the 
+    number after $a$. The name means "zero not equal to succ".
+  * The theorem `succ_inj (a b : mynat) : succ(a) = succ(b) → a = b`.
     This is the theorem that `succ` is injective, and the theorem name indicates this.
-    A more mundane way of explaining it is: "if the number after $a$ is the number
-    after $b$, then $a=b$."
+    A more mundane way of explaining it is: for all $a$ and $b$, if the number after $a$ is the number
+    after $b$, then $a=b$.
   * The principle of mathematical induction.
 
 These are the axioms isolated by Peano which uniquely characterise

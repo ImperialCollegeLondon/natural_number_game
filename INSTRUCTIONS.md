@@ -1,5 +1,15 @@
 # Playing the game.
 
+## Note
+
+Note: these are sketchy instructions for playing
+the version of the game where you install Lean
+and mathlib. If you just want to play online
+without installing anything, then
+[here's the link](http://wwwf.imperial.ac.uk/~buzzard/xena/natural_number_game/).
+
+## After installation
+
 If you open the file `src/my_solutions/world1_addition.lean` then you will see plenty of `sorry`s. You will currently also see a lot of comments which need editing and possibly completely removing and putting here instead.
 
 This whole thing is currently very daunting because the game is in a very preliminary state. This will be fixed up later. The general idea is that every `sorry` in the file `world1_addition.lean` needs to be removed and replaced with a proof. We will go through an example of how this works at the bottom of this file.

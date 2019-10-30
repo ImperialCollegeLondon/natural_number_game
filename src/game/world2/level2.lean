@@ -8,9 +8,9 @@ namespace mynat -- hide
 
 ## Your theorems so far:
 
-  * `add_zero : ∀ a : mynat, a + 0 = a`
-  * `add_succ : ∀ a b : mynat, a + succ(b) = succ(a + b)`
-  * `zero_add : ∀ a : mynat, 0 + a = a`
+  * `add_zero (a : mynat) : a + 0 = a`
+  * `add_succ (a b : mynat) : a + succ(b) = succ(a + b)`
+  * `zero_add (a : mynat) : 0 + a = a`
   * (some stuff from tutorial world which we won't need for a while)
 
 Check out the "Theorem Statements" drop-down box on the left

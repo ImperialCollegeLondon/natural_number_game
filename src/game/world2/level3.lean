@@ -10,10 +10,10 @@ namespace mynat -- hide
 
 ## You are equipped with:
 
-  * `add_zero : ∀ a : mynat, a + 0 = a`
-  * `add_succ : ∀ a b : mynat, a + succ(b) = succ(a + b)`
-  * `zero_add` : ∀ a : mynat, 0 + a = a`
-  * `add_assoc : ∀ a b c : mynat, (a + b) + c = a + (b + c)`
+  * `add_zero (a : mynat) : a + 0 = a`
+  * `add_succ (a b : mynat) : a + succ(b) = succ(a + b)`
+  * `zero_add` (a : mynat) : 0 + a = a`
+  * `add_assoc (a b c : mynat) : (a + b) + c = a + (b + c)`
 
 Oh no! On the way to `add_comm`, a wild `succ_add` appears. `succ_add`
 is the statement that `succ(a) + b = succ(a + b)` for `a` and `b` in your

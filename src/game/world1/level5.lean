@@ -13,7 +13,7 @@ Peano defined addition `a + b` by induction on `b`, or,
 more precisely, by *recursion* on `b`. He first explained how to add 0 to a number:
 this is the base case.
 
-* `add_zero : ∀ a : mynat, a + 0 = a`
+* `add_zero (a : mynat) : a + 0 = a`
 
 We will call this theorem `add_zero`. **Note the name of this theorem**.
 Mathematicians sometimes call it "Lemma 2.1" or "Hypothesis P6" or something. But
@@ -27,7 +27,7 @@ This is because `add_zero` is a proof that `x + 0 = x` (more precisely,
 Now here's the inductive step. If you know how to add `d` to `a`, then
 Peano tells you how to add `succ(d)` to `a`. It looks like this:
 
-* `add_succ : ∀ a d : mynat, a + succ(d) = succ (a + d)`
+* `add_succ (a d : mynat) : a + succ(d) = succ (a + d)`
 
 What's going on here is that we assume `a + d` is already
 defined, and we define `a + succ(d)` to be the number after it.

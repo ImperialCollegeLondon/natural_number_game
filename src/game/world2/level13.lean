@@ -11,7 +11,7 @@ namespace mynat -- hide
 
 You have the usual stuff. 
 
-  * `zero_ne_succ : ∀ (a : mynat), zero ≠ succ(a)`
+  * `zero_ne_succ (a : mynat) : zero ≠ succ(a)`
 
 might be useful for this one.
 

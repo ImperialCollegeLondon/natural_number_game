@@ -9,17 +9,6 @@ namespace mynat -- hide
 
 ## Level 9 -- `add_left_cancel`
 
-You have these:
-
-  * `zero_ne_succ : ∀ (a : mynat), zero ≠ succ(a)`
-  * `succ_inj : ∀ a b : mynat, succ(a) = succ(b) → a = b`
-  * `add_zero : ∀ a : mynat, a + 0 = a`
-  * `add_succ : ∀ a b : mynat, a + succ(b) = succ(a + b)`
-  * `zero_add : ∀ a : mynat, 0 + a = a`
-  * `add_assoc : ∀ a b c : mynat, (a + b) + c = a + (b + c)`
-  * `succ_add : ∀ a b : mynat, succ a + b = succ (a + b)`
-  * `add_comm : ∀ a b : mynat, a + b = b + a`
-
 The theorem `add_left_cancel` is the theorem that you can cancel on the left
 when you're doing addition -- if `a + b = a + c` then `b = c`. 
 You will need to know about `intro`, `revert` and `apply`. 

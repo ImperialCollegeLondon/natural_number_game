@@ -65,8 +65,8 @@ a reminder of what you're now equipped with.
 
 ## Theorems:
 
-  * `add_zero : ∀ a : mynat, a + 0 = a`
-  * `add_succ : ∀ a b : mynat, a + succ(b) = succ(a + b)`
+  * `add_zero (a : mynat) : a + 0 = a`
+  * `add_succ (a b : mynat) : a + succ(b) = succ(a + b)`
   * The principle of mathematical induction. Use with `induction` (see below)
   * A couple more theorems which we won't need for a while and I'll insert in the
      world 2 theorem box on the right when we do.
@@ -92,9 +92,10 @@ that tactic right now.
 
 OK so let's see induction in action. We're going to prove
 
-  `zero_add : ∀ n : mynat, 0 + n = n`. 
+  `zero_add (n : mynat) : 0 + n = n`. 
 
-Wait -- what is going on here? Didn't we already prove that adding zero to $n$ gave us $n$?
+That is: for all natural numbers $n$, $0+n=n$. Wait -- what is going on here?
+Didn't we already prove that adding zero to $n$ gave us $n$?
 No we didn't! We proved $n + 0 = n$ -- that was called `add_zero`. We're now
 trying to prove `zero_add`, which says $0 + n = n$. But aren't these two theorems
 the same? No they're not! It is *true* that `x + y = y + x`, but we haven't
