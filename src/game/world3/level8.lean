@@ -43,13 +43,8 @@ and go and get that big collectible at the end of it,
 or you can wait a few days until the next version of the game comes
 out, and then try and solve Advanced Multiplication World. 
 
-into a different Advanced Multiplication World and the tactics you
-need to solve them will actually be explained to you properly. Until then,
-you might just have to look at the 
-<a href="http://wwwf.imperial.ac.uk/~buzzard/xena/html/source/tactics/tacticindex.html" target="blank">tactic guide</a>.
-Note that level 13 is currently in the wrong place and you could do that
-one easily. But the others need tactics like `intro` which you might
-not know yet.
+Note to self: should put `mul_right_comm` in this elementary
+multiplication world.
 
 -/
 def collectible_06 : comm_semiring mynat := by structure_helper -- hide
