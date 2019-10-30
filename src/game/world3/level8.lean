@@ -40,10 +40,9 @@ That's the last collectible in Multiplication World.
 There are now two paths you can take. You can play it safe and move
 straight on to Power World by selecting "Next World" in the top right
 and go and get that big collectible at the end of it,
-or you can push further into uncharted
-(i.e. currently poorly documented) territory and see if you can solve
-some harder levels in multiplication world, by selecting "Next Level".
-Note that in the next version of the game these levels will split off
+or you can wait a few days until the next version of the game comes
+out, and then try and solve Advanced Multiplication World. 
+
 into a different Advanced Multiplication World and the tactics you
 need to solve them will actually be explained to you properly. Until then,
 you might just have to look at the 
