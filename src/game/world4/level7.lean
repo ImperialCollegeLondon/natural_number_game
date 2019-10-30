@@ -12,15 +12,17 @@ namespace mynat -- hide
 Boss level! What will the collectible be?
 -/
 /- Lemma
-For all naturals $m$, $a$, $b$, we have $(m ^ a) ^ b = m ^ {ab}$.
+For all naturals $a$, $m$, $n$, we have $(a ^ m) ^ n = a ^ {mn}$.
 -/
-lemma pow_pow (m a b : mynat) : (m ^ a) ^ b = m ^ (a * b) :=
+lemma pow_pow (a m n : mynat) : (a ^ m) ^ n = a ^ (m * n) :=
 begin [less_leaky]
-  induction' b with t Ht,
+  induction' n with t Ht,
     rw [mul_zero, pow_zero, pow_zero],
     refl,
   rw [pow_succ, Ht, mul_succ, pow_add],
   refl,
+
+
 
 
 
@@ -34,13 +36,8 @@ collectible for this level be called?
 -/
 
 /-
-The next world is inequality world, but it's different. Before you
-go there, you really should do world 2 level 6 and a half, and
-learn the terrifying truth about how our proofs go forwards but
-their functions go backwards. You will learn about `have`, the way
-to swim upstream, and `have` is the only tool you really need.
-Computer scientists have made tools that do proofs backwards,
-and this is quite a weird way of thnking about proofs. 
+The next world is inequality world, and you are going to have to
+learn two more tactics -- `cases` and `use`.
 -/
 
 end mynat -- hide

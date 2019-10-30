@@ -5,19 +5,21 @@ namespace mynat -- hide
 
 # World 4 : Power World
 
-## Level 5 of 7: `pow_add`
+## Level 5: `pow_add`
 -/
 
 /- Lemma
-For all naturals $m$, $a$, $b$, we have $m ^{a + b} = m ^ a  m ^ b$.
+For all naturals $m$, $a$, $b$, we have $a^{m + n} = a ^ m  a ^ n$.
 -/
-lemma pow_add (m a b : mynat) : m ^ (a + b) = m ^ a * m ^ b :=
+lemma pow_add (a m n : mynat) : a ^ (m + n) = a ^ m * a ^ n :=
 begin [less_leaky]
-  induction b with t ht,
+  induction n with t ht,
     rw [add_zero, pow_zero, mul_one],
     refl,
   rw [add_succ, pow_succ, pow_succ, ht, mul_assoc],
   refl,
+
+  
 
   
 end

@@ -24,9 +24,9 @@ i.e. we want to prove that we can "expand out the brackets"
 and show `a * (b + c) = (a * b) + (a * c)`.
 The technical term for this is "distributivity of multiplication over addition".
 
-Note the name of this lemma -- "mul_add". And note the left
-hand side -- `a * (b + c)`, a multiplication and an addition.
-I think "mul_add" is much easier to remember than "distributivity". 
+Note the name of this lemma -- `mul_add`. And note the left
+hand side -- `a * (b + c)`, a multiplication and then an addition.
+I think `mul_add` is much easier to remember than "distributivity". 
 -/
 
 /- Lemma

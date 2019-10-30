@@ -10,7 +10,7 @@ namespace mynat -- hide
 /- Lemma
 ≤ is transitive. In other words, if a ≤ b and b ≤ c then a ≤ c. 
 -/
-theorem le_trans ⦃a b c : mynat⦄ (hab : a ≤ b) (hbc : b ≤ c) : a ≤ c :=
+theorem le_trans {{a b c : mynat}} (hab : a ≤ b) (hbc : b ≤ c) : a ≤ c :=
 begin [less_leaky]
   cases hab with d hd,
   cases hbc with e he,
@@ -18,8 +18,6 @@ begin [less_leaky]
   rw ←add_assoc,
   rw ←hd,
   assumption,
-
-
 end
 
 /-

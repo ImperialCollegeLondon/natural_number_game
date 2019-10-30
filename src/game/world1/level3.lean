@@ -72,6 +72,16 @@ then
 will change the goal into `⊢ 1 + (y + 3) = y + 4`.
 Note of course that this goal is still far from solved.
 
+### Example: 
+You can rewrite a hypothesis as well. 
+For example, if your local context looks like this:
+```
+x y : mynat
+h1 : x = y + 3
+h2 : 2 * y = x
+⊢ y = 3
+```
+then `rw h1 at h2` will turn `h2` into `h2 : 2 * y = y + 3`.
 -/
 
 /-

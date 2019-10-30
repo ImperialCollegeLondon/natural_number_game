@@ -5,7 +5,9 @@ namespace mynat -- hide
 /-
 # World 5 : Inequality world 
 
-## Level 4 : `le_zero`
+## Level used-to-be-4 : `le_zero`
+
+-- THIS NEEDS LE_SUCC SOMEWHERE
 
 To do a level like this, you'll need to know that
 if `a + c = 0` then `a = 0`. You could launch into

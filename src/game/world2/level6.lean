@@ -69,32 +69,39 @@ manipulating equalities in Lean. You have also collected
 four collectibles:
 
 ```
-add_semigroup mynat -- (after world 2-2)
-add_monoid mynat -- (after world 2-2)
-add_comm_semigroup -- (after world 2-4)
-add_comm_monoid mynat -- (after world 2-4)
+mynat.add_semigroup -- (after world 2-2)
+mynat.add_monoid -- (after world 2-2)
+mynat.add_comm_semigroup mynat (after world 2-4)
+mynat.add_comm_monoid -- (after world 2-4)
 ```
 
 There is now a fork in the path. In V1.1 of this game you will
 be able to choose between one of two new worlds at this point.
-But until we get there, it's either "next level" or "next world".
+But until we get there, it's either "next level" or "next world",
+and I just broke "next level" -- TODO -- fix it?
 
 Will you click "next level" and learn some new tactics (`have` and `intro`,
-and more) to deal with addition problems involving implications,
+and more, still not documented particularly well in v1.01)
+to deal with addition problems involving implications
+(NB this is greyed out in v1.01),
 or will you stick to the tactics you know
 and click on "next world" to move on to Multiplication World and
-collect such advanced collectibles as `semring nat` and `distrib nat`,
-and the famed collectible at the end of world 4?
+collect such advanced collectibles as `mynat.semiring` and
+`mynat.distrib`, and the famous collectible at the end of world 4?
 
 While you are deciding, didn't you think that solving this level
 was boring? check out this AI called `simp`:
 
-First we have to get the collectible:
+First we have to get the collectible, which we do by saying
+the magic words which make Lean's type class inference
+system give it to us.
 -/
 instance : add_comm_monoid mynat := by structure_helper
 
 /-
-Now the `simp` AI becomes accessible.
+Now the `simp` AI becomes accessible (it's just an advanced
+tactic really), and can nail some really tedious-for-a-human-to-solve
+goals. 
 -/
 
 example (a b c d e : mynat) :
@@ -103,6 +110,8 @@ example (a b c d e : mynat) :
 end 
 
 /-
-Imagine having to do that one by hand!
+Imagine having to do that one by hand! The AI closes the goal
+because it knows how to use associativity and commutativity
+sensibly in a commutative monoid.
 -/
 end mynat -- hide

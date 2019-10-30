@@ -6,7 +6,7 @@ namespace mynat -- hide
 /- 
 # World 2 -- addition world
 
-## Level 3 : `succ_inj`
+## Level 3 : `succ_add`
 
 ## You are equipped with:
 

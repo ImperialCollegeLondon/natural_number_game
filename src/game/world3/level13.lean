@@ -14,6 +14,7 @@ The proof is basically the same as `add_right_comm`.
 See how few lines you can do it in.
 -/
 
+instance : comm_monoid mynat := by structure_helper
 /- Theorem
 For all $a$, $b$, $c$ natural numbers, $(a * b) * c = (a * c) * b$.
 -/

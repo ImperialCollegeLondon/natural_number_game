@@ -27,11 +27,15 @@ and remember also that we have tools like
 as well as all the addition stuff. These things
 are the tools we need to slowly build up the results
 which we will need to do mathematics "normally". 
+We also now have access to Lean's `simp` tactic,
+which will solve any goal which just needs a bunch
+of rewrites of `add_assoc` and `add_comm`. Use if
+you're getting lazy!
 -/
 
 /- Lemma
 For all natural numbers $a$ and $b$, we have
-$$ \operatorname{succ}(a) * b = a * b + b. $$
+$$ \operatorname{succ}(a) \times b = ab + b. $$
 -/
 lemma succ_mul (a b : mynat) : succ a * b = a * b + b :=
 begin [less_leaky]
