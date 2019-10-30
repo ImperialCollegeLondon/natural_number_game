@@ -1,7 +1,10 @@
 import mynat.definition -- hide
 import mynat.add -- hide
 import game.world2.level5 -- hide
+import tactic.ring -- hide
 namespace mynat -- hide
+
+
 
 /-
 
@@ -36,13 +39,16 @@ swap additions of the form `a + b`.
 
 After you have solved this level, you have a choice of two things.
 
-1) Press on in addition world, proving things like (a + b = a + c → b = c),
-which won't help for multiplication world and for which you will have
-to learn several new tactics (there are ten bonus levels, levels 7 to 16), or
+1) Press on in addition world (there are ten more levels),
+proving things like (a + b = a + c → b = c).
+You have never proved a goal like that before; your current tactics
+can't prove implications and you need to learn some new ones, specifically
+adapted to work with hypotheses and goals of the form `P → Q`;
 
-2) Leave the world now by clicking "next world". This will take you to world 3,
-multiplication world. You won't need to know any new tactics to prove
-the big theorem `a * b = b * a`.
+2) Solve this level and then leave addition world completely by clicking "next world".
+This will take you to world 3, multiplication world.
+You won't need to know any new tactics to prove
+the big theorem `a * b = b * a` and get the `comm_semiring` collectible.
 -/
 
 /- Lemma
@@ -58,11 +64,45 @@ begin [less_leaky]
 end
 
 /-
-There is now a fork in the path. Will you click "next level" and learn
-some new tactics to deal with harder addition problems, or will you click
-on "next world" to battle multiplication with the tactics you have?
-You can of course just go to any level or world you like -- we left
-them all unlocked.
+If you have got this far, then you have become very good at
+manipulating equalities in Lean. You have also collected
+four collectibles:
+
+```
+add_semigroup mynat -- (after world 2-2)
+add_monoid mynat -- (after world 2-2)
+add_comm_semigroup -- (after world 2-4)
+add_comm_monoid mynat -- (after world 2-4)
+```
+
+There is now a fork in the path. In V1.1 of this game you will
+be able to choose between one of two new worlds at this point.
+But until we get there, it's either "next level" or "next world".
+
+Will you click "next level" and learn some new tactics (`have` and `intro`,
+and more) to deal with addition problems involving implications,
+or will you stick to the tactics you know
+and click on "next world" to move on to Multiplication World and
+collect such advanced collectibles as `semring nat` and `distrib nat`,
+and the famed collectible at the end of world 4?
+
+While you are deciding, didn't you think that solving this level
+was boring? check out this AI called `simp`:
+
+First we have to get the collectible:
+-/
+instance : add_comm_monoid mynat := by structure_helper
+
+/-
+Now the `simp` AI becomes accessible.
 -/
 
+example (a b c d e : mynat) :
+(((a+b)+c)+d)+e=(c+((b+e)+a))+d := begin
+  simp
+end 
+
+/-
+Imagine having to do that one by hand!
+-/
 end mynat -- hide

@@ -35,7 +35,7 @@ then we have $a = b$.
 theorem add_right_cancel_iff (t a b : mynat) :  a + t = b + t ↔ a = b :=
 begin [less_leaky]
   split,
-  { apply add_right_cancel}, -- done that way already,
+  { exact add_right_cancel}, -- done that way already,
   { intro H, -- H : a = b,
     rw H,
     refl,

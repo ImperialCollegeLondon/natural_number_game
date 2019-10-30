@@ -29,7 +29,7 @@ In other words, if there are natural numbers $a, b$ and $c$ such that
 $$ a + b = a + c, $$
 then we have $b = c$.
 -/
-theorem add_left_cancel ⦃ a b c : mynat⦄ : a + b = a + c → b = c :=
+theorem add_left_cancel {a b c : mynat} : a + b = a + c → b = c :=
 begin [less_leaky]
   intro h,
   rw add_comm at h,
