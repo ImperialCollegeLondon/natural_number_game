@@ -10,13 +10,11 @@ namespace mynat -- hide
 
 You are equipped with:
 
-  * `zero_ne_succ : ∀ (a : mynat), zero ≠ succ(a)`
-  * `succ_inj : ∀ a b : mynat, succ(a) = succ(b) → a = b`
-  * `add_zero : ∀ a : mynat, a + 0 = a`
-  * `add_succ : ∀ a b : mynat, a + succ(b) = succ (a + b)`
-  * `zero_add : ∀ a : mynat, 0 + a = a`
-  * `add_assoc : ∀ a b c : mynat, (a + b) + c = a + (b + c)`
-  * `succ_add : ∀ a b : mynat, succ a + b = succ (a + b)`
+  * `add_zero (a : mynat) : a + 0 = a`
+  * `add_succ (a b : mynat) : a + succ(b) = succ (a + b)`
+  * `zero_add (a : mynat) : 0 + a = a`
+  * `add_assoc (a b c : mynat) : (a + b) + c = a + (b + c)`
+  * `succ_add (a b : mynat) : succ a + b = succ (a + b)`
 
 [boss battle music]
 -/

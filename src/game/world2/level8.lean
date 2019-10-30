@@ -1,7 +1,36 @@
 import mynat.definition -- hide
 import mynat.add -- hide
-import game.world2.level7 -- hide
+import game.world2.level6andseveneighths -- hide
 namespace mynat -- hide
+
+/- Tactic : split
+The `split` tactic turns one "if and only if" goal into
+two goals corresponding to the implications in each
+direction.
+
+### Example:
+
+If your local context (the top right window) looks like this
+```
+a b : mynat,
+⊢ a = b ↔ a + 3 = b + 3
+```
+
+then after
+
+`split,`
+
+it will look like this:
+
+```
+2 goals
+a b : mynat
+⊢ a = b → a + 3 = b + 3
+
+a b : mynat
+⊢ a + 3 = b + 3 → a = b
+```
+-/
 
 /-
 
@@ -9,25 +38,20 @@ namespace mynat -- hide
 
 ## Level 8 -- `eq_iff_succ_eq_succ`
 
-You have these:
-
-  * `zero_ne_succ : ∀ (a : mynat), zero ≠ succ(a)`
-  * `succ_inj : ∀ a b : mynat, succ(a) = succ(b) → a = b`
-  * `add_zero : ∀ a : mynat, a + 0 = a`
-  * `add_succ : ∀ a b : mynat, a + succ(b) = succ(a + b)`
-  * `zero_add : ∀ a : mynat, 0 + a = a`
-  * `add_assoc : ∀ a b c : mynat, (a + b) + c = a + (b + c)`
-  * `succ_add : ∀ a b : mynat, succ a + b = succ (a + b)`
-  * `add_comm : ∀ a b : mynat, a + b = b + a`
-
 Here is an `iff` goal. You can split it into two goals (the implications in both
-directions) using the `split` tactic, which you should probably start with.
-You are also going to have to learn something about tactics which handle
-the basics of propositions and their proofs here. You will need to know the
-`intro` tactic, which works (only) on a goal
-of the form `P → Q`; given a goal of this form, `intro h` makes `h` a proof
-of `P` and changes the goal to `Q`.
+directions) using the `split` tactic, which is how you're going to have to start.
 
+`split,`
+
+Now you have two goals. The first is exactly `succ_inj` so you can close
+it with
+
+`exact succ_inj,`
+
+and the second one you could solve by looking up the name of the theorem
+you proved in the last level and doing `exact <that name>`, or alternatively
+you could get some more `intro` practice and seeing if you can prove it
+using `intro`, `rw` and `refl`.
 -/
 
 /- Theorem
@@ -37,6 +61,7 @@ theorem eq_iff_succ_eq_succ (a b : mynat) : succ a = succ b ↔ a = b :=
 begin [less_leaky]
   split,
   { exact succ_inj},
+--  exact succ_eq_succ_of_eq,
   { intro H,
     rw H,
     refl,

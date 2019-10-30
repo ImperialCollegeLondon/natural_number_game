@@ -15,9 +15,8 @@ Now you have `eq_zero_or_eq_zero_of_mul_eq_zero` this is pretty straightforward.
 /- Theorem
 $a * b = 0$, if and only if at least one of $a$ or $b$ is equal to zero.
 -/
-theorem mul_eq_zero_iff : ∀ (a b : mynat), a * b = 0 ↔ a = 0 ∨ b = 0 :=
+theorem mul_eq_zero_iff (a b : mynat): a * b = 0 ↔ a = 0 ∨ b = 0 :=
 begin [less_leaky]
-  intros a b,
   split, swap,
     intro hab, cases hab,
       rw hab, rw zero_mul, refl,

@@ -1,7 +1,10 @@
 import mynat.definition -- hide
 import mynat.add -- hide
 import game.world2.level5 -- hide
+import tactic.ring -- hide
 namespace mynat -- hide
+
+
 
 /-
 
@@ -11,8 +14,8 @@ namespace mynat -- hide
 
 You have (amongst other things these:
 
-  * `add_assoc : ∀ a b c : mynat, (a + b) + c = a + (b + c)`
-  * `add_comm : ∀ a b : mynat, a + b = b + a`
+  * `add_assoc (a b c : mynat) : (a + b) + c = a + (b + c)`
+  * `add_comm (a b : mynat) : a + b = b + a`
 
 Lean sometimes writes `a + b + c`. What does it mean? The convention is
 that if there are no brackets displayed in an addition formula, the brackets
@@ -23,12 +26,12 @@ by putting these two theorems together.
 
 If you hadn't picked up on this already, `rw add_assoc` will
 change `(x + y) + z` to `x + (y + z)`, but to change it back
-you will need `rw ←add_assoc`. Get the left arrow with \l .
+you will need `rw ← add_assoc`. Get the left arrow with \l .
 Similarly, if `h : a = b` then `rw h` will change `a`'s to `b`'s
-and `rw ←h` will change `b`'s to `a`'s.
+and `rw ← h` will change `b`'s to `a`'s.
 
 Also, you can be (and will need to be, in this level) more precise
-about where to rewrite theorems. `rw add_commm,` will just find the
+about where to rewrite theorems. `rw add_comm,` will just find the
 first `? + ?` it sees and swap it around. You can target more specific
 additions like this: `rw add_comm a` will swap around
 additions of the form `a + ?`, and `rw add_comm a b,` will only
@@ -36,16 +39,20 @@ swap additions of the form `a + b`.
 
 After you have solved this level, you have a choice of two things.
 
-1) Press on in addition world, proving things like (a + b = a + c → b = c),
-which won't help for multiplication world and for which you will have
-to learn several new tactics (there are ten bonus levels, levels 7 to 16), or
+1) Press on in addition world (there are ten more levels),
+proving things like (a + b = a + c → b = c).
+You have never proved a goal like that before; your current tactics
+can't prove implications and you need to learn some new ones, specifically
+adapted to work with hypotheses and goals of the form `P → Q`;
 
-2) Leave the world now by clicking "next world". This will take you to world 3,
-multiplication world. You won't need to know any new 
+2) Solve this level and then leave addition world completely by clicking "next world".
+This will take you to world 3, multiplication world.
+You won't need to know any new tactics to prove
+the big theorem `a * b = b * a` and get the `comm_semiring` collectible.
 -/
 
 /- Lemma
-For all natural numebrs $a, b$ and $c$, we have
+For all natural numbers $a, b$ and $c$, we have
 $$ a + b + c = a + c + b. $$
 -/
 lemma add_right_comm (a b c : mynat) : a + b + c = a + c + b :=
@@ -57,11 +64,45 @@ begin [less_leaky]
 end
 
 /-
-There is now a fork in the path. Will you click "next level" and learn
-some new tactics to deal with harder addition problems, or will you click
-on "next world" to battle multiplication with the tactics you have?
-You can of course just go to any level or world you like -- we left
-them all unlocked.
+If you have got this far, then you have become very good at
+manipulating equalities in Lean. You have also collected
+four collectibles:
+
+```
+add_semigroup mynat -- (after world 2-2)
+add_monoid mynat -- (after world 2-2)
+add_comm_semigroup -- (after world 2-4)
+add_comm_monoid mynat -- (after world 2-4)
+```
+
+There is now a fork in the path. In V1.1 of this game you will
+be able to choose between one of two new worlds at this point.
+But until we get there, it's either "next level" or "next world".
+
+Will you click "next level" and learn some new tactics (`have` and `intro`,
+and more) to deal with addition problems involving implications,
+or will you stick to the tactics you know
+and click on "next world" to move on to Multiplication World and
+collect such advanced collectibles as `semring nat` and `distrib nat`,
+and the famed collectible at the end of world 4?
+
+While you are deciding, didn't you think that solving this level
+was boring? check out this AI called `simp`:
+
+First we have to get the collectible:
+-/
+instance : add_comm_monoid mynat := by structure_helper
+
+/-
+Now the `simp` AI becomes accessible.
 -/
 
+example (a b c d e : mynat) :
+(((a+b)+c)+d)+e=(c+((b+e)+a))+d := begin
+  simp
+end 
+
+/-
+Imagine having to do that one by hand!
+-/
 end mynat -- hide

@@ -22,7 +22,7 @@ following:
 
 and remember also that we have tools like
 
-* `add_right_comm : ∀ a b c, a + b + c = a + c + b` 
+* `add_right_comm a b c : a + b + c = a + c + b` 
 
 as well as all the addition stuff. These things
 are the tools we need to slowly build up the results

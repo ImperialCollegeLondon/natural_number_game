@@ -2,6 +2,8 @@ import game.world4.level7 -- hide
 import mynat.le
 namespace mynat -- hide
 
+-- World 5 : Inequality world
+
 /- A new level, a new import. You can take a look at the actual Leo `an files
 being imported by going to the source code for this game,
 which is available at

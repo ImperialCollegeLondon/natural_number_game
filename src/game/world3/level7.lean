@@ -38,9 +38,16 @@ end
 /-
 A mathematician would now say that you have proved that the natural
 numbers are a semiring.
+
+Lean would add that you have also proved that they are a `distrib`. 
+However this concept has no mathematical name at all -- this says something
+about the regard with which we hold this collectible. You consider politely
+declining. You are dreaming of the big collectible at the end of world 4.
 -/
 
 def right_distrib := add_mul -- stupid field name, -- hide
+
+def collectible_045 : distrib mynat := by structure_helper
 
 def collectible_05 : semiring mynat := by structure_helper  -- hide
 

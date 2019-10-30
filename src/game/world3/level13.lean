@@ -25,9 +25,6 @@ begin [less_leaky]
   refl,
 end
 
-/- To come: Powers! Inequalities! Odd and even numbers! Congruences!
-Prime numbers! And any other mathematics with the natural numbers that anyone can think of. 
-Suggestions welcome to k.buzzard@imperial.ac.uk or find me on the Lean chat at Zulip.
--/
+
 
 end mynat -- hide
