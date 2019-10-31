@@ -109,7 +109,8 @@ we'll be ready to enter Addition World.
 -/
 
 /- Lemma : no-side-bar
-If $succ(a) = b$, then $succ(succ(a)) = succ(b)$.
+If $\operatorname{succ}(a) = b$, then
+$$\operatorname{succ}(\operatorname{succ}(a)) = \operatorname{succ}(b).$$
 -/
 lemma example4 (a b : mynat) (h : succ a = b) : succ(succ(a)) = succ(b) :=
 begin [less_leaky]

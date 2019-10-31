@@ -4,7 +4,8 @@ namespace mynat -- hide
 
 -- World 5 : Inequality world
 
-/- A new level, a new import. By the way, you can take a look at the actual files
+/- 
+A new level, a new import. By the way, you can take a look at the actual files
 being imported by going to the source code for this game,
 which is available at
 <a href="https://github.com/ImperialCollegeLondon/natural_number_game" target="blank">
@@ -24,7 +25,11 @@ Here's what you get from the import:
 So `rw le_def` will change a ≤ b to `∃ c : mynat b = a + c`.
 
 You'll now have to know what to do with terms which have an ∃ in them! There
-are two new tactics you'll need. We will introduce one of them -- `use` -- in this
+are two new tactics you'll need immediately, but even with those
+we will not be able to get much further -- we really need to learn about 
+some sort of Propositions-as-Types thing at some point.
+
+. We will introduce one of them -- `use` -- in this
 level.
 
 ## The `use` tactic. 
@@ -95,6 +100,6 @@ end
 attribute [_refl_lemma] le_refl
 
 -- ...and now the `refl` tactic will close all goals of the form `a ≤ a`
--- as well as all goals of the form a = a.
+-- as well as all goals of the form `a = a`.
 
 end mynat --hide

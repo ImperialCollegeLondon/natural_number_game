@@ -27,7 +27,7 @@ with respect to multiplication.
 
 /- Lemma
 For any natural number $m$, we have
-$$ m * 1 = m. $$
+$$ m \times 1 = m. $$
 -/
 lemma mul_one (m : mynat) : m * 1 = m :=
 begin [less_leaky]

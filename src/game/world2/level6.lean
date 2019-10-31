@@ -37,15 +37,18 @@ additions like this: `rw add_comm a` will swap around
 additions of the form `a + ?`, and `rw add_comm a b,` will only
 swap additions of the form `a + b`.
 
-After you have solved this level, you have a choice of two things.
+There used to be ten more levels about addition after this one, which
+people found really hard to solve because they involve abstract
+manipulation of true/false statements and we don't know the tactics.
+I have temporarily removed them, while I write a new "abstract
+proposition manipulation" level. Once
+we have this, we will able to take on levels such as
+`a + b = a + c → b = c` which involve implications.
+The tactics we know work well with equalities but are essentially
+useless for goals involving implications. 
 
-1) Press on in addition world (there are ten more levels),
-proving things like (a + b = a + c → b = c).
-You have never proved a goal like that before; your current tactics
-can't prove implications and you need to learn some new ones, specifically
-adapted to work with hypotheses and goals of the form `P → Q`;
-
-2) Solve this level and then leave addition world completely by clicking "next world".
+So after you have solved this level, you are done with addition world and should
+leave it completely by clicking "next world".
 This will take you to world 3, multiplication world.
 You won't need to know any new tactics to prove
 the big theorem `a * b = b * a` and get the `comm_semiring` collectible.
@@ -75,25 +78,16 @@ mynat.add_comm_semigroup mynat (after world 2-4)
 mynat.add_comm_monoid -- (after world 2-4)
 ```
 
-There is now a fork in the path. In V1.1 of this game you will
-be able to choose between one of two new worlds at this point.
-But until we get there, it's either "next level" or "next world",
-and I just broke "next level" -- TODO -- fix it?
+In Multiplication World you will be able to collect such
+advanced collectibles as `mynat.comm_semiring` and
+`mynat.distrib`, and then move on to power world and
+the famous collectible at the end of it.
 
-Will you click "next level" and learn some new tactics (`have` and `intro`,
-and more, still not documented particularly well in v1.01)
-to deal with addition problems involving implications
-(NB this is greyed out in v1.01),
-or will you stick to the tactics you know
-and click on "next world" to move on to Multiplication World and
-collect such advanced collectibles as `mynat.semiring` and
-`mynat.distrib`, and the famous collectible at the end of world 4?
+One last thing -- didn't you think that solving this level
+`add_right_comm` was boring? check out this AI that can do it for us.
 
-While you are deciding, didn't you think that solving this level
-was boring? check out this AI called `simp`:
-
-First we have to get the collectible, which we do by saying
-the magic words which make Lean's type class inference
+First we have to get the `add_comm_monoid` collectible,
+which we do by saying the magic words which make Lean's type class inference
 system give it to us.
 -/
 instance : add_comm_monoid mynat := by structure_helper

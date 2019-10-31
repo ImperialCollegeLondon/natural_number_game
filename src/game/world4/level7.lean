@@ -37,7 +37,9 @@ collectible for this level be called?
 
 /-
 The next world is inequality world, and you are going to have to
-learn two more tactics -- `cases` and `use`.
+learn two more tactics -- `cases` and `use`. Unfortunately I can
+only think of a few levels before we actually have to learn about
+how Lean handles implications.
 -/
 
 end mynat -- hide

@@ -71,7 +71,8 @@ learn about proof by induction. Click on "next world" in the top right.
 -/
 
 /- Lemma : no-side-bar
-For all natural numbers $a$, we have $a + succ(0) = succ(a)$.
+For all natural numbers $a$, we have
+$$a + \operatorname{succ}(0) = \operatorname{succ}(a)$.
 -/
 lemma add_succ_zero (a : mynat) : a + succ(0) = succ(a) :=
 begin [less_leaky]

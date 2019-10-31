@@ -1,4 +1,4 @@
-import game.world3.level13 -- hide
+import game.world3.level8 -- hide
 import mynat.pow -- new import
 namespace mynat -- hide
 
@@ -27,7 +27,12 @@ Here are the two new axioms:
 The power function has various relations to addition and multiplication.
 If you have gone through levels 1-6 of addition world and levels 1-8 of
 multiplication world, then the usual tactics `induction`, `rw` and `refl`
-should see you through this world.
+should see you through this world. You might want to fiddle with the
+drop-down menus on the left so you can see which theorems of Power World
+you have proved at any given time. Addition and multiplication -- we
+have a solid API for them now, i.e. if you need something about addition
+or multiplication, it's probably already in the library we have built.
+Collectibles are indication that we are proving the right things.
 
 The levels in this world were designed by Sian Carey, a UROP student
 at Imperial in the summer of 2019.

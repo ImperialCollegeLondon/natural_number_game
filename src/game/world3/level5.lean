@@ -17,12 +17,16 @@ following:
 * `mul_add t a b : t * (a + b) = t * a + t * b`
 
 These things above are the tools we need to prove that multiplication is associative.
--/
 
+## Random tactic hints
+
+1) Did you know you can do `repeat {rw mul_succ}`?
+2) Did you know you can do `rwa [hd, mul_add]`? (I learnt that trick from Ken Lee)
+-/
 /- Lemma
 Multiplication is associative.
 In other words, for all natural numbers $a$, $b$ and $c$, we have
-$$ (a * b) * c = a * (b * c). $$
+$$ (ab)c = a(bc). $$
 -/
 lemma mul_assoc (a b c : mynat) : (a * b) * c = a * (b * c) :=
 begin [less_leaky]
@@ -40,6 +44,14 @@ begin [less_leaky]
     refl,
   }
 end
+
+/-
+  induction c with d hd,
+  refl,
+  repeat {rw mul_succ},
+  -- a * b * d + a * b = a * (b * d + b)
+  rwa [hd, mul_add],
+  -/
 
 /-
 A mathematician could now remark that you have proved that the natural
