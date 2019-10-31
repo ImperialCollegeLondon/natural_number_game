@@ -101,12 +101,16 @@ begin [less_leaky]
 end
 
 /-
-Now we write some magical incantation...
+Now we write some magical incantation (thanks to Reid Barton
+for correcting my spell)...
 -/
-attribute [_refl_lemma] le_refl
+attribute [refl] mynat.le_refl
 /-
 ...and now the `refl` tactic will close all goals of the form `a ≤ a`
 as well as all goals of the form `a = a`.
 -/
+example : (0 : mynat) ≤ 0 := begin
+  refl
+end
 
 end mynat --hide
