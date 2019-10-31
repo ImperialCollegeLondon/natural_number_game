@@ -34,7 +34,10 @@ begin [less_leaky]
   rw one_eq_succ_zero,
   rw mul_succ,
   rw mul_zero,
-  exact zero_add m,
+  rw zero_add,
+  refl
+
+  
 end
 
 end mynat -- hide

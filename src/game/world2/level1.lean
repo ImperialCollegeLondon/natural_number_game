@@ -74,7 +74,6 @@ a reminder of what you're now equipped with.
 ## Tactics:
 
   * `refl` -- proves goals of the form `X = X`
-  * `exact h` -- proves a goal if it is exactly equal to a hypothesis h 
   * `rw h` -- if h is a proof of `A = B`, changes all A's in the goal to B's.
   * `induction n with d hd` -- we're going to learn this right now.
 
@@ -126,9 +125,7 @@ Remember that `add_zero` (the theorem we have already) says that `x + 0 = x`
 change to? Remember to just keep
 focussing on the top goal, ignore the other one for now, it's not changing
 and we're not working on it. You should be able to solve the top goal yourself
-now with `refl`. I will remark that instead of `rw add_zero,refl,`,
-another way of solving the base case goal `⊢ 0 + 0 = 0` is `exact add_zero 0`,
-because for any natural number `t`, `add_zero t` is a proof that `t + 0 = t`.
+now with `refl`.
 
 When you solved this base case goal, we are now be back down
 to one goal -- the inductive step. Take a look at the
@@ -197,11 +194,10 @@ Lean will inform you that there are no goals left. You are done!
 
 ## Now venture off on your own.
 
-Those four tactics -- 
+Those three tactics -- 
 
 * `induction n with d hd,` 
 * `rw h,`
-* `exact h,` and
 * `refl,`
 
 will get you quite a long way through this game. Using only these tactics

@@ -13,7 +13,8 @@ namespace mynat -- hide
 Special thanks to Rob Lewis for tactic hackery, Sian Carey for power world (world 4),
 and, last but not least, all the people who fed back comments, including
 the 2019-20 Imperial College 1st year maths beta tester students, Marie-Amélie Lawn,
-and the people who have been in touch via the <a href="https://leanprover.zulipchat.com/" target="blank">Lean Zulip chat</a>
+Toby Gee, Joseph Myers, and all the people who have been in touch
+via the <a href="https://leanprover.zulipchat.com/" target="blank">Lean Zulip chat</a>
  or the <a href="https://xenaproject.wordpress.com/" target="blank">Xena Project blog</a>
  or via <a href="https://twitter.com/home" target="blank">Twitter</a>.
 The natural number game is brought to you by the Xena project, a project based at Imperial College London
@@ -79,7 +80,7 @@ If you want to be reminded about the `refl` tactic, you can click on the "Tactic
 down menu on the left. Resize the window if it's too small. 
 
 Now click on "next level" in the top right of your browser to go onto the second level of
-tutorial world, where we'll learn about the `exact` tactic. [NB don't click on "next world",
+tutorial world, where we'll learn about the `rw` tactic. [NB don't click on "next world",
 we're not ready for addition world yet]
 -/
 
