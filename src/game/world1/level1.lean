@@ -37,7 +37,7 @@ levels in a computer game.
 You're going to prove these theorems using *tactics*. This introductory world, Tutorial World,
 will take you through some of these tactics. During your proofs, your "goal" (i.e. what you're
 supposed to be proving) will be displayed with  a `⊢` symbol in front of it. If the top
-left hand box reports "Theorem Proved!", you have closed all the goals in the level
+right hand box reports "Theorem Proved!", you have closed all the goals in the level
 and can move on to the next level in the world you're in. 
 
 # World 1: Tutorial World
