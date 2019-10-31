@@ -2,7 +2,7 @@ import game.world4.level7 -- hide
 import mynat.le
 namespace mynat -- hide
 
--- World 5 : Inequality world
+-- World name : Inequality world
 
 /- 
 A new level, a new import. By the way, you can take a look at the actual files

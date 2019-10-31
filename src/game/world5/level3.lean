@@ -9,7 +9,7 @@ namespace mynat -- hide
 -/
 
 /- Lemma
-For all naturals `a`, `0 ≤ a`.
+For all naturals $a$, $0\leq a$.
 -/
 lemma zero_le (a : mynat) : 0 ≤ a :=
 begin [less_leaky]

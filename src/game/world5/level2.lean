@@ -75,7 +75,7 @@ You can get the goal sign by typing `\|-`.
 -/
 
 /- Lemma
-For all naturals `a`, `b`, if `a ≤ b` then `a ≤ succ(b)`. 
+For all naturals $a$, $b$, if $a\leq b$ then $a\leq \operatorname{succ}(b)$. 
 -/
 theorem le_succ {a b : mynat} (h : a ≤ b) : a ≤ (succ b) :=
 begin [less_leaky]
@@ -88,4 +88,7 @@ begin [less_leaky]
 
 
 end
+
+-- Did you use `succ c` or `c + 1` or `1 + c`? They're all the same, right?
+
 end mynat -- hide
