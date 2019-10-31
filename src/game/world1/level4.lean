@@ -1,124 +1,88 @@
-/-
-We just restarted Lean behind the scenes,
-so let's re-import the natural numbers, but this time without
-addition and multiplication.
--/
-
-import mynat.definition -- import Peano's definition of the natural numbers {0,1,2,3,4,...}
+import mynat.add -- definition of addition
 namespace mynat -- hide
 
-/- Axiom : zero_ne_succ (a : mynat) :
-zero ≠ succ(a)
--/
-
-/- Axiom : succ_inj (a b : mynat) :
-succ(a) = succ(b) → a = b
--/
-
-/- Axiom : one_eq_succ_zero
-1 = succ(0)
--/
 /-
-
 # World 1 : Tutorial world
 
-## Level 4: Peano's axioms.
+## Level 4: addition
 
-The import above gives us the type `mynat` of natural numbers. But it
-also gives us some other things, which we'll take a look at now:
+We have a new import -- the definition of addition.
 
-  * a term `0 : mynat`, interpreted as the number zero.
-  * a function `succ : mynat → mynat`, with `succ n` interpreted as "the number after $n$".
-  * The theorem `zero_ne_succ (a : mynat) : zero ≠ succ(a)`.
-    This is the axiom that for any natural number $a$, zero isn't the 
-    number after $a$. The name means "zero not equal to succ".
-  * The theorem `succ_inj (a b : mynat) : succ(a) = succ(b) → a = b`.
-    This is the theorem that `succ` is injective, and the theorem name indicates this.
-    A more mundane way of explaining it is: for all $a$ and $b$, if the number after $a$ is the number
-    after $b$, then $a=b$.
-  * The principle of mathematical induction.
+Peano defined addition `a + b` by induction on `b`, or,
+more precisely, by *recursion* on `b`. He first explained how to add 0 to a number:
+this is the base case.
 
-These are the axioms isolated by Peano which uniquely characterise
-the natural numbers. You don't have to learn the theorems off by heart -- they
-are summarised in the "Theorem statements" drop-down box on the left (check
-it now to see that they are there). However if you've not seen these things
-before, I guess they might look intimidating, so let's just go through them briefly.
-Firstly, notice
-that they are all standard statements about the natural numbers $\{0,1,2,3,\ldots\}$.
-The first axiom says that 0 is a natural number. The second says that there
-is a `succ` function which eats a number and spits out the number after it,
-so succ(0)=1, succ(1)=2 and so on. Then there are two theorems, both of
-which are obvious. `zero_ne_succ` says that there's no number before 0,
-and `succ_inj` says that if the
-number after `a` equals the number after `b`, then `a = b`.
+* `add_zero (a : mynat) : a + 0 = a`
 
-Peano's last axiom is the principle of mathematical induction. This is a deeper
-fact. It says that if we have infinitely many true/false statements $P(0)$, $P(1)$,
-$P(2)$ and so on, and if $P(0)$ is true, and if for every natural number $d$
-we know that $P(d)$ implies $P(succ(d))$, then $P(n)$ must be true for every
-natural number $n$. One can think of it as saying that every natural number
-can be built by starting at 0 and then applying `succ` a finite number of times.
+We will call this theorem `add_zero`. **Note the name of this theorem**.
+Mathematicians sometimes call it "Lemma 2.1" or "Hypothesis P6" or something. But
+computer scientists call it `add_zero` because it tells you
+what the answer to "$x$ add zero" is. It's a *much* better name than "Lemma 2.1".
+Even better, we can use the rewrite tactic with `add_zero`.
+If you ever see `x + 0` in your goal, `rw add_zero` should simplify it to `x`.
+This is because `add_zero` is a proof that `x + 0 = x` (more precisely,
+`add_zero x` is a proof that `x + 0 = x` but Lean can figure out the `x` from the context).
 
-Peano's insights were firstly that these axioms completely characterise
-the natural numbers, and secondly that these axioms alone can be used to build
-a whole bunch of other structure on the natural numbers, for example
-addition, multiplication and so on.
+Now here's the inductive step. If you know how to add `d` to `a`, then
+Peano tells you how to add `succ(d)` to `a`. It looks like this:
 
-This game is all about seeing how far these axioms of Peano can take us.
+* `add_succ (a d : mynat) : a + succ(d) = succ (a + d)`
 
-The import also gives us usual numerical notation
-0 and 1, where 0 is Peano's 0, and `1 = succ(0)`. It's sometimes useful to know that
-`one_eq_succ_zero` is a proof of the theorem that `1 = succ(0)`.
+What's going on here is that we assume `a + d` is already
+defined, and we define `a + succ(d)` to be the number after it.
+**Note the name of this theorem too** -- `add_succ` tells you
+how to add a successor to something. If you ever see `... + succ ...`
+in your goal, you should be able to use `rw add_succ,` to make
+progress. Here is a simple example where we shall see both. Let's prove
+that $x$ add the number after $0$ is the number after $x$.
 
-Let's practice our use of the `rw` tactic in the following example.
-Our hypothesis `h` is a proof that `succ(a) = b` and we want to prove that
-`succ(succ(a))=succ(b)`. In words, we're going to prove that if
-`b` is the number after `a` then `succ(b)` is the number after `succ(a)`. 
-Now here's a tricky question. If our goal is `⊢ succ (succ a) = succ b`,
-and our hypothesis is `h : succ a = b`, then what will the goal change
-to when we type
+Delete `sorry` (don't forget you can widen this box if you can't see the sorry).
+Observe that the goal mentions `... + succ ...`. So type
 
-`rw h,`
+`rw add_succ,`
 
-and hit enter whilst not forgetting the comma? Remember that `rw h` will
-look for the *left* hand side of `h` in the goal, and will replace it with
-the *right* hand side. Try and figure out how the goal will change, and
-then try it.
+and hit enter; see the goal change. **Don't forget the commma**.
+Do you see that the goal now mentions ` ... + 0 ...`? So type
 
-The answer: Lean changed `succ a` into `b`, so the goal became `succ b = succ b`.
-That goal is of the form `X = X`, so you can prove this new goal with
+`rw add_zero,`
+
+and then observe that you can close the goal with
 
 `refl,`
 
-on the line after `rw h,`. Don't forget blah blah blah.
+and you're done. You might want to review this proof now; at
+three lines long it is our current record. Click on a line in the proof
+and then use the arrow keys to move your cursor
+around (try going up and down first), and you can see what
+Lean is thinking on each line of the proof. The goal changes
+just before each comma. That's why commas are important.
 
-**Important note** : the tactics `rw` and `exact` both expect
-a proof afterwards (e.g. `rw h1`, `exact h2`). But `refl` is just `refl`.
-Note also that the system sometimes drops brackets when they're not
-necessary, and `succ b` just means `succ(b)`. 
+FAQ. Question: why has the top left hand box gone blank?
+Answer: Maybe you tried a tactic which didn't work. Or maybe you're
+in the middle of typing a tactic. Try deleting up to the last
+comma, or adding a new comma. Look at the
+error message. What line is the first error on? Perhaps
+Lean thinks you're in the middle of writing a tactic that you
+think you finished. Did you perhaps forget a comma somewhere?
 
-You may be wondering whether we could have just substituted in the definition of `b`
-and proved the goal that way. To do that, we would want to replace the right hand
-side of `h` with the left hand side. You do this in Lean by writing `rw ← h`. You get the
-left-arrow by typing `\l` and then a space. You can just edit your proof and try it. 
-
-You may also be wondering why we keep writing `succ(b)` instead of `b+1`. This
-is because we haven't defined addition yet! On the next level, the final level
-of Tutorial World, we will introduce addition, and then
-we'll be ready to enter Addition World.
+When you're happy, let's move onto world 2, addition world, and
+learn about proof by induction. Click on "next world" in the top right.
 -/
 
 /- Lemma : no-side-bar
-If $\operatorname{succ}(a) = b$, then
-$$\operatorname{succ}(\operatorname{succ}(a)) = \operatorname{succ}(b).$$
+For all natural numbers $a$, we have
+$$a + \operatorname{succ}(0) = \operatorname{succ}(a)$.
 -/
-lemma example4 (a b : mynat) (h : succ a = b) : succ(succ(a)) = succ(b) :=
+lemma add_succ_zero (a : mynat) : a + succ(0) = succ(a) :=
 begin [less_leaky]
-  rw h,
+  rw add_succ,
+  rw add_zero,
   refl,
 
 
 
+
+  
 end
 
-end mynat -- hide
+end mynat
