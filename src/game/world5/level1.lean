@@ -10,6 +10,8 @@ a ≤ b ↔ ∃ c, b = a + c
 
 
 /- 
+# World 5 : Inequality world 
+
 A new level, a new import. By the way, you can take a look at the actual files
 being imported by going to the source code for this game,
 which is available at
