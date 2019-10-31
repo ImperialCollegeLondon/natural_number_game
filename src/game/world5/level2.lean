@@ -89,6 +89,9 @@ begin [less_leaky]
 
 end
 
--- Did you use `succ c` or `c + 1` or `1 + c`? They're all the same, right?
+/-
+Did you use `succ c` or `c + 1` or `1 + c`? Those numbers are all
+equal, right? So it doesn't matter which one you use, right?
+-/
 
 end mynat -- hide
