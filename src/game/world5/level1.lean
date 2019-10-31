@@ -16,7 +16,7 @@ Here's what you get from the import:
 1) The following data:
   * a binary relation called mynat.le, and notation a ≤ b for this relation.
 
-  The definition is: a ≤ b ↔ ∃ c : mynat, b = a + c
+  The definition is: `a ≤ b ↔ ∃ c : mynat, b = a + c`
 
 2) The following axiom:
 
