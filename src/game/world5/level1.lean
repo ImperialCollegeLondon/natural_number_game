@@ -4,6 +4,11 @@ namespace mynat -- hide
 
 -- World name : Inequality world
 
+/- Axiom : le_def (a b : mynat) :
+a ≤ b ↔ ∃ c, b = a + c
+-/
+
+
 /- 
 A new level, a new import. By the way, you can take a look at the actual files
 being imported by going to the source code for this game,
@@ -22,15 +27,13 @@ Here's what you get from the import:
 
   * `le_def (a b : mynat) : a ≤ b ↔ ∃ (c : mynat), b = a + c`
 
-So `rw le_def` will change a ≤ b to `∃ c : mynat b = a + c`.
+So `rw le_def` will change $a \leq b$ to `∃ c : mynat b = a + c`.
 
 You'll now have to know what to do with terms which have an ∃ in them! There
 are two new tactics you'll need immediately, but even with those
 we will not be able to get much further -- we really need to learn about 
-some sort of Propositions-as-Types thing at some point.
-
-. We will introduce one of them -- `use` -- in this
-level.
+some sort of Propositions-as-Types thing at some point. But let's press
+on anyway by introducing the `use` tactic.
 
 ## The `use` tactic. 
 
@@ -95,11 +98,13 @@ begin [less_leaky]
 
 end
 
-
--- Now we write some magical incantation...
+/-
+Now we write some magical incantation...
+-/
 attribute [_refl_lemma] le_refl
-
--- ...and now the `refl` tactic will close all goals of the form `a ≤ a`
--- as well as all goals of the form `a = a`.
+/-
+...and now the `refl` tactic will close all goals of the form `a ≤ a`
+as well as all goals of the form `a = a`.
+-/
 
 end mynat --hide
