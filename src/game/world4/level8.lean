@@ -1,11 +1,12 @@
 import game.world4.level7 -- hide
 
--- incantation for importing ring into framework
-import tactic.ring
-import algebra.group_power -- is nat pow the problem?
+-- incantation for importing ring into framework -- hide
+import tactic.ring -- hide
 meta def less_leaky.interactive.ring := tactic.interactive.ring
-
 namespace mynat -- hide
+instance : comm_semiring mynat := begin
+  structure_helper,
+end
 
 /- 
 
@@ -56,32 +57,22 @@ end
 -- now blow them away with `ring`. But I can't get it to work,
 -- with or without the leaky framework :-/ 
 
--- thought this might help?
-protected def pow' (b : mynat) : ℕ → mynat
-| 0        := 1
-| (nat.succ n) := pow' n * b
-
-instance moo : has_pow mynat nat :=
-⟨mynat.pow'⟩
-
--- dammit I can't make make ring work
 lemma add_squared' (a b : mynat) :
   (a + b) ^ (succ(1)) = 
 a ^ (succ(1)) + b^(succ(1)) + (succ(1))*a*b :=
-begin
---  suffices : (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2*a*b,
---    exact this,
---  ring, -- fails
+begin [less_leaky]
   rw one_eq_succ_zero,
   repeat {rw pow_succ},
   repeat {rw pow_zero},
-  rw one_eq_succ_zero,
-  rw [succ_mul],
-  -- I must be doing something wrong
---  ring, -- fails
-  sorry
+  ring,
+
+
+
+
 end
-/-
+/- 
+
+
 I just beat this level with 27 rewrites followed by a `refl`. 
 Can you do any better? If you beat it then well done. Do you
 fancy doing $(a+b)^3$ now? You might want to read 
