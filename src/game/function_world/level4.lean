@@ -22,10 +22,17 @@ begin
   assumption,
 end
 
+-- TODO -- make human-ready
 example (P Q R F : Type) : P → (P → empty) → empty := by tauto
 example (P Q R F : Type) : ((P → empty) → empty) → P :=
 begin
   intro h,
+  /-
+  P Q R F : Type,
+  h : (P → empty) → empty
+  ⊢ P
+  -/
+  -- now what?
   sorry
 end
 
