@@ -1,3 +1,7 @@
+import mynat.mul -- * on mynat
+import mynat.pow -- ^ on mynat
+
+
 /- Tactic : intro
 If your goal is a function `⊢ P → Q` then `intro` is often the
 tactic you will use to proceed. What does it mean to define
@@ -24,7 +28,14 @@ and our task is to come up with an element of `Q` (which can of
 course depend on `p`).
 
 Note that the opposite of `intro` is `revert`; given a tactic
-state as above, `revert p` takes us back to `⊢ P → Q`. 
+state
+
+```
+p : P
+⊢ Q
+```
+
+as above, the tactic `revert p` takes us back to `⊢ P → Q`. 
 -/
 
 /-
@@ -32,25 +43,50 @@ state as above, `revert p` takes us back to `⊢ P → Q`.
 
 ## Level 3 : `intro`
 
-Let's make a constant function. Say $P$ and $Q$ are types,
-and `q : Q` is a term of type `Q` (i.e. a element of the set $Q$). 
-Let's build the function from $P$ to $Q$ which sends everything
-to $q$. 
+Let's make a function. Let's define the function on the natural
+numbers which sends a natural number $n$ to $3*n^2+2*n+1$. If you delete the
+`sorry` you will see that our goal is `mynat → mynat`. A mathematician
+might denote this set $\operatorname{Hom}(\mathbb{N},\mathbb{N})$
+but computer scientists use notation `X → Y`
+to denote the set `\operatorname{Hom}(X,Y)`.
+We write $f\in\operatorname{Hom}(X,Y)$, but for them,
+`X → Y` is a type, and `f : X → Y` means that `f` is a term
+of this type, i.e., a function.
+
+To define a function $X\to Y$ we need to choose an arbitrary
+element $x\in X$ and then, perhaps using $x$, make an element of $$Y$$.
+The Lean tactic for "let $x\in X$ be arbitrary" is `intro x`.
+
+To solve the goal below, you have to come up with a function from `mynat`
+to `mynat`. Start with
+
+`intro n,`
+
+(i.e. "let $n\in\mathbb{N}$ be arbitrary") and then use `exact` and return
+the value you want. For example
+
+`exact 3*n^2+2*n+1,`
+
+. This will close the goal. 
+
+TODO -- a mathematician *definitely* thinks that this is a *definition*,
+not a lemma.
 -/ 
 
+
 /- Lemma
-If $q\in Q$ then we can build a constant function $P\to Q$ sending
-every element of $P$ to $q$. 
+There's a function $\mathbb{N}\to\mathbb{N}$. 
 -/
-lemma level3 (P Q : Type)
-(q : Q)
-: P → Q :=
+lemma level3 : mynat → mynat :=
 begin
-sorry 
+  intro n,
+  exact n,
 
 
 
 end
 
+
+
 -- todo 
--- apply, intro
+-- apply
