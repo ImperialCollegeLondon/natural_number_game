@@ -17,7 +17,7 @@ Currently our tools for multiplication include the
 following: 
 
 * `mul_zero a : a * 0 = 0`
-* `mul_succ a b : a * succ b = a * b + b`
+* `mul_succ a b : a * succ b = a * b + a`
 * `mul_add a b c : a * (b + c) = a * b + a * c`
 
 and remember also that we have tools like

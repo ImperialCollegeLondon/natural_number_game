@@ -16,7 +16,7 @@ A new level, a new import. By the way, you can take a look at the actual files
 being imported by going to the source code for this game,
 which is available at
 <a href="https://github.com/ImperialCollegeLondon/natural_number_game" target="blank">
-GitHub</a>. The game files are in `src/game` and the imports are in `src/mynat`
+GitHub</a>. The game files are in `src/game` and the imports are in `src/mynat`.
 
 Here's what you get from the import:
 
