@@ -1,4 +1,9 @@
 import game.world4.level7 -- hide
+
+-- incantation for importing ring into framework
+import tactic.ring
+meta def less_leaky.interactive.ring := tactic.interactive.ring
+
 namespace mynat -- hide
 
 /- 
