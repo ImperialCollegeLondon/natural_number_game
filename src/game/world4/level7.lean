@@ -37,9 +37,8 @@ collectible for this level be called?
 
 /-
 But what is this? It's one of those twists where there's another
-boss after the one you thought was the final boss! Go to level 8
-and see if you tame the final boss of the equational reasoning
-part of the natural number game.
+boss after the boss you thought was the final boss! Go to the next
+level!
 -/
 
 end mynat -- hide
