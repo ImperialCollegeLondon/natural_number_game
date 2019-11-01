@@ -101,7 +101,7 @@ end
 
 ## More instructional materials.
 
-[Shoddy notes of mine](http://wwwf.imperial.ac.uk/~buzzard/xena/html/source/M1F_introduction/prop_exercises.html)
+[Shoddy notes of mine](http://wwwf.imperial.ac.uk/~buzzard/xena/html/source/ch1_and_or_props/prop_exercises.html)
 
 The very wonderful [Theorem Proving In Lean](https://leanprover.github.io/theorem_proving_in_lean/), especially [chapter 5 on tactics](https://leanprover.github.io/theorem_proving_in_lean/tactics.html)
 
