@@ -36,10 +36,10 @@ collectible for this level be called?
 -/
 
 /-
-The next world is inequality world, and you are going to have to
-learn two more tactics -- `cases` and `use`. Unfortunately I can
-only think of a few levels before we actually have to learn about
-how Lean handles implications.
+But what is this? It's one of those twists where there's another
+boss after the one you thought was the final boss! Go to level 8
+and see if you tame the final boss of the equational reasoning
+part of the natural number game.
 -/
 
 end mynat -- hide
