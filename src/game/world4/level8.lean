@@ -78,7 +78,7 @@ begin
   rw one_eq_succ_zero,
   rw [succ_mul],
   -- I must be doing something wrong
-  ring, -- fails
+--  ring, -- fails
   sorry
 end
 /-
