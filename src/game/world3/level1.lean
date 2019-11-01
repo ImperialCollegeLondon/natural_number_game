@@ -8,7 +8,7 @@ a * 0 = 0
 -/
 
 /- Axiom : mul_succ (a b : mynat) :
-a * succ(b) = a * b + b
+a * succ(b) = a * b + a
 -/
 
 /- 
