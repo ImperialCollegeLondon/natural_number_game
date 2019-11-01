@@ -1,5 +1,6 @@
 /- Tactic : let
-If you want to make some term of a type and you have the
+If you want to make some element of a set (or term of a type,
+as Lean would put it) and you have the
 formula, you can use `let` to give the term a name. 
 
 ## Example
@@ -29,10 +30,18 @@ step by step.
 In the level below, we have an element of $P$ and we want an element
 of $R$; during the proof we will make an intermediate element of $Q$.
 
+We can start by using the `let` tactic to make an element of $Q$:
+
+`let q := h(p),`
+
+and then we note that $j(q)$ is an element of $R$:
+
+`exact j(q),`
 -/
 
 /- Lemma
-For all naturals $a$, $b$, if $a\leq b$ then $a\leq \operatorname{succ}(b)$. 
+We can build an element of $R$ given an element of $P$, a function $P\to Q$
+and a function $Q\to R$. 
 -/
 lemma level2 (P Q R : Type)
 (p : P)
@@ -40,9 +49,10 @@ lemma level2 (P Q R : Type)
 (j : Q → R)
 : R :=
 begin
---  exact j(h(p)),
   let q := h(p),
   exact j(q),
+
+
 end
 
 -- todo 

@@ -17,7 +17,11 @@ So our notation for this level is: $P$, $Q$, $R$ and so on denote general
 sets, and let $h$, $j$, $k$ and so on denote general functions between
 them. What we will learn in this world is how to use the Lean theorem
 prover to move elements around between these sets using the functions
-we are given, and the tactics we will learn.
+we are given, and the tactics we will learn. A word of warning -- Lean
+works with Types not sets, so `P`, `Q` and `R` will be general types,
+and instead of elements of a given set, we'll have terms of a given type.
+This is just a language issue, but it does mean that we will write `p : P`
+instead of `p ∈ P`. 
 
 The levels in function world aren't theorems like in the natural
 number game -- in function world the object of a level is to create
@@ -25,7 +29,7 @@ an element of the set in the goal. For example if your local
 context (the top right hand box) looked like this:
 
 ```
-P Q : Sets,
+P Q : Type,
 p : P,
 h : P → Q
 ⊢ Q
@@ -38,11 +42,28 @@ make an element of $Q$ by applying the function $Q$ to
 the element $p$. There are at least two ways to do it, and here I'll explain
 how to use the `exact` tactic to solve this goal.
 
-If you can explicitly
-see how to make an elememnt of $Q$ from what you have, you can just make
-it. In the example above, we could solve this goal with this one line:
+## The `exact` tactic. 
+
+If you can explicitly see how to make an element of of your goal type,
+i.e. you have a formula for it, then you can just write `exact <formula>` 
+and this will close the goal. 
+
+### Example
+
+If your local context looks like this
+
+```
+P Q : Type,
+p : P,
+h : P → Q
+⊢ Q
+```
+
+then $h(p)$ is an element of $Q$ so you can just write
 
 `exact h(p),`
+
+to close the goal. 
 
 ## Level 1 -- `exact`
 -/
