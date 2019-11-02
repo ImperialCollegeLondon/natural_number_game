@@ -1,12 +1,11 @@
 import game.world4.level7 -- hide
-
 -- incantation for importing ring into framework -- hide
 import tactic.ring -- hide
-meta def less_leaky.interactive.ring := tactic.interactive.ring
+meta def less_leaky.interactive.ring := tactic.interactive.ring -- hide
 namespace mynat -- hide
-instance : comm_semiring mynat := begin
-  structure_helper,
-end
+instance : comm_semiring mynat := begin -- hide
+  structure_helper, -- hide
+end -- hide
 
 /- 
 
@@ -71,11 +70,10 @@ begin [less_leaky]
 
 end
 /- 
-
-As the boss lies smouldering, you notice that two more lines
-of code are now visible under the first two.
-
-<a href="link_to_tweet" >
+As the boss lies smouldering, you notice that
+<a href="http://wwwf.imperial.ac.uk/~buzzard/xena/html/source/tactics/tacticindex.html"
+  target="blank">
+two more lines of code are now visible under the first two...</a> (Twitter.com)
 
 I just beat this level with 27 rewrites followed by a `refl`. 
 Can you do any better? If you beat it then well done. Do you
