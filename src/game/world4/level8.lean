@@ -3,9 +3,7 @@ import game.world4.level7 -- hide
 import tactic.ring -- hide
 meta def less_leaky.interactive.ring := tactic.interactive.ring -- hide
 namespace mynat -- hide
-instance : comm_semiring mynat := begin -- hide
-  structure_helper, -- hide
-end -- hide
+instance : comm_semiring mynat := by structure_helper -- you just levelled up
 
 /- 
 
@@ -29,7 +27,7 @@ but only when you've beaten the boss.
 
 [editor's note: Actual Lean natural
 numbers do have `2`, but I figured now was no time to
-introduce it and anyway the first thing you'd do with
+introduce it; the first thing you'd do with
 it would be change it to `succ(1)` anyway]
 
 -/
