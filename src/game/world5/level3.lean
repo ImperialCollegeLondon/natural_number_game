@@ -10,7 +10,7 @@ of the set `P` if you think set-theoretically) you need
 to come up with a term of type `Q`, so your first step is
 to choose `p`, an arbitary 
 `intro p,` is Lean's way
-of saying "let $p ∈ P$ be arbitrary". `intro p` changes
+of saying "let $p\in P$ be arbitrary". `intro p` changes
 
 ```
 ⊢ P → Q
@@ -44,7 +44,7 @@ as above, the tactic `revert p` takes us back to `⊢ P → Q`.
 ## Level 3 : `intro`
 
 Let's make a function. Let's define the function on the natural
-numbers which sends a natural number $n$ to $3*n^2+2*n+1$. If you delete the
+numbers which sends a natural number $n$ to $3n^2+2n+1$. If you delete the
 `sorry` you will see that our goal is `mynat → mynat`. A mathematician
 might denote this set $\operatorname{Hom}(\mathbb{N},\mathbb{N})$
 but computer scientists use notation `X → Y`

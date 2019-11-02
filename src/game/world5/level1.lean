@@ -6,22 +6,19 @@ But there are plenty of levels later on which will require you
 to manipulate functions, and `rw` is not the tool for you here.
 
 To manipulate functions effectively, we need to learn about a new collection
-of tactics -- `intro`, `apply`, `exact` and `have` (TODO -- put them
-in the order I introduce them), specially designed for dealing with
+of tactics -- `exact`, `let`, `intro` and `apply`, specially designed for dealing with
 functions. Of course we are ultimately interested in using these
 tactics to prove theorems about the natural numbers -- but in this
 world there is little point in working with specific sets like `mynat`,
-everything works for general sets.
+everything works for general sets (and indeed general types).
 
 So our notation for this level is: $P$, $Q$, $R$ and so on denote general
-sets, and let $h$, $j$, $k$ and so on denote general functions between
-them. What we will learn in this world is how to use the Lean theorem
+types (think of them as sets), and $h$, $j$, $k$ and so on denote general
+functions between them. What we will learn in this world is how to use the Lean theorem
 prover to move elements around between these sets using the functions
-we are given, and the tactics we will learn. A word of warning -- Lean
-works with Types not sets, so `P`, `Q` and `R` will be general types,
-and instead of elements of a given set, we'll have terms of a given type.
-This is just a language issue, but it does mean that we will write `p : P`
-instead of `p ∈ P`. 
+we are given, and the tactics we will learn. A word of warning -- 
+instead of elements of a set, we'll have terms of a type and the notatin for "$p$ is
+an element of the set $P$" is not `p ∈ P` but `p : P`.
 
 The levels in function world aren't theorems like in the natural
 number game -- in function world the object of a level is to create
