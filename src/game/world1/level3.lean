@@ -7,14 +7,6 @@ addition and multiplication.
 import mynat.definition -- import Peano's definition of the natural numbers {0,1,2,3,4,...}
 namespace mynat -- hide
 
-/- Axiom : zero_ne_succ (a : mynat) :
-zero ≠ succ(a)
--/
-
-/- Axiom : succ_inj (a b : mynat) :
-succ(a) = succ(b) → a = b
--/
-
 /- Axiom : one_eq_succ_zero
 1 = succ(0)
 -/
@@ -29,28 +21,16 @@ also gives us some other things, which we'll take a look at now:
 
   * a term `0 : mynat`, interpreted as the number zero.
   * a function `succ : mynat → mynat`, with `succ n` interpreted as "the number after $n$".
-  * The theorem `zero_ne_succ (a : mynat) : zero ≠ succ(a)`.
-    This is the axiom that for any natural number $a$, zero isn't the 
-    number after $a$. The name means "zero not equal to succ".
-  * The theorem `succ_inj (a b : mynat) : succ(a) = succ(b) → a = b`.
-    This is the theorem that `succ` is injective, and the theorem name indicates this.
-    A more mundane way of explaining it is: for all $a$ and $b$, if the number after $a$ is the number
-    after $b$, then $a=b$.
   * The principle of mathematical induction.
 
-These are the axioms isolated by Peano which uniquely characterise
-the natural numbers. You don't have to learn the theorems off by heart -- they
-are summarised in the "Theorem statements" drop-down box on the left (check
-it now to see that they are there). However if you've not seen these things
-before, I guess they might look intimidating, so let's just go through them briefly.
-Firstly, notice
-that they are all standard statements about the natural numbers $\{0,1,2,3,\ldots\}$.
+These axioms are essentially the axioms isolated by Peano which uniquely characterise
+the natural numbers (we also need recursion, but we can ignore it until world 7 or so).
+If you've not seen these things before, I guess they might look intimidating,
+so let's just go through them briefly. Firstly, notice that they are all
+standard facts about the natural numbers $\{0,1,2,3,\ldots\}$.
 The first axiom says that 0 is a natural number. The second says that there
 is a `succ` function which eats a number and spits out the number after it,
-so succ(0)=1, succ(1)=2 and so on. Then there are two theorems, both of
-which are obvious. `zero_ne_succ` says that there's no number before 0,
-and `succ_inj` says that if the
-number after `a` equals the number after `b`, then `a = b`.
+so succ(0)=1, succ(1)=2 and so on.
 
 Peano's last axiom is the principle of mathematical induction. This is a deeper
 fact. It says that if we have infinitely many true/false statements $P(0)$, $P(1)$,
@@ -68,7 +48,9 @@ This game is all about seeing how far these axioms of Peano can take us.
 
 The import also gives us usual numerical notation
 0 and 1, where 0 is Peano's 0, and `1 = succ(0)`. It's sometimes useful to know that
-`one_eq_succ_zero` is a proof of the theorem that `1 = succ(0)`.
+`one_eq_succ_zero` is a proof of the theorem that `1 = succ(0)`. I've added this
+to your list of useful theorems -- check that you can find it
+in "theorem statements" for "World 1 - Tutorial World".
 
 Let's practice our use of the `rw` tactic in the following example.
 Our hypothesis `h` is a proof that `succ(a) = b` and we want to prove that

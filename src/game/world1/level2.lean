@@ -53,7 +53,14 @@ end
 The `rw` tactic is a way to do "substituting in".
 If `h : A = B` is a hypothesis (i.e., a proof of `A = B`)
 and your goal contains one or more `A`s, then `rw h`
-will change them all to `B`'s. If you want to change
+will change them all to `B`'s. 
+
+Important note: if `h` is not a proof of the form `A = B`
+or `A ↔ B` (for example if `h` is a function, an implication,
+or perhaps even a proposition itself rather than its proof),
+then `rw` is not the tactic you want to use.
+
+Pro tip 1: If `h : A = B` and you want to change
 `B`s to `A`s instead, try `rw ←h` (get the arrow with `\l`).
 
 ### Example:
@@ -72,7 +79,7 @@ will change the goal into `⊢ 1 + (y + 3) = y + 4`.
 Note of course that this goal is still far from solved.
 
 ### Example: 
-You can rewrite a hypothesis as well. 
+You can use `rw` to change a hypothesis as well. 
 For example, if your local context looks like this:
 ```
 x y : mynat
