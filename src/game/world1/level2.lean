@@ -1,102 +1,108 @@
-import mynat.definition -- Imports the natural numbers. -- hide
-
+import mynat.mul -- hide
 namespace mynat -- hide
 
 /-
+# World 1 : Tutorial world
 
-# World 1: Tutorial world
+## level 2: The rewrite (`rw`) tactic.
 
-## level 2: the `exact` tactic.
+The rewrite tactic is the way to "substitute in" the value
+of a variable. In general, if you have a hypothesis of the form `A = B`, and your
+goal mentions the left hand side `A` somewhere, then
+the `rewrite` tactic will replace the `A` in your goal with a `B`.
+Below is a theorem which cannot be
+proved using `refl` -- you need a rewrite first.
 
-Delete the `sorry` below and let's look at the box
-on the top right. It should look like this:
+Delete the sorry and take a look in the top right box at what we have.
+The variables $x$ and $y$ are natural numbers, and we have
+a proof `h` that $y = x + 7$. Our goal
+is to prove that $2y=2(x+7)$. This goal is obvious -- we just
+substitute in $y = x+7$ and we're done. In Lean, we do
+this substitution using the `rw` tactic. So start your proof with 
 
-```
-a b : mynat,
-h : a = b
-⊢ a = b
-```
+`rw h,`
 
-So here `a` and `b` are natural numbers,
-we have a hypothesis `h` that `a = b` (think of
-`h` as a *proof* that `a = b`), and our
-goal is to prove that `a = b`. 
+and then hit enter. **Don't forget the comma.**
+Did you see what happened to the goal? The goal doesn't close,
+but it *changes* from `⊢ 2 * y = 2 * (x + 7)` to `⊢ 2 * (x + 7) = 2 * (x + 7)`.
+We can just close this goal with
 
-We're hence in a situation where we have a hypothesis `h`,
-which is *exactly* equal to the goal we're trying to prove. In
-this situation, the tactic
+`refl,`
 
-`exact h,`
+by writing it on the line after `rw h,`. Don't forget the comma, hit
+enter, and enjoy seeing the "Proof complete!" message in the
+top right window. The other reason you'll know you're
+done is that the bottom right window (the error window)
+becomes empty. 
 
-will close the goal. Try typing `exact h,` where the `sorry` was, and
-hit enter after the comma to go onto a new line. 
-**Don't forget the `h`** and
-**don't forget the comma.**
-You should see the "no goals" message, and the error
-in the bottom right goal will disappear. The reason
-this works is that the goal is *exactly h*.
 -/
 
 /- Lemma : no-side-bar
-For all natual numbers $a$ and $b$,
-if $a=b$, then $a=b$.
+If $x$ and $y$ are natural numbers, 
+and $y=x+7$, then $2y=2(x+7)$. 
 -/
-lemma example2 (a b : mynat) (h : a = b): a = b :=
+lemma example2 (x y z : mynat) (h : y = x + 7) : 2 * y = 2 * (x + 7) :=
 begin [less_leaky]
-  exact h
-
-
+  rw h,
+  refl
+  
 
 end
 
-/- Tactic : exact
-If your goal is a proposition and you have access to a proof
-of that proposition, either because it is a hypothesis `h`
-or because it is a theorem which is already proved, then
+/- Tactic : rw
+The `rw` tactic is a way to do "substituting in".
+If `h : A = B` is a hypothesis (i.e., a proof of `A = B`)
+and your goal contains one or more `A`s, then `rw h`
+will change them all to `B`'s. 
 
-`exact h,`
+Important note: if `h` is not a proof of the form `A = B`
+or `A ↔ B` (for example if `h` is a function, an implication,
+or perhaps even a proposition itself rather than its proof),
+then `rw` is not the tactic you want to use.
 
-or
+Pro tip 1: If `h : A = B` and you want to change
+`B`s to `A`s instead, try `rw ←h` (get the arrow with `\l`).
 
-`exact <name_of_theorem>,`
-
-will close the goal. 
-
-### Examples
-
-1) If the top right box (the "local context") looks like
-this:
-
+### Example:
+If it looks like this in the top right hand box:
 ```
 x y : mynat
-h : y = x + 3
-⊢ y = x + 3
+h : x = y + 3
+⊢ 1 + x = y + 4
 ```
 
 then
 
-`exact h,`
+`rw h,`
 
-will close the goal.
+will change the goal into `⊢ 1 + (y + 3) = y + 4`.
+Note of course that this goal is still far from solved.
 
-2) (from world 2 onwards) If the top right box looks like this:
-
+### Example: 
+You can use `rw` to change a hypothesis as well. 
+For example, if your local context looks like this:
 ```
-a b : mynat
-⊢ a + succ(b) = succ(a + b)
+x y : mynat
+h1 : x = y + 3
+h2 : 2 * y = x
+⊢ y = 3
 ```
-
-then 
-
-`exact add_succ a b,`
-
-will close the goal.
+then `rw h1 at h2` will turn `h2` into `h2 : 2 * y = y + 3`.
 -/
 
 /-
-These two tactics, `refl` and `exact`, clearly only
-have limited capabilities by themselves. The next
-tactic we will learn, the rewrite tactic `rw`, is far more powerful.
-Click on "next level" to move onto the next level in tutorial world.
+
+## Exploring your proof.
+
+Click on `refl,` and then use the arrow keys to move
+your cursor around the proof. Go up and down and note that
+the goal changes -- indeed you can inspect Lean's "state" at each
+line of the proof (the hypotheses, and the goal).
+Try to figure out the exact place where the goal changes.
+The comma tells Lean "I've finished writing this tactic now,
+please process it." Lean ignores newlines, but pays great
+attention to commas.
+
 -/
-end mynat -- hide 
+
+end mynat -- hide

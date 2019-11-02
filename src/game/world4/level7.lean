@@ -5,15 +5,18 @@ namespace mynat -- hide
 
 # World 4 : Power World
 
-## Level 7: `pow_pow`
+## Level 7 : `pow_pow`
 -/
 
-/- Lemma
-For all naturals $m$, $a$, $b$, we have $(m ^ a) ^ b = m ^ {ab}$.
+/-
+Boss level! What will the collectible be?
 -/
-lemma pow_pow (m a b : mynat) : (m ^ a) ^ b = m ^ (a * b) :=
+/- Lemma
+For all naturals $a$, $m$, $n$, we have $(a ^ m) ^ n = a ^ {mn}$.
+-/
+lemma pow_pow (a m n : mynat) : (a ^ m) ^ n = a ^ (m * n) :=
 begin [less_leaky]
-  induction' b with t Ht,
+  induction' n with t Ht,
     rw [mul_zero, pow_zero, pow_zero],
     refl,
   rw [pow_succ, Ht, mul_succ, pow_add],
@@ -22,6 +25,20 @@ begin [less_leaky]
 
 
 
+
+
 end
+
+/-
+Apparently Lean can't find a collectible, even though you feel like you
+just finished power world so you must have proved *something*. What should the
+collectible for this level be called? 
+-/
+
+/-
+But what is this? It's one of those twists where there's another
+boss after the boss you thought was the final boss! Go to the next
+level!
+-/
 
 end mynat -- hide

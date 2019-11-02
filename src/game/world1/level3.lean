@@ -1,113 +1,106 @@
-import mynat.definition -- hide
+/-
+We just restarted Lean behind the scenes,
+so let's re-import the natural numbers, but this time without
+addition and multiplication.
+-/
+
+import mynat.definition -- import Peano's definition of the natural numbers {0,1,2,3,4,...}
 namespace mynat -- hide
 
+/- Axiom : one_eq_succ_zero
+1 = succ(0)
+-/
 /-
+
 # World 1 : Tutorial world
 
-## level 3: The rewrite (`rw`) tactic.
+## Level 3: Peano's axioms.
 
-The rewrite tactic is the way to "substitute in" the value
-of a variable. In general, If you have a hypothesis of the form `A = B`, and your
-goal mentions the left hand side `A` somewhere, then
-the `rewrite` tactic will replace the `A` in your goal with a `B`.
-Below is a theorem which looks obvious, but which cannot be
-proved using `refl` and `exact` alone -- you need a rewrite.
+The import above gives us the type `mynat` of natural numbers. But it
+also gives us some other things, which we'll take a look at now:
 
-Delete the sorry and take a look in the top right box at what we have.
-The variables `x`, `y` and `z`
-are natural numbers. We have a proof `h1` of `x = y` and a proof
-`h2` of `y = z`. Our goal is to prove that `x = z`. We're going
-to give a two-line proof of this goal. Start with 
+  * a term `0 : mynat`, interpreted as the number zero.
+  * a function `succ : mynat → mynat`, with `succ n` interpreted as "the number after $n$".
+  * The principle of mathematical induction.
 
-`rw h1,`
+These axioms are essentially the axioms isolated by Peano which uniquely characterise
+the natural numbers (we also need recursion, but we can ignore it until world 7 or so).
+If you've not seen these things before, I guess they might look intimidating,
+so let's just go through them briefly. Firstly, notice that they are all
+standard facts about the natural numbers $\{0,1,2,3,\ldots\}$.
+The first axiom says that 0 is a natural number. The second says that there
+is a `succ` function which eats a number and spits out the number after it,
+so succ(0)=1, succ(1)=2 and so on.
 
-and then hit enter. **don't forget the comma.**
-Did you see what happened to the goal? The goal doesn't close,
-but it *changes* from `⊢ x = z` to `⊢ y = z`. We used the proof
-`h1` of `x = y` to replace an `x` by a `y`.
+Peano's last axiom is the principle of mathematical induction. This is a deeper
+fact. It says that if we have infinitely many true/false statements $P(0)$, $P(1)$,
+$P(2)$ and so on, and if $P(0)$ is true, and if for every natural number $d$
+we know that $P(d)$ implies $P(\operatorname{succ}(d))$, then $P(n)$ must be true for every
+natural number $n$. One can think of it as saying that every natural number
+can be built by starting at 0 and then applying `succ` a finite number of times.
 
-After `rw h1,` our goal
-has now become `⊢ y = z`, which is exactly hypothesis `h2`,
-so we can prove this new goal by writing
+Peano's insights were firstly that these axioms completely characterise
+the natural numbers, and secondly that these axioms alone can be used to build
+a whole bunch of other structure on the natural numbers, for example
+addition, multiplication and so on.
 
-`exact h2,`
+This game is all about seeing how far these axioms of Peano can take us.
 
-on the line after `rw h1,`. Don't forget the comma, hit
-enter, and enjoy seeing the "no goals" message in the
-top right window. The other reason you'll know you're
-done is that the bottom right window (the error window)
-becomes empty. 
+The import also gives us usual numerical notation
+0 and 1, where 0 is Peano's 0, and `1 = succ(0)`. It's sometimes useful to know that
+`one_eq_succ_zero` is a proof of the theorem that `1 = succ(0)`. I've added this
+to your list of useful theorems -- check that you can find it
+in "theorem statements" for "World 1 - Tutorial World".
 
-Before you click "next level" and start to learn about
-Peano's axioms, you might want to read
-the comments underneath the proof, as there are a couple
-of extra things you might want to try.
+Let's practice our use of the `rw` tactic in the following example.
+Our hypothesis `h` is a proof that `succ(a) = b` and we want to prove that
+`succ(succ(a))=succ(b)`. In words, we're going to prove that if
+`b` is the number after `a` then `succ(b)` is the number after `succ(a)`. 
+Now here's a tricky question. If our goal is `⊢ succ (succ a) = succ b`,
+and our hypothesis is `h : succ a = b`, then what will the goal change
+to when we type
+
+`rw h,`
+
+and hit enter whilst not forgetting the comma? Remember that `rw h` will
+look for the *left* hand side of `h` in the goal, and will replace it with
+the *right* hand side. Try and figure out how the goal will change, and
+then try it.
+
+The answer: Lean changed `succ a` into `b`, so the goal became `succ b = succ b`.
+That goal is of the form `X = X`, so you can prove this new goal with
+
+`refl,`
+
+on the line after `rw h,`. Don't forget blah blah blah.
+
+**Important note** : the tactic `rw` expects
+a proof afterwards (e.g. `rw h1`). But `refl` is just `refl`.
+Note also that the system sometimes drops brackets when they're not
+necessary, and `succ b` just means `succ(b)`. 
+
+You may be wondering whether we could have just substituted in the definition of `b`
+and proved the goal that way. To do that, we would want to replace the right hand
+side of `h` with the left hand side. You do this in Lean by writing `rw ← h`. You get the
+left-arrow by typing `\l` and then a space. You can just edit your proof and try it. 
+
+You may also be wondering why we keep writing `succ(b)` instead of `b+1`. This
+is because we haven't defined addition yet! On the next level, the final level
+of Tutorial World, we will introduce addition, and then
+we'll be ready to enter Addition World.
 -/
 
 /- Lemma : no-side-bar
-For all natural numbers $x$, $y$ and $z$, if $x = y$
-and $y = z$ then $x = z$.
+If $\operatorname{succ}(a) = b$, then
+$$\operatorname{succ}(\operatorname{succ}(a)) = \operatorname{succ}(b).$$
 -/
-lemma example3 (x y z : mynat) (h1 : x = y) (h2 : y = z) : x = z :=
+lemma example4 (a b : mynat) (h : succ a = b) : succ(succ(a)) = succ(b) :=
 begin [less_leaky]
-  rw h1,
-  exact h2
-
+  rw h,
+  refl,
 
 
 
 end
-
-/- Tactic : rw
-The `rw` tactic is a way to do "substituting in".
-If `h : A = B` is a hypothesis (i.e., a proof of `A = B`)
-and your goal contains one or more `A`s, then `rw h`
-will change them all to `B`'s. 
-
-### Example:
-If it looks like this in the top right hand box:
-```
-x y : mynat
-h : x = y + 3
-⊢ 1 + x = y + 4
-```
-
-then
-
-`rw h,`
-
-will change the goal into `⊢ 1 + (y + 3) = y + 4`.
-Note of course that this goal is still far from solved.
-
--/
-
-/-
-
-## Extras
-
-1) Click on `exact h2,` and then use the arrow keys to move
-your cursor around the proof. You can inspect Lean's "state" at each
-line of the proof (the hypotheses, and the goal).
-Try to figure out the exact place where the goal changes.
-The comma tells Lean "I've finished writing this tactic now,
-please process it." Lean ignores newlines, but pays great
-attention to commas.
-
-2) Can you find a different proof of this theorem which uses
-two rewrites and `refl`? The answer is below.
-
-After `rw h1,`, when your goal is `⊢ y = z`, what happens if you try `rw h2,` instead
-of `exact h2`? 
-The `y` in the goal changes to a `z` and you can now close the goal with `refl,`.
-Try it to check. There's more than one way to prove a theorem. 
-
-In fact here's a third way -- delete your proof
-completely and try starting with `rw ← h2,`. Don't forget etc etc. You get the left arrow by typing `\l`.
-Can you figure out what happened? Here's what's going on. 
-What does the tactic `rw h1,` do to the goal? It replaces occurrences of the left hand
-side of hypothesis `h1` with the right hand side. The ← switches this behaviour -- it makes Lean replace
-occurrences of the right hand side of the hypothesis with the left hand side. There are at least three ways
-to proceed to solve the goal from here -- you might want to try and find them. 
--/
 
 end mynat -- hide

@@ -10,7 +10,7 @@ import mynat.mul
 2) The following axioms:
 
   * `mul_zero : ∀ a : mynat, a * 0 = 0`
-  * `mul_succ : ∀ a b : mynat, a * succ(b) = a * b + b`
+  * `mul_succ : ∀ a b : mynat, a * succ(b) = a * b + a`
 
 These axiom between them tell you how to work out a * x for every x; use induction on x to
 reduce to the case either `x = 0` or `x = succ b`, and then use `mul_zero` or `mul_succ` appropriately.

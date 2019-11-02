@@ -14,6 +14,7 @@ The proof is basically the same as `add_right_comm`.
 See how few lines you can do it in.
 -/
 
+instance : comm_monoid mynat := by structure_helper
 /- Theorem
 For all $a$, $b$, $c$ natural numbers, $(a * b) * c = (a * c) * b$.
 -/
@@ -25,9 +26,6 @@ begin [less_leaky]
   refl,
 end
 
-/- To come: Powers! Inequalities! Odd and even numbers! Congruences!
-Prime numbers! And any other mathematics with the natural numbers that anyone can think of. 
-Suggestions welcome to k.buzzard@imperial.ac.uk or find me on the Lean chat at Zulip.
--/
+
 
 end mynat -- hide

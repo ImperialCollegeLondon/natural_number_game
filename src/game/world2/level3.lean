@@ -6,19 +6,17 @@ namespace mynat -- hide
 /- 
 # World 2 -- addition world
 
-## Level 3 : `succ_inj`
+## Level 3 : `succ_add`
 
 ## You are equipped with:
 
-  * `zero_ne_succ : ∀ (a : mynat), zero ≠ succ(a)`
-  * `succ_inj : ∀ a b : mynat, succ(a) = succ(b) → a = b`
-  * `add_zero : ∀ a : mynat, a + 0 = a`
-  * `add_succ : ∀ a b : mynat, a + succ(b) = succ(a + b)`
-  * `zero_add` : ∀ a : mynat, 0 + a = a`
-  * `add_assoc : ∀ a b c : mynat, (a + b) + c = a + (b + c)`
+  * `add_zero (a : mynat) : a + 0 = a`
+  * `add_succ (a b : mynat) : a + succ(b) = succ(a + b)`
+  * `zero_add` (a : mynat) : 0 + a = a`
+  * `add_assoc (a b c : mynat) : (a + b) + c = a + (b + c)`
 
 Oh no! On the way to `add_comm`, a wild `succ_add` appears. `succ_add`
-is the statement that `succ(a) + b = succ(a+b)` for `a` and `b` in your
+is the statement that `succ(a) + b = succ(a + b)` for `a` and `b` in your
 natural number type. You will
 need this theorem to prove `a + b = b + a` so you'd better prove it first.
 NB: think about why computer scientists called this result `succ_add` .

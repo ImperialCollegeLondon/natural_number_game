@@ -1,6 +1,6 @@
 import mynat.definition -- hide
 import mynat.add -- hide
-import game.world2.level9 -- hide
+import game.world2.level8 -- hide
 namespace mynat -- hide
 
 /-
@@ -11,15 +11,15 @@ namespace mynat -- hide
 
 You have, amongst other things, these:
 
-  * `zero_ne_succ : ∀ (a : mynat), zero ≠ succ(a)`
-  * `succ_inj : ∀ a b : mynat, succ(a) = succ(b) → a = b`
-  * `add_zero : ∀ a : mynat, a + 0 = a`
-  * `add_succ : ∀ a b : mynat, a + succ(b) = succ(a + b)`
-  * `zero_add : ∀ a : mynat, 0 + a = a`
-  * `add_assoc : ∀ a b c : mynat, (a + b) + c = a + (b + c)`
-  * `succ_add : ∀ a b : mynat, succ a + b = succ (a + b)`
-  * `add_comm : ∀ a b : mynat, a + b = b + a`
-  * `add_left_cancel : ∀ a b c : mynat, a + b = a + c → b = c`
+  * `zero_ne_succ (a : mynat) : zero ≠ succ(a)`
+  * `succ_inj : (a b : mynat) : succ(a) = succ(b) → a = b`
+  * `add_zero : (a : mynat) : a + 0 = a`
+  * `add_succ : (a b : mynat) : a + succ(b) = succ(a + b)`
+  * `zero_add : (a : mynat) : 0 + a = a`
+  * `add_assoc : (a b c : mynat) (a + b) + c = a + (b + c)`
+  * `succ_add : (a b : mynat) : succ a + b = succ (a + b)`
+  * `add_comm : (a b : mynat) : a + b = b + a`
+  * `add_left_cancel (a b c : mynat) : a + b = a + c → b = c`
 
 Tactic info at <a href="http://wwwf.imperial.ac.uk/~buzzard/xena/html/source/tactics/tacticindex.html" target="blank">tactic guide</a>.
 
@@ -33,12 +33,17 @@ In other words, if there are natural numbers $a, b$ and $c$ such that
 $$ a + t = b + t, $$
 then we have $a = b$.
 -/
-theorem add_right_cancel ⦃a b t : mynat⦄ : a + t = b + t → a = b :=
+theorem add_right_cancel {a b t : mynat} : a + t = b + t → a = b :=
 begin [less_leaky]
   intro h,
-  rw add_comm at h,
-  rw add_comm b at h,
-  exact add_left_cancel h
+  induction t with d hd,
+  rw add_zero at h,
+  rw add_zero at h,
+  exact h,
+  apply hd,
+  rw add_succ at h,
+  rw add_succ at h,
+  exact succ_inj(h),  
 end
 
 end mynat -- hide

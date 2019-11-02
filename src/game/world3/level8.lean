@@ -34,19 +34,13 @@ begin [less_leaky]
 end
 
 /-
-You've now proved that the natural numbers are a "commutative semiring"!
-There are now two paths you can take. You can play it safe and move
-straight on to Power World by selecting "Next World" in the top right,
-or you can push further into uncharted
-(i.e. currently poorly documented) territory and see if you can solve
-some harder levels in multiplication world, by selecting "Next Level".
-If you stay in multiplication world, there are three more levels,
-and you will need tactics such as `intro`, `cases` and `exfalso`.
-These tactics are explained in the
-<a href="http://wwwf.imperial.ac.uk/~buzzard/xena/html/source/tactics/tacticindex.html" target="blank">tactic guide</a>.
-
-
+You've now proved that the natural numbers are a commutative semiring!
+That's the last collectible in Multiplication World. 
 -/
-def collectible_06 : comm_semiring mynat := by structure_helper -- hide
+instance mynat.comm_semiring : comm_semiring mynat := by structure_helper
+/-
+But don't leave multiplication just yet -- prove `mul_left_comm`, the last
+level of the world, and I'll show you a trick. 
+-/
 
 end mynat -- hide

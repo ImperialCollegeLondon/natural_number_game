@@ -2,7 +2,7 @@ import mynat.le
 import solutions.world2_multiplication
 import tactic.interactive
 
-#check tactic.interactive.rintro 
+-- #check tactic.interactive.rintro 
 meta def less_leaky.interactive.rintro := tactic.interactive.rintro
 namespace mynat
 

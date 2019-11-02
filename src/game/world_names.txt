@@ -1,0 +1,20 @@
+Until Mohammad's refactor we are stuck with being linear.
+
+world1 = Tutorial World
+world2 = basic addition world
+world3 = basic multiplication world
+world4 = power world
+world5 is now function world
+world6 will be proposition world but we have 0 levels
+world 7 is then advanced addition world (7-16 or whatever)
+world 8 advanced multiplcation world (there were only a few?)
+world 9 inequality world (full 30 levels)
+plus proof that natural numbers are some totally_ordered_semiring or
+whatever nonsense.
+
+That's the goal of v1.1
+
+TODO : if Mohammad has not non-lineared the game then we want to give
+the user the choice of jumping from world 2 to worlds 5,6,7 before world 3
+within the text
+

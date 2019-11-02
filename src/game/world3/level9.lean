@@ -1,38 +1,58 @@
 import game.world3.level8 -- hide
-import game.world2.level7 -- succ ne zero -- hide
-import game.world2.level13 -- add_left_eq_zero -- hide
-
+import mynat.mul -- hide
 namespace mynat -- hide
 
 /-
 # Multiplication World
 
-## Level 9: `mul_pos`
+## Level 9: `succ_mul`
 
-If you do `cases b with n` when `b` is a natural number, it will split into the
-two possibilites, namely `b = 0` and `b = succ(n)`. So `cases` here is like
-a weaker version of induction (you don't get the inductive hypothesis).
+You are equipped with
 
-Understanding `intro` and `apply` will be useful here.
+* `mul_assoc (a b c : mynat) : (a * b) * c = a * (b * c)`
+* `mul_comm (a b : mynat) : a * b = b * a`
+
+Re-read the docs for `rw` so you know all the tricks.
+You can see them in the "tactics" drop-down menu on the left.
+
+
 -/
 
-/- Theorem
-The product of two non-zero natural numbers is non-zero.
+
+
+
+/- Lemma
+For all natural numbers $a$ $b$ and $c$, we have
+$$a(bc)=b(ac)$$
 -/
-theorem mul_pos (a b : mynat) : a ≠ 0 → b ≠ 0 → a * b ≠ 0 :=
+lemma mul_left_comm (a b c : mynat) : a * (b * c) = b * (a * c) :=
 begin [less_leaky]
-  intros ha hb,
-  intro hab,
-  cases b with b,
-    apply hb,
-    refl,
-  rw mul_succ at hab,
-  apply ha,
-  cases a with a,
-    refl,
-  rw add_succ at hab,
-  exfalso,
-  apply succ_ne_zero hab
+  rw ←mul_assoc,
+  rw mul_comm a, 
+  rw mul_assoc,
+  refl,
+
+
+
 end
+
+/-
+And now I whisper a magic incantation
+-/
+attribute [simp] mul_assoc mul_comm mul_left_comm
+/-
+and all of a sudden Lean can automatically do levels which are
+very boring for a human, for example
+-/
+example (a b c d e : mynat) :
+(((a*b)*c)*d)*e=(c*((b*e)*a))*d :=
+begin
+  simp,
+end 
+
+/-
+Coming soon -- advanced multiplication world! But until then, 
+feel free to move on to world 4, power world, with the `next world` button.
+-/
 
 end mynat -- hide

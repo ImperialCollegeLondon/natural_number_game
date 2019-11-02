@@ -5,13 +5,13 @@ namespace mynat -- hide
 
 # World 4 : Power World
 
-## Level 3 : `pow_one`
+## Level 3: `pow_one`
 -/
 
 /- Lemma
-For all naturals $m$, $m ^ 1 = m$.
+For all naturals $a$, $a ^ 1 = a$.
 -/
-lemma pow_one (m : mynat) : m ^ (1 : mynat) = m :=
+lemma pow_one (a : mynat) : a ^ (1 : mynat) = a :=
 begin [less_leaky]
   rw one_eq_succ_zero,
   rw pow_succ,

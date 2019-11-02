@@ -11,29 +11,33 @@ namespace mynat -- hide
 Currently our tools for multiplication are the
 following: 
 
-* `mul_zero : ∀ m, m * 0 = 0`
-* `zero_mul : ∀ m, 0 * m = m`
-* `mul_succ : ∀ a b, a * succ b = a * b + b`
+* `mul_zero (m : mynat) : m * 0 = 0`
+* `zero_mul (m : mynat) : 0 * m = 0`
+* `mul_succ (a b : mynat) : a * succ b = a * b + a`
 
 We also have
 
 * `one_eq_succ_zero : 1 = succ(0)`
 
-which will be a useful thing to rewrite as we now
+which was mentioned way back in Tutorial World and
+which will be a useful thing to rewrite right now, as we
 begin to prove a couple of lemmas about how `1` behaves
 with respect to multiplication.
 -/
 
 /- Lemma
 For any natural number $m$, we have
-$$ m * 1 = m. $$
+$$ m \times 1 = m. $$
 -/
 lemma mul_one (m : mynat) : m * 1 = m :=
 begin [less_leaky]
   rw one_eq_succ_zero,
   rw mul_succ,
   rw mul_zero,
-  exact zero_add m,
+  rw zero_add,
+  refl
+
+  
 end
 
 end mynat -- hide

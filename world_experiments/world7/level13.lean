@@ -11,7 +11,7 @@ namespace mynat -- hide
 
 You have the usual stuff. 
 
-  * `zero_ne_succ : ∀ (a : mynat), zero ≠ succ(a)`
+  * `zero_ne_succ (a : mynat) : zero ≠ succ(a)`
 
 might be useful for this one.
 
@@ -24,9 +24,8 @@ If $a$ and $b$ are natural numbers such that
 $$ a + b = 0, $$
 then $b = 0$.
 -/
-lemma add_left_eq_zero {{a b : mynat}} : a + b = 0 → b = 0 :=
+lemma add_left_eq_zero {a b : mynat} (H : a + b = 0) : b = 0 :=
 begin [less_leaky]
-  intro H,
   cases b with c,
   { refl},
   { rw add_succ at H,

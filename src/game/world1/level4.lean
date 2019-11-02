@@ -1,83 +1,88 @@
-import mynat.definition -- hide
+import mynat.add -- definition of addition
 namespace mynat -- hide
 
 /-
-
 # World 1 : Tutorial world
 
-## level 4: more rewriting.
+## Level 4: addition
 
-Way back on page 1 we imported a file called `mynat.definition`.
-This gave us the type `mynat` of natural numbers. But it
-also gave us some other things:
+We have a new import -- the definition of addition.
 
-  * a term `0 : mynat`, interpreted as the number zero.
-  * a function `succ : mynat → mynat`, with `succ n` interpreted as "the number after n".
-  * The theorem `zero_ne_succ : ∀ a : mynat, zero ≠ succ(a)`.
-    This is the axiom that zero isn't a successor. The name means "zero not equal to succ".
-  * The theorem `succ_inj : ∀ a b : mynat, succ(a) = succ(b) → a = b`.
-    This is the theorem that `succ` is injective, and the theorem name indicates this.
-  * The principle of mathematical induction.
+Peano defined addition `a + b` by induction on `b`, or,
+more precisely, by *recursion* on `b`. He first explained how to add 0 to a number:
+this is the base case.
 
-These are the five axioms isolated by Peano, which uniquely characterise
-the natural numbers. If you've not seen them before, I guess they might
-look intimidating, so let's just go through them briefly. They are all
-obvious statements about the natural numbers {0,1,2,3,...}. The first axiom
-says that 0 is a natural number. The `succ` function eats a number
-and spits out the number after it, so succ(0)=1, succ(1)=2 and so on. 
-The theorem `zero_ne_succ` makes sure that there's no number before 0,
-and `succ_inj` ensures that numbers go on forever.
-And the principle of mathematical induction
-tells us that every natural number can be built by starting at 0 and
-then applying `succ` some finite number of times.
+* `add_zero (a : mynat) : a + 0 = a`
 
-Peano's insight was that these five things alone can be used to build
-a whole bunch of other structure on the natural numbers. 
-This game is all about seeing how far these
-axioms of Peano will take us.
+We will call this theorem `add_zero`. **Note the name of this theorem**.
+Mathematicians sometimes call it "Lemma 2.1" or "Hypothesis P6" or something. But
+computer scientists call it `add_zero` because it tells you
+what the answer to "$x$ add zero" is. It's a *much* better name than "Lemma 2.1".
+Even better, we can use the rewrite tactic with `add_zero`.
+If you ever see `x + 0` in your goal, `rw add_zero` should simplify it to `x`.
+This is because `add_zero` is a proof that `x + 0 = x` (more precisely,
+`add_zero x` is a proof that `x + 0 = x` but Lean can figure out the `x` from the context).
 
-The import also offers us usual numerical notation
-0,1,2,3,4,5 etc, with `1 = succ(0)`, `2=succ(1)` and so on.
+Now here's the inductive step. If you know how to add `d` to `a`, then
+Peano tells you how to add `succ(d)` to `a`. It looks like this:
 
-Let's practice our use of the `rw` tactic in the following example.
-Our hypothesis `h` is a proof that `b = succ(a)` and we want to prove that
-`succ(b)=succ(succ(a))`. In words, we're going to prove that if
-`b` is the number after `a` then `succ(b)` is the number after `succ(a)`. 
-Now `h` gives us a formula for `b` and we just want to substitute in.
-*This is exactly what the `rw` tactic does*.
-Before you delete the sorry and write
+* `add_succ (a d : mynat) : a + succ(d) = succ (a + d)`
 
-`rw h,`
+What's going on here is that we assume `a + d` is already
+defined, and we define `a + succ(d)` to be the number after it.
+**Note the name of this theorem too** -- `add_succ` tells you
+how to add a successor to something. If you ever see `... + succ ...`
+in your goal, you should be able to use `rw add_succ,` to make
+progress. Here is a simple example where we shall see both. Let's prove
+that $x$ add the number after $0$ is the number after $x$.
 
-and hit enter whilst not forgetting the comma, try and figure out
-what the goal will become. The answer: it will become `succ(succ(a))=succ(succ(a))`,
-and that goal is of the form `X = X` (if the goal goes onto a
-second line, resize the top right window -- make it wider by dragging
-its left hand edge). You can prove this new goal with
+Delete `sorry` (don't forget you can widen this box if you can't see the sorry).
+Observe that the goal mentions `... + succ ...`. So type
+
+`rw add_succ,`
+
+and hit enter; see the goal change. **Don't forget the commma**.
+Do you see that the goal now mentions ` ... + 0 ...`? So type
+
+`rw add_zero,`
+
+and then observe that you can close the goal with
 
 `refl,`
 
-on the line after `rw h`,. Don't forget blah blah blah.
+and you're done. You might want to review this proof now; at
+three lines long it is our current record. Click on a line in the proof
+and then use the arrow keys to move your cursor
+around (try going up and down first), and you can see what
+Lean is thinking on each line of the proof. The goal changes
+just before each comma. That's why commas are important.
 
-**Important note** : the tactics `rw` and `exact` both expect
-a proof afterwards (e.g. `rw h1,`, `exact h2,`), But `refl,` is just `refl,`.
-Note also that the system sometimes drops brackets when they're not
-necessary, and `succ b` just means `succ(b)`. 
+FAQ. Question: why has the top left hand box gone blank?
+Answer: Maybe you tried a tactic which didn't work. Or maybe you're
+in the middle of typing a tactic. Try deleting up to the last
+comma, or adding a new comma. Look at the
+error message. What line is the first error on? Perhaps
+Lean thinks you're in the middle of writing a tactic that you
+think you finished. Did you perhaps forget a comma somewhere?
 
-On the next level, the final level of Tutorial World, we will introduce
-addition, and when we've solved it we'll be ready to enter Addition World.
+When you're happy, let's move onto world 2, addition world, and
+learn about proof by induction. Click on "next world" in the top right.
 -/
 
-/- lemma : no-side-bar
-If `b = succ(a)`, then `succ(b) = succ(succ(a))`.
+/- Lemma : no-side-bar
+For all natural numbers $a$, we have
+$$a + \operatorname{succ}(0) = \operatorname{succ}(a)$.
 -/
-lemma example4 (a b : mynat) (h : b = succ a) : succ b = succ (succ a) :=
+lemma add_succ_zero (a : mynat) : a + succ(0) = succ(a) :=
 begin [less_leaky]
-  rw h,
+  rw add_succ,
+  rw add_zero,
   refl,
 
 
 
+
+  
 end
 
-end mynat -- hide
+end mynat

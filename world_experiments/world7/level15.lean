@@ -11,7 +11,7 @@ namespace mynat -- hide
 
 We have
 
-  * `succ_eq_add_one : ∀ (n : mynat), succ n = n + 1`
+  * `succ_eq_add_one (n : mynat) : succ n = n + 1`
 
 but sometimes the other way is also convenient.
 -/
