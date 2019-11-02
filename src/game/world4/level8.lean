@@ -23,7 +23,9 @@ begin
   ...
 ```
 
-and you can't make out the rest.
+and you can't make out the rest because there's a kind
+of thing in the way that will magically disappear
+but only when you've beaten the boss.
 
 [editor's note: Actual Lean natural
 numbers do have `2`, but I figured now was no time to
@@ -69,7 +71,7 @@ begin [less_leaky]
 end
 
 /- 
-As the boss lies smouldering, you notice that
+As the boss lies smouldering, you notice on the dungeon wall that
 <a href="https://twitter.com/XenaProject/status/1190453646904958976?s=20/" target="blank">
 two more lines of code are now visible under the first two...</a> (Twitter.com)
 
@@ -81,10 +83,8 @@ this Xena Project blog post</a> before you start though.
 -/
 
 /-
-The next world is inequality world, and you are going to have to
-learn two more tactics -- `cases` and `use`. Unfortunately I can
-only think of a few levels before we actually have to learn about
-how Lean handles implications, which is what I am currently working on.
+The next world is not yet written -- it will be an abstract function world
+where several more tactics will be introduced. Coming soon.
 -/
 
 end mynat -- hide
