@@ -52,7 +52,7 @@ end
 
 /- 
 As the boss lies smouldering, you notice that
-<a href="http://wwwf.imperial.ac.uk/~buzzard/xena/html/source/tactics/tacticindex.html"
+<a href="https://twitter.com/XenaProject/status/1190426922372743168?s=20"
   target="blank">
 two more lines of code are now visible under the first two...</a> (Twitter.com)
 
