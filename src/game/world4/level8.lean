@@ -72,6 +72,10 @@ begin [less_leaky]
 end
 /- 
 
+As the boss lies smouldering, you notice that two more lines
+of code are now visible under the first two.
+
+<a href="link_to_tweet" >
 
 I just beat this level with 27 rewrites followed by a `refl`. 
 Can you do any better? If you beat it then well done. Do you

@@ -6,7 +6,7 @@ namespace mynat -- hide
 -- World name : Tutorial world
 
 /- 
-# The Natural Number Game, version 1.04 [add new boss level 4-8]
+# The Natural Number Game, version 1.05 [add easter egg to new boss level 4-8]
 
 ## By Kevin Buzzard and Mohammad Pedramfar. 
 
@@ -21,9 +21,15 @@ The natural number game is brought to you by the Xena project, a project based a
 whose aim is to get mathematics undergraduates using computer theorem provers.
 Lean is a computer theorem prover being developed at Microsoft Research.
 
+## News
+
+New in version 1.05 -- are you smarter than a high school kid?
+Can you expand out $(a+b)^2$?
+
 # What is this game?
 
 Welcome to the natural number game -- a game which shows the power of induction.
+
 
 In this game, you get own version of the natural numbers, called `mynat`, in a programming
 language called Lean. Your version of the natural numbers satisfies something called
