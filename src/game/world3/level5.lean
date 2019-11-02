@@ -46,14 +46,6 @@ begin [less_leaky]
 end
 
 /-
-  induction c with d hd,
-  refl,
-  repeat {rw mul_succ},
-  -- a * b * d + a * b = a * (b * d + b)
-  rwa [hd, mul_add],
-  -/
-
-/-
 A mathematician could now remark that you have proved that the natural
 numbers form a monoid under multiplication.
 -/
