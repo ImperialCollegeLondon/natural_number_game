@@ -12,6 +12,9 @@ You are equipped with
 * `mul_assoc (a b c : mynat) : (a * b) * c = a * (b * c)`
 * `mul_comm (a b : mynat) : a * b = b * a`
 
+Re-read the docs for `rw` so you know all the tricks.
+You can see them in the "tactics" drop-down menu on the left.
+
 
 -/
 
