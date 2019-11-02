@@ -1,0 +1,43 @@
+5-1 exact, P , P-> Q : Q
+5-2 intro -- function mynat -> mynat
+5-3 let -- moving forwards through a 6 term maze
+5-4 apply -- moving backwards through a 6 term maze
+5-5 (P -> (Q -> P)) (talk about constant functions)
+5-6 (P -> (Q -> R)) -> ((P -> Q) -> (P -> R)) 
+5-7 (P -> Q) -> ((Q -> F) -> (P -> F)) -- sham
+5-8 F=empty and do it again.
+this is not function.comp
+5-9 gigantic maze, solve with solve_by_elim or tauto
+?5-10: teach them split with (P -> Q) -> (Q -> P) -> (P iff Q)?
+
+world 6 -- proposition world
+6-7 -- introduce \not and not_iff_imp_false
+
+Docs should do everything using type theory language, and explanations
+in levels should be specific to sets/functions and props/implications
+
+
+
+world 7 -- logic world
+
+or, and, exists, cases tactic, left tactic,
+right tactic, use tactic, split tactic,
+
+TABLE for suggested tactic if blah is
+in the hypothesis or goal
+
+LEM
+
+Then move on to world 8 = advanced addition world
+
+
+5-1
+
+[Antoine was stuck on add_assoc. email him to say thanks]
+
+5-2 :skipped
+
+
+5-4 will be "let" and let's do a maze.
+
+5-5 will be "

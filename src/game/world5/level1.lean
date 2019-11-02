@@ -1,29 +1,33 @@
 -- World name : Function world
 /- 
-If you have beaten Addition World in this game, then you have got
+If you have beaten Addition World, then you have got
 quite good at manipulating equalities in Lean using the `rw` tactic.
 But there are plenty of levels later on which will require you
 to manipulate functions, and `rw` is not the tool for you here.
 
 To manipulate functions effectively, we need to learn about a new collection
-of tactics -- `exact`, `let`, `intro` and `apply`, specially designed for dealing with
-functions. Of course we are ultimately interested in using these
-tactics to prove theorems about the natural numbers -- but in this
+of tactics, namely `exact`, `intro`, `let` and `apply`. These tactics
+are specially designed for dealing with functions. Of course we are
+ultimately interested in using these tactics to prove theorems
+about the natural numbers -- but in this
 world there is little point in working with specific sets like `mynat`,
-everything works for general sets (and indeed general types).
+everything works for general sets.
 
-So our notation for this level is: $P$, $Q$, $R$ and so on denote general
-types (think of them as sets), and $h$, $j$, $k$ and so on denote general
-functions between them. What we will learn in this world is how to use the Lean theorem
-prover to move elements around between these sets using the functions
+So our notation for this level is: $P$, $Q$, $R$ and so on denote general sets,
+and $h$, $j$, $k$ and so on denote general
+functions between them. What we will learn in this world is how to use Lean
+to move elements around between these sets using the functions
 we are given, and the tactics we will learn. A word of warning -- 
-instead of elements of a set, we'll have terms of a type and the notatin for "$p$ is
-an element of the set $P$" is not `p ∈ P` but `p : P`.
+even though there's no harm at all in thinking of $P$ being a set and $p$
+being an element, you will not see Lean using the notation $p\in P$, because
+internally Lean stores $P$ as a "Type" and $p$ as a "term", and it uses `p : P`
+to mean "$p$ is a term of type $P$", Lean's way of expressing the idea that $p$
+is an element of the set $P$. 
 
 The levels in function world aren't theorems like in the natural
 number game -- in function world the object of a level is to create
-an element of the set in the goal. For example if your local
-context (the top right hand box) looked like this:
+an element of the set in the goal. For example your local
+context (the top right hand box) will soon look like this:
 
 ```
 P Q : Type,
@@ -32,12 +36,13 @@ h : P → Q
 ⊢ Q
 ```
 
-then this means that we have sets $P$ and $Q$, an element $p$ of $P$,
+In this situation, we have sets $P$ and $Q$, an element $p$ of $P$,
 a function $h$ from $P$ to $Q$, and our goal is to construct an
-element of $Q$. It's clear what to do to solve this goal -- we can
-make an element of $Q$ by applying the function $Q$ to
-the element $p$. There are at least two ways to do it, and here I'll explain
-how to use the `exact` tactic to solve this goal.
+element of $Q$. It's clear what to do *mathematically* to solve this goal -- we can
+make an element of $Q$ by applying the function $h$ to
+the element $p$. But how to do it in Lean? There are at least two ways,
+and here we will learn about one of them, namely the method which
+uses the `exact` tactic to explain our mathematical argument to Lean.
 
 ## The `exact` tactic. 
 
@@ -79,25 +84,26 @@ end
 
 /- Tactic : exact
 
-If the local context is like this: 
+Say $P$, $Q$ and $R$ are types (i.e., what a mathematician
+might think of as either sets or propositions),
+and the local context looks like this: 
 
 ```
-1 goal
-P Q R : Type,
 p : P,
 h : P → Q,
 j : Q → R
 ⊢ R
 ```
 
-and you can see how to make the element of $R$, then you
+If you can spot how to make a term of type `R`, then you
 can just make it and say you're done using the `exact` tactic
 together with the formula you have spotted. For example the
 above goal could be solved with
 
 `exact j(h(p)),`
 
-
+because $j(h(p))$ is easily checked to be a term of type $R$
+(i.e., an element of the set $R$, or a proof of the proposition $R$).
 
 -/
 

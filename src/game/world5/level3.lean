@@ -1,92 +1,121 @@
-import mynat.mul -- * on mynat
-import mynat.pow -- ^ on mynat
+/- Tactic : let
+If you want to name a term of some type (because you want it
+in your local context for some reason), and if you have the
+formula for the term, you can use `let` to give the term a name. 
 
+## Example
 
-/- Tactic : intro
-If your goal is a function `⊢ P → Q` then `intro` is often the
-tactic you will use to proceed. What does it mean to define
-a function? Given an arbitrary term of type `P` (or an element
-of the set `P` if you think set-theoretically) you need
-to come up with a term of type `Q`, so your first step is
-to choose `p`, an arbitary 
-`intro p,` is Lean's way
-of saying "let $p\in P$ be arbitrary". `intro p` changes
-
+If the local context contains
 ```
-⊢ P → Q
-```
-
-into
-
-```
+f : P → Q
 p : P
-⊢ Q
 ```
 
-So `p` is an arbitrary element of `P` about which nothing is known,
-and our task is to come up with an element of `Q` (which can of
-course depend on `p`).
-
-Note that the opposite of `intro` is `revert`; given a tactic
-state
+then the tactic `let q := f(p),` will add `q` to our local context,
+leaving it like this:
 
 ```
+f : P → Q
 p : P
-⊢ Q
+q : Q := f p
 ```
-
-as above, the tactic `revert p` takes us back to `⊢ P → Q`. 
+Note that Lean leaves the definition of `q` in the local context
+as well, to remind us where it came from.
+Because `q` is *defined to be `f(p)`*, when Lean sees `q` later on
+it will just imagine it is seeing `f(p)`. Note in particular
+that `let` is never logically necessary in a proof, it is just
+there for convenience.
 -/
 
 /-
 # Function world. 
 
-## Level 3 : `intro`
+## Level 3 : `let`.
 
-Let's make a function. Let's define the function on the natural
-numbers which sends a natural number $n$ to $3n^2+2n+1$. If you delete the
-`sorry` you will see that our goal is `mynat → mynat`. A mathematician
-might denote this set $\operatorname{Hom}(\mathbb{N},\mathbb{N})$
-but computer scientists use notation `X → Y`
-to denote the set `\operatorname{Hom}(X,Y)`.
-We write $f\in\operatorname{Hom}(X,Y)$, but for them,
-`X → Y` is a type, and `f : X → Y` means that `f` is a term
-of this type, i.e., a function.
+Say you have a whole bunch of sets and functions between them,
+and your goal is to build a certain element of a certain set.
+If it helps, you can build intermediate elements of other sets
+along the way, using the `let` command. `let` is the Lean analogue
+of saying "let's define $q$ to be $f(p)$" in the middle of a proof.
+It is often not logically necessary, but on the other hand
+it is very convenient, for example it can save on notation, or
+it can break proofs up into smaller steps.
 
-To define a function $X\to Y$ we need to choose an arbitrary
-element $x\in X$ and then, perhaps using $x$, make an element of $$Y$$.
-The Lean tactic for "let $x\in X$ be arbitrary" is `intro x`.
+In the level below, we have an element of $P$ and we want an element
+of $U$; during the proof we will make several intermediate elements
+of some of the other sets involved. The diagram of sets and
+functions looks like this pictorially:
 
-To solve the goal below, you have to come up with a function from `mynat`
-to `mynat`. Start with
+```
+       h      i
+    P ---→ Q ---→ R
+           |
+           |j
+       k   ↓   l
+    S ---→ T ---→ U
+```
 
-`intro n,`
+and so it's clear how to make the element of $U$ from the element of $P$.
+Indeed, we could solve this level in one move by typing
 
-(i.e. "let $n\in\mathbb{N}$ be arbitrary") and then use `exact` and return
-the value you want. For example
+`exact l(j(h(P))),`
 
-`exact 3*n^2+2*n+1,`
+But let us instead stroll more lazily through the level.
+We can start by using the `let` tactic to make an element of $Q$:
 
-. This will close the goal. 
+`let q := h(p),`
 
-TODO -- a mathematician *definitely* thinks that this is a *definition*,
-not a lemma.
--/ 
+and then we note that $j(q)$ is an element of $T$:
 
+`let t := j(q),`
+
+and we could even define $u$ to be $l(t)$:
+
+`let u := l(t),`
+
+and then finish the level with `exact u,`. 
+-/
 
 /- Lemma
-There's a function $\mathbb{N}\to\mathbb{N}$. 
+We can solve a maze.
 -/
-lemma level3 : mynat → mynat :=
+lemma maze (P Q R S T U: Type)
+(p : P)
+(h : P → Q)
+(i : Q → R)
+(j : Q → T)
+(k : S → T)
+(l : T → U)
+: U :=
 begin
-  intro n,
-  exact n,
-
+  let q := h(p),
+  let t := j(q),
+  let u := l(t),
+  exact u,
 
 
 end
 
+/-
+If you solved the level using `let` then at the end of it,
+the local context is in the following mess:
 
+```
+P Q R S T U : Type,
+p : P,
+h : P → Q,
+i : Q → R,
+j : Q → T,
+k : S → T,
+l : T → U,
+q : Q := h p,
+t : T := j q,
+u : U := l t
+⊢ U
+```
 
--- todo 
--- apply
+It was already bad enough to start with, and we added three more
+terms to it. In level 4 we will learn about the `apply` tactic
+which solves the level in the same sort of way without leaving
+so much junk behind.
+-/

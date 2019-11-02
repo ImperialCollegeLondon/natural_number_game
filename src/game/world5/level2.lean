@@ -1,59 +1,104 @@
-/- Tactic : let
-If you want to make some element of a set (or term of a type,
-as Lean would put it) and you have the
-formula, you can use `let` to give the term a name. 
+import mynat.mul -- * on mynat
+import mynat.pow -- ^ on mynat
 
-## Example
 
-If the local context contains
+/- Tactic : intro
+If your goal is a function `⊢ P → Q` then `intro` is often the
+tactic you will use to proceed. What does it mean to define
+a function? Given an arbitrary term of type `P` (or an element
+of the set `P` if you think set-theoretically) you need
+to come up with a term of type `Q`, so your first step is
+to choose `p`, an arbitary 
+`intro p,` is Lean's way
+of saying "let $p\in P$ be arbitrary". `intro p` changes
+
 ```
-f : P → Q
+⊢ P → Q
+```
+
+into
+
+```
 p : P
+⊢ Q
 ```
 
-then the tactic `let q := f(p),` will add `q` to our local context,
-and it will also remind us of its definition. Because `q` is
-*defined to be `f(p)`*, any arguments at any point in your code which mention
-`q` would be true by definition if we just changed `q` to `f(p)`. 
+So `p` is an arbitrary element of `P` about which nothing is known,
+and our task is to come up with an element of `Q` (which can of
+course depend on `p`).
+
+Note that the opposite of `intro` is `revert`; given a tactic
+state
+
+```
+p : P
+⊢ Q
+```
+
+as above, the tactic `revert p` takes us back to `⊢ P → Q`. 
 -/
 
 /-
 # Function world. 
 
-## Level 2 : `let`
+## Level 2 : `intro`.
 
-If it helps, you can build intermediate elements along the way,
-using the `let` command. It is often not logically necessary,
-but on the other hand can often help you to proceed if you're working
-step by step. 
+Let's make a function. Let's define the function on the natural
+numbers which sends a natural number $n$ to $3n^2+2n+1$. If you delete the
+`sorry` you will see that our goal is `mynat → mynat`. A mathematician
+might denote this set $\operatorname{Hom}(\mathbb{N},\mathbb{N})$
+but computer scientists use notation `X → Y`
+to denote the set $\operatorname{Hom}(X,Y)$.
+Mathematicians might write write $f\in\operatorname{Hom}(X,Y)$,
+but in type theory,
+`X → Y` is a type (the type of all functions from $X$ to $Y$),
+and `f : X → Y` means that `f` is a term
+of this type, i.e., $f$ is a function from $X$ to $Y$.
 
-In the level below, we have an element of $P$ and we want an element
-of $R$; during the proof we will make an intermediate element of $Q$.
+To define a function $X\to Y$ we need to choose an arbitrary
+element $x\in X$ and then, perhaps using $x$, make an element of $Y$.
+The Lean tactic for "let $x\in X$ be arbitrary" is `intro x`.
 
-We can start by using the `let` tactic to make an element of $Q$:
+## Rule of thumb: 
 
-`let q := h(p),`
+If your goal is `P → Q` then `intro p` will make progress.
 
-and then we note that $j(q)$ is an element of $R$:
+To solve the goal below, you have to come up with a function from `mynat`
+to `mynat`. Start with
 
-`exact j(q),`
--/
+`intro n,`
+
+(i.e. "let $n\in\mathbb{N}$ be arbitrary") and note that our
+local context now looks like this:
+
+```
+1 goal
+n : mynat
+⊢ mynat
+```
+
+Our job now is to construct a natural number, which is
+allowed to depend on $n$. We can do this using `exact` and
+writing a formula for the function we want to define. For example
+
+`exact 3*n^2+2*n+1,`
+
+will close the goal, ultimately defining the function $f(n)=3n^2+2n+1$.
+
+-/ 
+
 
 /- Lemma
-We can build an element of $R$ given an element of $P$, a function $P\to Q$
-and a function $Q\to R$. 
+We can construct a function $\mathbb{N}\to\mathbb{N}$. 
 -/
-lemma level2 (P Q R : Type)
-(p : P)
-(h : P → Q)
-(j : Q → R)
-: R :=
+lemma level3 : mynat → mynat :=
 begin
-  let q := h(p),
-  exact j(q),
+  intro n,
+  exact n,
+
 
 
 end
 
--- todo 
--- apply, intro
+-- TODO -- this is not a lemma, this is a definition. But currently
+-- the framework making the game will only let me make lemmas.
