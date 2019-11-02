@@ -50,4 +50,9 @@ begin
   simp,
 end 
 
+/-
+Coming soon -- advanced multiplication world! But until then, 
+feel free to move on to world 4, power world, with the `next world` button.
+-/
+
 end mynat -- hide
