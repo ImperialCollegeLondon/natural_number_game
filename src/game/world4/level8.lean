@@ -40,26 +40,6 @@ lemma add_squared (a b : mynat) :
   (a + b) ^ (succ(1)) = 
 a ^ (succ(1)) + b^(succ(1)) + (succ(1))*a*b :=
 begin [less_leaky]
-  rw [pow_succ, pow_succ, pow_succ, one_eq_succ_zero],
-  rw [pow_succ, pow_succ, pow_succ, pow_zero, pow_zero],
-  rw [pow_zero, one_mul, one_mul, one_mul, mul_add],
-  rw [add_mul, add_mul, succ_mul, succ_mul],
-  rw [zero_mul, zero_add, add_mul, mul_comm b],
-  rw add_assoc, 
-  rw ←add_assoc (a * b),
-  rw add_comm _ (b * b),
-  rw ←add_assoc,
-  rw ←add_assoc,
-  refl,
-end
-
--- now blow them away with `ring`. But I can't get it to work,
--- with or without the leaky framework :-/ 
-
-lemma add_squared' (a b : mynat) :
-  (a + b) ^ (succ(1)) = 
-a ^ (succ(1)) + b^(succ(1)) + (succ(1))*a*b :=
-begin [less_leaky]
   rw one_eq_succ_zero,
   repeat {rw pow_succ},
   repeat {rw pow_zero},
@@ -69,6 +49,7 @@ begin [less_leaky]
 
 
 end
+
 /- 
 As the boss lies smouldering, you notice that
 <a href="http://wwwf.imperial.ac.uk/~buzzard/xena/html/source/tactics/tacticindex.html"
