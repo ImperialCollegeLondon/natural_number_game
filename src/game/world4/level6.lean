@@ -7,11 +7,7 @@ namespace mynat -- hide
 
 ## Level 6: `mul_pow`
 
-You might find `mul_right_comm` useful in this one. This is proved
-in 3-13, but it should be in the basic world. When the big reordering
-comes in v1.1 this will be in the right place.
-Remember `rw mul_right_comm (a ^ t)` will
-rewrite the first occurrence of `(a ^ t) * x * y = (a ^ t) * y * x`.
+You might find the tip at the end of 3-9 useful in this one.
 -/
 
 
@@ -24,7 +20,6 @@ begin [less_leaky]
     rw [pow_zero, pow_zero, pow_zero, mul_one],
     refl,
   rw [pow_succ, pow_succ, pow_succ, Ht],
-  rw ←mul_assoc,
   simp,
 
   

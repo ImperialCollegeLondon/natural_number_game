@@ -4,15 +4,17 @@ world1 = Tutorial World
 world2 = basic addition world
 world3 = basic multiplication world
 world4 = power world
-world5 will soon be function world
-world6 will be proposition world
-world 7 is then advanced addition world
-world 8 advanced multiplcation world
+world5 is now function world
+world6 will be proposition world but we have 0 levels
+world 7 is then advanced addition world (7-16 or whatever)
+world 8 advanced multiplcation world (there were only a few?)
 world 9 inequality world (full 30 levels)
+plus proof that natural numbers are some totally_ordered_semiring or
+whatever nonsense.
 
 That's the goal of v1.1
 
-and then we can add advanced other worlds
-and it would be nice if we could be more nonlinear
-because I am happy for someone to do world 5 directly after world 2, then 6 then 7 but then they must do world 3 before world 8
+TODO : if Mohammad has not non-lineared the game then we want to give
+the user the choice of jumping from world 2 to worlds 5,6,7 before world 3
+within the text
 

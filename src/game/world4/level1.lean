@@ -1,4 +1,4 @@
-import game.world3.level8 -- hide
+import game.world3.level9 -- hide
 import mynat.pow -- new import
 namespace mynat -- hide
 

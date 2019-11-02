@@ -92,6 +92,33 @@ system give it to us.
 -/
 instance : add_comm_monoid mynat := by structure_helper
 
+/- Tactic : simp
+The `simp` tactic does basic automation. By level 2-6 you
+have proved enough about addition for `simp` to be able
+to solve all equalities whose proofs involve a tedious number
+of rewrites of `add_assoc` and `add_comm`, and by
+level 3-9 the same is true of `mul_assoc` and `mul_comm`.
+
+### Example:
+If our goal is this:
+```
+⊢ a + b + c + d + e = c + (b + e + a) + d
+```
+
+and you are after level 2-6, then you've proved
+enough about addition to solve this level with `simp`. 
+Note however that you can't prove `add_assoc` with `simp`,
+because `add_assoc` is an ingredient to get `simp` working.
+
+### Example:
+If our goal is this:
+```
+⊢ a * b * c = c * b * a
+```
+then as long as you're after 3-9, `simp` will close this
+goal.
+-/
+
 /-
 Now the `simp` AI becomes accessible (it's just an advanced
 tactic really), and can nail some really tedious-for-a-human-to-solve
