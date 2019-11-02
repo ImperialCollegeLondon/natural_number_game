@@ -6,7 +6,7 @@ namespace mynat -- hide
 -- World name : Tutorial world
 
 /- 
-# The Natural Number Game, version 1.05 [add easter egg to new boss level 4-8]
+# The Natural Number Game, version 1.06
 
 ## By Kevin Buzzard and Mohammad Pedramfar. 
 
