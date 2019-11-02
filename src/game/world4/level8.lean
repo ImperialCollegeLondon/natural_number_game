@@ -70,8 +70,7 @@ end
 
 /- 
 As the boss lies smouldering, you notice that
-<a href="https://twitter.com/XenaProject/status/1190431662049550336?s=20"
-  target="blank">
+<a href="https://twitter.com/XenaProject/status/1190453646904958976?s=20/" target="blank">
 two more lines of code are now visible under the first two...</a> (Twitter.com)
 
 I just beat this level with 27 rewrites followed by a `refl`. 
