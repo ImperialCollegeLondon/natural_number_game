@@ -50,15 +50,29 @@ begin [less_leaky]
 end
 
 /- Tactic : rw
-The `rw` tactic is a way to do "substituting in".
-If `h : A = B` is a hypothesis (i.e., a proof of `A = B`)
-and your goal contains one or more `A`s, then `rw h`
+The `rw` tactic is a way to do "substituting in". There
+are two distinct situations where use this tactics.
+
+1) If `h : A = B` is a hypothesis (i.e., a proof of `A = B`)
+in your local context (the box in the top right)
+and if your goal contains one or more `A`s, then `rw h`
 will change them all to `B`'s. 
+
+2) The `rw` tactic will also work with proofs of theorems
+which are equalities (look for them in the drop down
+menu on the left, within Theorem Statements).
+For example, in world 1 level 4
+we learn about `add_zero x : x + 0 = x`, and `rw add_zero`
+will change `x + 0` into `x` in your goal (or fail with
+an error if Lean cannot find `x + 0` in the goal).
 
 Important note: if `h` is not a proof of the form `A = B`
 or `A ↔ B` (for example if `h` is a function, an implication,
 or perhaps even a proposition itself rather than its proof),
-then `rw` is not the tactic you want to use.
+then `rw` is not the tactic you want to use. For example,
+`rw (P = Q)` is never correct: `P = Q` is the true-false
+statement itself, not the proof.
+If `h : P = Q` is its proof, then `rw h` will work.
 
 Pro tip 1: If `h : A = B` and you want to change
 `B`s to `A`s instead, try `rw ←h` (get the arrow with `\l`).
@@ -67,16 +81,20 @@ Pro tip 1: If `h : A = B` and you want to change
 If it looks like this in the top right hand box:
 ```
 x y : mynat
-h : x = y + 3
-⊢ 1 + x = y + 4
+h : x = z + z
+⊢ succ (x + 0) = succ (z + z)
 ```
 
 then
 
+`rw add_zero,`
+
+will change the goal into `⊢ succ x = succ (z + z)`, and then
+
 `rw h,`
 
-will change the goal into `⊢ 1 + (y + 3) = y + 4`.
-Note of course that this goal is still far from solved.
+will change the goal into `⊢ succ (z + z) = succ (z + z)`, which
+can be solved with `refl,`.
 
 ### Example: 
 You can use `rw` to change a hypothesis as well. 
