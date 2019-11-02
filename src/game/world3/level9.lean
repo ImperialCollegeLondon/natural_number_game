@@ -1,60 +1,50 @@
-import game.world3.level5 -- hide
+import game.world3.level8 -- hide
 import mynat.mul -- hide
 namespace mynat -- hide
 
 /-
 # Multiplication World
 
-## Level 6: `succ_mul`
+## Level 9: `succ_mul`
 
-We now begin our journey to `mul_comm`, the proof that `a * b = b * a`. 
-We'll get there in level 8. Until we're there, it is frustrating
-but true that we cannot assume commutativity. We have `mul_succ`
-but we're going to need `succ_mul` (guess what it says -- maybe you
-are getting the hang of Lean's naming conventions). 
+You are equipped with
 
-Currently our tools for multiplication include the
-following: 
+* `mul_assoc (a b c : mynat) : (a * b) * c = a * (b * c)`
+* `mul_comm (a b : mynat) : a * b = b * a`
 
-* `mul_zero a : a * 0 = 0`
-* `mul_succ a b : a * succ b = a * b + a`
-* `mul_add a b c : a * (b + c) = a * b + a * c`
 
-and remember also that we have tools like
-
-* `add_right_comm a b c : a + b + c = a + c + b` 
-
-as well as all the addition stuff. These things
-are the tools we need to slowly build up the results
-which we will need to do mathematics "normally". 
-We also now have access to Lean's `simp` tactic,
-which will solve any goal which just needs a bunch
-of rewrites of `add_assoc` and `add_comm`. Use if
-you're getting lazy!
 -/
+
+
+
 
 /- Lemma
-For all natural numbers $a$ and $b$, we have
-$$ \operatorname{succ}(a) \times b = ab + b. $$
+For all natural numbers $a$ $b$ and $c$, we have
+$$a(bc)=b(ac)$$
 -/
-lemma succ_mul (a b : mynat) : succ a * b = a * b + b :=
+lemma mul_left_comm (a b c : mynat) : a * (b * c) = b * (a * c) :=
 begin [less_leaky]
-  induction b with d hd,
-  {
-    rw mul_zero,
-    rw mul_zero,
-    rw add_zero,
-    refl,
-  },
-  {
-    rw mul_succ,
-    rw mul_succ,
-    rw hd,
-    rw add_succ,
-    rw add_succ,
-    rw add_right_comm,
-    refl,
-  }
+  rw ←mul_assoc,
+  rw mul_comm a, 
+  rw mul_assoc,
+  refl,
+
+
+
 end
+
+/-
+And now I whisper a magic incantation
+-/
+attribute [simp] mul_assoc mul_comm mul_left_comm
+/-
+and all of a sudden Lean can automatically do levels which are
+very boring for a human, for example
+-/
+example (a b c d e : mynat) :
+(((a*b)*c)*d)*e=(c*((b*e)*a))*d :=
+begin
+  simp,
+end 
 
 end mynat -- hide

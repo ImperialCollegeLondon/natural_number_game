@@ -36,32 +36,11 @@ end
 /-
 You've now proved that the natural numbers are a commutative semiring!
 That's the last collectible in Multiplication World. 
-
-Todo -- add `mul_left_comm` after this because then `simp` will be able to prove
-`a*(b*c)=c*(b*a)` and more.
-
-There used to be some very poorly-explained advanced multiplication levels
-here, but they have been removed for a few days while I take a look at
-where people are stuck and decide how best to teach them.
-
-Until then, you can move
-straight on to Power World by selecting "Next World" in the top right
-and go and get that big collectible at the end of it,
-
 -/
-def collectible_06 : comm_semiring mynat := by structure_helper -- hide
-
--- begin hide
-lemma mul_left_comm (a b c : mynat) : a * (b * c) = b * (a * c) :=
-begin
-  rwa [←mul_assoc, mul_comm a, mul_assoc],
-end
-
-attribute [simp] mul_assoc mul_comm mul_left_comm
-example (a b c d e : mynat) :
-(((a*b)*c)*d)*e=(c*((b*e)*a))*d := begin
-  simp,
-end 
--- end hide
+instance mynat.comm_semiring : comm_semiring mynat := by structure_helper
+/-
+But don't leave multiplication just yet -- prove `mul_left_comm`, the last
+level of the world, and I'll show you a trick. 
+-/
 
 end mynat -- hide
