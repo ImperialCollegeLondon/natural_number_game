@@ -6,7 +6,7 @@ namespace mynat -- hide
 -- World name : Tutorial world
 
 /- 
-# The Natural Number Game, version 1.06
+# The Natural Number Game, version 1.07beta [adding function world, world 5]
 
 ## By Kevin Buzzard and Mohammad Pedramfar. 
 
