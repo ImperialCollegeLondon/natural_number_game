@@ -1,34 +1,45 @@
-import game.world5.level3 -- hide
-namespace mynat -- hide
-
-/-
-# World 5 : Inequality world 
-
-## Level 4 : `le_trans`
+/- Tactic : apply
+If you have a function `h : P → Q` and your goal is `⊢ Q`
+then `apply h` changes the goal to `⊢ P`. The logic is
+simple: if you are trying to create a term of type `Q`,
+but `h` is a function which turns terms of type `P` into
+terms of type `Q`, then it will suffice to construct a
+term of type `P`
+goal is a function `⊢ P → Q` then `intro` is often the
+tactic you will use to proceed. What does it mean to define
+a function? Given an arbitrary term of type `P` (or an element
+of the set `P` if you think set-theoretically) you need
+to come up with a term of type `Q`, so your first step is
+to choose `p`, an arbitary 
+`intro p,` is Lean's way
+of sayin
 -/
-
-/- Lemma
-≤ is transitive. In other words, if $a\leq b$ and $b\leq c$ then $a\leq c$. 
--/
-theorem le_trans {{a b c : mynat}} (hab : a ≤ b) (hbc : b ≤ c) : a ≤ c :=
-begin [less_leaky]
-  cases hab with d hd,
-  cases hbc with e he,
-  use (d + e),
-  rw ←add_assoc,
-  rw ←hd,
+import tactic.tauto
+example (P Q R : Type) : (Q → R) → (P → Q) → (P → R) :=
+begin
+  intro h1,
+  apply function.comp,
   assumption,
 end
 
-/-
-Congratulations -- you just proved that the natural numbers are a preorder.
--/
-instance : preorder mynat := by structure_helper -- hide
-end mynat -- hide
+-- TODO -- make human-ready
+example (P Q R F : Type) : P → (P → empty) → empty := by tauto
+example (P Q R F : Type) : ((P → empty) → empty) → P :=
+begin
+  intro h,
+  /-
+  P Q R F : Type,
+  h : (P → empty) → empty
+  ⊢ P
+  -/
+  -- now what?
+  sorry
+end
 
 /-
-I think that to go further, I (Kevin) have to teach you that implication is a function,
-and Mohammad has to make the worlds in this game depend on each other in a non-linear
-manner. This is all to come in V1.1.
+# Function world. 
+
+## Level 4 : `apply`
+
 
 -/

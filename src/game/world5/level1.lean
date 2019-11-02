@@ -1,116 +1,106 @@
-import game.world4.level7 -- hide
-import mynat.le
-namespace mynat -- hide
-
--- World name : Inequality world
-
-/- Axiom : le_def (a b : mynat) :
-a ≤ b ↔ ∃ c, b = a + c
--/
-
-
+-- World name : Function world
 /- 
-# World 5 : Inequality world 
+If you have beaten Addition World in this game, then you have got
+quite good at manipulating equalities in Lean using the `rw` tactic.
+But there are plenty of levels later on which will require you
+to manipulate functions, and `rw` is not the tool for you here.
 
-A new level, a new import. By the way, you can take a look at the actual files
-being imported by going to the source code for this game,
-which is available at
-<a href="https://github.com/ImperialCollegeLondon/natural_number_game" target="blank">
-GitHub</a>. The game files are in `src/game` and the imports are in `src/mynat`.
+To manipulate functions effectively, we need to learn about a new collection
+of tactics -- `intro`, `apply`, `exact` and `have` (TODO -- put them
+in the order I introduce them), specially designed for dealing with
+functions. Of course we are ultimately interested in using these
+tactics to prove theorems about the natural numbers -- but in this
+world there is little point in working with specific sets like `mynat`,
+everything works for general sets.
 
-Here's what you get from the import:
+So our notation for this level is: $P$, $Q$, $R$ and so on denote general
+sets, and let $h$, $j$, $k$ and so on denote general functions between
+them. What we will learn in this world is how to use the Lean theorem
+prover to move elements around between these sets using the functions
+we are given, and the tactics we will learn. A word of warning -- Lean
+works with Types not sets, so `P`, `Q` and `R` will be general types,
+and instead of elements of a given set, we'll have terms of a given type.
+This is just a language issue, but it does mean that we will write `p : P`
+instead of `p ∈ P`. 
 
-1) The following data:
-  * a binary relation called mynat.le, and notation a ≤ b for this relation.
-
-  The definition is: `a ≤ b ↔ ∃ c : mynat, b = a + c`
-
-2) The following axiom:
-
-  * `le_def (a b : mynat) : a ≤ b ↔ ∃ (c : mynat), b = a + c`
-
-So `rw le_def` will change $a \leq b$ to `∃ c : mynat b = a + c`.
-
-You'll now have to know what to do with terms which have an ∃ in them! There
-are two new tactics you'll need immediately, but even with those
-we will not be able to get much further -- we really need to learn about 
-some sort of Propositions-as-Types thing at some point. But let's press
-on anyway by introducing the `use` tactic.
-
-## The `use` tactic. 
-
-If your *goal* is of the form `∃ c, ...` then to make progress you can
-use the `use` tactic. Note of course that you have to decide what to use!
-You are going to prove a theorem of the form "there exists $c$ such that blahblahblah"
-by actually saying "look -- this explicit choice of $c$ works".
-For example if your local context is this:
-```
-x y : mynat
-⊢ ∃ c : mynat, c + y = x + y
-```
-
-then we want to set `c = x` so we write `use x`, and this will remove the `∃`
-and change `t` to `x`, so the goal will become `⊢ x + y = x + y` which you can
-solve with `refl`. 
-
-Note that `use` is a tactic that can go wrong -- if you `use` the wrong value
-then your goal might become *impossible* to solve and you'll have to go back
-and change your mind.
--/
-
-/- Tactic : use
-If your goal is of the form 
+The levels in function world aren't theorems like in the natural
+number game -- in function world the object of a level is to create
+an element of the set in the goal. For example if your local
+context (the top right hand box) looked like this:
 
 ```
-⊢ ∃ c : P(c)`
-```
-where `P` is some proposition which depends on `c`, then you might want to prove it
-by coming up with an explicit value of `c` for which you can prove `P(c)`. The
-way you supply this value is with the `use` tactic. For example if the goal is
-
-```
-⊢ ∃ c : c = 6
+P Q : Type,
+p : P,
+h : P → Q
+⊢ Q
 ```
 
-then you can prove this with
+then this means that we have sets $P$ and $Q$, an element $p$ of $P$,
+a function $h$ from $P$ to $Q$, and our goal is to construct an
+element of $Q$. It's clear what to do to solve this goal -- we can
+make an element of $Q$ by applying the function $Q$ to
+the element $p$. There are at least two ways to do it, and here I'll explain
+how to use the `exact` tactic to solve this goal.
+
+## The `exact` tactic. 
+
+If you can explicitly see how to make an element of of your goal type,
+i.e. you have a formula for it, then you can just write `exact <formula>` 
+and this will close the goal. 
+
+### Example
+
+If your local context looks like this
 
 ```
-use 6,
-refl,
+P Q : Type,
+p : P,
+h : P → Q
+⊢ Q
 ```
 
--/
+then $h(p)$ is an element of $Q$ so you can just write
 
-/-
-## Level 1: `le_refl`
+`exact h(p),`
 
-To get started on this level, you can `rw le_def`. Once you have proved
-it, we will know that `≤` is reflexive.
+to close the goal. 
+
+## Level 1 -- `exact`
 -/
 
 /- Lemma
-For all naturals $a$, $a \leq a$.
+Given an element of $P$ and a function from $P$ to $Q$,
+you can get an element of $Q$.
 -/
-theorem le_refl (a : mynat) : a ≤ a :=
-begin [less_leaky]
-  rw le_def,
-  use 0,
-  rw add_zero, 
-  refl,
+lemma level1 (P Q : Type) (p : P) (h : P → Q) : Q :=
+begin
+exact h(p),
 
-end
 
-/-
-Now we write some magical incantation (thanks to Reid Barton
-for correcting my spell)...
+
+end 
+
+/- Tactic : exact
+
+If the local context is like this: 
+
+```
+1 goal
+P Q R : Type,
+p : P,
+h : P → Q,
+j : Q → R
+⊢ R
+```
+
+and you can see how to make the element of $R$, then you
+can just make it and say you're done using the `exact` tactic
+together with the formula you have spotted. For example the
+above goal could be solved with
+
+`exact j(h(p)),`
+
+
+
 -/
-attribute [refl] mynat.le_refl
-/-
-...and now the `refl` tactic will close all goals of the form `a ≤ a`
-as well as all goals of the form `a = a`.
--/
-example : (0 : mynat) ≤ 0 := begin
-  refl
-end
 
-end mynat --hide

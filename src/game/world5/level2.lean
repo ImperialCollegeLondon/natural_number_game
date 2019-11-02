@@ -1,97 +1,59 @@
-import game.world5.level1 -- hide
-namespace mynat -- hide
-
-/-
-# World 5 : Inequality world 
-
-## Level 2 : `le_succ`
-
-In this level we will find ourselves with a *hypothesis* of the form `h : ∃ c, P`
-where `P` is some
-proposition (which probably depends on `c`). To extract `c` from `h` you
-can use the `cases` tactic. If `h : ∃ c, P` is as above, then
-`cases h with c hc` will create your term `c` as well as creating a proof `hc` of `P`,
-i.e., `hc` is the proof that `c` satisfies `P`.
-
-For example, if we have
-```
-h : ∃ c : mynat, c + c = 12
-```
-
-then 
-
-`cases h with c hc`
-
-will turn it into
-```
-c : mynat,
-hc : c + c = 12
-```
-
-Of course if you don't want it to be called `c`, you can do `cases h with n hn`
-and if you want `n + n = 12` to be called H12 you can do `cases h with n H12`.
-
--/
-
-/- Tactic : cases
-If you have a hypothesis `h : ∃ n, P(n)`
-where `P(n)` is a proposition depending on `n`, then
-`cases h with d hd`
-will produce a new term `d` and also a proof `hd` of `P(d)`. 
+/- Tactic : let
+If you want to make some element of a set (or term of a type,
+as Lean would put it) and you have the
+formula, you can use `let` to give the term a name. 
 
 ## Example
 
 If the local context contains
 ```
-h : ∃ c : mynat, c + c = 12
+f : P → Q
+p : P
 ```
 
-then 
-
-`cases h with c hc`
-
-will turn it into
-```
-c : mynat,
-hc : c + c = 12
-```
+then the tactic `let q := f(p),` will add `q` to our local context,
+and it will also remind us of its definition. Because `q` is
+*defined to be `f(p)`*, any arguments at any point in your code which mention
+`q` would be true by definition if we just changed `q` to `f(p)`. 
 -/
 
 /-
+# Function world. 
 
-I also need to tell you that `rw` works on hypotheses as well as on the goal.
-In the level below, we have an inequality in the hypothesis as well as in the goal.
-So perhaps a natural way to start this level is 
+## Level 2 : `let`
 
-```
-rw le_def at h,
-rw le_def,
-```
+If it helps, you can build intermediate elements along the way,
+using the `let` command. It is often not logically necessary,
+but on the other hand can often help you to proceed if you're working
+step by step. 
 
-and now you can use `cases` on `h` and `use` for the goal.
+In the level below, we have an element of $P$ and we want an element
+of $R$; during the proof we will make an intermediate element of $Q$.
 
-Pro tip: `rw le_def at h ⊢` does both rewrites at once.
-You can get the goal sign by typing `\|-`.
+We can start by using the `let` tactic to make an element of $Q$:
+
+`let q := h(p),`
+
+and then we note that $j(q)$ is an element of $R$:
+
+`exact j(q),`
 -/
 
 /- Lemma
-For all naturals $a$, $b$, if $a\leq b$ then $a\leq \operatorname{succ}(b)$. 
+We can build an element of $R$ given an element of $P$, a function $P\to Q$
+and a function $Q\to R$. 
 -/
-theorem le_succ {a b : mynat} (h : a ≤ b) : a ≤ (succ b) :=
-begin [less_leaky]
-  rw le_def at h ⊢,
-  cases h with c hc,
-  use (succ c),
-  rw hc,
-  rw add_succ,
-  refl,
+lemma level2 (P Q R : Type)
+(p : P)
+(h : P → Q)
+(j : Q → R)
+: R :=
+begin
+  let q := h(p),
+  exact j(q),
 
 
 end
 
-/-
-Did you use `succ c` or `c + 1` or `1 + c`? Those numbers are all
-equal, right? So it doesn't matter which one you use, right?
--/
-
-end mynat -- hide
+-- todo 
+-- apply, intro

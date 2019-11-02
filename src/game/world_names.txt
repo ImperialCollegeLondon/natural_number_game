@@ -1,0 +1,18 @@
+Until Mohammad's refactor we are stuck with being linear.
+
+world1 = Tutorial World
+world2 = basic addition world
+world3 = basic multiplication world
+world4 = power world
+world5 will soon be function world
+world6 will be proposition world
+world 7 is then advanced addition world
+world 8 advanced multiplcation world
+world 9 inequality world (full 30 levels)
+
+That's the goal of v1.1
+
+and then we can add advanced other worlds
+and it would be nice if we could be more nonlinear
+because I am happy for someone to do world 5 directly after world 2, then 6 then 7 but then they must do world 3 before world 8
+
