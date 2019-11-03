@@ -1,13 +1,13 @@
 /-
 # Proposition world. 
 
-## Level 3 : `let`.
+## Level 3 : `have`.
 
 Say you have a whole bunch of propositions and implications between them,
 and your goal is to build a certain proof of a certain proposition.
 If it helps, you can build intermediate proofs of other propositions
-along the way, using the `let` command. `let` is the Lean analogue
-of saying "We now see that $Q$ is true, because here's a proof"
+along the way, using the `have` command. `have` is the Lean analogue
+of saying "We now see that $Q$ is true, because..."
 in the middle of a proof.
 It is often not logically necessary, but on the other hand
 it is very convenient, for example it can save on notation, or
@@ -35,17 +35,17 @@ Indeed, we could solve this level in one move by typing
 `exact l(j(h(P))),`
 
 But let us instead stroll more lazily through the level.
-We can start by using the `let` tactic to make a proof of $Q$:
+We can start by using the `have` tactic to make a proof of $Q$:
 
-`let q := h(p),`
+`have q := h(p),`
 
 and then we note that $j(q)$ is a proof of $T$:
 
-`let t := j(q),`
+`have t := j(q),`
 
 and we could even define $u$ to be $l(t)$:
 
-`let u := l(t),`
+`have u := l(t),`
 
 and then finish the level with `exact u,`. 
 -/
@@ -62,9 +62,9 @@ lemma maze (P Q R S T U: Type)
 (l : T → U)
 : U :=
 begin
-  let q := h(p),
-  let t := j(q),
-  let u := l(t),
+  have q := h(p),
+  have t := j(q),
+  have u := l(t),
   exact u,
 
 
