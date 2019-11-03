@@ -1,5 +1,6 @@
+import mynat.add -- + on mynat
 import mynat.mul -- * on mynat
-import mynat.pow -- ^ on mynat
+
 
 
 /- Tactic : intro
@@ -8,9 +9,10 @@ tactic you will use to proceed. What does it mean to define
 a function? Given an arbitrary term of type `P` (or an element
 of the set `P` if you think set-theoretically) you need
 to come up with a term of type `Q`, so your first step is
-to choose `p`, an arbitary 
-`intro p,` is Lean's way
-of saying "let $p\in P$ be arbitrary". `intro p` changes
+to choose `p`, an arbitary element of `P`. 
+
+`intro p,` is Lean's way of saying "let $p\in P$ be arbitrary".
+The tactic `intro p` changes
 
 ```
 ⊢ P → Q
@@ -44,14 +46,13 @@ as above, the tactic `revert p` takes us back to `⊢ P → Q`.
 ## Level 2 : `intro`.
 
 Let's make a function. Let's define the function on the natural
-numbers which sends a natural number $n$ to $3n^2+2n+1$. If you delete the
+numbers which sends a natural number $n$ to $3*n+2$. If you delete the
 `sorry` you will see that our goal is `mynat → mynat`. A mathematician
-might denote this set $\operatorname{Hom}(\mathbb{N},\mathbb{N})$
-but computer scientists use notation `X → Y`
-to denote the set $\operatorname{Hom}(X,Y)$.
-Mathematicians might write write $f\in\operatorname{Hom}(X,Y)$,
-but in type theory,
-`X → Y` is a type (the type of all functions from $X$ to $Y$),
+might denote this set with some exotic name such as
+$\operatorname{Hom}(\mathbb{N},\mathbb{N})$,
+but computer scientists use notation `X → Y` to denote the set of
+functions from `X` to `Y` and this name definitely has its merits.
+In type theory, `X → Y` is a type (the type of all functions from $X$ to $Y$),
 and `f : X → Y` means that `f` is a term
 of this type, i.e., $f$ is a function from $X$ to $Y$.
 
@@ -72,7 +73,6 @@ to `mynat`. Start with
 local context now looks like this:
 
 ```
-1 goal
 n : mynat
 ⊢ mynat
 ```
@@ -81,9 +81,9 @@ Our job now is to construct a natural number, which is
 allowed to depend on $n$. We can do this using `exact` and
 writing a formula for the function we want to define. For example
 
-`exact 3*n^2+2*n+1,`
+`exact 3*n+2,`
 
-will close the goal, ultimately defining the function $f(n)=3n^2+2n+1$.
+will close the goal, ultimately defining the function $f(n)=3n+2$.
 
 -/ 
 
@@ -92,9 +92,9 @@ will close the goal, ultimately defining the function $f(n)=3n^2+2n+1$.
 We can construct a function $\mathbb{N}\to\mathbb{N}$. 
 -/
 lemma level3 : mynat → mynat :=
-begin
+begin [less_leaky]
   intro n,
-  exact n,
+  exact 3*n+2,
 
 
 

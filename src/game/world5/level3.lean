@@ -46,6 +46,8 @@ of $U$; during the proof we will make several intermediate elements
 of some of the other sets involved. The diagram of sets and
 functions looks like this pictorially:
 
+TODO -- better diagram?
+
 ```
        h      i
     P ---→ Q ---→ R
@@ -97,8 +99,8 @@ begin
 end
 
 /-
-If you solved the level using `let` then at the end of it,
-the local context is in the following mess:
+If you solved the level using `let` then just before the `exact` line,
+the local context is in something like the following mess:
 
 ```
 P Q R S T U : Type,
@@ -116,6 +118,6 @@ u : U := l t
 
 It was already bad enough to start with, and we added three more
 terms to it. In level 4 we will learn about the `apply` tactic
-which solves the level in the same sort of way without leaving
+which solves the level using another technique, without leaving
 so much junk behind.
 -/

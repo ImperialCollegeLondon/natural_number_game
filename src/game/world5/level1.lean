@@ -24,10 +24,9 @@ internally Lean stores $P$ as a "Type" and $p$ as a "term", and it uses `p : P`
 to mean "$p$ is a term of type $P$", Lean's way of expressing the idea that $p$
 is an element of the set $P$. 
 
-The levels in function world aren't theorems like in the natural
-number game -- in function world the object of a level is to create
-an element of the set in the goal. For example your local
-context (the top right hand box) will soon look like this:
+The levels in function world aren't theorems like in addition world -- in
+function world the object of a level is to create an element of the set in the goal. 
+If you delete the sorry below then your local context will look like this:
 
 ```
 P Q : Type,
@@ -46,7 +45,7 @@ uses the `exact` tactic to explain our mathematical argument to Lean.
 
 ## The `exact` tactic. 
 
-If you can explicitly see how to make an element of of your goal type,
+If you can explicitly see how to make an element of of your goal set,
 i.e. you have a formula for it, then you can just write `exact <formula>` 
 and this will close the goal. 
 
@@ -65,7 +64,8 @@ then $h(p)$ is an element of $Q$ so you can just write
 
 `exact h(p),`
 
-to close the goal. 
+to close the goal. Note that `exact h(P),` won't work;
+$P$ is not an element of $P$, it's $p$ that is an element of $P$. 
 
 ## Level 1 -- `exact`
 -/

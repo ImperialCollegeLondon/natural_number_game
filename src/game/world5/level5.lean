@@ -25,7 +25,6 @@ So let's start with
 and we then find ourselves in this state:
 
 ```
-1 goal
 P Q : Type,
 p : P
 ⊢ Q → P
@@ -68,7 +67,7 @@ I wrote `P → (Q → P)` but Lean just writes `P → Q → P`. This is because
 computer scientists adopt the convention that `→` is *right associative*,
 which is a fancy way of saying "when we write `P → Q → R`, we mean `P → (Q → R)`."
 Mathematicians use right associativity as a convention for powers: if
-a mathematician says $10^{10^{10}}}$ they don't mean $(10^{10})^{10}=10^{100}$, they
+a mathematician says $10^{10^{10}}$ they don't mean $(10^{10})^{10}=10^{100}$, they
 mean $10^{(10^{10})}$. So `10 ^ 10 ^ 10` in Lean means `10 ^ (10 ^ 10)` and not `(10 ^ 10) ^ 10`.
 However they use left associativity as a convention for subtraction: if
 a mathematician writes $6 - 2 - 1$ they mean $(6 - 2) - 1$ and not $6 - (2 - 1)$.

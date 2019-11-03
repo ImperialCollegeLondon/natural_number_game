@@ -30,7 +30,7 @@ Let's do the same level again:
 ```
 
 We are given $p \in P$ and our goal is to find an element of $U$, or
-in other words to find a path through the maze that links $P$ to $Q$.
+in other words to find a path through the maze that links $P$ to $U$.
 In level 3 we solved this by using `let`s to move forward, from $P$
 to $Q$ to $T$ to $U$. Using the `apply` tactic we can instead construct
 the path backwards, moving from $U$ to $T$ to $Q$ to $P$.
@@ -44,7 +44,8 @@ Lean this by starting the proof below with
 and notice that our assumptions don't change but *the goal changes*
 from `⊢ U` to `⊢ T`. 
 
-Keep `apply`ing functions until your goal is `P`. Now solve this goal
+Keep `apply`ing functions until your goal is `P`, and try not
+to get lost! Now solve this goal
 with `exact p`. Note: you will need to learn the difference between
 `exact p` (which works) and `exact P` (which doesn't, because $P$ is
 not an element of $P$).
