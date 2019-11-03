@@ -42,13 +42,13 @@ begin [less_leaky]
   },
   {
     rw add_succ,
--- or    show a * succ (b + d) = _,
     rw mul_succ,
--- or    show a * (b + d) + _ = _,
     rw hd,
     rw mul_succ,
     rw add_assoc, -- ;-)
     refl,
+
+
   }
 end
 
