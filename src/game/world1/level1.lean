@@ -6,7 +6,7 @@ namespace mynat -- hide
 -- World name : Tutorial world
 
 /- 
-# The Natural Number Game, version 1.07beta [adding function world, world 5]
+# The Natural Number Game, version 1.07rc1
 
 ## By Kevin Buzzard and Mohammad Pedramfar. 
 
@@ -21,10 +21,11 @@ The natural number game is brought to you by the Xena project, a project based a
 whose aim is to get mathematics undergraduates using computer theorem provers.
 Lean is a computer theorem prover being developed at Microsoft Research.
 
-## News
+## What's new?
 
-New in version 1.05 -- are you smarter than a high school kid?
-Can you expand out $(a+b)^2$?
+What's new: function world (world 5) and proposition world (world 6). Can
+be attempted straight after world 2 (world 5 before world 6 though).
+New tactics `exact`, `intro`, `have` and `apply`.
 
 # What is this game?
 

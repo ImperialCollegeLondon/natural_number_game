@@ -27,8 +27,18 @@ internally Lean stores $P$ as a "Type" and $p$ as a "term", and it uses `p : P`
 to mean "$p$ is a term of type $P$", Lean's way of expressing the idea that $p$
 is an element of the set $P$. 
 
-The levels in function world aren't theorems like in addition world -- in
-function world the object of a level is to create an element of the set in the goal. 
+## A new kind of goal.
+
+All through addition and multiplication world, our goals have been theorems,
+and it was our job to find the proofs. 
+**The levels in function world aren't theorems**. This is the only world where
+the levels aren't theorems in fact. In function world the object of a level
+is to create an element of the set in the goal. The goal will look like `⊢ X`
+with $X$ a set and you get rid of the goal by constructing an element of $X$. 
+I don't know if you noticed this, but essentially every goal you solved in
+levels 2 to 4 you solved with `refl`. This tactic is no use to us here.
+We are going to have to learn a new way of solving goals -- the `exact` tactic.
+
 If you delete the sorry below then your local context will look like this:
 
 ```
@@ -38,9 +48,11 @@ h : P → Q
 ⊢ Q
 ```
 
-In this situation, we have sets $P$ and $Q$, an element $p$ of $P$,
-a function $h$ from $P$ to $Q$, and our goal is to construct an
-element of $Q$. It's clear what to do *mathematically* to solve this goal -- we can
+In this situation, we have sets $P$ and $Q$ and an element $p$ of $P$ (written `p : P`
+but meaning $p\in P$). We also have a function $h$ from $P$ to $Q$,
+and our goal is to construct an
+element of the set $Q$. It's clear what to do *mathematically* to solve
+this goal -- we can
 make an element of $Q$ by applying the function $h$ to
 the element $p$. But how to do it in Lean? There are at least two ways,
 and here we will learn about one of them, namely the method which
