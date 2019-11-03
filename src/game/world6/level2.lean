@@ -1,5 +1,5 @@
 /-
-# Propositon world. 
+# Proposition world. 
 
 ## Level 2 : `intro`.
 
