@@ -9,7 +9,7 @@ But there are plenty of levels later on which will require you
 to manipulate functions, and `rw` is not the tool for you here.
 
 To manipulate functions effectively, we need to learn about a new collection
-of tactics, namely `exact`, `intro`, `let` and `apply`. These tactics
+of tactics, namely `exact`, `intro`, `have` and `apply`. These tactics
 are specially designed for dealing with functions. Of course we are
 ultimately interested in using these tactics to prove theorems
 about the natural numbers -- but in this
@@ -79,7 +79,12 @@ then $h(p)$ is an element of $Q$ so you can just write
 
 `exact h(p),`
 
-to close the goal. Note that `exact h(P),` won't work;
+to close the goal. 
+
+## Important note
+
+Note that `exact h(P),` won't work (with a capital $P$);
+this is a common error I see from beginners. 
 $P$ is not an element of $P$, it's $p$ that is an element of $P$. 
 
 ## Level 1 -- `exact`

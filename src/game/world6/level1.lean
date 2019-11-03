@@ -15,8 +15,11 @@ it already). Particularly problematic is the fact that mathematicians
 use the word Proposition to mean "a relatively straightforward statement
 which is true" and computer scientists use it to mean "a statement of
 arbitrary complexity, which might be true or false". Computer scientists
-are far more careful about distinguishing the two concepts: a proposition
-(for example: `∀ x : mynat, x + 0 = x`) and its proof (for example `add_zero`).
+are far more careful about distinguishing between a proposition and a proof.
+(for example: `x + 0 = x`) is a proposition, and `add_zero x`
+is its proof. The convention we'll use is capital letters for propositions
+and small letters for proofs. 
+
 In this world you will see the local context in the following kind of state:
 
 ```
@@ -24,8 +27,8 @@ P : Prop
 p : P
 ```
 
-Here `P` is the statement, and `p` is its proof. It's like `P`
-being the set and `p` being the element. In fact computer scientists
+Here `P` is the true/false statement (the statement of proposition), and `p` is its proof.
+It's like `P` being the set and `p` being the element. In fact computer scientists
 sometimes think about the following analogy: propositions are like sets,
 and proofs are like their elements. 
 
@@ -33,7 +36,7 @@ and proofs are like their elements.
 
 We're going to learn about manipulating propositions and proofs.
 Fortunately, we don't need to learn a bunch of new tactics -- the
-ones we just learnt (`intro`, `exact`, `apply`) will be perfect.
+ones we just learnt (`exact`, `intro`, `have`, `apply`) will be perfect.
 
 The levels in proposition world are "back to normal", we're proving
 theorems, not constructing elements of sets. Or are we?
@@ -60,16 +63,21 @@ of $P$ to proofs of $Q$, so the rather surprising approach
 
 `exact h(p),`
 
-works to close the goal. Note that `exact h(P),` won't work;
-$P$ is not proof of $P$, it's $p$ that is a proof of $P$. 
+works to close the goal.
 
-In Lean, Propositions are types, like sets.
+Note that `exact h(P),` (with a capital P) won't work;
+this is a common error I see from beginners. "We're trying to solve P
+so it's exactly P". The goal states the *theorem*, your job is to
+construct the *proof*. $P$ is not proof of $P$, it's $p$ that is a proof of $P$. 
+
+In Lean, Propositions are types, like sets, and proofs are terms,
+like elements of sets.
 
 ## Level 1 -- `exact`
 -/
 
 /- Lemma : no-side-bar
-If $P$ is true, and $P\implies Q$, then $Q$ is true.
+If $P$ is true, and $P\implies Q$ is also true, then $Q$ is true.
 -/
 lemma level1 (P Q : Prop) (p : P) (h : P → Q) : Q :=
 begin

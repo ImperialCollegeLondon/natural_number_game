@@ -1,7 +1,7 @@
 /-
 # Function world. 
 
-## Level 8 : `(P → Q) → ((Q → R) → (P → R))` 
+## Level 7 : `(P → Q) → ((Q → R) → (P → R))` 
 
 If you start with `intro hpq` and then `intro `hqr`
 the dust will clear a bit and the level will look like this:

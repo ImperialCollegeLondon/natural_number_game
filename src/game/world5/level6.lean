@@ -5,8 +5,15 @@
 
 You can solve this level completely just using `intro`, `apply` and `exact`,
 but if you want to argue forwards instead of backwards then don't forget
-that you can do things like `have j : Q → R := f p` if `f : P → (Q → R)`
-and `p : P`. I recommend that you start with `intro f` rather than `intro p`
+that you can do things like
+
+`have j : Q → R := f p,`
+
+if `f : P → (Q → R)` and `p : P`. Remember the trick with the colon in `have`:
+we could just write `have j := f p,` but this way we can be sure that `j` is
+what we actually expect it to be.
+
+I recommend that you start with `intro f` rather than `intro p`
 because even though the goal starts `P → ...`, the brackets mean that
 the goal is not a function from `P` to anything, it's a function from
 `P → (Q → R)` to something. In fact I'd recommend that you started

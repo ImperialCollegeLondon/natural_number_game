@@ -17,7 +17,7 @@ the `sorry` and let's think about how to proceed.
 
 Our goal is `P → X` for some set $X=\operatorname{Hom}(Q,P)$, and if our
 goal is to construct a function then we almost always want to use the
-`intro` tactic from world 2, Lean's version of "let $p\in P$ be arbitrary."
+`intro` tactic from level 2, Lean's version of "let $p\in P$ be arbitrary."
 So let's start with
 
 `intro p,`
@@ -42,7 +42,7 @@ and then let's output `p`.
 -/
 
 /- Lemma : no-side-bar
-Whatever sets $P$ and $Q$ are, we can always
+Whatever the sets $P$ and $Q$ are, we can always
 make an element of $\operatorname{Hom}(P,\operatorname{Hom}(Q,P))$.
 -/
 example (P Q : Type) : P → (Q → P) :=

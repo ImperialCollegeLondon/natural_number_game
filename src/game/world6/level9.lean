@@ -23,6 +23,11 @@ end
 Still to come in proposition world: `∧`! `∨`! `↔`! `∃`! And
 the tactics `cases`, `split`, `left`, `right`, `use`. 
 But the good news is that (1) all these tactics are easy and (2)
-they will be the last 
+they will be the last tactics you will need to know
+in order to become a competent Lean user. Indeed, after working through
+the rest of proposition world (which KB hasn't written yet) you
+should have all the tools you need to solve all the levels in advanced
+addition world, advanced multiplication world, and the 30 levels of
+inequality world.
 
 -/

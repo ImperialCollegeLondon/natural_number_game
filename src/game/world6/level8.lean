@@ -8,7 +8,7 @@ lemma not_iff_imp_false (P : Prop) : ¬ P ↔ P → false := iff.rfl -- hide
 ## Level 8 : `(P → Q) → (¬ Q → ¬ P)` 
 
 There is a false proposition `false`, with no proof. It is
-easy to check that $lnot Q$ is equivalent to $Q\implies {\tt false}$,
+easy to check that $\lnot Q$ is equivalent to $Q\implies {\tt false}$,
 and in the natural number game we call this
 
 `not_iff_imp_false (P : Prop) : ¬ P ↔ (P → false)`
@@ -20,7 +20,7 @@ So you can start the proof below with
 to get rid of the two occurences of `¬`, and I'm sure you can
 take it from there. At some point your goal might be to prove `false`.
 At that point I guess you must be proving something by contradiction.
-Or are you?
+Or are you? Does it even matter?
 -/
 
 /- Lemma : no-side-bar

@@ -31,7 +31,7 @@ Let's do the same level again:
 
 We are given $p \in P$ and our goal is to find an element of $U$, or
 in other words to find a path through the maze that links $P$ to $U$.
-In level 3 we solved this by using `let`s to move forward, from $P$
+In level 3 we solved this by using `have`s to move forward, from $P$
 to $Q$ to $T$ to $U$. Using the `apply` tactic we can instead construct
 the path backwards, moving from $U$ to $T$ to $Q$ to $P$.
 

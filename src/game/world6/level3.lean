@@ -41,13 +41,19 @@ We can start by using the `have` tactic to make a proof of $Q$:
 
 and then we note that $j(q)$ is a proof of $T$:
 
-`have t := j(q),`
+`have t : T := j(q),`
 
+(note how we explicitly told Lean what proposition we thought $t$ was
+a proof of, with that `: T` thing before the `:=`) 
 and we could even define $u$ to be $l(t)$:
 
-`have u := l(t),`
+`have u : U := l(t),`
 
-and then finish the level with `exact u,`. 
+and then finish the level with
+
+`exact u,`
+
+. 
 -/
 
 /- Lemma : no-side-bar
@@ -71,11 +77,13 @@ begin
 end
 
 /-
-If you solved the level using `let` then just before the `exact` line,
-the local context is in something like the following mess:
+If you solved the level using `have`, then click on the last line of your proof
+(you do know you can move your cursor around with the arrow keys
+and explore your proof, right?) and note that the local context at that point
+is in something like the following mess:
 
 ```
-P Q R S T U : Type,
+P Q R S T U : Prop,
 p : P,
 h : P → Q,
 i : Q → R,

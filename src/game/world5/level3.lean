@@ -48,7 +48,7 @@ TODO -- better diagram?
 
 ```
        h      i
-    P ---→ Q ---→ R
+p : P ---→ Q ---→ R
            |
            |j
        k   ↓   l
@@ -65,15 +65,20 @@ We can start by using the `have` tactic to make an element of $Q$:
 
 `have q := h(p),`
 
-and then we note that $j(q)$ is an element of $T$:
+and then we note that $j(q)$ is an element of $T$
 
-`have t := j(q),`
+`have t : T := j(q),`
 
-and we could even define $u$ to be $l(t)$:
+(notice how on this occasion we explicitly told Lean what set we thought $t$ was in, with
+that `: T` thing before the `:=`) and we could even define $u$ to be $l(t)$:
 
-`have u := l(t),`
+`have u : U := l(t),`
 
-and then finish the level with `exact u,`. 
+and then finish the level with
+
+`exact u,`
+
+. 
 -/
 
 /- Lemma : no-side-bar
@@ -89,16 +94,18 @@ lemma maze (P Q R S T U: Type)
 : U :=
 begin
   have q := h(p),
-  have t := j(q),
-  have u := l(t),
+  have t : T := j(q),
+  have u : U := l(t),
   exact u,
 
 
 end
 
 /-
-If you solved the level using `have` then just before the `exact` line,
-the local context is in something like the following mess:
+If you solved the level using `have`, then click on the last line of your proof
+(you do know you can move your cursor around with the arrow keys
+and explore your proof, right?) and note that the local context at that point
+is in something like the following mess:
 
 ```
 P Q R S T U : Type,

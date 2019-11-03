@@ -6,22 +6,22 @@
 Let's prove an implication. Let $P$ be a true/false statement,
 and let's prove that $P\implies P$. If you delete the
 `sorry` you will see that our goal is `P → P`. Constructing a term
-of type `P → P` (which is what solving a goal *means*) in this
+of type `P → P` (which is what solving this goal *means*) in this
 case amounts to proving that $P\implies P$, and computer scientists
 think of this as coming up with a function which sends proofs of $P$
 to proofs of $P$.
 
-To define an implication $P\to Q$ we need to choose an arbitrary
+To define an implication $P\implies Q$ we need to choose an arbitrary
 proof $p : P$ of $P$ and then, perhaps using $p$, construct a proof
 of $Q$.  The Lean way to say "let's assume $P$ is true" is `intro p`,
 i.e., "let's assume we have a proof of $P$". Those of you who know
 something about the subtle differences between truth and provability
 discovered by Goedel -- I would strongly advise that you completely
-forget about them for the moment because $p$ is not really a proof
-of $P$, it's some sort of more abstract "witness to the truth of $P$".
-So either believe in Goedel and think about this concept, or
-forget about all of this for the time being and concentrate on
-learning how to prove theorems in Lean.
+forget about them for the moment because this issue is not relevant
+here. $p$ doesn't have to be thought of as a proof of $P$, it can be
+interpreted as some sort of more abstract "evidence for the truth of $P$"
+or "witness to the truth of $P$" if you like. This is however philosophy
+rather than mathematics, and it's easiest to just think of $p$ as a proof of $P$.
 
 ## Rule of thumb: 
 

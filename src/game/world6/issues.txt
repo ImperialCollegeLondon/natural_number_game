@@ -1,82 +1,14 @@
 CHECK: IMPORTANT World 5 and 6 left menu is filling up with crap.
 
-5-1 "let and apply" -> "have and apply".
+CHECK : LaTeX was broken in 6.5 after proof
 
-"Note that exact h(P), won't work (say "CAPITAL P")
+CHECK : 6-6 broken latex in lemma statement
 
-5-2 "3*n+2" -> 3n+2
+6-8 LaTeX broken in first line of text
 
-just above lemma remark that i impotred mul.
+CHECK 6-8 axiom 
 
-5-3 put p \in P into the crap diagram
-
-..finish the level with
-
-exact u,
-
-.
-
-5-4 "using lets -> using haves"
-
-5-5 "frmo world 2" -> "from level 2"
-
-lemma statement "whatever sets are" -> "whatever the sets..."
-
-5-6 I write "have j : Q -> R := f p" but I think this is the first
-time I wrote the type of the term after j.
-
-5-8 "1 goal" -- not there for me.
-
-Notation for empty set on line 2
-
-"so we are doing some kind of proof by contradiction at this point"
-
-5-9 You can of course work both forwards and backwards. Or you can
-just crack and draw a picture.
-
-Aftter proof: the tactics are indeed good enoough.
-
-6-1 -> "distinhuishing the concept of a proposition and its proof."
-
-"intro, exact, appl" -> "exact, intro, have, apply"
-
-Lemma: "and P -> Q is true"
-
-6-2 "which is what solvign a goal mean -> solving this goal means"
-
-"To define an implication P -> Q £ -- \implies
-
-"So either believe in Goedel... -- delete"
-
-6-3 exact u, on newline at end.
-
-"If you solved the level using let" -> "have, then click on the word
-"exact" and l.v. ...
-
-Lemma: THEY ARE TYPES. Example in text: STILL TYPES
-
-6-5 "tactic from world 2" -> "level 2"
-THEY ARE TYPES AND EXAMPLES ARE TYPES
-"always have make an elemenT" in lemma statement
-
-LaTeX broken in 6.5 after proof
-
-6-6 btokrn latex in lemma statement
-TYPES
-
-6-7 "Level 8" in text.
-LaTeX broken in first line of text
-
-6-8 axiom 
 TODOs
-
-6-9 "they will be the last -> the last tactics you will need to know
-in order to become a competent Lean user. Indeed, after working through
-the rest of proposition world (which KB hasn't written yet) you
-should have all the tools you need to solve all the levels in advanced
-addition world, advanced multiplication world, and the 30 levels of
-inequality world.
-
 
 5-1 we're linear. When can we be nonlinear?
 5-2 TODO at bottom of screen.

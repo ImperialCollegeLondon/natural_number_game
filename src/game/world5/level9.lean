@@ -7,6 +7,9 @@ I asked around on Zulip and apparently there is not a tactic for this, perhaps b
 this level is rather artificial. In world 6 we will see a variant of this example
 which can be solved by a tactic. It would be an interesting project to make a tactic
 which could solve this sort of level in Lean.
+
+You can of course work both forwards and backwards, or you could crack and draw a picture.
+
 -/
 
 /- Lemma : no-side-bar
@@ -29,6 +32,6 @@ begin
 end
 
 /-
-Next it's Proposition world and I'm hoping that the tactics we've just learnt will be enough
-to get us through it.
+Next it's Proposition world, and the tactics you've learnt in function world are enough
+to solve all nine levels!
 -/

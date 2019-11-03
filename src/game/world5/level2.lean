@@ -46,7 +46,7 @@ as above, the tactic `revert p` takes us back to `⊢ P → Q`.
 ## Level 2 : `intro`.
 
 Let's make a function. Let's define the function on the natural
-numbers which sends a natural number $n$ to $3*n+2$. If you delete the
+numbers which sends a natural number $n$ to $3n+2$. If you delete the
 `sorry` you will see that our goal is `mynat → mynat`. A mathematician
 might denote this set with some exotic name such as
 $\operatorname{Hom}(\mathbb{N},\mathbb{N})$,
@@ -80,6 +80,8 @@ n : mynat
 Our job now is to construct a natural number, which is
 allowed to depend on $n$. We can do this using `exact` and
 writing a formula for the function we want to define. For example
+we imported addition and multiplication at the top of this file,
+so 
 
 `exact 3*n+2,`
 

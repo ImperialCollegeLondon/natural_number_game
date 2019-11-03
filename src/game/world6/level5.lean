@@ -17,7 +17,7 @@ the `sorry` and let's think about how to proceed.
 
 Our goal is `P → X` for some true/false statement $X$, and if our
 goal is to construct an implication then we almost always want to use the
-`intro` tactic from world 2, Lean's version of "assume $P$ is true". 
+`intro` tactic from level 2, Lean's version of "assume $P$ is true". 
 So let's start with
 
 `intro p,`
@@ -25,7 +25,7 @@ So let's start with
 and we then find ourselves in this state:
 
 ```
-P Q : Type,
+P Q : Prop,
 p : P
 ⊢ Q → P
 ```
@@ -43,7 +43,7 @@ and now we have to prove $P$, but have a proof handy:
 
 /- Lemma : no-side-bar
 For any propositions $P$ and $Q$, we always have
-make an element of $P\implies(Q\implies P)$. 
+$P\implies(Q\implies P)$. 
 -/
 example (P Q : Prop) : P → (Q → P) :=
 begin
@@ -55,7 +55,8 @@ begin
 end
 
 /-
-A mathematician would treat $P\implies(Q\implies P)` as the same as the set $P\land Q\implies P$,
+A mathematician would treat $P\implies(Q\implies P)$
+as the same as the set $P\land Q\implies P$,
 because to give a proof of either of these is just to give a method which takes
 a proof of $P$ and a proof of $Q$, and returns a proof of $P$. Thinking of the
 goal as $P\land Q\implies P$ we see why it is provable.
