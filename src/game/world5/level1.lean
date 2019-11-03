@@ -1,5 +1,8 @@
 -- World name : Function world
 /- 
+
+# Function world. 
+
 If you have beaten Addition World, then you have got
 quite good at manipulating equalities in Lean using the `rw` tactic.
 But there are plenty of levels later on which will require you

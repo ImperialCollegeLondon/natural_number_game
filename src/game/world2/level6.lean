@@ -37,19 +37,16 @@ additions like this: `rw add_comm a` will swap around
 additions of the form `a + ?`, and `rw add_comm a b,` will only
 swap additions of the form `a + b`.
 
-There used to be ten more levels about addition after this one, which
-people found really hard to solve because they involve abstract
-manipulation of true/false statements and we don't know the tactics.
-I have temporarily removed them, while I write a new "abstract
-proposition manipulation" level. Once
-we have this, we will able to take on levels such as
-`a + b = a + c → b = c` which involve implications.
-The tactics we know work well with equalities but are essentially
-useless for goals involving implications. 
+## Where next?
 
-So after you have solved this level, you are done with addition world and should
-leave it completely by clicking "next world".
-This will take you to world 3, multiplication world.
+There are ten more levels about addition after this one, but before
+you can attempt them you need to learn some more tactics. So after this
+level you have a choice -- either move on to world 3 (which you can
+solve with the tactics you know) or try world 5 (and learn some new ones).
+Use the "next world" and "previous world" buttons to move between worlds.
+Note that advanced addition world is not yet available in 1.07beta.
+
+Clicking "next world" once will take you to world 3, multiplication world.
 You won't need to know any new tactics to prove
 the big theorem `a * b = b * a` and get the `comm_semiring` collectible.
 -/
