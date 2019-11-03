@@ -37,21 +37,13 @@ begin [less_leaky]
   {
     rw mul_succ,
     rw mul_succ,
---    show (a * b) * d + (a * b) = _,
     rw hd,
---    show _ = a * (b * d + _),
     rw mul_add,
     refl,
+
+
   }
 end
-
-/-
-  induction c with d hd,
-  refl,
-  repeat {rw mul_succ},
-  -- a * b * d + a * b = a * (b * d + b)
-  rwa [hd, mul_add],
-  -/
 
 /-
 A mathematician could now remark that you have proved that the natural
