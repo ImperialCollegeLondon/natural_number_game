@@ -41,11 +41,11 @@ and now we have to prove $P$, but have a proof handy:
 `exact p,`
 -/
 
-/- Lemma
+/- Lemma : no-side-bar
 For any propositions $P$ and $Q$, we always have
 make an element of $P\implies(Q\implies P)$. 
 -/
-example (P Q : Type) : P → (Q → P) :=
+example (P Q : Prop) : P → (Q → P) :=
 begin
   intro p,
   intro q,

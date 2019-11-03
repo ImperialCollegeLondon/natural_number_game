@@ -36,7 +36,7 @@ with `exact p`. Note: you will need to learn the difference between
 `exact p` (which works) and `exact P` (which doesn't, because $P$ is
 not a proof of $P$).
 -/
-/- Lemma
+/- Lemma : no-side-bar
 We can solve a maze.
 -/
 lemma maze (P Q R S T U: Prop)

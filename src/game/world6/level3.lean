@@ -50,10 +50,10 @@ and we could even define $u$ to be $l(t)$:
 and then finish the level with `exact u,`. 
 -/
 
-/- Lemma
+/- Lemma : no-side-bar
 In the maze of logical implications above, if $P$ is true then so is $U$.
 -/
-lemma maze (P Q R S T U: Type)
+lemma maze (P Q R S T U: Prop)
 (p : P)
 (h : P → Q)
 (i : Q → R)

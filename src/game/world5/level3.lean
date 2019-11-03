@@ -76,7 +76,7 @@ and we could even define $u$ to be $l(t)$:
 and then finish the level with `exact u,`. 
 -/
 
-/- Lemma
+/- Lemma : no-side-bar
 We can solve a maze.
 -/
 lemma maze (P Q R S T U: Type)

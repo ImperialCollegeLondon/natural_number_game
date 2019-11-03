@@ -17,7 +17,7 @@ What happens if you just try `apply f`? Can you figure out what just happened? T
 `apply` easter egg. Why is it mathematically valid?
 -/
 
-/- Lemma
+/- Lemma : no-side-bar
 Whatever the sets $P$ and $Q$ and $R$ are, we can always
 make an element of $\operatorname{Hom}(\operatorname{Hom}(P,\operatorname{Hom}(Q,R)),
 \operatorname{Hom}(\operatorname{Hom}(P,Q),\operatorname{Hom}(P,R)))$.

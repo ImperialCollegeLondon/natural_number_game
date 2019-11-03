@@ -54,10 +54,10 @@ and small letters for proofs.
 -/ 
 
 
-/- Lemma
+/- Lemma : no-side-bar
 If $P$ is a proposition then $P\implies P$.
 -/
-lemma level3 (P : Prop) : P → P :=
+lemma level2 (P : Prop) : P → P :=
 begin
   intro p,
   exact p,

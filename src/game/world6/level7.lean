@@ -15,7 +15,7 @@ So this level is really about showing transitivity of $\implies$,
 if you like that sort of language.
 -/
 
-/- Lemma
+/- Lemma : no-side-bar
 From $P\implies Q$ and $Q\implies R$ we can deduce $P\implies R$.
 -/
 example (P Q R : Prop) : (P → Q) → ((Q → R) → (P → R)) :=

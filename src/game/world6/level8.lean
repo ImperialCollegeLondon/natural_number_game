@@ -1,4 +1,4 @@
-/- Axiom not_iff_imp_false (P : Prop) :
+/- Axiom : not_iff_imp_false (P : Prop) :
 ¬ P ↔ P → false
 -/
 lemma not_iff_imp_false (P : Prop) : ¬ P ↔ P → false := iff.rfl -- hide
@@ -23,7 +23,7 @@ At that point I guess you must be proving something by contradiction.
 Or are you?
 -/
 
-/- Lemma
+/- Lemma : no-side-bar
 If $P$ and $Q$ are propositions, and $P\implies Q$, then
 $\lnot Q\implies \lnot P$. 
 -/

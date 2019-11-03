@@ -68,7 +68,7 @@ In Lean, Propositions are types, like sets.
 ## Level 1 -- `exact`
 -/
 
-/- Lemma
+/- Lemma : no-side-bar
 If $P$ is true, and $P\implies Q$, then $Q$ is true.
 -/
 lemma level1 (P Q : Prop) (p : P) (h : P → Q) : Q :=

@@ -7,7 +7,7 @@ Lean's "congruence closure" tactic `cc` is good at mazes. Perhaps I should have
 mentioned it earlier.
 -/
 
-/- Lemma
+/- Lemma : no-side-bar
 There is a way through the following maze.
 -/
 example (A B C D E F G H I J K L : Prop)

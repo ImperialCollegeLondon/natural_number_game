@@ -41,7 +41,7 @@ and then let's output `p`.
 `exact p,`
 -/
 
-/- Lemma
+/- Lemma : no-side-bar
 Whatever sets $P$ and $Q$ are, we can always
 make an element of $\operatorname{Hom}(P,\operatorname{Hom}(Q,P))$.
 -/

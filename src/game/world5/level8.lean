@@ -31,7 +31,7 @@ it worked for the empty set, you just probably weren't really thinking about
 this case explicitly beforehand.
 -/
 
-/- Lemma
+/- Lemma : no-side-bar
 Whatever the sets $P$ and $Q$ are, we can always
 make an element of $\operatorname{Hom}(\operatorname{Hom}(P,Q),
 \operatorname{Hom}(\operatorname{Hom}(Q,\emptyset),\operatorname{Hom}(P,\emptyset)))$.
