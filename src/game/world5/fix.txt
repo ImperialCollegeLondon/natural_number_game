@@ -1,0 +1,45 @@
+5-1
+
+For example your local context will soon look liek thsi -> if you delet the sorry below your local context will look like this, meaning p \in P and etc.
+
+"element of your goal type" -> "goal set"
+
+Mention h(P) doesn't work?
+
+5-2
+
+3*n+2 and just import + and *
+
+Hom(N,N) is a bit heavy-going.
+
+"our local context now looks like this: 1 goal" (no it doesn't)
+
+5-2 TODO
+
+"intro" docs have duplication
+
+5-3 add TODO -- can we get a better diagram?
+
+
+"then at the end of it" -> "then just before the 1exact..."
+
+"solves the level in teh same soprt of way" -> "solves the level using another technique"
+
+5-4 "path...that links P to Q" -> "to U"
+
+"Keep applying functions" : "don't get lost!"
+
+5-5 "and then we find outselvse in this state: 1 goal (no we don't!)
+
+**LESS LEAKY**
+
+10^{10^{10}}} too many close }
+
+5-6 intros f h p, and talk about what to do next.
+
+5-7 "^op_erator"
+Stress we're leaving them alone now.
+
+
+5-9 import useless
+5-9 oops they're props!
