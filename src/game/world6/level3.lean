@@ -18,16 +18,7 @@ of $U$; during the proof we will construct proofs of
 of some of the other propositions involved. The diagram of
 propositions and implications looks like this pictorially:
 
-TODO -- this one should look like $P\implies Q\implies R$ etc.
-
-```
-       h      i
-    P ---→ Q ---→ R
-           |
-           |j
-       k   ↓   l
-    S ---→ T ---→ U
-```
+![diagram](/implies_diag.jpg)
 
 and so it's clear how to deduce $U$ from $P$.
 Indeed, we could solve this level in one move by typing

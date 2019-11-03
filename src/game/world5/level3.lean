@@ -44,16 +44,7 @@ of $U$; during the proof we will make several intermediate elements
 of some of the other sets involved. The diagram of sets and
 functions looks like this pictorially:
 
-TODO -- better diagram?
-
-```
-       h      i
-p : P ---→ Q ---→ R
-           |
-           |j
-       k   ↓   l
-    S ---→ T ---→ U
-```
+![diagram](/function_diag.jpg)
 
 and so it's clear how to make the element of $U$ from the element of $P$.
 Indeed, we could solve this level in one move by typing

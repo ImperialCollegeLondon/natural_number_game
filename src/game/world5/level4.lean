@@ -20,14 +20,7 @@ so it suffices to prove $P$".
 
 Let's do the same level again:
 
-```
-       h      i
-    P ---→ Q ---→ R
-           |
-           |j
-       k   ↓   l
-    S ---→ T ---→ U
-```
+![diagram](/function_diag.jpg)
 
 We are given $p \in P$ and our goal is to find an element of $U$, or
 in other words to find a path through the maze that links $P$ to $U$.

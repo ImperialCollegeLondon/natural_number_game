@@ -6,14 +6,7 @@
 
 Let's do the same level again:
 
-```
-       h      i
-    P ---→ Q ---→ R
-           |
-           |j
-       k   ↓   l
-    S ---→ T ---→ U
-```
+![diagram](/implies_diag.jpg)
 
 We are given a proof $p$ of $P$ and our goal is to find a proof of $U$, or
 in other words to find a path through the maze that links $P$ to $U$.
