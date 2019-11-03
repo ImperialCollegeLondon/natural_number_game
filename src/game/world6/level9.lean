@@ -17,6 +17,9 @@ example (A B C D E F G H I J K L : Prop)
  : A → L :=
 begin
   cc,
+
+
+
 end
 
 /-
