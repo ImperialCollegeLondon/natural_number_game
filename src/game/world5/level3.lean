@@ -36,10 +36,10 @@ Say you have a whole bunch of sets and functions between them,
 and your goal is to build a certain element of a certain set.
 If it helps, you can build intermediate elements of other sets
 along the way, using the `let` command. `let` is the Lean analogue
-of saying "let's define $q$ to be $f(p)$" in the middle of a proof.
+of saying "let's define $q$ to be $f(p)$" in the middle of a calculation.
 It is often not logically necessary, but on the other hand
 it is very convenient, for example it can save on notation, or
-it can break proofs up into smaller steps.
+it can break proofs or calculations up into smaller steps.
 
 In the level below, we have an element of $P$ and we want an element
 of $U$; during the proof we will make several intermediate elements

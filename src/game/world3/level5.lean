@@ -21,6 +21,7 @@ These things above are the tools we need to prove that multiplication is associa
 ## Random tactic hints
 
 1) Did you know you can do `repeat {rw mul_succ}`?
+
 2) Did you know you can do `rwa [hd, mul_add]`? (I learnt that trick from Ken Lee)
 -/
 /- Lemma

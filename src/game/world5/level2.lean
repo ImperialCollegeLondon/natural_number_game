@@ -91,7 +91,7 @@ will close the goal, ultimately defining the function $f(n)=3n+2$.
 /- Lemma
 We can construct a function $\mathbb{N}\to\mathbb{N}$. 
 -/
-lemma level3 : mynat → mynat :=
+lemma level2 : mynat → mynat :=
 begin [less_leaky]
   intro n,
   exact 3*n+2,
