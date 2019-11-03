@@ -9,7 +9,7 @@ We really are just constructing abstract levels with sets and
 functions, and then solving them and never using the results
 ever again. Here's another one, which should hopefully be
 very easy for you now. Advanced mathematician viewers will
-know it as contravariance of $ᵒᵖeratorname{Hom}(\cdot,F)$
+know it as contravariance of $\operatorname{Hom}(\cdot,F)$
 functor.
 -/
 

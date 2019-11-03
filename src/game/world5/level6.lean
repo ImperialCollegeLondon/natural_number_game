@@ -9,8 +9,11 @@ that you can do things like `let j : Q → R := f p` if `f : P → (Q → R)`
 and `p : P`. I recommend that you start with `intro f` rather than `intro p`
 because even though the goal starts `P → ...`, the brackets mean that
 the goal is not a function from `P` to anything, it's a function from
-`P → (Q → R)` to something. If you do start with `intro f`, and your goal is `⊢ R` later on,
-try `apply f` and then try and figure out what just happened. This is a little
+`P → (Q → R)` to something. In fact I'd recommend that you started
+with `intros f h p`, which introduces three variables at once.
+You then find that your your goal is `⊢ R`. If you try `let j : Q → R := f p`
+now then you can `apply j`. Alternatively you can `apply (f p)` directly.
+What happens if you just try `apply f`? Can you figure out what just happened? This is a little
 `apply` easter egg. Why is it mathematically valid?
 -/
 
