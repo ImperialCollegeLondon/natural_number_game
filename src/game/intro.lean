@@ -9,7 +9,7 @@ the 2019-20 Imperial College 1st year maths beta tester students, Marie-Amélie 
 Toby Gee, Joseph Myers, and all the people who have been in touch
 via the <a href="https://leanprover.zulipchat.com/" target="blank">Lean Zulip chat</a>
  or the <a href="https://xenaproject.wordpress.com/" target="blank">Xena Project blog</a>
- or via <a href="https://twitter.com/home" target="blank">Twitter</a>.
+ or via <a href="https://twitter.com/XenaProject" target="blank">Twitter</a>.
 The natural number game is brought to you by the Xena project, a project based at Imperial College London
 whose aim is to get mathematics undergraduates using computer theorem provers.
 Lean is a computer theorem prover being developed at Microsoft Research.
@@ -33,5 +33,5 @@ will take you through some of these tactics. During your proofs, your "goal" (i.
 supposed to be proving) will be displayed with  a `⊢` symbol in front of it. If the top
 right hand box reports "Theorem Proved!", you have closed all the goals in the level
 and can move on to the next level in the world you're in. When you've finished a world,
-hit "main menu" in the top left to get back here
+hit "main menu" in the top left to get back here.
 -/

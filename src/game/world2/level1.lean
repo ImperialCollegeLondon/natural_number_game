@@ -49,10 +49,8 @@ hd : 2 * d = d + d
 /- 
 # World 2 -- addition world. 
 
-Welcome to World 2, addition world. If you've only proved *one* lemma from the tutorial world
-with `refl` and you've never heard of the `rw` tactic, then you probably just clicked the wrong button.
-Go back to world 1 using the "previous world" button in the top left and then click "next level" instead
-of "next world". If you've done all five levels in tutorial world, then you're in the right place! Here's
+Welcome to World 2, addition world. If you've done all five levels in tutorial world
+and know about `rw` and `refl`, then you're in the right place. Here's
 a reminder of what you're now equipped with.
 
 ## Data:

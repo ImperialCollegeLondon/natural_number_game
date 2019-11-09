@@ -46,8 +46,7 @@ If you want to be reminded about the `refl` tactic, you can click on the "Tactic
 down menu on the left. Resize the window if it's too small. 
 
 Now click on "next level" in the top right of your browser to go onto the second level of
-tutorial world, where we'll learn about the `rw` tactic. [NB don't click on "next world",
-we're not ready for addition world yet]
+tutorial world, where we'll learn about the `rw` tactic.
 -/
 
 /- Lemma : no-side-bar

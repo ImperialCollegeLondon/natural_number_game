@@ -10,7 +10,7 @@ a + succ(b) = succ(a + b)
 -/
 
 /-
-# World 1 : Tutorial world
+# Tutorial world
 
 ## Level 4: addition
 
@@ -22,7 +22,8 @@ this is the base case.
 
 * `add_zero (a : mynat) : a + 0 = a`
 
-We will call this theorem `add_zero`. **Note the name of this theorem**.
+We will call this theorem `add_zero`. More precisely, `add_zero` is the name
+of the *proof* of the theorem. **Note the name of this proof**.
 Mathematicians sometimes call it "Lemma 2.1" or "Hypothesis P6" or something. But
 computer scientists call it `add_zero` because it tells you
 what the answer to "$x$ add zero" is. It's a *much* better name than "Lemma 2.1".
@@ -38,7 +39,7 @@ Peano tells you how to add `succ(d)` to `a`. It looks like this:
 
 What's going on here is that we assume `a + d` is already
 defined, and we define `a + succ(d)` to be the number after it.
-**Note the name of this theorem too** -- `add_succ` tells you
+**Note the name of this proof too** -- `add_succ` tells you
 how to add a successor to something. If you ever see `... + succ ...`
 in your goal, you should be able to use `rw add_succ,` to make
 progress. Here is a simple example where we shall see both. Let's prove
@@ -58,28 +59,36 @@ and then observe that you can close the goal with
 
 `refl,`
 
-and you're done. You might want to review this proof now; at
-three lines long it is our current record. Click on a line in the proof
-and then use the arrow keys to move your cursor
-around (try going up and down first), and you can see what
-Lean is thinking on each line of the proof. The goal changes
-just before each comma. That's why commas are important.
+and you're done. You have finished tutorial world!
 
-FAQ. Question: why has the top left hand box gone blank?
+## Examining proofs.
+
+You might want to review this proof now; at
+three lines long it is our current record. Click on a line in the proof
+and use the L/R arrow keys to put your cursor as far left as it will go.
+Then use the U/D arrow keys to move your cursor
+up and down from line to line, and you can see what
+Lean is thinking on each line of the proof.
+
+## Fixing problems.
+
+Question: why has the top right hand box gone blank?
+
 Answer: Maybe you tried a tactic which didn't work. Or maybe you're
 in the middle of typing a tactic. Try deleting up to the last
-comma, or adding a new comma. Look at the
+comma, *or adding a new comma*. Look at the
 error message. What line is the first error on? Perhaps
 Lean thinks you're in the middle of writing a tactic that you
-think you finished. Did you perhaps forget a comma somewhere?
+think you finished. If Lean is still attempting to process a tactic
+it won't display anything. 
 
 When you're happy, let's move onto world 2, addition world, and
-learn about proof by induction. Click on "next world" in the top right.
+learn about proof by induction. Go back to the main menu and select addition world.
 -/
 
 /- Lemma : no-side-bar
 For all natural numbers $a$, we have
-$$a + \operatorname{succ}(0) = \operatorname{succ}(a)$$.
+$$a + \operatorname{succ}(0) = \operatorname{succ}(a).$$
 -/
 lemma add_succ_zero (a : mynat) : a + succ(0) = succ(a) :=
 begin [less_leaky]

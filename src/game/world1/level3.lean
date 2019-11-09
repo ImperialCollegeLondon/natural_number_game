@@ -12,7 +12,7 @@ namespace mynat -- hide
 -/
 /-
 
-# World 1 : Tutorial world
+# Tutorial world
 
 ## Level 3: Peano's axioms.
 
@@ -24,19 +24,19 @@ also gives us some other things, which we'll take a look at now:
   * The principle of mathematical induction.
 
 These axioms are essentially the axioms isolated by Peano which uniquely characterise
-the natural numbers (we also need recursion, but we can ignore it until world 7 or so).
-If you've not seen these things before, I guess they might look intimidating,
-so let's just go through them briefly. Firstly, notice that they are all
-standard facts about the natural numbers $\{0,1,2,3,\ldots\}$.
+the natural numbers (we also need recursion, but we can ignore it for now).
 The first axiom says that 0 is a natural number. The second says that there
 is a `succ` function which eats a number and spits out the number after it,
-so succ(0)=1, succ(1)=2 and so on.
+so $\operatorname{succ}(0)=1$, $\operatorname{succ}(1)=2$ and so on.
 
 Peano's last axiom is the principle of mathematical induction. This is a deeper
 fact. It says that if we have infinitely many true/false statements $P(0)$, $P(1)$,
 $P(2)$ and so on, and if $P(0)$ is true, and if for every natural number $d$
 we know that $P(d)$ implies $P(\operatorname{succ}(d))$, then $P(n)$ must be true for every
-natural number $n$. One can think of it as saying that every natural number
+natural number $n$. It's like saying that if you have a long line of dominoes, and if
+you knock the first one down, and if you know that if a domino falls down then the one
+after it will fall down too, then you can deduce that all the dominos will fall down.
+One can also think of it as saying that every natural number
 can be built by starting at 0 and then applying `succ` a finite number of times.
 
 Peano's insights were firstly that these axioms completely characterise
@@ -49,8 +49,8 @@ This game is all about seeing how far these axioms of Peano can take us.
 The import also gives us usual numerical notation
 0 and 1, where 0 is Peano's 0, and `1 = succ(0)`. It's sometimes useful to know that
 `one_eq_succ_zero` is a proof of the theorem that `1 = succ(0)`. I've added this
-to your list of useful theorems -- check that you can find it
-in "theorem statements" for "World 1 - Tutorial World".
+to your list of useful theorems -- check that you can find it in the bar on the left
+in "Rheorem statements" for Tutorial World.
 
 Let's practice our use of the `rw` tactic in the following example.
 Our hypothesis `h` is a proof that `succ(a) = b` and we want to prove that
@@ -72,7 +72,7 @@ That goal is of the form `X = X`, so you can prove this new goal with
 
 `refl,`
 
-on the line after `rw h,`. Don't forget blah blah blah.
+on the line after `rw h,`. Don't forget the commas!
 
 **Important note** : the tactic `rw` expects
 a proof afterwards (e.g. `rw h1`). But `refl` is just `refl`.

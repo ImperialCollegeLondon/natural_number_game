@@ -2,7 +2,7 @@ import mynat.mul -- hide
 namespace mynat -- hide
 
 /-
-# World 1 : Tutorial world
+# Tutorial world
 
 ## level 2: The rewrite (`rw`) tactic.
 
@@ -33,7 +33,9 @@ by writing it on the line after `rw h,`. Don't forget the comma, hit
 enter, and enjoy seeing the "Proof complete!" message in the
 top right window. The other reason you'll know you're
 done is that the bottom right window (the error window)
-becomes empty. 
+becomes empty. When you've finished reading the comments below
+the proof, click "Next Level" in the top right to proceed to the next
+level in this world.
 
 -/
 
