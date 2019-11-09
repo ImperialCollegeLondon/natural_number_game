@@ -1,6 +1,6 @@
 import mynat.definition -- hide
 import mynat.add -- hide
-import game.world2.level6andthreequarters -- hide
+import game.world7.level2 -- hide
 namespace mynat -- hide
 
 /- Tactic : intro
@@ -29,16 +29,16 @@ h : a + a = b + b
 
 /-
 
-# World 2 -- Addition World
+# Advanced Addition World
 
-## Level 6 and seven eighths:  -- `succ_eq_succ_of_eq`.
+## Level 3  -- `succ_eq_succ_of_eq`.
 -/
 
 /-
-Here we will learn the `intro` tactic. We are going to prove something
-completely obvious: if $a=b$ then $succ(a)=succ(b)$. This is *not* `succ_inj`!
+We are going to prove something completely obvious: if $a=b$ then
+$succ(a)=succ(b)$. This is *not* `succ_inj`!
 This is trivial -- we can just rewrite our proof of `a=b`.
-But how do we get to that proof?
+But how do we get to that proof? Use the `intro` tactic.
 -/
 
 /- Theorem
@@ -51,11 +51,4 @@ begin [less_leaky]
   refl,
 end
 
-/-
-Try starting with
-
-`intro h,`
-
-Now `rw` and `refl` will get you home.
--/
 end mynat -- hide

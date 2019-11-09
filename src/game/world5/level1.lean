@@ -104,6 +104,13 @@ end
 
 /- Tactic : exact
 
+## Summary 
+
+If the goal is `⊢ X` then `exact x` will close the goal if
+and only if `x` is a term of type `X`. 
+
+## Details
+
 Say $P$, $Q$ and $R$ are types (i.e., what a mathematician
 might think of as either sets or propositions),
 and the local context looks like this: 

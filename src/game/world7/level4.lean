@@ -1,12 +1,12 @@
 import mynat.definition -- hide
 import mynat.add -- hide
-import game.world2.level6andseveneighths -- hide
+import game.world7.level3 -- hide
 namespace mynat -- hide
 
 /- Tactic : split
-The `split` tactic turns one "if and only if" goal into
-two goals corresponding to the implications in each
-direction.
+The `split` tactic acts on the goal. It turns one
+`⊢ P ↔ Q` goal into two goals `⊢ P → Q` and `⊢ Q → P`.
+It also turns one `P ∧ Q` goal into two goals, namely 
 
 ### Example:
 
@@ -57,7 +57,7 @@ using `intro`, `rw` and `refl`.
 /- Theorem
 Two natural numbers are equal if and only if their successors are equal.
 -/
-theorem eq_iff_succ_eq_succ (a b : mynat) : succ a = succ b ↔ a = b :=
+theorem succ_eq_succ_iff (a b : mynat) : succ a = succ b ↔ a = b :=
 begin [less_leaky]
   split,
   { exact succ_inj},

@@ -1,9 +1,17 @@
 /- Tactic : have
+
+## Summary
+
+`have h : P,` will create a new goal of creating a term of type `P`,
+and will add `h : P` to the hypotheses for the goal you were working on.
+
+## Details
+
 If you want to name a term of some type (because you want it
 in your local context for some reason), and if you have the
 formula for the term, you can use `have` to give the term a name. 
 
-## Example
+## Example (`have q := ...` or `have q : Q := ...`)
 
 If the local context contains
 ```
@@ -23,6 +31,33 @@ q : Q
 If you think about it, you don't ever really need `q`, because whenever you
 think you need it you coudl just use `f(p)` instead. But it's good that
 we can introduce convenient notation like this.
+
+## Example (`have q : Q,`)
+
+A variant of this tactic can be used where you just declare the
+type of the term you want to have, finish the tactic statement with
+a comma and no `:=`, and then Lean just adds it as a new goal.
+The number of goals goes up by one if you use `have` like this.
+
+For example if the local context is
+```
+P Q R : Prop/Type,
+f : P → Q,
+g : Q → R,
+p : P
+⊢ R
+```
+
+then after `have q : Q,`, there will be the new goal
+```
+f : P → Q,
+g : Q → R,
+p : P,
+⊢ Q
+```
+
+and your original goal will have `q : Q` added to the list
+of hypotheses.
 -/
 
 /-
