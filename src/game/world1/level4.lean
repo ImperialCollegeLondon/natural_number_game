@@ -76,11 +76,11 @@ Question: why has the top right hand box gone blank?
 
 Answer: Maybe you tried a tactic which didn't work. Or maybe you're
 in the middle of typing a tactic. Try deleting up to the last
-comma, *or adding a new comma*. Look at the
+comma, *or adding a comma at the end of your code*. Look at the
 error message. What line is the first error on? Perhaps
-Lean thinks you're in the middle of writing a tactic that you
+Lean thinks you're in the middle of writing a tactic command that you
 think you finished. If Lean is still attempting to process a tactic
-it won't display anything. 
+command it won't display anything. 
 
 When you're happy, let's move onto Addition World, and
 learn about proof by induction. Go back to the main menu and select addition world.

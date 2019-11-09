@@ -74,7 +74,7 @@ advanced collectibles as `mynat.comm_semiring` and
 the famous collectible at the end of it.
 
 One last thing -- didn't you think that solving this level
-`add_right_comm` was boring? check out this AI that can do it for us.
+`add_right_comm` was boring? Check out this AI that can do it for us.
 
 First we have to get the `add_comm_monoid` collectible,
 which we do by saying the magic words which make Lean's type class inference
@@ -99,6 +99,13 @@ end
 Imagine having to do that one by hand! The AI closes the goal
 because it knows how to use associativity and commutativity
 sensibly in a commutative monoid.
+
+You are now done with addition world. Go back to the main menu (top left)
+and decide whether to press on with multiplication world and power world
+(which can be solved with `rw`, `refl` and `induction`), or to go on
+to Function World where you can learn the tactics needed to prove
+goals of the form $P\implies Q$, thus enabling you to solve more
+advanced addition world levels such as $a+t=b+t\implies a=b$.
 -/
 
 end mynat -- hide

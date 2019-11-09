@@ -77,8 +77,9 @@ a reminder of the things you're now equipped with which we'll need in this world
 # Important thing: 
 
 This is a *really* good time to check you understand about the box on the left with the drop down
-menus. All the theorems and all the tactics above are documented there. Have a click around
-and check that you can find statements of the theorems above, and explanations of
+menus. All the theorems and all the tactics above are documented there. You can find
+all you need to know about what theorems you have collected in Theorem statements -> Addition world.
+Have a click around and check that you can find statements of the theorems above, and explanations of
 the tactics above. As we go through the game, these lists will grow. The box on the left
 will prove invaluable as the number of theorems we prove gets bigger. On the other hand,
 we only need to learn one more tactic to really start going places, so let's learn about
@@ -92,8 +93,8 @@ OK so let's see induction in action. We're going to prove
 
 That is: for all natural numbers $n$, $0+n=n$. Wait -- what is going on here?
 Didn't we already prove that adding zero to $n$ gave us $n$?
-No we didn't! We proved $n + 0 = n$ -- that was called `add_zero`. We're now
-trying to prove `zero_add`, which says $0 + n = n$. But aren't these two theorems
+No we didn't! We proved $n + 0 = n$ -- that proof was called `add_zero`. We're now
+trying to establish `zero_add`, the proof that $0 + n = n$. But aren't these two theorems
 the same? No they're not! It is *true* that `x + y = y + x`, but we haven't
 *proved* it yet, and in fact we will need both `add_zero` and `zero_add` in order
 to prove this. In fact `x + y = y + x` is the boss level for addition world,
@@ -101,7 +102,7 @@ and `induction` is the only other tactic you'll need to beat it.
 
 Now `add_zero` is one of Peano's axioms, so we don't need to prove it, we already have it
 (indeed, if you've opened the Addition World theorem statements on the left, you can even see it).
-To prove `zero_add` we need to use induction. While we're here,
+To prove `0 + n = n` we need to use induction on $n$. While we're here,
   note that `zero_add` is about zero add something, and `add_zero` is about something add zero.
   The names of the proofs tell you what the theorems are. Anyway, let's prove `0 + n = n`.
 
@@ -147,9 +148,7 @@ end
 
 /-
 We're in the successor case, and your top right box should look
-something like this (make sure you've solved the `0 + 0 = 0` goal or
-your tactics will be acting on that goal instead of the goal we're talking about
-here):
+something like this:
 
 ```
 case mynat.succ
@@ -157,6 +156,9 @@ d : mynat,
 hd : 0 + d = d
 ⊢ 0 + succ d = succ d
 ```
+
+*Important:* make sure that you only have one goal at this point. You
+should have proved `0 + 0 = 0` by now. Tactics only operate on the top goal.
 
 The first line just reminds us we're doing the inductive step.
 We have a fixed natural number `d`, and the inductive hypothesis `hd : 0 + d = d`

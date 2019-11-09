@@ -9,9 +9,10 @@ namespace mynat -- hide
 ## Level 3 : `succ_add`
 
 Oh no! On the way to `add_comm`, a wild `succ_add` appears. `succ_add`
-is the statement that `succ(a) + b = succ(a + b)` for `a` and `b` in your
-natural number type. You will
-need this theorem to prove `a + b = b + a` so you'd better prove it first.
+is the proof that `succ(a) + b = succ(a + b)` for `a` and `b` in your
+natural number type. We need to prove this now, because we will need
+to use this result in our proof that `a + b = b + a` in the next level.
+
 NB: think about why computer scientists called this result `succ_add` .
 There is a logic to all the names.
 
