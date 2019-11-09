@@ -60,7 +60,7 @@ levels = [
 [[worlds]]
 name = "Function world"
 id = 5
-parents = [4]
+parents = [2]
 levels = [
 	"src/game/world5/level1.lean",
 	"src/game/world5/level2.lean",
@@ -87,4 +87,14 @@ levels = [
 	"src/game/world6/level7.lean",
 	"src/game/world6/level8.lean",
 	"src/game/world6/level9.lean",
+]
+[[worlds]]
+name = "Advanced addition world"
+id = 7
+parents = [2, 6]
+levels = [
+	"src/game/world7/level1.lean",
+	"src/game/world7/level2.lean",
+	"src/game/world7/level3.lean",
+	"src/game/world7/level4.lean",
 ]
