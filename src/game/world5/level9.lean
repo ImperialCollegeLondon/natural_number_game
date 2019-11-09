@@ -1,7 +1,7 @@
 /-
 # Function world. 
 
-## Level 9 : a big maze. 
+## Level 9: a big maze. 
 
 I asked around on Zulip and apparently there is not a tactic for this, perhaps because
 this level is rather artificial. In world 6 we will see a variant of this example

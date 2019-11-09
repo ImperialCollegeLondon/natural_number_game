@@ -16,7 +16,7 @@ use the word Proposition to mean "a relatively straightforward statement
 which is true" and computer scientists use it to mean "a statement of
 arbitrary complexity, which might be true or false". Computer scientists
 are far more careful about distinguishing between a proposition and a proof.
-(for example: `x + 0 = x`) is a proposition, and `add_zero x`
+For example: `x + 0 = x` is a proposition, and `add_zero x`
 is its proof. The convention we'll use is capital letters for propositions
 and small letters for proofs. 
 
@@ -53,11 +53,10 @@ h : P → Q
 In this situation, we have true/false statements $P$ and $Q$,
 a proof $p$ of $P$, and $h$ is the hypothesis that $P\implies Q$.
 Our goal is to construct a proof of $Q$. It's clear what to do
-*mathematically* to solve this goal -- we can deduce $Q$
-by applying the hypothesis $h:P\implies Q$ to
-the proof $p$ of $P$. But how to do it in Lean?
+*mathematically* to solve this goal, $P$ is true and $P$ implies $Q$
+so $Q$ is true. But how to do it in Lean?
 
-Adopting a point of view wholly unfamiliar to mathematicians,
+Adopting a point of view wholly unfamiliar to many mathematicians,
 Lean interprets the hypothesis $h$ as a function from proofs
 of $P$ to proofs of $Q$, so the rather surprising approach
 
@@ -68,18 +67,18 @@ works to close the goal.
 Note that `exact h(P),` (with a capital P) won't work;
 this is a common error I see from beginners. "We're trying to solve P
 so it's exactly P". The goal states the *theorem*, your job is to
-construct the *proof*. $P$ is not proof of $P$, it's $p$ that is a proof of $P$. 
+construct the *proof*. $P$ is not a proof of $P$, it's $p$ that is a proof of $P$. 
 
 In Lean, Propositions are types, like sets, and proofs are terms,
 like elements of sets.
 
-## Level 1 -- `exact`
+## Level 1: the `exact` tactic.
 -/
 
 /- Lemma : no-side-bar
 If $P$ is true, and $P\implies Q$ is also true, then $Q$ is true.
 -/
-lemma level1 (P Q : Prop) (p : P) (h : P → Q) : Q :=
+example (P Q : Prop) (p : P) (h : P → Q) : Q :=
 begin
 exact h(p),
 
