@@ -34,8 +34,8 @@ and this is OK because their hypotheses don't add up?]
 
 -/
 
-/- Lemma : no-side-bar
-Whatever the sets $P$ and $Q$ are, we can always
+/- Definition
+Whatever the sets $P$ and $Q$ are, we
 make an element of $\operatorname{Hom}(\operatorname{Hom}(P,Q),
 \operatorname{Hom}(\operatorname{Hom}(Q,\emptyset),\operatorname{Hom}(P,\emptyset)))$.
 -/

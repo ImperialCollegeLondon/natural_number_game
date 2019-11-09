@@ -13,8 +13,8 @@ know it as contravariance of $\operatorname{Hom}(\cdot,F)$
 functor.
 -/
 
-/- Lemma : no-side-bar
-Whatever the sets $P$ and $Q$ and $F$ are, we can always
+/- Definition
+Whatever the sets $P$ and $Q$ and $F$ are, we 
 make an element of $\operatorname{Hom}(\operatorname{Hom}(P,Q),
 \operatorname{Hom}(\operatorname{Hom}(Q,F),\operatorname{Hom}(P,F)))$.
 -/

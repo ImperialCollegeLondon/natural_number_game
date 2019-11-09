@@ -91,7 +91,7 @@ levels = [
 [[worlds]]
 name = "Advanced addition world"
 id = 7
-parents = [2, 6]
+parents = [3, 6]
 levels = [
 	"src/game/world7/level1.lean",
 	"src/game/world7/level2.lean",

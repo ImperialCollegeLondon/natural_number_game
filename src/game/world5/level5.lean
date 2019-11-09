@@ -41,9 +41,8 @@ and then let's output `p`.
 `exact p,`
 -/
 
-/- Lemma : no-side-bar
-Whatever the sets $P$ and $Q$ are, we can always
-make an element of $\operatorname{Hom}(P,\operatorname{Hom}(Q,P))$.
+/- Definition
+We define an element of $\operatorname{Hom}(P,\operatorname{Hom}(Q,P))$.
 -/
 example (P Q : Type) : P → (Q → P) :=
 begin

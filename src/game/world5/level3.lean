@@ -107,8 +107,8 @@ and then finish the level with
 . 
 -/
 
-/- Lemma : no-side-bar
-We can solve a maze.
+/- Definition
+Given an element of $P$ we can define an element of $U$.
 -/
 lemma maze (P Q R S T U: Type)
 (p : P)

@@ -12,8 +12,7 @@ You can of course work both forwards and backwards, or you could crack and draw 
 
 -/
 
-/- Lemma : no-side-bar
-There is a way through the following maze.
+/- Given a bunch of functions, we can define another one.
 -/
 example (A B C D E F G H I J K L : Type)
 (f1 : A → B) (f2 : B → E) (f3 : E → D) (f4 : D → A) (f5 : E → F)

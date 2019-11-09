@@ -47,8 +47,8 @@ with `exact p`. Note: you will need to learn the difference between
 `exact p` (which works) and `exact P` (which doesn't, because $P$ is
 not an element of $P$).
 -/
-/- Lemma : no-side-bar
-We can solve a maze.
+/- Definition
+Given an element of $P$ we can define an element of $U$.
 -/
 lemma maze (P Q R S T U: Type)
 (p : P)

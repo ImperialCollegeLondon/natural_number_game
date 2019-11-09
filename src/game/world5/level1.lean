@@ -25,11 +25,12 @@ even though there's no harm at all in thinking of $P$ being a set and $p$
 being an element, you will not see Lean using the notation $p\in P$, because
 internally Lean stores $P$ as a "Type" and $p$ as a "term", and it uses `p : P`
 to mean "$p$ is a term of type $P$", Lean's way of expressing the idea that $p$
-is an element of the set $P$. 
+is an element of the set $P$. You have seen this already -- Lean has
+been writing `n : mynat` to mean that $n$ is a natural number.
 
 ## A new kind of goal.
 
-All through addition and multiplication world, our goals have been theorems,
+All through addition world, our goals have been theorems,
 and it was our job to find the proofs. 
 **The levels in function world aren't theorems**. This is the only world where
 the levels aren't theorems in fact. In function world the object of a level
@@ -48,15 +49,17 @@ h : P → Q
 ⊢ Q
 ```
 
-In this situation, we have sets $P$ and $Q$ and an element $p$ of $P$ (written `p : P`
+In this situation, we have sets $P$ and $Q$ (but Lean calls them types),
+and an element $p$ of $P$ (written `p : P`
 but meaning $p\in P$). We also have a function $h$ from $P$ to $Q$,
 and our goal is to construct an
 element of the set $Q$. It's clear what to do *mathematically* to solve
 this goal -- we can
 make an element of $Q$ by applying the function $h$ to
-the element $p$. But how to do it in Lean? There are at least two ways,
+the element $p$. But how to do it in Lean? There are at least two ways
+to explain this idea to Lean,
 and here we will learn about one of them, namely the method which
-uses the `exact` tactic to explain our mathematical argument to Lean.
+uses the `exact` tactic.
 
 ## The `exact` tactic. 
 
@@ -90,11 +93,11 @@ $P$ is not an element of $P$, it's $p$ that is an element of $P$.
 ## Level 1 -- `exact`
 -/
 
-/- Lemma : no-side-bar
+/- Definition
 Given an element of $P$ and a function from $P$ to $Q$,
-you can get an element of $Q$.
+we define an element of $Q$.
 -/
-lemma level1 (P Q : Type) (p : P) (h : P → Q) : Q :=
+definition level1 (P Q : Type) (p : P) (h : P → Q) : Q :=
 begin
 exact h(p),
 
