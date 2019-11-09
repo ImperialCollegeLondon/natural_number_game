@@ -20,7 +20,7 @@ so it suffices to prove $P$".
 
 Let's do the same level again:
 
-![diagram](/function_diag.jpg)
+![diagram](https://wwwf.imperial.ac.uk/~buzzard/xena/natural_number_game_images/function_diag.jpg)
 
 We are given $p \in P$ and our goal is to find an element of $U$, or
 in other words to find a path through the maze that links $P$ to $U$.

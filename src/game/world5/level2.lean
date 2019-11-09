@@ -101,6 +101,3 @@ begin [less_leaky]
 
 
 end
-
--- TODO -- this is not a lemma, this is a definition. But currently
--- the framework making the game will only let me make lemmas.
