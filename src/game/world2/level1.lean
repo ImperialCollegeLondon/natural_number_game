@@ -13,6 +13,15 @@ a + succ(b) = succ(a + b)
 -/
 
 /- Tactic : induction
+
+## Summary
+
+if `n : mynat` is in our assumptions, then `induction n with d hd`
+attempts to prove the goal by induction on `n`, with the inductive
+assumption in the `succ` case being `hd`.
+
+## Details
+
 If you have a natural number `n : mynat` in your context
 (above the `⊢`) then `induction n with d hd` turns your
 goal into two goals, a base case with `n = 0` and

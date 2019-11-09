@@ -111,11 +111,21 @@ advanced addition world levels such as $a+t=b+t\implies a=b$.
 end mynat -- hide
 
 /- Tactic : simp
-The `simp` tactic does basic automation. By level 2-6 you
+
+## Summary
+
+The `simp` tactic is a high-level tactic which tries
+to prove equalities using facts in its database (such
+as `add_assoc` and `add_comm`).
+
+## Details
+
+The `simp` tactic does basic automation. By level 6 of
+Addition World you
 have proved enough about addition for `simp` to be able
 to solve all equalities whose proofs involve a tedious number
 of rewrites of `add_assoc` and `add_comm`, and by
-level 3-9 the same is true of `mul_assoc` and `mul_comm`.
+level 9 of Multiplication World the same is true of `mul_assoc` and `mul_comm`.
 
 ### Example:
 If our goal is this:
@@ -123,7 +133,7 @@ If our goal is this:
 ⊢ a + b + c + d + e = c + (b + e + a) + d
 ```
 
-and you are after level 2-6, then you've proved
+and you have completed addition world, then you've proved
 enough about addition to solve this level with `simp`. 
 Note however that you can't prove `add_assoc` with `simp`,
 because `add_assoc` is an ingredient to get `simp` working.
@@ -133,7 +143,7 @@ If our goal is this:
 ```
 ⊢ a * b * c = c * b * a
 ```
-then as long as you're after 3-9, `simp` will close this
+then as long as you've completed Multiplication World, `simp` will close this
 goal.
 -/
 

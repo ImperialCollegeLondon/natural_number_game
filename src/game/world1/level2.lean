@@ -52,6 +52,17 @@ begin [less_leaky]
 end
 
 /- Tactic : rw
+
+## Summary
+
+If `h` is a proof of `X = Y`, then `rw h,` will change
+all `X`s in the goal to `Y`s. Variants: `rw ← h` (changes
+`Y` to `X`) and
+`rw h at h2` (changes `X` to `Y` in hypothesis `h2` instead
+of the goal).
+
+## Details
+
 The `rw` tactic is a way to do "substituting in". There
 are two distinct situations where use this tactics.
 

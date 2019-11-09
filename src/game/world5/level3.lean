@@ -63,7 +63,7 @@ of hypotheses.
 /-
 # Function world. 
 
-## Level 3 : `have`.
+## Level 3: the `have` tactic.
 
 Say you have a whole bunch of sets and functions between them,
 and your goal is to build a certain element of a certain set.

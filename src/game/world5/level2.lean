@@ -52,7 +52,7 @@ as above, the tactic `revert p` takes us back to `⊢ P → Q`.
 /-
 # Function world. 
 
-## Level 2 : `intro`.
+## Level 2: the `intro` tactic.
 
 Let's make a function. Let's define the function on the natural
 numbers which sends a natural number $n$ to $3n+2$. If you delete the

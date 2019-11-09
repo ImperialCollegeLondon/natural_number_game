@@ -90,7 +90,7 @@ Note that `exact h(P),` won't work (with a capital $P$);
 this is a common error I see from beginners. 
 $P$ is not an element of $P$, it's $p$ that is an element of $P$. 
 
-## Level 1 -- `exact`
+## Level 1: the `exact` tactic.
 -/
 
 /- Definition

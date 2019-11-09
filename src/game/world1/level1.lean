@@ -61,6 +61,13 @@ begin [less_leaky]
 end
 
 /- Tactic : refl
+
+## Summary
+
+`refl` proves goals of the form `X = X`.
+
+## Details
+
 The `refl` tactic will close any goal of the form `A = B`
 where `A` and `B` are *exactly the same thing*.
 
