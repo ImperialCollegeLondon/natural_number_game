@@ -1,7 +1,7 @@
 /-
 # Function world. 
 
-## Level 5 : `P → (Q → P)`.
+## Level 5: `P → (Q → P)`.
 
 In this level, our goal is to construct a function, like in level 2.
 
@@ -70,4 +70,8 @@ a mathematician says $10^{10^{10}}$ they don't mean $(10^{10})^{10}=10^{100}$, t
 mean $10^{(10^{10})}$. So `10 ^ 10 ^ 10` in Lean means `10 ^ (10 ^ 10)` and not `(10 ^ 10) ^ 10`.
 However they use left associativity as a convention for subtraction: if
 a mathematician writes $6 - 2 - 1$ they mean $(6 - 2) - 1$ and not $6 - (2 - 1)$.
+
+## Pro tip
+
+`intros p q,` is the same as `intro p, intro q,`.
 -/

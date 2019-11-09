@@ -81,7 +81,7 @@ functions looks like this pictorially:
 
 ![diagram](https://wwwf.imperial.ac.uk/~buzzard/xena/natural_number_game_images/function_diag.jpg)
 
-and so it's clear how to make the element of $U$ from the element of $P$.
+and so it's clear how to make the element of $U$ from the element of $P.$
 Indeed, we could solve this level in one move by typing
 
 `exact l(j(h(P))),`

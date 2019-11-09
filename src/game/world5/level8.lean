@@ -1,7 +1,7 @@
 /-
 # Function world. 
 
-## Level 8 : `(P → Q) → ((Q → empty) → (P → empty))` 
+## Level 8: `(P → Q) → ((Q → empty) → (P → empty))` 
 
 Level 8 is the same as level 7, except we have replaced the
 set $F$ with the empty set $\emptyset$. The same proof will work (after all, our

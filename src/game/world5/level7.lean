@@ -1,7 +1,7 @@
 /-
 # Function world. 
 
-## Level 7 : `(P → Q) → ((Q → F) → (P → F))` 
+## Level 7: `(P → Q) → ((Q → F) → (P → F))` 
 
 Have you noticed that, in stark contrast to earlier worlds,
 we are not amassing a large collection of useful theorems? 

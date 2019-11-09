@@ -12,7 +12,8 @@ You can of course work both forwards and backwards, or you could crack and draw 
 
 -/
 
-/- Given a bunch of functions, we can define another one.
+/- Definition
+Given a bunch of functions, we can define another one.
 -/
 example (A B C D E F G H I J K L : Type)
 (f1 : A → B) (f2 : B → E) (f3 : E → D) (f4 : D → A) (f5 : E → F)
@@ -31,6 +32,6 @@ begin
 end
 
 /-
-Next it's Proposition world, and the tactics you've learnt in function world are enough
-to solve all nine levels!
+That's the end of Function World! Next it's Proposition world, and the tactics you've learnt in Function World are enough
+to solve all nine levels! In fact, the levels in Proposition world might look strangely familiar$\ldots$.
 -/
