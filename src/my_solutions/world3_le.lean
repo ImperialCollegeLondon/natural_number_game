@@ -20,7 +20,7 @@ For example `use 7` will replace all c's in the goal with 7's.
 
 
 namespace mynat
-
+#exit
 -- example
 theorem le_refl (a : mynat) : a ≤ a :=
 begin [less_leaky]
