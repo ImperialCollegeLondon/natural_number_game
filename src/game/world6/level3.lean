@@ -18,7 +18,7 @@ of $U$; during the proof we will construct proofs of
 of some of the other propositions involved. The diagram of
 propositions and implications looks like this pictorially:
 
-![diagram](/implies_diag.jpg)
+![diagram](https://wwwf.imperial.ac.uk/~buzzard/xena/natural_number_game_images/implies_diag.jpg)
 
 and so it's clear how to deduce $U$ from $P$.
 Indeed, we could solve this level in one move by typing

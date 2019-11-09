@@ -6,7 +6,7 @@
 
 Let's do the same level again:
 
-![diagram](/implies_diag.jpg)
+![diagram](https://wwwf.imperial.ac.uk/~buzzard/xena/natural_number_game_images/implies_diag.jpg)
 
 We are given a proof $p$ of $P$ and our goal is to find a proof of $U$, or
 in other words to find a path through the maze that links $P$ to $U$.
