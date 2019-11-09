@@ -97,7 +97,7 @@ $P$ is not an element of $P$, it's $p$ that is an element of $P$.
 Given an element of $P$ and a function from $P$ to $Q$,
 we define an element of $Q$.
 -/
-definition level1 (P Q : Type) (p : P) (h : P → Q) : Q :=
+example (P Q : Type) (p : P) (h : P → Q) : Q :=
 begin
 exact h(p),
 

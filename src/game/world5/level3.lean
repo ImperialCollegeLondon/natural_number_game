@@ -110,7 +110,7 @@ and then finish the level with
 /- Definition
 Given an element of $P$ we can define an element of $U$.
 -/
-lemma maze (P Q R S T U: Type)
+example (P Q R S T U: Type)
 (p : P)
 (h : P → Q)
 (i : Q → R)
