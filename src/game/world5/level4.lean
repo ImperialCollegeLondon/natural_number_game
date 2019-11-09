@@ -1,4 +1,8 @@
 /- Tactic : apply
+
+## Summary
+
+If `h : P → Q` is a hypothesis, and the goal is `|
 If you have a function `h : P → Q` and your goal is `⊢ Q`
 then `apply h` changes the goal to `⊢ P`. The logic is
 simple: if you are trying to create a term of type `Q`,
