@@ -47,11 +47,11 @@ hd : 2 * d = d + d
 
 
 /- 
-# World 2 -- addition world. 
+# Addition World. 
 
-Welcome to World 2, addition world. If you've done all five levels in tutorial world
+Welcome to Addition World. If you've done all four levels in tutorial world
 and know about `rw` and `refl`, then you're in the right place. Here's
-a reminder of what you're now equipped with.
+a reminder of the things you're now equipped with which we'll need in this world.
 
 ## Data:
 
@@ -66,8 +66,7 @@ a reminder of what you're now equipped with.
   * `add_zero (a : mynat) : a + 0 = a`
   * `add_succ (a b : mynat) : a + succ(b) = succ(a + b)`
   * The principle of mathematical induction. Use with `induction` (see below)
-  * A couple more theorems which we won't need for a while and I'll insert in the
-     world 2 theorem box on the right when we do.
+  
 
 ## Tactics:
 
@@ -81,7 +80,7 @@ This is a *really* good time to check you understand about the box on the left w
 menus. All the theorems and all the tactics above are documented there. Have a click around
 and check that you can find statements of the theorems above, and explanations of
 the tactics above. As we go through the game, these lists will grow. The box on the left
-will prove invaluable as the number of theorems we prove begins to grow. On the other hand,
+will prove invaluable as the number of theorems we prove gets bigger. On the other hand,
 we only need to learn one more tactic to really start going places, so let's learn about
 that tactic right now.
 
@@ -97,13 +96,14 @@ No we didn't! We proved $n + 0 = n$ -- that was called `add_zero`. We're now
 trying to prove `zero_add`, which says $0 + n = n$. But aren't these two theorems
 the same? No they're not! It is *true* that `x + y = y + x`, but we haven't
 *proved* it yet, and in fact we will need both `add_zero` and `zero_add` in order
-to prove this. In fact `x + y = y + x` is the boss level for addition world.
+to prove this. In fact `x + y = y + x` is the boss level for addition world,
+and `induction` is the only other tactic you'll need to beat it.
 
 Now `add_zero` is one of Peano's axioms, so we don't need to prove it, we already have it
-(indeed, if you've opened the world 2 theorem statements on the left, you can even see it).
+(indeed, if you've opened the Addition World theorem statements on the left, you can even see it).
 To prove `zero_add` we need to use induction. While we're here,
   note that `zero_add` is about zero add something, and `add_zero` is about something add zero.
-  The names tell you what the theorem is. Anyway, let's prove `zero_add`.
+  The names of the proofs tell you what the theorems are. Anyway, let's prove `0 + n = n`.
 
   Delete `sorry` and replace it with `induction n with d hd,`
 and **don't forget the comma**. Hit enter, wait for Lean to finish thinking,
@@ -114,7 +114,7 @@ induction tactic has generated for us a base case with `n = 0` (the goal at the 
 and an inductive step (the goal underneath). The golden rule: **Tactics operate on the first goal** --
 the goal at the top. So let's just worry about that top goal now, the base case `⊢ 0 + 0 = 0`.
 
-Remember that `add_zero` (the theorem we have already) says that `x + 0 = x`
+Remember that `add_zero` (the proof we have already) is the proof of `x + 0 = x`
 (for any $x$) so we can try
 
 `rw add_zero,`
@@ -199,16 +199,15 @@ Those three tactics --
 * `refl,`
 
 will get you quite a long way through this game. Using only these tactics
-you can beat world 2 level 4, the boss level of addition world
-(although you'll need more tactics to do the bonus levels in world 2 after that) and
-also you will be able to beat all of multiplication world including the boss level `a * b = b * a`.
-If you're interested in seeing more tactics,
-or other ways of applying the tactics you know, take a look at the 
-<a href="http://wwwf.imperial.ac.uk/~buzzard/xena/html/source/tactics/tacticindex.html" target="blank">tactic guide</a>
-in the book that one of us (Buzzard) is slowly writing (opens in new tab). Or just
-look in the sidebar on the left -- more tactics will appear there.
+you can beat Addition World level 4 (the boss level of Addition World),
+all of Multiplication World including the boss level `a * b = b * a`,
+and even all of Power World including the fiendish final boss. This route will
+give you a good grounding in these three basic tactics; after that, if you
+are still interested, there are other worlds to master, where you can learn
+more tactics.
 
-But we're going to stop explaining stuff carefully now. If you get stuck or want
+But we're getting ahead of ourselves, you still have to beat the rest of Addition World. 
+We're going to stop explaining stuff carefully now. If you get stuck or want
 to know more about Lean (e.g. how to do much harder maths in Lean),
 ask in `#new members` at
 <a href="https://leanprover.zulipchat.com" target="blank">the Lean chat</a>

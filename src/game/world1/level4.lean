@@ -82,7 +82,7 @@ Lean thinks you're in the middle of writing a tactic that you
 think you finished. If Lean is still attempting to process a tactic
 it won't display anything. 
 
-When you're happy, let's move onto world 2, addition world, and
+When you're happy, let's move onto Addition World, and
 learn about proof by induction. Go back to the main menu and select addition world.
 -/
 

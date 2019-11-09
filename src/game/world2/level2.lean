@@ -4,19 +4,10 @@ import game.world2.level1 -- hide
 namespace mynat -- hide
 
 /- 
-# World 2 -- addition world
+# Addition world
 
-## Your theorems so far:
-
-  * `add_zero (a : mynat) : a + 0 = a`
-  * `add_succ (a b : mynat) : a + succ(b) = succ(a + b)`
-  * `zero_add (a : mynat) : 0 + a = a`
-  * (some stuff from tutorial world which we won't need for a while)
-
-Check out the "Theorem Statements" drop-down box on the left
-to see that these theorems have been added to addition world. This is a handy place
-to refresh your memory about exactly which theorems you have proved so far.
-As we go further through the game, more theorems will be added here.
+Don't forget to use the drop down boxes on the left to see your tactics and
+what you have proved so far.
 
 ## Level 2 -- `add_assoc` -- associativity of addition.
 

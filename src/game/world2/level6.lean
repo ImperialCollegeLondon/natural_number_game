@@ -8,14 +8,9 @@ namespace mynat -- hide
 
 /-
 
-# World 2 -- Addition World
+# Addition World
 
 ## Level 6 -- `add_right_comm`
-
-You have (amongst other things) these:
-
-  * `add_assoc (a b c : mynat) : (a + b) + c = a + (b + c)`
-  * `add_comm (a b : mynat) : a + b = b + a`
 
 Lean sometimes writes `a + b + c`. What does it mean? The convention is
 that if there are no brackets displayed in an addition formula, the brackets
@@ -26,7 +21,8 @@ by putting these two theorems together.
 
 If you hadn't picked up on this already, `rw add_assoc` will
 change `(x + y) + z` to `x + (y + z)`, but to change it back
-you will need `rw ← add_assoc`. Get the left arrow with \l .
+you will need `rw ← add_assoc`. Get the left arrow by typing `\l`
+then the space bar.
 Similarly, if `h : a = b` then `rw h` will change `a`'s to `b`'s
 and `rw ← h` will change `b`'s to `a`'s.
 
@@ -41,14 +37,11 @@ swap additions of the form `a + b`.
 
 There are ten more levels about addition after this one, but before
 you can attempt them you need to learn some more tactics. So after this
-level you have a choice -- either move on to world 3 (which you can
-solve with the tactics you know) or try world 5 (and learn some new ones).
-Use the "next world" and "previous world" buttons to move between worlds.
-Note that advanced addition world is not yet available in 1.07beta.
-
-Clicking "next world" once will take you to world 3, multiplication world.
-You won't need to know any new tactics to prove
-the big theorem `a * b = b * a` and get the `comm_semiring` collectible.
+level you have a choice -- either move on to Multiplication World (which you can
+solve with the tactics you know) or try Function World (and learn some new ones).
+After solving this level, click "Main Menu" in the top left to take you back
+to the overworld, and make your choice. Other things, perhaps of interest
+to some players, are mentioned below the lemma. 
 -/
 
 /- Lemma
@@ -65,14 +58,14 @@ end
 
 /-
 If you have got this far, then you have become very good at
-manipulating equalities in Lean. You have also collected
-four collectibles:
+manipulating equalities in Lean. You can also now collect
+four collectibles (or `instance`s, as Lean calls them)
 
 ```
-mynat.add_semigroup -- (after world 2-2)
-mynat.add_monoid -- (after world 2-2)
-mynat.add_comm_semigroup mynat (after world 2-4)
-mynat.add_comm_monoid -- (after world 2-4)
+mynat.add_semigroup -- (after level 2)
+mynat.add_monoid -- (after level 2)
+mynat.add_comm_semigroup mynat (after level 4)
+mynat.add_comm_monoid -- (after level 4)
 ```
 
 In Multiplication World you will be able to collect such
@@ -88,6 +81,27 @@ which we do by saying the magic words which make Lean's type class inference
 system give it to us.
 -/
 instance : add_comm_monoid mynat := by structure_helper
+
+
+
+/-
+Now the `simp` AI becomes accessible (it's just an advanced
+tactic really), and can nail some really tedious-for-a-human-to-solve
+goals. For example check out this one-line proof:
+-/
+
+example (a b c d e : mynat) :
+(((a+b)+c)+d)+e=(c+((b+e)+a))+d := begin
+  simp
+end 
+
+/-
+Imagine having to do that one by hand! The AI closes the goal
+because it knows how to use associativity and commutativity
+sensibly in a commutative monoid.
+-/
+
+end mynat -- hide
 
 /- Tactic : simp
 The `simp` tactic does basic automation. By level 2-6 you
@@ -116,20 +130,3 @@ then as long as you're after 3-9, `simp` will close this
 goal.
 -/
 
-/-
-Now the `simp` AI becomes accessible (it's just an advanced
-tactic really), and can nail some really tedious-for-a-human-to-solve
-goals. 
--/
-
-example (a b c d e : mynat) :
-(((a+b)+c)+d)+e=(c+((b+e)+a))+d := begin
-  simp
-end 
-
-/-
-Imagine having to do that one by hand! The AI closes the goal
-because it knows how to use associativity and commutativity
-sensibly in a commutative monoid.
--/
-end mynat -- hide
