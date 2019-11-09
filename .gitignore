@@ -4,3 +4,8 @@
 /scratch/*
 /notes/*
 /html/*
+/src/game/LaTeX/*.aux
+/src/game/LaTeX/*.log
+/src/game/LaTeX/*.pdf
+/src/game/LaTeX/*.tex~
+
