@@ -6,7 +6,7 @@ namespace mynat -- hide
 /- 
 # Addition World
 
-## Level 4 (boss level) : `add_comm`
+## Level 4: `add_comm` (boss level)
 
 [boss battle music]
 

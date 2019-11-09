@@ -6,7 +6,7 @@ namespace mynat -- hide
 /- 
 # Addition World
 
-## Level 3 : `succ_add`
+## Level 3: `succ_add`
 
 Oh no! On the way to `add_comm`, a wild `succ_add` appears. `succ_add`
 is the proof that `succ(a) + b = succ(a + b)` for `a` and `b` in your

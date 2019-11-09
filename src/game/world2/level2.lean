@@ -9,7 +9,7 @@ namespace mynat -- hide
 Don't forget to use the drop down boxes on the left to see your tactics and
 what you have proved so far.
 
-## Level 2 -- `add_assoc` -- associativity of addition.
+## Level 2: `add_assoc` -- associativity of addition.
 
 It's well-known that (1 + 2) + 3 = 1 + (2 + 3) -- if we have three numbers
 to add up, it doesn't matter which of the additions we do first. This fact

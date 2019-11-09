@@ -10,7 +10,7 @@ namespace mynat -- hide
 
 # Addition World
 
-## Level 6 -- `add_right_comm`
+## Level 6: `add_right_comm`
 
 Lean sometimes writes `a + b + c`. What does it mean? The convention is
 that if there are no brackets displayed in an addition formula, the brackets

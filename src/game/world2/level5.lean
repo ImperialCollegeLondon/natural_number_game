@@ -11,7 +11,7 @@ namespace mynat -- hide
 
 # Addition World
 
-## Level 5 -- `succ_eq_add_one`
+## Level 5: `succ_eq_add_one`
 
 I've just added `one_eq_succ_zero` (a proof of `1 = succ(0)`) to your list of theorems; this is true
 by definition of $1$, but we didn't need it until now.
