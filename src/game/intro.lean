@@ -1,7 +1,5 @@
 /-
-# The Natural Number Game, version 1.08beta [see "what's new" below]
-
-[will be ready to go after some updates to the engine which generates the web pages]
+# The Natural Number Game, version 1.08rc1
 
 ## By Kevin Buzzard and Mohammad Pedramfar. 
 
@@ -30,9 +28,10 @@ but nobody has proved that `x + y = y + x` yet. This is your job. You're going t
 prove mathematical theorems using the Lean theorem prover. In other words, you're going to solve
 levels in a computer game.
 
-You're going to prove these theorems using *tactics*. This introductory world, Tutorial World,
+You're going to prove these theorems using *tactics*. The introductory world, Tutorial World,
 will take you through some of these tactics. During your proofs, your "goal" (i.e. what you're
 supposed to be proving) will be displayed with  a `⊢` symbol in front of it. If the top
 right hand box reports "Theorem Proved!", you have closed all the goals in the level
-and can move on to the next level in the world you're in. 
+and can move on to the next level in the world you're in. When you've finished a world,
+hit "main menu" in the top left to get back here
 -/
