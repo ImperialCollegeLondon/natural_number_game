@@ -1,0 +1,90 @@
+name = "Natural number game"
+version = "0.1.0"
+extra_files = "extras"
+intro = "src/game/intro.lean"
+
+[[worlds]]
+name = "Tutorial world"
+id = 1
+levels = [
+	"src/game/world1/level1.lean",
+	"src/game/world1/level2.lean",
+	"src/game/world1/level3.lean",
+	"src/game/world1/level4.lean",
+]
+
+[[worlds]]
+name = "Addition world"
+id = 2
+parents = [1]
+levels = [
+	"src/game/world2/level1.lean",
+	"src/game/world2/level2.lean",
+	"src/game/world2/level3.lean",
+	"src/game/world2/level4.lean",
+	"src/game/world2/level5.lean",
+	"src/game/world2/level6.lean",
+]
+
+[[worlds]]
+name = "Multiplication world"
+id = 3
+parents = [2]
+levels = [
+	"src/game/world3/level1.lean",
+	"src/game/world3/level2.lean",
+	"src/game/world3/level3.lean",
+	"src/game/world3/level4.lean",
+	"src/game/world3/level5.lean",
+	"src/game/world3/level6.lean",
+	"src/game/world3/level7.lean",
+	"src/game/world3/level8.lean",
+	"src/game/world3/level9.lean",
+]
+
+[[worlds]]
+name = "Power world"
+id = 4
+parents = [3]
+levels = [
+	"src/game/world4/level1.lean",
+	"src/game/world4/level2.lean",
+	"src/game/world4/level3.lean",
+	"src/game/world4/level4.lean",
+	"src/game/world4/level5.lean",
+	"src/game/world4/level6.lean",
+	"src/game/world4/level7.lean",
+	"src/game/world4/level8.lean",
+]
+
+[[worlds]]
+name = "Function world"
+id = 5
+parents = [4]
+levels = [
+	"src/game/world5/level1.lean",
+	"src/game/world5/level2.lean",
+	"src/game/world5/level3.lean",
+	"src/game/world5/level4.lean",
+	"src/game/world5/level5.lean",
+	"src/game/world5/level6.lean",
+	"src/game/world5/level7.lean",
+	"src/game/world5/level8.lean",
+	"src/game/world5/level9.lean",
+]
+
+[[worlds]]
+name = "Proposition world"
+id = 6
+parents = [5]
+levels = [
+	"src/game/world6/level1.lean",
+	"src/game/world6/level2.lean",
+	"src/game/world6/level3.lean",
+	"src/game/world6/level4.lean",
+	"src/game/world6/level5.lean",
+	"src/game/world6/level6.lean",
+	"src/game/world6/level7.lean",
+	"src/game/world6/level8.lean",
+	"src/game/world6/level9.lean",
+]
