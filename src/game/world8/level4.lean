@@ -1,40 +1,11 @@
 import mynat.definition -- hide
 import mynat.add -- hide
-import game.world7.level3 -- hide
+import game.world8.level3 -- hide
 namespace mynat -- hide
-
-/- Tactic : split
-The `split` tactic acts on the goal. It turns one
-`⊢ P ↔ Q` goal into two goals `⊢ P → Q` and `⊢ Q → P`.
-It also turns one `P ∧ Q` goal into two goals, namely 
-
-### Example:
-
-If your local context (the top right window) looks like this
-```
-a b : mynat,
-⊢ a = b ↔ a + 3 = b + 3
-```
-
-then after
-
-`split,`
-
-it will look like this:
-
-```
-2 goals
-a b : mynat
-⊢ a = b → a + 3 = b + 3
-
-a b : mynat
-⊢ a + 3 = b + 3 → a = b
-```
--/
 
 /-
 
-# World 2 -- Addition World
+# Advanced Addition World
 
 ## Level 8 -- `eq_iff_succ_eq_succ`
 

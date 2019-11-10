@@ -12,7 +12,11 @@ import mynat.mul -- * on mynat
 ## Details
 
 If your goal is a function or an implication `⊢ P → Q` then `intro`
-will always make progress. What does it mean to define
+will always make progress. 
+
+## Example (functions)
+
+What does it mean to define
 a function? Given an arbitrary term of type `P` (or an element
 of the set `P` if you think set-theoretically) you need
 to come up with a term of type `Q`, so your first step is
@@ -47,6 +51,12 @@ p : P
 as above, the tactic `revert p` takes us back to `⊢ P → Q`. 
 
 ## Example (propositions)
+
+If your goal is an implication $P\implies Q$ then Lean writes
+this as `⊢ P → Q`, and `intro p,` can be thought of as meaning
+"let $p$ be a proof of $P$", or more informally "let's assume that
+$P$ is true". The goal changes to `⊢ Q` and the hypothesis `p : P`
+appears in the local context.
 -/
 
 /-

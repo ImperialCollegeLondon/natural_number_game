@@ -43,4 +43,26 @@ two goals, namely `⊢ P` and `⊢ Q`.
 If `P Q : Prop` and the goal is `⊢ P ↔ Q`, then `split` will change it into
 two goals, namely `⊢ P → Q` and `⊢ Q → P`.  
 
+## Example:
+
+If your local context (the top right window) looks like this
+```
+a b : mynat,
+⊢ a = b ↔ a + 3 = b + 3
+```
+
+then after
+
+`split,`
+
+it will look like this:
+
+```
+2 goals
+a b : mynat
+⊢ a = b → a + 3 = b + 3
+
+a b : mynat
+⊢ a + 3 = b + 3 → a = b
+
 -/

@@ -1,31 +1,7 @@
 import mynat.definition -- hide
 import mynat.add -- hide
-import game.world7.level2 -- hide
+import game.world8.level2 -- hide
 namespace mynat -- hide
-
-/- Tactic : intro
-The `intro h` tactic is very simple. If we're trying to prove
-$P\implies Q$ with $P$ and $Q$ true/false statements, then
-`intro h` is Lean's way of saying "Let's assume $P$ is true,
-and let's call its proof `h`".
-
-More formally, the `intro` tactic makes progress if the *goal*
-is an *implication*. For example, say our local context looks like this:
-
-```
-a b : mynat
-⊢ a + a = b + b → a + b
-```
-
-Then after `intro h` it will look like this:
-
-```
-a b : mynat,
-h : a + a = b + b
-⊢ a = b
-```
-
--/
 
 /-
 

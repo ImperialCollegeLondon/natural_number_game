@@ -1,24 +1,14 @@
-import mynat.definition -- hide
-import mynat.add -- hide
-import game.world7.level11 -- hide
+import game.world8.level7 -- hide
 namespace mynat -- hide
 
 /-
 
-# World 2 -- Addition World
+# Advanced Addition World
 
-## Level 12 -- `eq_zero_of_add_right_eq_self`
-
-You have : the usual stuff. 
-
-  * `succ_inj (a b : mynat) : succ(a) = succ(b) → a = b`
-
-will be useful for this one. 
-
-You might want to read about how `rw zero_add at h` works in the
-<a href="http://wwwf.imperial.ac.uk/~buzzard/xena/html/source/tactics/tacticindex.html" target="blank">tactic guide</a>.
+## Level 8: `eq_zero_of_add_right_eq_self`
 
 The lemma you're about to prove will be useful when we want to prove that $\leq$ is antisymmetric.
+It's perhaps a little tricky.
 -/
 
 /- Lemma
@@ -39,6 +29,8 @@ begin [less_leaky]
     rw succ_add at h,
     assumption,
   }
+
+
 end
 
 end mynat -- hide

@@ -51,6 +51,6 @@ end
 
 You can rewrite proofs of *equalities*. If `h : A = B` then `rw h` changes `A`s to `B`s.
 But you *cannot rewrite proofs of implications*. `rw succ_inj` will *never work*
-because `succ_inj` isn't `A = B`, it's $A\implies B$.
+because `succ_inj` isn't of the form $A = B$, it's of the form $A\implies B$.
 -/
 end mynat -- hide
