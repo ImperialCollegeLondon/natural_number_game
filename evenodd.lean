@@ -101,5 +101,6 @@ intros h1 h2, apply h1,
 apply odd_square, assumption
 end
 
-set_option pp.all true
+--set_option pp.all true
 #check (7 : ℤ)
+
