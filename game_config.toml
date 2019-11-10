@@ -104,8 +104,12 @@ name = "Advanced Addition world"
 id = 8
 parents = [3, 7]
 levels = [
-	"src/game/world7/level1.lean",
-	"src/game/world7/level2.lean",
-	"src/game/world7/level3.lean",
-	"src/game/world7/level4.lean",
+	"src/game/world8/level1.lean",
+	"src/game/world8/level2.lean",
+	"src/game/world8/level3.lean",
+	"src/game/world8/level4.lean",
+	"src/game/world8/level5.lean",
+	"src/game/world8/level6.lean",
+	"src/game/world8/level7.lean",
+	"src/game/world8/level8.lean",
 ]
