@@ -3,8 +3,8 @@
 
 # Advanced proposition world. 
 
-In this world we will learn the last five tactics needed to solve all the
-levels of the Natural Number Game, namely `cases`, `split`, `left`, `right` and `use`.
+In this world we will learn the last six tactics needed to solve all the
+levels of the Natural Number Game, namely `split`, `cases`, `left`, `right`, `exfalso` and `use`.
 
 TODO -- change order to order we learn them in (here and in Prop world level 9)
 
@@ -29,3 +29,18 @@ begin
 
 end 
 
+/- Tactic : split
+
+## Summary:
+
+If the goal is `P ∧ Q` or `P ↔ Q` then `split` will break it into two goals.
+
+## Details
+
+If `P Q : Prop` and the goal is `⊢ P ∧ Q`, then `split` will change it into
+two goals, namely `⊢ P` and `⊢ Q`. 
+
+If `P Q : Prop` and the goal is `⊢ P ↔ Q`, then `split` will change it into
+two goals, namely `⊢ P → Q` and `⊢ Q → P`.  
+
+-/
