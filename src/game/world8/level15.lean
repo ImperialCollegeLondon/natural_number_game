@@ -1,6 +1,4 @@
-import mynat.definition -- hide
-import mynat.add -- hide
-import game.world7.level14 -- hide
+import game.world8.level14 -- hide
 namespace mynat -- hide
 
 /-
