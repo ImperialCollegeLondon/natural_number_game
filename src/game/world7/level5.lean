@@ -38,11 +38,12 @@ begin
   split,
   intro p,
   apply hqr.1,
-
-  cases hpq with hpq hqp,
-  cases hqr with hqr hrq,
-  split,
-  cc,cc,
+  apply hpq.1,
+  assumption,
+  intro r,
+  apply hpq.2,
+  apply hqr.2,
+  assumption,
 
 
 end
