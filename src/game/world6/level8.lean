@@ -13,21 +13,22 @@ and in the natural number game we call this
 
 `not_iff_imp_false (P : Prop) : ¬ P ↔ (P → false)`
 
-So you can start the proof below with
+So you can start the proof of the contrapositive below with
 
 `repeat {rw not_iff_imp_false},`
 
 to get rid of the two occurences of `¬`, and I'm sure you can
-take it from there. At some point your goal might be to prove `false`.
+take it from there (note that we just added `not_iff_imp_false` to the
+theorem statements in the menu on the left). At some point your goal might be to prove `false`.
 At that point I guess you must be proving something by contradiction.
-Or are you? Does it even matter?
+Or are you? 
 -/
 
 /- Lemma : no-side-bar
 If $P$ and $Q$ are propositions, and $P\implies Q$, then
 $\lnot Q\implies \lnot P$. 
 -/
-example (P Q : Prop) : (P → Q) → (¬ Q → ¬ P) :=
+lemma contrapositive (P Q : Prop) : (P → Q) → (¬ Q → ¬ P) :=
 begin
   repeat {rw not_iff_imp_false},
   intro f,

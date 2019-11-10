@@ -1,9 +1,9 @@
 /-
 # Function world. 
 
-## Level 7 : `(P → Q) → ((Q → R) → (P → R))` 
+## Level 7: `(P → Q) → ((Q → R) → (P → R))` 
 
-If you start with `intro hpq` and then `intro `hqr`
+If you start with `intro hpq` and then `intro hqr`
 the dust will clear a bit and the level will look like this:
 ```
 P Q R : Prop,
@@ -18,7 +18,7 @@ if you like that sort of language.
 /- Lemma : no-side-bar
 From $P\implies Q$ and $Q\implies R$ we can deduce $P\implies R$.
 -/
-example (P Q R : Prop) : (P → Q) → ((Q → R) → (P → R)) :=
+lemma imp_trans (P Q R : Prop) : (P → Q) → ((Q → R) → (P → R)) :=
 begin
   intros hpq hqr,
   intro p,

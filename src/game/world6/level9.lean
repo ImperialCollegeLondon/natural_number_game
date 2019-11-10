@@ -1,7 +1,7 @@
 /-
 # Proposition world. 
 
-## Level 9 : a big maze. 
+## Level 9: a big maze. 
 
 Lean's "congruence closure" tactic `cc` is good at mazes. Perhaps I should have
 mentioned it earlier.
@@ -23,14 +23,11 @@ begin
 end
 
 /-
-Still to come in proposition world: `∧`! `∨`! `↔`! `∃`! And
-the tactics `cases`, `split`, `left`, `right`, `use`. 
-But the good news is that (1) all these tactics are easy and (2)
-they will be the last tactics you will need to know
-in order to become a competent Lean user. Indeed, after working through
-the rest of proposition world (which KB hasn't written yet) you
-should have all the tools you need to solve all the levels in advanced
-addition world, advanced multiplication world, and the 30 levels of
-inequality world.
-
+Now move onto advanced proposition world, where you will see
+how to prove goals such as `P ∧ Q` ($P$ and $Q$), `P ∨ Q` ($P$ or $Q$),
+`P ↔ Q` ($P\iff Q$), `∃ x, P(x)` (there exists $x$ such that $P(x)$ is true) and so on.
+You will need to learn five more tactics: `cases`, `split`, `left`, `right` and `use`,
+but they are all straightforward, and furthermore they are the last tactics you
+need to know in order to complete all the levels of the Natural Number Game, including all 30
+levels of Inequality World. 
 -/

@@ -1,13 +1,13 @@
 /-
 # Proposition world. 
 
-## Level 3 : `have`.
+## Level 3: `have`.
 
 Say you have a whole bunch of propositions and implications between them,
 and your goal is to build a certain proof of a certain proposition.
 If it helps, you can build intermediate proofs of other propositions
-along the way, using the `have` command. `have` is the Lean analogue
-of saying "We now see that $Q$ is true, because..."
+along the way, using the `have` command. `have q : Q := ...` is the Lean analogue
+of saying "We now see that we can prove $Q$, because..."
 in the middle of a proof.
 It is often not logically necessary, but on the other hand
 it is very convenient, for example it can save on notation, or
@@ -81,9 +81,9 @@ i : Q → R,
 j : Q → T,
 k : S → T,
 l : T → U,
-q : Q := h p,
-t : T := j q,
-u : U := l t
+q : Q,
+t : T,
+u : U
 ⊢ U
 ```
 

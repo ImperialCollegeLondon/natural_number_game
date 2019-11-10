@@ -2,7 +2,7 @@
 
 # Proposition world. 
 
-## Level 4 : `apply`.
+## Level 4: `apply`.
 
 Let's do the same level again:
 
@@ -14,7 +14,7 @@ In level 3 we solved this by using `have`s to move forward, from $P$
 to $Q$ to $T$ to $U$. Using the `apply` tactic we can instead construct
 the path backwards, moving from $U$ to $T$ to $Q$ to $P$.
 
-Our goal is to prove $U$. But $l:T\to U$ is
+Our goal is to prove $U$. But $l:T\implies U$ is
 an implication which we are assuming, so it would suffice to prove $T$.
 Tell Lean this by starting the proof below with
 
@@ -23,7 +23,7 @@ Tell Lean this by starting the proof below with
 and notice that our assumptions don't change but *the goal changes*
 from `⊢ U` to `⊢ T`. 
 
-Keep `apply`ing functions until your goal is `P`, and try not
+Keep `apply`ing implications until your goal is `P`, and try not
 to get lost! Now solve this goal
 with `exact p`. Note: you will need to learn the difference between
 `exact p` (which works) and `exact P` (which doesn't, because $P$ is
