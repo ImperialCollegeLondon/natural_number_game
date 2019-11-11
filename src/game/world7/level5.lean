@@ -31,7 +31,7 @@ you cannot rewrite one-way implications, but you can rewrite two-way implication
 `cc` works on this sort of goal too.
 -/
 
-/- Lemma
+/- Lemma : no-side-bar
 If $P$, $Q$ and $R$ are true/false statements, then `P ↔ Q` and `Q ↔ R` together imply `P ↔ R`.
 -/
 lemma iff_trans (P Q R : Prop) : (P ↔ Q) → (Q ↔ R) → (P ↔ R) :=
