@@ -13,7 +13,7 @@ This means that if you see `a ≠ b` you can *literally treat
 it as saying* `(a = b) → false`. Computer scientists would
 say that these two terms are *definitionally equal*. 
 
-The following lemma will be useful in inequality world.
+The following lemma, $a+b=0\implies b=0$, will be useful in inequality world.
 Let me go through the proof, because it introduces several new
 concepts: 
 
@@ -28,8 +28,8 @@ with
 
 `cases b with d,`
 
-and then we have two cases. The first you can solve easily.
-The second looks like this:
+and then we have two goals, the case `b = 0` (which you can solve easily)
+and the case `b = succ(d)`, which looks like this:
 
 ```
 a d : mynat,
@@ -50,8 +50,9 @@ Hence `succ_ne_zero (a + d) H` is a proof of `false`!
 Unfortunately our goal is not `false`, it's a generic
 false statement. 
 
-
-
+Recall however that the `exfalso` command turns any goal into `false`
+(it's logically OK because `false` implies every proposition, true or false).
+You can probably take it from here.
 -/
 
 /- Lemma
@@ -65,10 +66,10 @@ begin [less_leaky]
   { refl},
   { rw add_succ at H,
     exfalso,
-    apply zero_ne_succ (a + d),
-    rw H,
-    refl,
+    apply succ_ne_zero (a + d),
+    exact H,
   },
+
 end
 
 end mynat -- hide

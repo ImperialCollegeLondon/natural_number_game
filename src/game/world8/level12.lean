@@ -1,11 +1,11 @@
-import game.world8.level14 -- hide
+import game.world8.level11 -- hide
 namespace mynat -- hide
 
 /-
 
-# World 2 -- Addition World
+# Advanced Addition World
 
-## Level 15 -- `eq_zero_of_add_right_eq_self`
+## Level 12: `add_one_eq_succ`
 
 We have
 

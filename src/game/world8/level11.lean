@@ -1,18 +1,16 @@
 import mynat.definition -- hide
 import mynat.add -- hide
-import game.world8.level11 -- hide
+import game.world8.level10 -- hide
 namespace mynat -- hide
 
 /-
 
-# World 2 -- Addition World
+# Advanced Addition World
 
-## Level 14 -- `add_right_eq_zero`
+## Level 11: `add_right_eq_zero`
 
-You have
-  * `add_left_eq_zero (a b : mynat) a + b = 0 → b = 0`
-
-  from level 13, so `add_right_eq_zero` shouldn't be too hard.
+We just proved `add_left_eq_zero (a b : mynat) : a + b = 0 → b = 0`.
+Hopefully `add_right_eq_zero` shouldn't be too hard now.
 -/
 
 /- Lemma

@@ -19,8 +19,9 @@ that $0\not=\operatorname{succ}(a)$. The proof of this is called `zero_ne_succ a
 `zero_ne_succ (a : mynat) : 0 ≠ succ(a)`
 
 The `symmetry` tactic will turn any goal of the form `R x y` into `R y x`,
-if `R` is a symmetric binary relation. In particular, you can prove
-`succ_ne_zero` below by first using `symmetry` and then `exact zero_ne_succ a`.
+if `R` is a symmetric binary relation (for example `=` or `≠`).
+In particular, you can prove `succ_ne_zero` below by first using
+`symmetry` and then `exact zero_ne_succ a`.
 -/
 
 /- Theorem
