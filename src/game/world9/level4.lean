@@ -10,12 +10,6 @@ This is the last but one of the bonus multiplication levels.
 `mul_left_cancel` will be useful in inequality world.
 -/
 
-example (h : 3 = 4) : 2 + 2 = 4 :=
-begin
-  symmetry,
-  symmetry' at h,
-end
-
 /- Theorem
 If $a \neq 0$, $b$ and $c$ are natural numbers such that
 $$ a * b = a * c, $$
@@ -40,14 +34,18 @@ begin [less_leaky]
       exfalso,
       apply ha,
       symmetry at hb,
-      rw eq_comm at hb,
-      apply add_left_eq_zero hb,
+      cases (eq_zero_or_eq_zero_of_mul_eq_zero _ _ hb) with h h,
+        exact h,
+      exfalso,
+      exact succ_ne_zero _ h,
     },
-    { congr, -- c = d -> succ c = succ d
-      apply hd,
-      rw mul_succ at hb,
-      rw mul_succ at hb,
-      apply add_right_cancel hb
+    { have h : c = d,
+        apply hd,
+        rw mul_succ at hb,
+        rw mul_succ at hb,
+        apply add_right_cancel hb,
+      rw h,
+      refl,
     }
   }
 end
