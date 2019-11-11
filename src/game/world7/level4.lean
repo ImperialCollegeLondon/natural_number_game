@@ -11,7 +11,8 @@ to write an `↔` arrow you can do so by typing `\iff`, but you shouldn't need t
 -/
 
 /- Lemma
-If $P$, $Q$ and $R$ are true/false statements, then `P ↔ Q` and `Q ↔ R` together imply `P ↔ R`.
+If $P$, $Q$ and $R$ are true/false statements, then
+$P\iff Q$ and $Q\iff R$ together imply $P\iff R$.
 -/
 lemma iff_trans (P Q R : Prop) : (P ↔ Q) → (Q ↔ R) → (P ↔ R) :=
 begin

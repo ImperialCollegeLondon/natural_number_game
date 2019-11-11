@@ -7,7 +7,7 @@ namespace mynat -- hide
 
 # Advanced Addition World
 
-## Level 8 -- `eq_iff_succ_eq_succ`
+## Level 4: `eq_iff_succ_eq_succ`
 
 Here is an `iff` goal. You can split it into two goals (the implications in both
 directions) using the `split` tactic, which is how you're going to have to start.

@@ -9,7 +9,7 @@ namespace mynat -- hide
 
 It's sometimes convenient to have the "if and only if" version
 of theorems like `add_right_cancel`. Remember that you can use `split`
-to split an ↔ goal into the → goal and the ← goal.
+to split an `↔` goal into the `→` goal and the `←` goal.
 -/
 
 /- Theorem

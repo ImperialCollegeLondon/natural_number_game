@@ -8,7 +8,7 @@ namespace mynat -- hide
 ## Level 8: `eq_zero_of_add_right_eq_self`
 
 The lemma you're about to prove will be useful when we want to prove that $\leq$ is antisymmetric.
-It's perhaps a little tricky.
+There are some wrong paths that you can take with this one.
 -/
 
 /- Lemma

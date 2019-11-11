@@ -3,12 +3,15 @@ import mynat.add -- hide
 import game.world2.level6 -- hide
 namespace mynat -- hide
 
+/- Axiom : succ_inj (a b : mynat) :
+  succ(a) = succ(b) → a = b
+-/
 
 /-
 
 # Advanced Addition World
 
-## Level 1 -- `succ_inj`. A function.
+## Level 1: `succ_inj`. A function.
 
 Peano's original collection of axioms for the natural numbers contained two further
 assumptions, which have not yet been mentioned in the game:
@@ -34,7 +37,7 @@ of ways to prove the below -- one directly using an `exact`, and one which uses 
 `apply` first.
 -/
 
-/- Theorem
+/- Theorem : no-side-bar
 For all naturals $a$ and $b$, if we assume $succ(a)=succ(b)$, then we can
 deduce $a=b$. 
 -/

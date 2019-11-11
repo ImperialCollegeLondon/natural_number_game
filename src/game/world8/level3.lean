@@ -7,7 +7,7 @@ namespace mynat -- hide
 
 # Advanced Addition World
 
-## Level 3  -- `succ_eq_succ_of_eq`.
+## Level 3: `succ_eq_succ_of_eq`.
 -/
 
 /-

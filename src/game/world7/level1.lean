@@ -3,10 +3,10 @@
 
 # Advanced proposition world. 
 
-In this world we will learn the last six tactics needed to solve all the
-levels of the Natural Number Game, namely `split`, `cases`, `left`, `right`, `exfalso` and `use`.
-
-TODO -- change order to order we learn them in (here and in Prop world level 9)
+In this world we will learn five key tactics needed to solve all the
+levels of the Natural Number Game, namely `split`, `cases`, `left`, `right`, and `exfalso`.
+These, and `use` (which we'll get to in Inequality World) are all the
+tactics you will need to beat all the levels of the game.
 
 ## Level 1: the `split` tactic.
 

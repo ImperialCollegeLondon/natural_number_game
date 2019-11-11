@@ -5,7 +5,7 @@ namespace mynat -- hide
 
 # Advanced Addition World
 
-## Level 5 -- `add_left_cancel`
+## Level 5: `add_left_cancel`
 
 The theorem `add_left_cancel` is the theorem that you can cancel on the left
 when you're doing addition -- if `t + a = t + b` then `a = b`. 

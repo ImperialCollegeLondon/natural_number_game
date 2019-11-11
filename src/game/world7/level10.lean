@@ -14,14 +14,13 @@ You might think this is a step backwards, but if you have a hypothesis `h : ¬ P
 then after `rw not_iff_imp_false at h,` you can `apply h,` to make progress. 
 Try solving this level without using `cc` or `tauto`, but using `exfalso` instead.
 
-OK that's plenty of logic -- now perhaps it's time to go on to Advanced Addition World!
 -/
 
 
 
 /- Lemma
 If $P$ and $Q$ are true/false statements, then
-$$(P\land(\lnot P)\implies Q.$$
+$$(P\land(\lnot P))\implies Q.$$
 -/
 lemma contra (P Q : Prop) : (P ∧ ¬ P) → Q :=
 begin
@@ -36,8 +35,14 @@ begin
 end
 
 /-
+OK that's enough logic -- now perhaps it's time to go on to Advanced Addition World!
+Get to it via the main menu.
+-/
+
+/-
 ## Pro tip.
 
-`¬ P` is actually `P → false` *by definition*. Try deleting `rw not_iff_imp_false at ...` in your proof. 
-Does it still compile?
+`¬ P` is actually `P → false` *by definition*. Try
+commenting out `rw not_iff_imp_false at ...` by putting two minus signs `--`
+before the `rw`. Does it still compile?
 -/

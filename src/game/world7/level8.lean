@@ -1,4 +1,5 @@
 import tactic.finish
+namespace mynat -- hide
 /- 
 # Advanced proposition world. 
 
@@ -14,7 +15,7 @@ over `∨` and `∨` distributes over `∧`. Let's prove one of these.
 If $P$. $Q$ and $R$ are true/false statements, then
 $$P\land(Q\lor R)\iff(P\land Q)\lor (P\land R).$$ 
 -/
-example (P Q R : Prop) : P ∧ (Q ∨ R) ↔ (P ∧ Q) ∨ (P ∧ R) :=
+lemma and_or_distrib_left (P Q R : Prop) : P ∧ (Q ∨ R) ↔ (P ∧ Q) ∨ (P ∧ R) :=
 begin
   split,
   intro h,
@@ -46,3 +47,4 @@ If you follow the instructions at
 you will be able to install Lean and mathlib on your own system, and then you can create a new project
 and experiment with such imports yourself.
 -/
+end mynat

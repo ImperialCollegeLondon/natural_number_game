@@ -5,9 +5,9 @@ namespace mynat -- hide
 
 /-
 
-# World 2 -- Addition World
+# Advanced Addition World
 
-## Level 2  -- `succ_succ_inj`.
+## Level 2: `succ_succ_inj`.
 -/
 
 /-

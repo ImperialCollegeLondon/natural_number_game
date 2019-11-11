@@ -105,7 +105,9 @@ and decide whether to press on with multiplication world and power world
 (which can be solved with `rw`, `refl` and `induction`), or to go on
 to Function World where you can learn the tactics needed to prove
 goals of the form $P\implies Q$, thus enabling you to solve more
-advanced addition world levels such as $a+t=b+t\implies a=b$.
+advanced addition world levels such as $a+t=b+t\implies a=b$. Note that
+Function World is more challenging mathematically; but if you can do Addition
+World you can surely do Multiplication World and Power World.
 -/
 
 end mynat -- hide
