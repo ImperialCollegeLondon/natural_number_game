@@ -3,21 +3,9 @@
 
 ## By Kevin Buzzard and Mohammad Pedramfar. 
 
-Special thanks to Rob Lewis for tactic hackery, Sian Carey for power world (world 4),
-and, last but not least, all the people who fed back comments, including
-the 2019-20 Imperial College 1st year maths beta tester students, Marie-Amélie Lawn,
-Toby Gee, Joseph Myers, and all the people who have been in touch
-via the <a href="https://leanprover.zulipchat.com/" target="blank">Lean Zulip chat</a>
- or the <a href="https://xenaproject.wordpress.com/" target="blank">Xena Project blog</a>
- or via <a href="https://twitter.com/XenaProject" target="blank">Twitter</a>.
-The natural number game is brought to you by the Xena project, a project based at Imperial College London
-whose aim is to get mathematics undergraduates using computer theorem provers.
-Lean is a computer theorem prover being developed at Microsoft Research.
-
 # What is this game?
 
-Welcome to the natural number game -- a game which shows the power of induction.
-
+Welcome to the natural number game -- a part-book part-game which shows the power of induction.
 
 In this game, you get own version of the natural numbers, called `mynat`, in a programming
 language called Lean. Your version of the natural numbers satisfies something called
@@ -34,4 +22,17 @@ supposed to be proving) will be displayed with  a `⊢` symbol in front of it. I
 right hand box reports "Theorem Proved!", you have closed all the goals in the level
 and can move on to the next level in the world you're in. When you've finished a world,
 hit "main menu" in the top left to get back here.
+
+# Thanks
+
+Special thanks to Rob Lewis for tactic hackery, Sian Carey for Power World,
+and, last but not least, all the people who fed back comments, including
+the 2019-20 Imperial College 1st year maths beta tester students, Marie-Amélie Lawn,
+Toby Gee, Joseph Myers, and all the people who have been in touch
+via the <a href="https://leanprover.zulipchat.com/" target="blank">Lean Zulip chat</a>
+ or the <a href="https://xenaproject.wordpress.com/" target="blank">Xena Project blog</a>
+ or via <a href="https://twitter.com/XenaProject" target="blank">Twitter</a>.
+The natural number game is brought to you by the Xena project, a project based at Imperial College London
+whose aim is to get mathematics undergraduates using computer theorem provers.
+Lean is a computer theorem prover being developed at Microsoft Research.
 -/

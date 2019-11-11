@@ -49,5 +49,5 @@ All of that rewriting you did with `rw` in addition world
 was rewriting hypothesis of the form `h : X = Y`, but
 you can also `rw h` if `h : P ↔ Q` (because propositional
 extensionality says that if $P\iff Q$ then $P=Q$, and
-mathematicians use this whether or not they notice)
+mathematicians use this whether or not they notice.)
 -/

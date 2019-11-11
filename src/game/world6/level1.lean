@@ -30,7 +30,7 @@ p : P
 Here `P` is the true/false statement (the statement of proposition), and `p` is its proof.
 It's like `P` being the set and `p` being the element. In fact computer scientists
 sometimes think about the following analogy: propositions are like sets,
-and proofs are like their elements. 
+and their proofs are like their elements. 
 
 ## What's going on in this world? 
 

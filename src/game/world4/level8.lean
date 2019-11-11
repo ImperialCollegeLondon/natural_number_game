@@ -26,7 +26,7 @@ begin
   ...
 ```
 
-and you can't make out the rest because there's a kind
+and you can't make out the last two lines because there's a kind
 of thing in the way that will magically disappear
 but only when you've beaten the boss.
 

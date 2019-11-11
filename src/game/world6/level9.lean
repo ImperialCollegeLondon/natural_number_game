@@ -25,9 +25,11 @@ end
 /-
 Now move onto advanced proposition world, where you will see
 how to prove goals such as `P ∧ Q` ($P$ and $Q$), `P ∨ Q` ($P$ or $Q$),
-`P ↔ Q` ($P\iff Q$), `∃ x, P(x)` (there exists $x$ such that $P(x)$ is true) and so on.
-You will need to learn five more tactics: `cases`, `split`, `left`, `right` and `use`,
-but they are all straightforward, and furthermore they are the last tactics you
-need to know in order to complete all the levels of the Natural Number Game, including all 30
-levels of Inequality World. 
+`P ↔ Q` ($P\iff Q$).
+You will need to learn five more tactics: `split`, `cases`,
+`left`, `right`, and `exfalso`,
+but they are all straightforward, and furthermore they are
+essentially the last tactics you
+need to learn in order to complete all the levels of the Natural Number Game,
+including all 30 levels of Inequality World. 
 -/
