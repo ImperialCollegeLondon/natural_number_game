@@ -97,6 +97,6 @@ all_goals `[try { dsimp only with leakage at * }]
 --  try {rw' (show mynat.le = (≤), from rfl) at *}]
 
 -- next def is waiting on https://github.com/leanprover-community/mathlib/pull/1269
---meta def symmetry' := symmetry' -- already there
+--meta def  := symmetry' -- already there
 
 end tactic.interactive

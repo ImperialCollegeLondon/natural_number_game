@@ -1,6 +1,6 @@
 -- Many many thanks to Rob Lewis for supplying 99.9% of this file.
 
-import tactic.modded
+import tactic.modded tactic.apply
 
 open tactic
 
@@ -8,7 +8,7 @@ meta def copy_decl (d : declaration) : tactic unit :=
 add_decl $ d.update_name $ d.to_name.update_prefix `less_leaky.interactive
 
 @[reducible] meta def filter (d : declaration) : bool :=
-d.to_name ∉ [`tactic.interactive.induction, `tactic.interactive.cases, `tactic.interactive.rw]
+d.to_name ∉ [`tactic.interactive.induction, `tactic.interactive.cases, `tactic.interactive.rw, `tactic.interactive.symmetry]
 
 meta def copy_decls : tactic unit :=
 do env ← get_env,
@@ -52,6 +52,9 @@ meta def cases
 
 meta def rw
 := tactic.interactive.rw'
+
+meta def symmetry
+:= tactic.interactive.symmetry'
 
 end less_leaky.interactive
 
