@@ -5,7 +5,7 @@ namespace mynat -- hide
 /-
 # Multiplication World
 
-## Level 9: `succ_mul`
+## Level 9: `mul_left_comm`
 
 You are equipped with
 
@@ -14,12 +14,7 @@ You are equipped with
 
 Re-read the docs for `rw` so you know all the tricks.
 You can see them in the "tactics" drop-down menu on the left.
-
-
 -/
-
-
-
 
 /- Lemma
 For all natural numbers $a$ $b$ and $c$, we have
@@ -52,7 +47,7 @@ end
 
 /-
 Coming soon -- advanced multiplication world! But until then, 
-feel free to move on to world 4, power world, with the `next world` button.
+feel free to go back to the main menu and move on to Power World.
 -/
 
 end mynat -- hide

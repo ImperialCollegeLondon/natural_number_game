@@ -40,7 +40,7 @@ That's the last collectible in Multiplication World.
 instance mynat.comm_semiring : comm_semiring mynat := by structure_helper
 /-
 But don't leave multiplication just yet -- prove `mul_left_comm`, the last
-level of the world, and I'll show you a trick. 
+level of the world, and then we can beef up the power of `simp`. 
 -/
 
 end mynat -- hide

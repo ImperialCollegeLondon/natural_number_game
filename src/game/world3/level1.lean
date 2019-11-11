@@ -13,7 +13,7 @@ a * succ(b) = a * b + a
 
 /- 
 
-# World 3: Multiplication World
+# Multiplication World
 
 A new import! This import gives you the definition of multiplication on your
 natural numbers. It is defined by recursion, just like addition.
@@ -34,8 +34,8 @@ remind you of your two new theorems, both of which are true by definition.
 If you want to be reminded of the theorems you have proved about addition,
 you can just open up the Addition World theorem statements and take a look. 
 If you don't want to keep opening and closing these menus, why not think
-a bit about the logic behind the naming of the theorems? After a while you
-might find that you can guess the name of the theorem you want.
+a bit about the logic behind the naming of the proofs? After a while you
+might find that you can guess the name of the proof you want.
 
 Anyway, what's going on in multiplication world? Like addition, we need to go
 for the proofs that multiplication
@@ -47,7 +47,7 @@ there is a lot more to do. Good luck!
 We are given `mul_zero`, and the first thing to prove is `zero_mul`.
 Like `zero_add`, we of course prove it by induction.
 
-## Level 1 : `zero_mul`
+## Level 1: `zero_mul`
 -/
 
 namespace mynat -- hide

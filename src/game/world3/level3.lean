@@ -8,17 +8,7 @@ namespace mynat -- hide
 
 ## Level 3: `one_mul`
 
-Currently our tools for multiplication are the
-following: 
-
-* `mul_zero m : m * 0 = 0`
-* `zero_mul m : 0 * m = 0`
-* `mul_succ a b : a * succ b = a * b + a`
-* `mul_one m : m * 1 = 1`
-
-We have also these other facts about 1 (the
-first is just the definition, the second was
-world 2 level 5)
+These proofs from addition world might be useful here:
 
 * `one_eq_succ_zero : 1 = succ(0)`
 * `succ_eq_add_one a : succ(a) = a + 1` 

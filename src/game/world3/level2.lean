@@ -8,18 +8,14 @@ namespace mynat -- hide
 
 ## Level 2: `mul_one`
 
-Currently our tools for multiplication are the
-following: 
+Remember that you can see everything you have proved so far about multiplication in
+the drop-down box on the left (and that this list will grow as we proceed).
 
-* `mul_zero (m : mynat) : m * 0 = 0`
-* `zero_mul (m : mynat) : 0 * m = 0`
-* `mul_succ (a b : mynat) : a * succ b = a * b + a`
-
-We also have
+In this level we'll need to use
 
 * `one_eq_succ_zero : 1 = succ(0)`
 
-which was mentioned way back in Tutorial World and
+which was mentioned back in Addition World and
 which will be a useful thing to rewrite right now, as we
 begin to prove a couple of lemmas about how `1` behaves
 with respect to multiplication.

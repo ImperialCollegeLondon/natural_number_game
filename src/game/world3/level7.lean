@@ -20,7 +20,7 @@ just try `simp`.
 
 /- Lemma
 Addition is distributive over multiplication.
-In other words, for all natural numbers $a$, $b$ and $c$, we have
+In other words, for all natural numbers $a$, $b$ and $t$, we have
 $$ (a + b) \times t = at + bt. $$
 -/
 lemma add_mul (a b t : mynat) : (a + b) * t = a * t + b * t :=
@@ -44,19 +44,21 @@ end
 
 /-
 A mathematician would now say that you have proved that the natural
-numbers are a semiring.
+numbers are a semiring. This sounds like a respectable result.
+-/
 
+def right_distrib := add_mul -- alternative name
+def collectible_05 : semiring mynat := by structure_helper
+
+/-
 Lean would add that you have also proved that they are a `distrib`. 
 However this concept has no mathematical name at all -- this says something
-about the regard with which we hold this collectible. You consider politely
+about the regard with which mathematicians hold this collectible.
+This is an artefact of the set-up of collectibles in Lean. You consider politely
 declining Lean's offer of a `distrib` collectible.
 You are dreaming of the big collectible at the end of world 4.
 -/
 
-def right_distrib := add_mul -- stupid field name, -- hide
-
-def collectible_045 : distrib mynat := by structure_helper -- hide
-
-def collectible_05 : semiring mynat := by structure_helper  -- hide
+example : distrib mynat := by structure_helper -- 
 
 end mynat -- hide
