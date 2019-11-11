@@ -51,3 +51,7 @@ begin [less_leaky]
 end
 
 end mynat -- hide
+
+/-
+To come -- inequality world. 30 levels of `≤` and the `use` tactic.
+-/
