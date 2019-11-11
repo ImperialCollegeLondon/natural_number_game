@@ -1,4 +1,4 @@
-import data.string data.list.defs
+import data.string.basic data.list.defs
 import tactic.core
 
 def {u v w} list.mfilter_map {m : Type u → Type v} [alternative m] [monad m] {α : Type w} {β : Type u} (f : α → m β) : list α → m (list β)
