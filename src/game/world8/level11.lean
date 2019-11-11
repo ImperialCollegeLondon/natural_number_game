@@ -18,7 +18,7 @@ If $a$ and $b$ are natural numbers such that
 $$ a + b = 0, $$
 then $a = 0$.
 -/
-lemma add_right_eq_zero {{a b : mynat}} : a + b = 0 → a = 0 :=
+lemma add_right_eq_zero (a b : mynat) : a + b = 0 → a = 0 :=
 begin [less_leaky]
   intro H,
   rw add_comm at H,

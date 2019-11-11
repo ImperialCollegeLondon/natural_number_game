@@ -34,7 +34,7 @@ with the right hand side.
 /- Lemma
 ≤ is antisymmetric. In other words, if a ≤ b and b ≤ a then a = b. 
 -/
-theorem le_antisymm {{a b : mynat}} (hab : a ≤ b) (hba : b ≤ a) : a = b :=
+theorem le_antisymm (a b : mynat) (hab : a ≤ b) (hba : b ≤ a) : a = b :=
 begin [less_leaky]
   cases hab with c hc,
   cases hba with d hd,
