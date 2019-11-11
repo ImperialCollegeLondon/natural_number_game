@@ -3,7 +3,7 @@ namespace mynat -- hide
 
 /- 
 
-# World 4 : Power World
+# Power World
 
 ## Level 2: `zero_pow_succ`
 -/
