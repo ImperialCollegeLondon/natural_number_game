@@ -1,5 +1,5 @@
 /-
-# The Natural Number Game, version 1.08rc1
+# The Natural Number Game, version 1.09beta [some advanced addition world finally back; loads of proposition stuff]
 
 ## By Kevin Buzzard and Mohammad Pedramfar. 
 
