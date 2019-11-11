@@ -1,11 +1,13 @@
 /-
-# The Natural Number Game, version 1.09beta [some advanced addition world finally back; loads of proposition stuff]
+# The Natural Number Game, version 1.09
 
 ## By Kevin Buzzard and Mohammad Pedramfar. 
 
 # What is this game?
 
 Welcome to the natural number game -- a part-book part-game which shows the power of induction.
+Blue nodes on the graph are ones that you are ready to enter. Grey nodes you should stay away
+from -- try blue ones higher up the chain first. Green nodes are completed.
 
 In this game, you get own version of the natural numbers, called `mynat`, in a programming
 language called Lean. Your version of the natural numbers satisfies something called
@@ -23,9 +25,15 @@ right hand box reports "Theorem Proved!", you have closed all the goals in the l
 and can move on to the next level in the world you're in. When you've finished a world,
 hit "main menu" in the top left to get back here.
 
+# What's new?
+
+Lots of things. A function world, two proposition worlds, and the advanced addition
+and multiplication worlds are back! To come: inequality world.
+
 # Thanks
 
-Special thanks to Rob Lewis for tactic hackery, Sian Carey for Power World,
+Special thanks to Rob Lewis for tactic hackery, Bryan Gin-Ge Chen for
+javascript hackery, Sian Carey for Power World,
 and, last but not least, all the people who fed back comments, including
 the 2019-20 Imperial College 1st year maths beta tester students, Marie-Amélie Lawn,
 Toby Gee, Joseph Myers, and all the people who have been in touch
@@ -35,4 +43,6 @@ via the <a href="https://leanprover.zulipchat.com/" target="blank">Lean Zulip ch
 The natural number game is brought to you by the Xena project, a project based at Imperial College London
 whose aim is to get mathematics undergraduates using computer theorem provers.
 Lean is a computer theorem prover being developed at Microsoft Research.
+
+The Xena Project. Prove a theorem. Write a function. @XenaProject.
 -/

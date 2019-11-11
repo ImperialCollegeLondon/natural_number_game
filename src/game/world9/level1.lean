@@ -8,10 +8,10 @@ namespace mynat -- hide
 ## Level 1: `mul_pos`
 
 Welcome to Advanced Multiplication World! Before attempting this
-world you should have completed eight other worlds, including
+world you should have completed seven other worlds, including
 Multiplication World and Advanced Addition World. 
 
-Recall that if `b : mynat` is a hypothesi and you do `cases b with n`,
+Recall that if `b : mynat` is a hypothesis and you do `cases b with n`,
 your one goal will split into two goals, 
 namely the cases `b = 0` and `b = succ(n)`. So `cases` here is like
 a weaker version of induction (you don't get the inductive hypothesis).
