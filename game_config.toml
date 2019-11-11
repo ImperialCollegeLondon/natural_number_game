@@ -128,5 +128,4 @@ levels = [
 	"src/game/world9/level2.lean",
 	"src/game/world9/level3.lean",
 	"src/game/world9/level4.lean",
-	"src/game/world9/level5.lean",
 ]
