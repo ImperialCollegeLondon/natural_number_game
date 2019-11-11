@@ -1,5 +1,4 @@
 import game.world9.level3 -- hide
-import tactic.interactive
 namespace mynat -- hide
 
 /-

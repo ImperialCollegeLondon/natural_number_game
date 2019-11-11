@@ -1,6 +1,4 @@
-import game.world3.level12 -- hide
-import game.world2.level13 -- add_left_eq_zero -- hide
-
+import game.world9.level4 -- hide
 namespace mynat -- hide
 
 /-
