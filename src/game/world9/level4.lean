@@ -6,7 +6,7 @@ namespace mynat -- hide
 
 ## Level 4: `mul_left_cancel`
 
-This is the last but one of the bonus multiplication levels.
+This is the last of the bonus multiplication levels.
 `mul_left_cancel` will be useful in inequality world.
 -/
 
