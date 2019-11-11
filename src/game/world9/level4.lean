@@ -12,7 +12,7 @@ This is the last of the bonus multiplication levels.
 
 /- Theorem
 If $a \neq 0$, $b$ and $c$ are natural numbers such that
-$$ a * b = a * c, $$
+$ ab = ac, $
 then $b = c$.
 -/
 theorem mul_left_cancel (a b c : mynat) (ha : a ≠ 0) : a * b = a * c → b = c :=
