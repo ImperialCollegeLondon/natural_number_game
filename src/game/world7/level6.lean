@@ -15,7 +15,7 @@ to an impossible goal, the other to an easy finish.
 
 
 
-/- Lemma
+/- Lemma : no-side-bar
 If $P$ and $Q$ are true/false statements, then
 $$Q\implies(P\lor Q).$$ 
 -/

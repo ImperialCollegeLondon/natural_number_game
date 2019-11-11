@@ -47,7 +47,7 @@ this result. This is called the law of the excluded middle, and it cannot be pro
 using tactics such as `intro` and `apply`.
 
 -/
-/- Lemma
+/- Lemma : no-side-bar
 If $P$ and $Q$ are true/false statements, then
 $$(\lnot Q\implies \lnot P)\implies(P\implies Q).$$ 
 -/

@@ -18,7 +18,7 @@ Try solving this level without using `cc` or `tauto`, but using `exfalso` instea
 
 
 
-/- Lemma
+/- Lemma : no-side-bar
 If $P$ and $Q$ are true/false statements, then
 $$(P\land(\lnot P))\implies Q.$$
 -/
