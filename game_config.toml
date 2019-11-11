@@ -97,6 +97,12 @@ levels = [
 	"src/game/world7/level2.lean",
 	"src/game/world7/level3.lean",
 	"src/game/world7/level4.lean",
+	"src/game/world7/level5.lean",
+	"src/game/world7/level6.lean",
+	"src/game/world7/level7.lean",
+	"src/game/world7/level8.lean",
+	"src/game/world7/level9.lean",
+	"src/game/world7/level10.lean",
 ]
 
 [[worlds]]

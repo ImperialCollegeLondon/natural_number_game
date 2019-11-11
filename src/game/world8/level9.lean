@@ -9,7 +9,7 @@ namespace mynat -- hide
 
 /-
 
-# Addition World
+# Advanced Addition World
 
 ## Level 9: `succ_ne_zero`
 

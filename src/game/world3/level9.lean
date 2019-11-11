@@ -46,8 +46,11 @@ begin
 end 
 
 /-
-Coming soon -- advanced multiplication world! But until then, 
-feel free to go back to the main menu and move on to Power World.
+If you feel like attempting Advanced Multiplication world
+you'll have to do Function World and the Proposition Worlds first.
+These worlds assume a certain amount of mathematical maturity
+(perhaps 1st year undergraduate level). 
+Your other possibility is Power World, with the "final boss".
 -/
 
 end mynat -- hide
