@@ -44,5 +44,5 @@ The natural number game is brought to you by the Xena project, a project based a
 whose aim is to get mathematics undergraduates using computer theorem provers.
 Lean is a computer theorem prover being developed at Microsoft Research.
 
-The Xena Project. Prove a theorem. Write a function. @XenaProject.
+Prove a theorem. Write a function. @XenaProject.
 -/
