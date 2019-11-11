@@ -112,4 +112,21 @@ levels = [
 	"src/game/world8/level6.lean",
 	"src/game/world8/level7.lean",
 	"src/game/world8/level8.lean",
+	"src/game/world8/level9.lean",
+	"src/game/world8/level10.lean",
+	"src/game/world8/level11.lean",
+	"src/game/world8/level12.lean",
+	"src/game/world8/level13.lean",
+]
+
+[[worlds]]
+name = "Advanced Multiplication world"
+id = 9
+parents = [2, 8]
+levels = [
+	"src/game/world9/level1.lean",
+	"src/game/world9/level2.lean",
+	"src/game/world9/level3.lean",
+	"src/game/world9/level4.lean",
+	"src/game/world9/level5.lean",
 ]
