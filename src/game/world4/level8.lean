@@ -3,7 +3,6 @@ import game.world4.level7 -- hide
 import tactic.ring -- hide
 meta def less_leaky.interactive.ring := tactic.interactive.ring -- hide
 namespace mynat -- hide
-instance : comm_semiring mynat := by structure_helper -- you just levelled up
 
 def two_eq_succ_one : (2 : mynat) = succ 1 := rfl -- hide
 
@@ -11,6 +10,7 @@ def two_eq_succ_one : (2 : mynat) = succ 1 := rfl -- hide
 # Power World
 -/
 
+instance : comm_semiring mynat := by structure_helper -- you just levelled up
 
 /-
 ## Level 8: `add_squared`
