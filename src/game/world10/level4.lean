@@ -1,11 +1,12 @@
-import game.world5.level2 -- hide
+import game.world10.level3 -- hide
 namespace mynat -- hide
+/- 
 
-/-
-# World 5 : Inequality world 
+# Inequality world. 
 
-## Level 3 : `zero_le`
+## Level 4: `zero_le`
 
+Another easy one. 
 -/
 
 /- Lemma

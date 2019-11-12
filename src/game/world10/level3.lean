@@ -1,4 +1,4 @@
-import game.world10.level1 -- hide
+import game.world10.level2 -- hide
 namespace mynat -- hide
 /- 
 
@@ -56,8 +56,10 @@ end
 Did you use `succ c` or `c + 1` or `1 + c`? Those numbers are all
 equal, right? So it doesn't matter which one you use, right?
 
-Here's an interesting question. If you fill in the `???`
-below with `succ c`, will this proof compile? What about if you
+Here's an interesting question. If you copy the proof below into
+the box above, and then fill in the `???`
+below with `succ c`, will this proof compile? (move your cursor to
+after the final comma to see what Lean thinks). What about if you
 `use 1 + c`? What about if you `use c + 1`? Can you work out
 what is going on? Does it help if I tell you that the *definition*
 of `1` is `succ 0`?
