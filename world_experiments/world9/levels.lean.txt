@@ -1,34 +1,5 @@
-import game.world5.level1 -- hide
-namespace mynat -- hide
-
-/-
-# World 5 : Inequality world 
-
-## Level 2 : `le_succ`
--/
-
-
--- ignore this, it's the definition.
-theorem lt_iff_le_not_le {a b : mynat} : a < b ↔ a ≤ b ∧ ¬ b ≤ a := iff.rfl
-
--- level 6
-theorem le_antisymm : ∀ {{a b : mynat}}, a ≤ b → b ≤ a → a = b :=
-begin [less_leaky]
-  sorry
-end
-
-instance : partial_order mynat := by structure_helper
-
-theorem lt_iff_le_and_ne ⦃a b : mynat⦄ : a < b ↔ a ≤ b ∧ a ≠ b :=
-begin [less_leaky]
-  sorry
-end
-
-
-lemma succ_le_succ {a b : mynat} (h : a ≤ b) : succ a ≤ succ b :=
-begin [less_leaky]
-  sorry
-end
+definition of a < b
+theorem lt_iff_le_not_le {a b : mynat} : a < b ↔ a ≤ b ∧ ¬ b ≤ a
 
 theorem le_total (a b : mynat) : a ≤ b ∨ b ≤ a :=
 begin [less_leaky]
@@ -228,3 +199,33 @@ begin [less_leaky]
 end
 
 end mynat
+/-
+after <=
+
+lemma le_mul (a b c d : mynat) : a ≤ b → c ≤ d → a * c ≤ b * d :=
+begin
+intros hab hcd,
+cases' a with t Ht,
+  rw' [zero_mul],
+  apply zero_le,
+have cz : 0 ≤ c,
+  apply zero_le,
+have bz : 0 ≤ b,
+  apply zero_le,
+apply mul_le_mul hab hcd cz bz,
+end
+
+--End of world 3
+
+lemma pow_le (m n a : mynat) : m ≤ n → m ^ a ≤ n ^ a :=
+begin
+intro h,
+induction' a with t Ht,
+  rw' [pow_zero, pow_zero],
+  refl,
+rw' [pow_succ, pow_succ],
+apply le_mul,
+  assumption,
+assumption,
+end
+-/
