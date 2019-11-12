@@ -10,6 +10,10 @@ namespace mynat -- hide
 It's sometimes convenient to have the "if and only if" version
 of theorems like `add_right_cancel`. Remember that you can use `split`
 to split an `↔` goal into the `→` goal and the `←` goal.
+
+## Pro tip:
+
+`exact add_right_cancel _ _ _` means "let Lean figure out the missing inputs"
 -/
 
 /- Theorem
@@ -19,7 +23,7 @@ $$ a + t = b + t\iff a=b. $$
 theorem add_right_cancel_iff (t a b : mynat) :  a + t = b + t ↔ a = b :=
 begin [less_leaky]
   split,
-  { exact add_right_cancel}, -- done that way already,
+  { exact add_right_cancel _ _ _}, -- done that way already,
   { intro H, -- H : a = b,
     rw H,
     refl,

@@ -22,11 +22,11 @@ In other words, if there are natural numbers $a, b$ and $c$ such that
 $$ a + b = a + c, $$
 then we have $b = c$.
 -/
-theorem add_left_cancel {a b t : mynat} : t + a = t + b → a = b :=
+theorem add_left_cancel (t a b : mynat) : t + a = t + b → a = b :=
 begin [less_leaky]
   rw add_comm,
   rw add_comm t,
-  exact add_right_cancel,
+  exact add_right_cancel _ _ _,
 
 
 

@@ -8,6 +8,10 @@ namespace mynat -- hide
 
 This is the last of the bonus multiplication levels.
 `mul_left_cancel` will be useful in inequality world.
+
+It might be worth noting that `revert` is the opposite of `intro`.
+`revert` can be a convenient tactic just before the beginning of
+an induction proof.
 -/
 
 /- Theorem
@@ -43,7 +47,7 @@ begin [less_leaky]
         apply hd,
         rw mul_succ at hb,
         rw mul_succ at hb,
-        apply add_right_cancel hb,
+        apply add_right_cancel _ _ _ hb,
       rw h,
       refl,
     }

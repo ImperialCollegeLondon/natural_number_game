@@ -22,7 +22,7 @@ In other words, if there are natural numbers $a, b$ and $c$ such that
 $$ a + t = b + t, $$
 then we have $a = b$.
 -/
-theorem add_right_cancel {a b t : mynat} : a + t = b + t → a = b :=
+theorem add_right_cancel (a t b : mynat) : a + t = b + t → a = b :=
 begin [less_leaky]
   intro h,
   induction t with d hd,

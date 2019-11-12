@@ -1,34 +1,6 @@
 definition of a < b
 theorem lt_iff_le_not_le {a b : mynat} : a < b ↔ a ≤ b ∧ ¬ b ≤ a
 
-theorem le_total (a b : mynat) : a ≤ b ∨ b ≤ a :=
-begin [less_leaky]
-  sorry
-end
-
-instance : linear_order mynat := by structure_helper
-
-
-theorem add_le_add_right (a b : mynat) : a ≤ b → ∀ t, (a + t) ≤ (b + t) :=
-begin [less_leaky]
-  sorry
-end
-
-theorem le_succ_self (a : mynat) : a ≤ succ a :=
-begin [less_leaky]
-  sorry
-end
-
-theorem le_of_succ_le_succ {a b : mynat} : succ a ≤ succ b → a ≤ b :=
-begin [less_leaky]
-  sorry
-end
-
-theorem not_succ_le_self {{d : mynat}} (h : succ d ≤ d) : false :=
-begin [less_leaky]
-  sorry
-end
-
 theorem add_le_add_left : ∀ (a b : mynat), a ≤ b → ∀ (c : mynat), c + a ≤ c + b :=
 begin [less_leaky]
   sorry
@@ -45,11 +17,6 @@ begin [less_leaky]
 end
 
 theorem lt_of_add_lt_add_left : ∀ {{a b c : mynat}}, a + b < a + c → b < c :=
-begin [less_leaky]
-  sorry
-end
-
-theorem le_iff_exists_add : ∀ (a b : mynat), a ≤ b ↔ ∃ (c : mynat), b = a + c :=
 begin [less_leaky]
   sorry
 end
