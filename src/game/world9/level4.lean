@@ -53,5 +53,5 @@ end
 end mynat -- hide
 
 /-
-To come -- inequality world. 30 levels of `≤` and the `use` tactic.
+You should now be ready for inequality world.
 -/
