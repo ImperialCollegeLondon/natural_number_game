@@ -7,81 +7,73 @@ namespace mynat -- hide
 ## Level 3: le_succ_of_le
 
 We have seen how the `use` tactic makes progress on goals of the form `⊢ ∃ c, ...`.
-But what do we do when we have a *hypothesis* of the form `∃ c, ...`?
+But what do we do when we have a *hypothesis* of the form `h : ∃ c, ...`?
+The hypothesis claims that there exists some natural number `c` with some
+property. How are we going to get to that natural number `c`? It turns out
+that the `cases` tactic can be used (just like it was used to extract
+information from `∧` and `∨` and `↔` hypotheses). Let me talk you through
+the proof of $a\le b\implies a\le\operatorname{succ}(b)$.
+
+The goal is an implication so we clearly want to start with 
+
+`intro h,`
+
+. After this, if you *want*, you can do something like
+
+`rw le_def at h ⊢,`
+
+(get the sideways T with `\|-` then space). This changes the `≤` into
+its `∃` form -- but if you are happy of just *seeing* the `∃` whenever
+you read a `≤` then you don't need to do this line.
+
+Our hypothesis `h` is now `∃ (c : mynat), b = a + c` (or `a ≤ b` if you
+elected not to do the definitional rewriting) so
+
+`cases h with c hc,`
+
+gives you the natural number `c` and the hypothesis `hc : b = a + d`.
+Now use `use` wisely and you're home.
 
 -/
 
 /- Lemma
 For all naturals $a$, $b$, if $a\leq b$ then $a\leq \operatorname{succ}(b)$. 
 -/
-theorem le_succ {a b : mynat} (h : a ≤ b) : a ≤ (succ b) :=
+theorem le_succ (a b : mynat) : a ≤ b → a ≤ (succ b) :=
 begin [less_leaky]
-  rw le_def at h ⊢,
+  intro h,
   cases h with c hc,
-  use (succ c),
   rw hc,
-  rw add_succ,
+  use c + 1,
   refl,
 
 
 end
 
 /-
+
+
 Did you use `succ c` or `c + 1` or `1 + c`? Those numbers are all
 equal, right? So it doesn't matter which one you use, right?
--/
 
+Here's an interesting question. If you fill in the `???`
+below with `succ c`, will this proof compile? What about if you
+`use 1 + c`? What about if you `use c + 1`? Can you work out
+what is going on? Does it help if I tell you that the *definition*
+of `1` is `succ 0`?
 
-/- Lemma : 
-The $\le$ relation is reflexive. In other words, if $x$ is a natural number,
-then $x\le x$.
--/
-lemma le_refl (x : mynat) : x ≤ x :=
+```
+theorem le_succ (a b : mynat) : a ≤ b → a ≤ (succ b) :=
 begin [less_leaky]
-  use 0,
-  rw add_zero,
+  intro h,
+  cases h with c hc,
+  rw hc,
+  use ???,
   refl,
 
 
-end 
-/-
-## Upgrading the `refl` tactic 
-
-Now with the following incantation (NB thanks to master wizard Reid Barton
-for correcting my spell) :
--/
-attribute [refl] mynat.le_refl
-/-
-...we now find that the `refl` tactic will close all goals
-of the form `a ≤ a` as well as all goals of the form `a = a`.
--/
-example : (0 : mynat) ≤ 0 := begin
-  refl
 end
+```
 
-/-
-## Pro tip
-
-Did you skip `rw le_def` in your proof of `le_refl` above?
-Instead of `rw add_zero` or `ring` at the end there,
-what happens if you just try `refl`? The *definition* of `x + 0` is `x`,
-so you don't need to `rw add_zero` either!
-
-The same remarks are true of
-`add_succ`, `mul_zero`, `mul_succ`, `pow_zero` and `pow_succ`. All of those
-theorems are true *by definition*. The same is *not* true however of `zero_add`; 
-the theorem `0 + x = x` was proved by induction on `x`,
-and in particular it is not true by *definition*.
-
-Definitional equality is of great importance
-to computer scientists, but mathematicians are much more fluid with their idea
-of a definition -- a concept can simultaneously have three equivalent definitions
-in a maths talk, as long as they're all logically equivalent. In Lean, a definition
-is *one thing*, and definitional equality is a subtle concept which depends on
-exactly which definition you chose. `add_comm` is certainly not true by definition,
-which means that if we had decided to define `a ≤ b` by `∃ c, b = c + a` (rather
-than `a + c`) all the same theorems would be true, but `refl` would work in
-different places. `refl` closes a goal of the form `X = Y` if `X` and `Y` are
-definitionally equal.
 -/
 end mynat -- hide
