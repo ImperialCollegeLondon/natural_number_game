@@ -17,7 +17,7 @@ be able to make it home from there.
 
 /- Lemma
 If $P$ and $Q$ are true/false statements, then
-$$Q\implies(P\lor Q).$$ 
+$$P \lor Q\implies Q\lor P .$$ 
 -/
 lemma or_symm (P Q : Prop) : P ∨ Q → Q ∨ P :=
 begin
