@@ -36,7 +36,7 @@ end
 
 ## Details
 
-The tactics `left` and `write` work on a goal which is a type with
+The tactics `left` and `right` work on a goal which is a type with
 two constructors, the classic example being `P ∨ Q`. 
 To prove `P ∨ Q` it suffices to either prove `P` or prove `Q`,
 and once you know which one you are going for you can change
