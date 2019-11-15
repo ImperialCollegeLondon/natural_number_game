@@ -235,12 +235,6 @@ begin
   rwa succ_lt_succ_iff at h,
 end
 
-theorem le_iff_exists_add : ∀ (a b : mynat), a ≤ b ↔ ∃ (c : mynat), b = a + c :=
-begin
-  intros a b,
-  refl,
-end
-
 theorem zero_ne_one : (0 : mynat) ≠ 1 :=
 begin
   symmetry,
@@ -332,8 +326,6 @@ begin [less_leaky]
   refl,
 end
 
-#check @nat.lt_succ_iff
-#check @nat.succ_eq_add_one
 /-
 nat.lt_succ_iff : ∀ {m n : ℕ}, m < nat.succ n ↔ m ≤ n
 -/

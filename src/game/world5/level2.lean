@@ -7,12 +7,30 @@ import mynat.mul -- * on mynat
 
 ## Summary:
 
-`intro p` will make progress if the goal is of the form `P → Q`.
+`intro p` will turn a goal `⊢ P → Q` into a hypothesis `p : P`
+and goal `⊢ Q`. If `P` and `Q` are sets `intro p` means "let $p$ be an arbitrary element of $P$".
+If `P` and `Q` are propositions then `intro p` says "assume $P$ is true". 
 
 ## Details
 
 If your goal is a function or an implication `⊢ P → Q` then `intro`
-will always make progress. 
+will always make progress. `intro p` turns
+
+`⊢ P → Q`
+
+into 
+
+```
+p : P
+⊢ Q
+```
+
+The opposite tactic to intro is `revert`; given the situation
+just above, `revert p` turns the goal back into `⊢ P → Q`.
+
+There are two points of view with `intro` -- the
+function point of view (Function World) and the proposition
+point of view (Proposition World).
 
 ## Example (functions)
 
@@ -39,16 +57,6 @@ p : P
 So `p` is an arbitrary element of `P` about which nothing is known,
 and our task is to come up with an element of `Q` (which can of
 course depend on `p`).
-
-Note that the opposite of `intro` is `revert`; given a tactic
-state
-
-```
-p : P
-⊢ Q
-```
-
-as above, the tactic `revert p` takes us back to `⊢ P → Q`. 
 
 ## Example (propositions)
 

@@ -2,7 +2,7 @@ import mynat.le -- import definition of ≤
 import game.world9.level4
 import game.world4.level8
 namespace mynat -- hide
-/- Axiom : le_def (a b : mynat)
+/- Axiom : le_iff_exists_add (a b : mynat)
   a ≤ b ↔ ∃ (c : mynat), b = a + c
 -/
 
@@ -37,15 +37,15 @@ The upside-down E means "there exists". So in words, $a\le b$
 if and only if there exists a natural $c$ such that $b=a+c$. 
 
 If you really want to change an `a ≤ b` to `∃ c, b = a + c` then
-you can do so with `rw le_def`:
+you can do so with `rw le_iff_exists_add`:
 
 ```
-le_def (a b : mynat) :
+le_iff_exists_add (a b : mynat) :
   a ≤ b ↔ ∃ (c : mynat), b = a + c
 ```
 
 But because `a ≤ b` is *defined as* `∃ (c : mynat), b = a + c`, you
-do not need to `rw le_def`, you can just pretend when you see `a ≤ b`
+do not need to `rw le_iff_exists_add`, you can just pretend when you see `a ≤ b`
 that it says `∃ (c : mynat), b = a + c`. You will see a concrete
 example of this below.
 
@@ -59,7 +59,7 @@ of the form `∃ c, ...`.
 The goal below is to prove $x\le 1+x$ for any natural number $x$. 
 First let's turn the goal explicitly into an existence problem with
 
-`rw le_def,`
+`rw le_iff_exists_add,`
 
 and now the goal has become `∃ c : mynat, 1 + x = x + c`. Clearly
 this statement is true, and the proof is that $c=1$ will work (we also
@@ -81,7 +81,7 @@ look at your proof. We're going to remove a line.
 ## Important
 
 An important time-saver here is to note that because `a ≤ b` is *defined*
-as `∃ c : mynat, b = a + c`, you *do not need to write `rw le_def`*.
+as `∃ c : mynat, b = a + c`, you *do not need to write `rw le_iff_exists_add`*.
 The `use` tactic will work directly on a goal of the form `a ≤ b`. Just
 use the difference `b - a` (note that we have not defined subtraction so
 this does not formally make sense, but you can do the calculation in your head).
@@ -92,7 +92,7 @@ If $x$ is a natural number, then $x\le 1+x$.
 -/
 lemma one_add_le_self (x : mynat) : x ≤ 1 + x :=
 begin
---  rw le_def,
+  rw le_iff_exists_add,
   use 1,
   ring,
 

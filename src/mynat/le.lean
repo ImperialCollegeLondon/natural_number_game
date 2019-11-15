@@ -7,7 +7,7 @@ namespace mynat
 
 def le (a b : mynat) :=  ∃ (c : mynat), b = a + c
 
--- Third choices: 
+-- Another choice is to define it recursively: 
 -- | le 0 _
 -- | le (succ a) (succ b) = le ab 
 
@@ -16,6 +16,6 @@ instance : has_le mynat := ⟨mynat.le⟩
 
 @[leakage] theorem le_def' : mynat.le = (≤) := rfl
 
-theorem le_def (a b : mynat) : a ≤ b ↔ ∃ (c : mynat), b = a + c := iff.rfl
+theorem le_iff_exists_add (a b : mynat) : a ≤ b ↔ ∃ (c : mynat), b = a + c := iff.rfl
 
 end mynat

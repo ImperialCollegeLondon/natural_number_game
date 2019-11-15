@@ -4,10 +4,11 @@ namespace mynat -- hide
 
 # Inequality world. 
 
-## Level 15: `add_le_add_left`
+## Level 14: `add_le_add_left`
 
 I know these are easy and we've done several already, but this is one
-of the axioms for an ordered commutative monoid! 
+of the axioms for an ordered commutative monoid! We'll get something
+new in the next level.
 -/
 
 /- Lemma

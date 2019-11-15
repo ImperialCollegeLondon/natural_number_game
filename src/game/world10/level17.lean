@@ -44,4 +44,12 @@ begin [less_leaky]
 
 end
 
+
+def lt_of_add_lt_add_left : ∀ (a b c : mynat), a + b < a + c → b < c := sorry
+
+def bot := 0
+def bot_le := zero_le
+instance : canonically_ordered_monoid mynat := by structure_helper
+instance : ordered_comm_monoid mynat := by structure_helper
+
 end mynat -- hide

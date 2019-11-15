@@ -38,7 +38,7 @@ end
 /-
 ## Pro tip
 
-Did you skip `rw le_def` in your proof of `le_refl` above?
+Did you skip `rw le_iff_exists_add` in your proof of `le_refl` above?
 Instead of `rw add_zero` or `ring` at the end there,
 what happens if you just try `refl`? The *definition* of `x + 0` is `x`,
 so you don't need to `rw add_zero` either!

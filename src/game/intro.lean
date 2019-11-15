@@ -1,5 +1,5 @@
 /-
-# The Natural Number Game, version 1.09
+# The Natural Number Game, version 1.09a
 
 ## By Kevin Buzzard and Mohammad Pedramfar. 
 
