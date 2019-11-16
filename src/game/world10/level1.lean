@@ -1,6 +1,6 @@
 import mynat.le -- import definition of ≤
-import game.world9.level4
-import game.world4.level8
+import game.world9.level4 -- hide
+import game.world4.level8 -- hide
 namespace mynat -- hide
 /- Axiom : le_iff_exists_add (a b : mynat)
   a ≤ b ↔ ∃ (c : mynat), b = a + c
@@ -51,7 +51,7 @@ example of this below.
 
 A new construction like `∃` means that we need to learn how to manipulate it.
 There are two situations. Firstly we need to know how to solve a goal
-of the form `⊢ ∃ c, ...`, and secondly we need to know how to use a hypothesi
+of the form `⊢ ∃ c, ...`, and secondly we need to know how to use a hypothesis
 of the form `∃ c, ...`. 
 
 ## Level 1: the `use` tactic.
@@ -81,10 +81,12 @@ look at your proof. We're going to remove a line.
 ## Important
 
 An important time-saver here is to note that because `a ≤ b` is *defined*
-as `∃ c : mynat, b = a + c`, you *do not need to write `rw le_iff_exists_add`*.
+as `∃ c : mynat, b = a + c`, you *do not need to write* `rw le_iff_exists_add`.
 The `use` tactic will work directly on a goal of the form `a ≤ b`. Just
 use the difference `b - a` (note that we have not defined subtraction so
 this does not formally make sense, but you can do the calculation in your head).
+If you have written `rw le_iff_exists_add` below, then just put two minus signs `--`
+before it and comment it out. See that the proof still compiles.
 -/
 
 /- Lemma : no-side-bar
