@@ -7,7 +7,7 @@ namespace mynat -- hide
 0 ≠ succ(a)
 -/
 
-/- Tactic : `symmetry`
+/- Tactic : symmetry
 
 ## Summary
 

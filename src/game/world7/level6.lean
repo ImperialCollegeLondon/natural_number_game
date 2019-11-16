@@ -27,7 +27,7 @@ begin
 
 
 end
-/- Tactic : `left` and `right`
+/- Tactic : left and right
 
 ## Summary
 

@@ -22,7 +22,11 @@ which says that if $x$, $y$ and $z$ are natural numbers then $xy + z = xy + z$.
 Locate this lemma (if you can't see the lemma and these instructions at the same time, make this box wider
 by dragging the sides). Let's supply the proof. Click on the word `sorry` and then delete it.
 When the system finishes being busy, you'll be able to see your goal -- the objective
-of this level -- in the box on the top right. Remember that the goal is
+of this level -- in the box on the top right. [NB if your system never finishes being busy, then
+your computer is not running the javascript Lean which powers everything behind the scenes. 
+Try Chrome? Try not using private browsing?] 
+
+Remember that the goal is
 the thing with the weird `⊢` thing just before it. The goal in this case is `x * y + z = x * y + z`,
 where `x`, `y` and `z` are some of your very own natural numbers.
 That's a pretty easy goal to prove -- you can just prove it with the `refl` tactic.

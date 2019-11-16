@@ -6,7 +6,7 @@ namespace mynat -- hide
   a ≤ b ↔ ∃ (c : mynat), b = a + c
 -/
 
-/- Tactic : `use`
+/- Tactic : use
 ## Summary
 
 `use` works on the goal. If your goal is `⊢ ∃ c : mynat, 1 + x = x + c`
