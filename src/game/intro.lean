@@ -33,7 +33,9 @@ and multiplication worlds are back! To come: inequality world.
 # Thanks
 
 Special thanks to Rob Lewis for tactic hackery, Bryan Gin-Ge Chen for
-javascript hackery, Sian Carey for Power World,
+javascript hackery, Patrick Massot for his
+<a href="https://github.com/leanprover-community/format_lean" target="blank">Lean to html formatter</a>,
+Sian Carey for Power World,
 and, last but not least, all the people who fed back comments, including
 the 2019-20 Imperial College 1st year maths beta tester students, Marie-Amélie Lawn,
 Toby Gee, Joseph Myers, and all the people who have been in touch
