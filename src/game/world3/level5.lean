@@ -15,10 +15,11 @@ We now have enough to prove that multiplication is associative.
 1) Did you know you can do `repeat {rw mul_succ}`?
 
 2) Did you know you can do `rwa [hd, mul_add]`?
-(I learnt that trick from Ken Lee). `rwa` is like `rw` except
-that at the end it will check to see if the goal it's working
-on can be proved either by `refl` or `exact X` where `X` is
-one of the assumptions.
+I learnt that trick from Ken Lee. Ken spotted that
+`rwa` will do the rewrites and will then check to
+see if the goal can be proved by `refl`, and if it
+can, it will close it! [It will also close goals which
+are exactly equal to hypotheses, which will be helpful later on.]
 -/
 
 /- Lemma

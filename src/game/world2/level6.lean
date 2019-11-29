@@ -35,7 +35,7 @@ swap additions of the form `a + b`.
 
 ## Where next?
 
-There are ten more levels about addition after this one, but before
+There are thirteen more levels about addition after this one, but before
 you can attempt them you need to learn some more tactics. So after this
 level you have a choice -- either move on to Multiplication World (which you can
 solve with the tactics you know) or try Function World (and learn some new ones).

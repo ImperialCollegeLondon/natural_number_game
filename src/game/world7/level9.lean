@@ -11,7 +11,7 @@ more things.
 
 We proved earlier that `(P → Q) → (¬ Q → ¬ P)`. The converse,
 that `(¬ Q → ¬ P) → (P → Q)` is certainly true, but trying to prove
-it using what we know is impossible (because it is not provable in
+it using what we've learnt so far is impossible (because it is not provable in
 constructive logic). For example, after
 
 ```
@@ -65,9 +65,54 @@ end
 In fact the tactic `tauto` just kills this goal immediately.
 -/
 
-/- todo:
+/- Tactic : by_cases
 
-* ∃ and ∀ (and hence the `use` tactic)
-* `exfalso`
+## Summary
 
+`by_cases h : P` does a cases split on whether `P` is true or false.
+
+## Details
+
+Some logic goals cannot be proved with `intro` and `apply` and `exact`.
+The simplest example is the law of the excluded middle `¬ ¬ P → P`.
+You can prove this using truth tables but not with `intro`, `apply` etc.
+To do a truth table proof, the tactic `by_cases h : P` will turn a goal of
+`⊢ ¬ ¬ P → P` into two goals
+
+```
+P : Prop,
+h : P
+⊢ ¬¬P → P
+
+P : Prop,
+h : ¬P
+⊢ ¬¬P → P
+```
+
+Each of these can now be proved using `intro`, `apply`, `exact` and `exfalso`.
+Remember though that in these simple logic cases, high-powered logic
+tactics like `cc` and `tauto` will just prove everything.
+
+
+
+-/
+
+/- Tactic : tauto
+
+## Summary
+
+The `tauto` tactic (and its variant `tauto!`) will close various logic
+goals.
+
+## Details
+
+`tauto` is an all-purpose logic tactic which will try to solve goals using pure
+logical reasoning -- for example it will close the following goal:
+
+```
+P Q : Prop,
+hP : P,
+hQ : Q
+⊢ P ∧ Q
+```
 -/

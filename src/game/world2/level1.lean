@@ -141,7 +141,7 @@ text below the lemma to see an explanation of this goal.
 -/
 
 /- Lemma
-For all natual numbers $n$, we have
+For all natural numbers $n$, we have
 $$0 + n = n.$$
 -/
 lemma zero_add (n : mynat) : 0 + n = n :=

@@ -46,3 +46,22 @@ Get to it via the main menu.
 commenting out `rw not_iff_imp_false at ...` by putting two minus signs `--`
 before the `rw`. Does it still compile?
 -/
+
+/- Tactic : exfalso
+
+## Summary
+
+`exfalso` changes your goal to `false`. 
+
+## Details
+
+We know that `false` implies `P` for any proposition `P`, and so if your goal is `P`
+then you should be able to `apply` `false → P` and reduce your goal to `false`. This
+is what the `exfalso` tactic does. The theorem that `false → P` is called `false.elim`
+so one can achieve the same effect with `apply false.elim`. 
+
+This tactic can be used in a proof by contradiction, where the hypotheses are enough
+to deduce a contradiction and the goal happens to be some random statement (possibly
+a false one) which you just want to simplify to `false`.
+-/
+

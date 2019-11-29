@@ -31,5 +31,18 @@ You will need to learn five more tactics: `split`, `cases`,
 but they are all straightforward, and furthermore they are
 essentially the last tactics you
 need to learn in order to complete all the levels of the Natural Number Game,
-including all 30 levels of Inequality World. 
+including all the (20 or so?) levels of Inequality World. 
+-/
+
+/- Tactic : cc
+
+## Summary:
+
+`cc` will solve certain "logic" goals.
+
+## Details
+
+`cc` is a "congruence closure tactic". In practice this means that it is
+good at solving certain logic goals. It's worth trying if you think
+that the goal could be solved using truth tables.
 -/
