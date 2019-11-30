@@ -7,8 +7,11 @@ namespace mynat -- hide
 ## Level 14: `add_le_add_left`
 
 I know these are easy and we've done several already, but this is one
-of the axioms for an ordered commutative monoid! We'll get something
-new in the next level.
+of the axioms for an ordered commutative monoid! The nature of formalising
+is that we should formalise all "obvious" lemmas, and then when we're
+actually using $\le$ in real life, everything will be there. Note also,
+of course, that all of these lemmas are already formalised in Lean's
+maths library already, for Lean's inbuilt natural numbers. 
 -/
 
 /- Lemma

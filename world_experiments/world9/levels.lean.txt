@@ -1,141 +1,41 @@
-definition of a < b
-theorem lt_iff_le_not_le {a b : mynat} : a < b ↔ a ≤ b ∧ ¬ b ≤ a
+i THINK THESE ARE ALL ODNE NOW
 
-theorem add_le_add_left : ∀ (a b : mynat), a ≤ b → ∀ (c : mynat), c + a ≤ c + b :=
-begin [less_leaky]
-  sorry
-end
 
-def succ_le_succ_iff (a b : mynat) : succ a ≤ succ b ↔ a ≤ b :=
-begin [less_leaky]
-  sorry
-end
 
-def succ_lt_succ_iff (a b : mynat) : succ a < succ b ↔ a < b :=
-begin [less_leaky]
-  sorry
-end
-
-theorem lt_of_add_lt_add_left : ∀ {{a b c : mynat}}, a + b < a + c → b < c :=
-begin [less_leaky]
-  sorry
-end
-
+ADD TO SOME OTHER WORLD 
+-- nothing to do with <= world; this is just the axiom succ_ne_zero
+-- we need it for comm_semiring or something
 theorem zero_ne_one : (0 : mynat) ≠ 1 :=
 begin [less_leaky]
   sorry
 end
 
-instance : ordered_comm_monoid mynat := by structure_helper
 
-theorem le_of_add_le_add_left ⦃ a b c : mynat⦄ : a + b ≤ a + c → b ≤ c :=
-begin [less_leaky]
-  sorry
+lemma le_mul (a b c d : mynat) : a ≤ b → c ≤ d → a * c ≤ b * d :=
+begin
+intros hab hcd,
+cases' a with t Ht,
+  rw' [zero_mul],
+  apply zero_le,
+have cz : 0 ≤ c,
+  apply zero_le,
+have bz : 0 ≤ b,
+  apply zero_le,
+apply mul_le_mul hab hcd cz bz,
 end
 
-instance : ordered_cancel_comm_monoid mynat := by structure_helper
-
-theorem mul_le_mul_of_nonneg_left ⦃a b c : mynat⦄ : a ≤ b → 0 ≤ c → c * a ≤ c * b :=
-begin [less_leaky]
-  sorry
-end
-
-theorem mul_le_mul_of_nonneg_right ⦃a b c : mynat⦄ : a ≤ b → 0 ≤ c → a * c ≤ b * c :=
-begin [less_leaky]
-  sorry
-end
-
-theorem ne_zero_of_pos ⦃a : mynat⦄ : 0 < a → a ≠ 0 :=
-begin [less_leaky]
-  sorry
-end
-
-theorem mul_lt_mul_of_pos_left ⦃a b c : mynat⦄ : a < b → 0 < c → c * a < c * b :=
-begin [less_leaky]
-  sorry
-end
-
-theorem mul_lt_mul_of_pos_right ⦃a b c : mynat⦄ : a < b → 0 < c → a * c < b * c :=
-begin [less_leaky]
-  sorry
-end
-
-instance : ordered_semiring mynat := by structure_helper
-
-lemma lt_irrefl (a : mynat) : ¬ (a < a) :=
-begin [less_leaky]
-  sorry
-end
-
-theorem not_lt_zero ⦃a : mynat⦄ : ¬(a < 0) :=
-begin [less_leaky]
-  intro h,
-  cases h with ha hna,
-  apply hna, clear hna,
-  --apply le_zero at ha,
-  replace ha := le_zero ha,
-  rw ha,
+lemma pow_le (m n a : mynat) : m ≤ n → m ^ a ≤ n ^ a :=
+begin
+intro h,
+induction' a with t Ht,
+  rw' [pow_zero, pow_zero],
   refl,
+rw' [pow_succ, pow_succ],
+apply le_mul,
+  assumption,
+assumption,
 end
-
-/-
-nat.lt_succ_iff : ∀ {m n : ℕ}, m < nat.succ n ↔ m ≤ n
 -/
-
-theorem lt_succ_self (n : mynat) : n < succ n :=
-begin [less_leaky]
-  rw lt_iff_le_and_ne,
-  split,
-    use 1,
-    apply succ_eq_add_one,
-  intro h,
-  exact ne_succ_self n h
-end
-
-theorem lt_succ_iff (m n : mynat) : m < succ n ↔ m ≤ n :=
-begin [less_leaky]
-  rw lt_iff_le_and_ne,
-  split,
-  { intro h,
-    cases h with h1 h2,
-    cases h1 with c hc,
-    cases c with d,
-      exfalso,
-      apply h2,
-      rw hc,
-      rw add_zero,refl,
-    use d,
-    apply succ_inj,
-    rw hc,
-    apply add_succ,
-  },
-  { intro h,
-    cases h with c hc,
-    split,
-    { use succ c,
-      rw hc,
-      rw add_succ,
-      refl
-    },
-    { rw hc,
-      apply ne_of_lt,
-      rw lt_iff_le_and_ne,
-      split,
-        use succ c,
-        rw add_succ,
-        refl,
-      intro h,
-      rw [succ_eq_add_one, add_assoc] at h,
-      -- doesn't' work yet
-      -- symmetry at h,
-      rw eq_comm at h,
-      replace h := eq_zero_of_add_right_eq_self h,
-      apply zero_ne_succ c,
-      rw ←h,
-      apply add_one_eq_succ
-    }
-  }
-end
 
 -- is this right?
 @[elab_as_eliminator]
@@ -169,30 +69,4 @@ end mynat
 /-
 after <=
 
-lemma le_mul (a b c d : mynat) : a ≤ b → c ≤ d → a * c ≤ b * d :=
-begin
-intros hab hcd,
-cases' a with t Ht,
-  rw' [zero_mul],
-  apply zero_le,
-have cz : 0 ≤ c,
-  apply zero_le,
-have bz : 0 ≤ b,
-  apply zero_le,
-apply mul_le_mul hab hcd cz bz,
-end
 
---End of world 3
-
-lemma pow_le (m n a : mynat) : m ≤ n → m ^ a ≤ n ^ a :=
-begin
-intro h,
-induction' a with t Ht,
-  rw' [pow_zero, pow_zero],
-  refl,
-rw' [pow_succ, pow_succ],
-apply le_mul,
-  assumption,
-assumption,
-end
--/
