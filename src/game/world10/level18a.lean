@@ -1,9 +1,7 @@
 import game.world10.level17 -- hide
 namespace mynat -- hide
 
--- todo MODIFY USE
 -- todo INTRODUCE CONGR
-
 
 lemma lt_irrefl (a : mynat) : ¬ (a < a) :=
 begin [less_leaky]
@@ -213,7 +211,8 @@ begin [less_leaky]
   cases hab with d hd,
   rw hd,
   rw mul_add,
-  use c * d, -- DAMMIT I SHOULD MODIFY USE
+  use c * d,
+  refl
 end
 
 theorem mul_le_mul_of_nonneg_right (a b c : mynat) : a ≤ b → 0 ≤ c → a * c ≤ b * c :=

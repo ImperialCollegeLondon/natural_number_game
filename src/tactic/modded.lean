@@ -55,6 +55,9 @@ end >> (returnopt rs.end_pos >>= save_info <|> skip)
 meta def rw' (q : parse rw_rules) (l : parse location) (cfg : rewrite_cfg := {}) : tactic unit :=
 propagate_tags (rw_core q l cfg)
 
+meta def use' (l : parse pexpr_list_or_texpr) : tactic unit :=
+tactic.use l
+
 end interactive
 end tactic
 

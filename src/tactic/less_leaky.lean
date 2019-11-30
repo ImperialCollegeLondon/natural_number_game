@@ -8,7 +8,11 @@ meta def copy_decl (d : declaration) : tactic unit :=
 add_decl $ d.update_name $ d.to_name.update_prefix `less_leaky.interactive
 
 @[reducible] meta def filter (d : declaration) : bool :=
-d.to_name ∉ [`tactic.interactive.induction, `tactic.interactive.cases, `tactic.interactive.rw, `tactic.interactive.symmetry]
+d.to_name ∉ [`tactic.interactive.induction, 
+             `tactic.interactive.cases, 
+             `tactic.interactive.rw, 
+             `tactic.interactive.symmetry,
+             `tactic.interactive.use]
 
 meta def copy_decls : tactic unit :=
 do env ← get_env,
@@ -55,6 +59,9 @@ meta def rw
 
 meta def symmetry
 := tactic.interactive.symmetry'
+
+meta def use
+:= tactic.interactive.use'
 
 end less_leaky.interactive
 
