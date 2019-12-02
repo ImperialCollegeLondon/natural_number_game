@@ -25,7 +25,10 @@ it means `(a + b) + c`. If it wants to talk about `a + (b + c)` it will put the 
 in explictly.
 
 Reminder: you are done when you see "Proof complete!" in the top right, and an empty
-box (no errors) in the bottom right.
+box (no errors) in the bottom right. You can move between levels and worlds (i.e. you
+can go back and review old stuff) without losing anything.
+
+Once you're done with associativity (sub-boss), we can move on to commutativity (boss).
 -/
 
 /- Lemma
@@ -50,8 +53,5 @@ begin [nat_num_game]
   }
 end
 
-/-
-Once you have associativity (sub-boss), let's move on to commutativity (boss).
--/
 end mynat -- hide 
 

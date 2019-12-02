@@ -59,25 +59,9 @@ and then observe that you can close the goal with
 
 `refl,`
 
-and you're done. You have finished tutorial world!
+and you're done. You have finished tutorial world! There are important things
+written below the lemma, including what to do next.
 
-## Examining proofs.
-
-You might want to review this proof now; at
-three lines long it is our current record. Click on a line in the proof
-and use the L/R arrow keys to put your cursor as far left as it will go.
-Then use the U/D arrow keys to move your cursor
-up and down from line to line, and you can see what
-Lean is thinking on each line of the proof.
-
-## No problems?
-
-When you're happy, let's move onto Addition World, and
-learn about proof by induction. Go back to the main menu and select addition world.
-
-## Problems? 
-
-See below the lemma.
 -/
 
 /- Lemma : no-side-bar
@@ -99,6 +83,20 @@ end
 end mynat -- hide
 
 /-
+## Examining proofs.
+
+You might want to review this proof now; at
+three lines long it is our current record. Click on a line in the proof
+and use the L/R arrow keys to put your cursor as far left as it will go.
+Then use the U/D arrow keys to move your cursor
+up and down from line to line, and you can see what
+Lean is thinking on each line of the proof.
+
+## No problems?
+
+When you're happy, let's move onto Addition World, and
+learn about proof by induction. Go back to the main menu and select addition world.
+
 ## Problems?
 
 Question: why has the top right hand box gone blank?

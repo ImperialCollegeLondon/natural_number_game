@@ -79,9 +79,9 @@ a reminder of the things you're now equipped with which we'll need in this world
 
 ## Tactics:
 
-  * `refl`:  proves goals of the form `X = X`
-  * `rw h`: if h is a proof of `A = B`, changes all A's in the goal to B's.
-  * `induction n with d hd` -- we're going to learn this right now.
+  * `refl` :  proves goals of the form `X = X`
+  * `rw h` : if h is a proof of `A = B`, changes all A's in the goal to B's.
+  * `induction n with d hd` : we're going to learn this right now.
 
 # Important thing: 
 
@@ -100,9 +100,9 @@ OK so let's see induction in action. We're going to prove
 
   `zero_add (n : mynat) : 0 + n = n`. 
 
-That is: for all natural numbers $n$, $0+n=n$. Wait -- what is going on here?
+That is: for all natural numbers $n$, $0+n=n$. Wait $-$ what is going on here?
 Didn't we already prove that adding zero to $n$ gave us $n$?
-No we didn't! We proved $n + 0 = n$ -- that proof was called `add_zero`. We're now
+No we didn't! We proved $n + 0 = n$, and that proof was called `add_zero`. We're now
 trying to establish `zero_add`, the proof that $0 + n = n$. But aren't these two theorems
 the same? No they're not! It is *true* that `x + y = y + x`, but we haven't
 *proved* it yet, and in fact we will need both `add_zero` and `zero_add` in order

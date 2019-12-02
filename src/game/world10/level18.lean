@@ -22,7 +22,8 @@ begin [nat_num_game]
   rw lt_iff_succ_le,
   rw lt_iff_succ_le,
   intro h,
-  apply le_of_add_le_add_left, -- wtf? Not there?
+  sorry,
+--  apply le_of_add_le_add_left, -- wtf? Not there?
 end
 
 def bot := 0 -- hide

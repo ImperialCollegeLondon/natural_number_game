@@ -84,7 +84,7 @@ functions looks like this pictorially:
 and so it's clear how to make the element of $U$ from the element of $P.$
 Indeed, we could solve this level in one move by typing
 
-`exact l(j(h(P))),`
+`exact l(j(h(p))),`
 
 But let us instead stroll more lazily through the level.
 We can start by using the `have` tactic to make an element of $Q$:
