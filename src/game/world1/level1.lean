@@ -17,6 +17,10 @@ right hand side (a computer scientist would say "definitionally equal"). I reall
 "press the same buttons on your computer in the same order" equal.
 For example, `x * y + z = x * y + z` can be proved by `refl`, but `x + y = y + x` cannot.
 
+Each level in this game involves proving a theorem or a lemma (a lemma is just a baby theorem).
+The goal of the thereom will be a mathematical statement with a `⊢` just before it.
+We will use tactics to manipulate and ultimately close (i.e. prove) these goals.
+
 Let's see `refl` in action! At the bottom of the text in this box, there's a lemma,
 which says that if $x$, $y$ and $z$ are natural numbers then $xy + z = xy + z$.
 Locate this lemma (if you can't see the lemma and these instructions at the same time, make this box wider

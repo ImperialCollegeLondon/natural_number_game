@@ -70,20 +70,14 @@ Then use the U/D arrow keys to move your cursor
 up and down from line to line, and you can see what
 Lean is thinking on each line of the proof.
 
-## Fixing problems.
-
-Question: why has the top right hand box gone blank?
-
-Answer: Maybe you tried a tactic which didn't work. Or maybe you're
-in the middle of typing a tactic. Try deleting up to the last
-comma, *or adding a comma at the end of your code*. Look at the
-error message. What line is the first error on? Perhaps
-Lean thinks you're in the middle of writing a tactic command that you
-think you finished. If Lean is still attempting to process a tactic
-command it won't display anything. 
+## No problems?
 
 When you're happy, let's move onto Addition World, and
 learn about proof by induction. Go back to the main menu and select addition world.
+
+## Problems? 
+
+See below the lemma.
 -/
 
 /- Lemma : no-side-bar
@@ -102,4 +96,33 @@ begin [less_leaky]
   
 end
 
-end mynat
+end mynat -- hide
+
+/-
+## Problems?
+
+Question: why has the top right hand box gone blank?
+
+Answer: Maybe you tried a tactic which didn't work. Or maybe you're
+in the middle of typing a tactic. Try deleting up to the last
+comma, *or adding a comma at the end of your code*. Look at the
+error message. What line is the first error on? Perhaps
+Lean thinks you're in the middle of writing a tactic command that you
+think you finished. If Lean is still attempting to process a tactic
+command it won't display anything. You can get it to stop processing by
+adding a comma. 
+
+If the worst comes to the worst, just delete what you wrote. Most people
+with problems have written random stuff in the proof box. The only thing
+you're supposed to be writing is lines like
+
+`rw add_zero,`
+`rw h,`
+`refl,`
+
+One line of code with a comma at the end. Nothing else at all goes in the box.
+
+If you cannot see what you have done wrong, you can always
+<a href="https://github.com/ImperialCollegeLondon/natural_number_game/blob/master/SOLUTIONS.md"
+  target="blank">take a look at the solutions</a> (github.com, opens in new window).
+-/

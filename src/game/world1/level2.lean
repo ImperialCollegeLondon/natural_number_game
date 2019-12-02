@@ -134,6 +134,19 @@ The comma tells Lean "I've finished writing this tactic now,
 please process it." Lean ignores newlines, but pays great
 attention to commas.
 
+## The tactic index
+
+The documentation for `rw` just appeared in the list of tactics
+in the box on the left. Play around with the menus on the left
+and see what is there currently. More information will appear as you progress.
+
+## Bewildered?
+
+Doesn't work? Weird error that won't go away? You can check out
+the 
+<a href="https://github.com/ImperialCollegeLondon/natural_number_game/blob/master/SOLUTIONS.md"
+  target="blank">solutions</a> (github.com, opens in new window).
+  Solutions to every level are here.
 -/
 
 end mynat -- hide

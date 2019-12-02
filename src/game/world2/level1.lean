@@ -67,20 +67,20 @@ a reminder of the things you're now equipped with which we'll need in this world
   * a type called `mynat`
   * a term `0 : mynat`, interpreted as the number zero.
   * a function `succ : mynat → mynat`, with `succ n` interpreted as "the number after `n`".
-  * Usual numerical notation 0,1,2 etc (although 2 onwards will be of no use to us ;-) ).
+  * Usual numerical notation 0,1,2 etc (although 2 onwards will be of no use to us until much later ;-) ).
   * Addition (with notation `a + b`).
 
 ## Theorems:
 
-  * `add_zero (a : mynat) : a + 0 = a`
-  * `add_succ (a b : mynat) : a + succ(b) = succ(a + b)`
+  * `add_zero (a : mynat) : a + 0 = a`. Use with `rw add_zero`.
+  * `add_succ (a b : mynat) : a + succ(b) = succ(a + b)`. Use with `rw add_succ`.
   * The principle of mathematical induction. Use with `induction` (see below)
   
 
 ## Tactics:
 
-  * `refl` -- proves goals of the form `X = X`
-  * `rw h` -- if h is a proof of `A = B`, changes all A's in the goal to B's.
+  * `refl`:  proves goals of the form `X = X`
+  * `rw h`: if h is a proof of `A = B`, changes all A's in the goal to B's.
   * `induction n with d hd` -- we're going to learn this right now.
 
 # Important thing: 

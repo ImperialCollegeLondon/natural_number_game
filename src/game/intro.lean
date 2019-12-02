@@ -1,5 +1,5 @@
 /-
-# The Natural Number Game, version 1.09b
+# The Natural Number Game, version 1.1alpha0
 
 ## By Kevin Buzzard and Mohammad Pedramfar. 
 
@@ -7,7 +7,7 @@
 
 Welcome to the natural number game -- a part-book part-game which shows the power of induction.
 Blue nodes on the graph are ones that you are ready to enter. Grey nodes you should stay away
-from -- try blue ones higher up the chain first. Green nodes are completed.
+from -- a grey node turns blue when *all* nodes above it are complete. Green nodes are completed.
 
 In this game, you get own version of the natural numbers, called `mynat`, in a programming
 language called Lean. Your version of the natural numbers satisfies something called
@@ -27,8 +27,7 @@ hit "main menu" in the top left to get back here.
 
 # What's new?
 
-Lots of things. A function world, two proposition worlds, and the advanced addition
-and multiplication worlds are back! To come: inequality world.
+Inequality world.
 
 # Thanks
 
