@@ -23,7 +23,7 @@ For all naturals $a$ and $b$,
 $$a<b\iff\operatorname{succ}(a)\le b.$$
 -/
 lemma lt_iff_succ_le (a b : mynat) : a < b ↔ succ a ≤ b :=
-begin [less_leaky]
+begin [nat_num_game]
   split,
     exact lt_aux_one a b,
   exact lt_aux_two a b,

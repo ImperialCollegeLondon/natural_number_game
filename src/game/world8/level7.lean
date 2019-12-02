@@ -21,7 +21,7 @@ For all naturals $a$, $b$ and $t$,
 $$ a + t = b + t\iff a=b. $$
 -/
 theorem add_right_cancel_iff (t a b : mynat) :  a + t = b + t ↔ a = b :=
-begin [less_leaky]
+begin [nat_num_game]
   split,
   { exact add_right_cancel _ _ _}, -- done that way already,
   { intro H, -- H : a = b,

@@ -34,7 +34,7 @@ In other words, for all natural numbers $a, b$ and $c$, we have
 $$ (a + b) + c = a + (b + c). $$
 -/
 lemma add_assoc (a b c : mynat) : (a + b) + c = a + (b + c) :=
-begin [less_leaky]
+begin [nat_num_game]
   induction c with d hd,
   { -- ⊢ a + b + 0 = a + (b + 0)
     rw add_zero,

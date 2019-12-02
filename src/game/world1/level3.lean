@@ -86,7 +86,7 @@ If $\operatorname{succ}(a) = b$, then
 $$\operatorname{succ}(\operatorname{succ}(a)) = \operatorname{succ}(b).$$
 -/
 lemma example3 (a b : mynat) (h : succ a = b) : succ(succ(a)) = succ(b) :=
-begin [less_leaky]
+begin [nat_num_game]
   rw h,
   refl,
 

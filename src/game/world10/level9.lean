@@ -10,7 +10,7 @@ namespace mynat -- hide
 For all naturals $a$ and $b$, either $a\le b$ or $b\le a$. 
 -/
 theorem le_total (a b : mynat) : a ≤ b ∨ b ≤ a :=
-begin [less_leaky]
+begin [nat_num_game]
   revert a,
   induction b with d hd,
     intro a,

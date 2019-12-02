@@ -50,7 +50,7 @@ For all natural numbers $a$ and $b$,
 if $2a=b + 7$, then $2a=b+7$.
 -/
 lemma example2 (a b : mynat) (h : 2 * a = b + 7): 2 * a = b + 7 :=
-begin [less_leaky]
+begin [nat_num_game]
   exact h
 
 

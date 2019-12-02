@@ -13,7 +13,7 @@ The $\le$ relation is reflexive. In other words, if $x$ is a natural number,
 then $x\le x$.
 -/
 lemma le_refl (x : mynat) : x ≤ x :=
-begin [less_leaky]
+begin [nat_num_game]
   use 0,
   rw add_zero,
   refl,

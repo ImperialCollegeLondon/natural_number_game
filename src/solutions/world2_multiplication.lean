@@ -42,7 +42,7 @@ reduce to the case either `x = 0` or `x = succ b`, and then use `mul_zero` or `m
 namespace mynat
 
 lemma zero_mul (m : mynat) : 0 * m = 0 :=
-begin [less_leaky]
+begin [nat_num_game]
   induction m with d hd,
   {
     rw mul_zero,
@@ -59,7 +59,7 @@ end
 def collectible_3 : mul_zero_class mynat := by structure_helper
 
 lemma mul_one (m : mynat) : m * 1 = m :=
-begin [less_leaky]
+begin [nat_num_game]
   rw one_eq_succ_zero,
   rw mul_succ,
   rw mul_zero,
@@ -67,7 +67,7 @@ begin [less_leaky]
 end
 
 lemma one_mul (m : mynat) : 1 * m = m :=
-begin [less_leaky]
+begin [nat_num_game]
   induction m with d hd,
   {
     rw mul_zero,
@@ -84,7 +84,7 @@ end
 -- ⊢ a * (b * d) + a * b = a * (b * d + b)
 
 lemma mul_add (a b c : mynat) : a * (b + c) = a * b + a * c :=
-begin [less_leaky]
+begin [nat_num_game]
   induction c with d hd,
   { rewrite [add_zero, mul_zero, add_zero],
   },
@@ -104,7 +104,7 @@ def left_distrib := mul_add -- stupid field name,
 -- I just don't instinctively know what left_distrib means
 
 lemma mul_assoc (a b c : mynat) : (a * b) * c = a * (b * c) :=
-begin [less_leaky]
+begin [nat_num_game]
   induction c with d hd,
   { 
     refl
@@ -134,7 +134,7 @@ def collectible_4 : monoid mynat := by structure_helper
 
 -- I need this for mul_comm
 lemma succ_mul (a b : mynat) : succ a * b = a * b + b :=
-begin [less_leaky]
+begin [nat_num_game]
   induction b with d hd,
   {
     refl
@@ -153,7 +153,7 @@ end
 
 -- turns out I don't actually need this for mul_comm
 lemma add_mul (a b c : mynat) : (a + b) * c = a * c + b * c :=
-begin [less_leaky]
+begin [nat_num_game]
   induction' b with d hd,
   { 
     rw zero_mul,
@@ -176,7 +176,7 @@ def right_distrib := add_mul -- stupid field name,
 def collectible_05 : semiring mynat := by structure_helper 
 
 lemma mul_comm (a b : mynat) : a * b = b * a :=
-begin [less_leaky]
+begin [nat_num_game]
   induction' b with d hd,
   { 
     rw zero_mul,
@@ -195,7 +195,7 @@ def collectible_06 : comm_semiring mynat := by structure_helper
 
 -- this is < axiom 4
 theorem mul_pos (a b : mynat) : a ≠ 0 → b ≠ 0 → a * b ≠ 0 :=
-begin [less_leaky]
+begin [nat_num_game]
   intros ha hb,
   intro hab,
   cases b with b,
@@ -213,7 +213,7 @@ end
 -- this involves a lot of cases. Would be really cool
 -- to have some sort of trickery instead of all the {}s.
 theorem mul_eq_zero_iff : ∀ (a b : mynat), a * b = 0 ↔ a = 0 ∨ b = 0 :=
-begin [less_leaky]
+begin [nat_num_game]
   intros a b,
   split, swap,
     intro hab, cases hab,
@@ -231,7 +231,7 @@ begin [less_leaky]
 end
 
 theorem eq_zero_or_eq_zero_of_mul_eq_zero ⦃a b : mynat⦄ (h : a * b = 0) : a = 0 ∨ b = 0 :=
-begin [less_leaky]
+begin [nat_num_game]
   revert a,
   induction b with c hc,
   { intros a ha,
@@ -248,7 +248,7 @@ instance : comm_semiring mynat := by structure_helper
 
 -- I use this in world3_le_solutions
 theorem mul_left_cancel ⦃a b c : mynat⦄ (ha : a ≠ 0) : a * b = a * c → b = c :=
-begin [less_leaky]
+begin [nat_num_game]
   revert b,
   induction c with d hd,
   { intro b,

@@ -29,7 +29,7 @@ $$ t(a + b) = ta + tb. $$
 -/
 
 lemma mul_add (t a b : mynat) : t * (a + b) = t * a + t * b :=
-begin [less_leaky]
+begin [nat_num_game]
   induction b with d hd,
   { rewrite [add_zero, mul_zero, add_zero],
   },

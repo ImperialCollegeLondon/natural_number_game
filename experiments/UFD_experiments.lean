@@ -14,7 +14,7 @@ instance : has_dvd mynat := ⟨mynat.divides⟩
 def is_prime (n : mynat) : Prop := n ≠ 1 ∧ ∀ d, d ∣ n → d = 1 ∨ d = n
 
 theorem has_prime_factor (n : mynat) : 1 < n → ∃ p : mynat, is_prime p ∧ p ∣ n :=
-begin [less_leaky]
+begin [nat_num_game]
   intro h,
   cases n with n,
     exfalso, apply @not_lt_zero 1,

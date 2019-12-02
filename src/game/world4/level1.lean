@@ -46,7 +46,7 @@ in the summer of 2019. Thanks Sian!
 $0 ^ 0 = 1$.
 -/
 lemma zero_pow_zero : (0 : mynat) ^ (0 : mynat) = 1 :=
-begin [less_leaky]
+begin [nat_num_game]
   rw pow_zero,
   refl,
 

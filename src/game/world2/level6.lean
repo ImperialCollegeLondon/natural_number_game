@@ -49,7 +49,7 @@ For all natural numbers $a, b$ and $c$, we have
 $$ a + b + c = a + c + b. $$
 -/
 lemma add_right_comm (a b c : mynat) : a + b + c = a + c + b :=
-begin [less_leaky]
+begin [nat_num_game]
   rw add_assoc,
   rw add_comm b c,
   rw ←add_assoc,

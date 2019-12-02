@@ -20,7 +20,7 @@ $ ab = ac, $
 then $b = c$.
 -/
 theorem mul_left_cancel (a b c : mynat) (ha : a ≠ 0) : a * b = a * c → b = c :=
-begin [less_leaky]
+begin [nat_num_game]
   revert b,
   induction c with d hd,
   { intro b,

@@ -17,7 +17,7 @@ $$
 a\le b\land\lnot(b\le a).$$
 -/
 lemma lt_aux_two (a b : mynat) : succ a ≤ b → a ≤ b ∧ ¬ (b ≤ a) :=
-begin [less_leaky]
+begin [nat_num_game]
   intro h,
   cases h with c hc,
   split,

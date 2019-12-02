@@ -40,7 +40,7 @@ Now use `use` wisely and you're home.
 For all naturals $a$, $b$, if $a\leq b$ then $a\leq \operatorname{succ}(b)$. 
 -/
 theorem le_succ (a b : mynat) : a ≤ b → a ≤ (succ b) :=
-begin [less_leaky]
+begin [nat_num_game]
   intro h,
   cases h with c hc,
   rw hc,
@@ -66,7 +66,7 @@ of `1` is `succ 0`?
 
 ```
 theorem le_succ (a b : mynat) : a ≤ b → a ≤ (succ b) :=
-begin [less_leaky]
+begin [nat_num_game]
   intro h,
   cases h with c hc,
   rw hc,

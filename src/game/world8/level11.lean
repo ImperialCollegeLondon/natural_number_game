@@ -19,7 +19,7 @@ $$ a + b = 0, $$
 then $a = 0$.
 -/
 lemma add_right_eq_zero (a b : mynat) : a + b = 0 → a = 0 :=
-begin [less_leaky]
+begin [nat_num_game]
   intro H,
   rw add_comm at H,
   exact add_left_eq_zero H,

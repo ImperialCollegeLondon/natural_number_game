@@ -17,7 +17,7 @@ This might be useful in this level.
 ≤ is antisymmetric. In other words, if a ≤ b and b ≤ a then a = b. 
 -/
 theorem le_antisymm (a b : mynat) (hab : a ≤ b) (hba : b ≤ a) : a = b :=
-begin [less_leaky]
+begin [nat_num_game]
   cases hab with c hc,
   cases hba with d hd,
   rw hc at hd,

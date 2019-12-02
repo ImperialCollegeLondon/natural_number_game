@@ -145,7 +145,7 @@ For all natural numbers $n$, we have
 $$0 + n = n.$$
 -/
 lemma zero_add (n : mynat) : 0 + n = n :=
-begin [less_leaky]
+begin [nat_num_game]
   induction n with d hd,
     rw add_zero,
     refl,

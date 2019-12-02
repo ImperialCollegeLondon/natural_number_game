@@ -25,7 +25,7 @@ For all naturals $a$ and $b$,
 $$a\le b\land\lnot(b\le a)\implies\operatorname{succ}(a)\le b.$$
 -/
 lemma lt_aux_one (a b : mynat) : a ≤ b ∧ ¬ (b ≤ a) → succ a ≤ b :=
-begin [less_leaky]
+begin [nat_num_game]
   intro h,
   cases h with h1 h2,
   cases h1 with c hc,

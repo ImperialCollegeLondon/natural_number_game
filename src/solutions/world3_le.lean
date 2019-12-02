@@ -3,7 +3,7 @@ import solutions.world2_multiplication
 import tactic.interactive
 
 -- #check tactic.interactive.rintro 
-meta def less_leaky.interactive.rintro := tactic.interactive.rintro
+meta def nat_num_game.interactive.rintro := tactic.interactive.rintro
 namespace mynat
 
 theorem le_refl (a : mynat) : a ≤ a :=
@@ -315,7 +315,7 @@ end
 instance : ordered_semiring mynat := by structure_helper
 
 theorem not_lt_zero ⦃a : mynat⦄ : ¬(a < 0) :=
-begin [less_leaky]
+begin [nat_num_game]
 --  rintro ⟨ha, hna⟩, -- *TODO* -- rintro doesn't work??
   intro h,
   cases h with ha hna,
@@ -331,7 +331,7 @@ nat.lt_succ_iff : ∀ {m n : ℕ}, m < nat.succ n ↔ m ≤ n
 -/
 
 theorem lt_succ_self (n : mynat) : n < succ n :=
-begin [less_leaky]
+begin [nat_num_game]
   rw lt_iff_le_and_ne,
   split,
     use 1,
@@ -341,7 +341,7 @@ begin [less_leaky]
 end
 
 theorem lt_succ_iff (m n : mynat) : m < succ n ↔ m ≤ n :=
-begin [less_leaky]
+begin [nat_num_game]
   rw lt_iff_le_and_ne,
   split,
   { rintro ⟨h1, h2⟩,
@@ -388,7 +388,7 @@ end
 theorem strong_induction (P : mynat → Prop)
   (IH : ∀ m : mynat, (∀ d : mynat, d < m → P d) → P m) :
   ∀ n, P n :=
-begin [less_leaky]
+begin [nat_num_game]
   let Q : mynat → Prop := λ m, ∀ d < m, P d,
   have hQ : ∀ n, Q n,
   { intro n,

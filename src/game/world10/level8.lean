@@ -13,7 +13,7 @@ Another straightforward one.
 For all naturals $a$ and $b$, if $a\le b$, then $\operatorname{succ}(a)\le\operatorname{succ}(b)$. 
 -/
 lemma succ_le_succ (a b : mynat) (h : a ≤ b) : succ a ≤ succ b :=
-begin [less_leaky]
+begin [nat_num_game]
   cases h with c hc,
   use c,
   rw hc,

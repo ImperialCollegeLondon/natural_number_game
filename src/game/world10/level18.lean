@@ -18,7 +18,7 @@ For all naturals $a$ $b$ and $c$,
 $$a+b<a+c\implies b<c.$$ 
 -/
 lemma lt_of_add_lt_add_left (a b c : mynat) : a + b < a + c → b < c :=
-begin [less_leaky]
+begin [nat_num_game]
   rw lt_iff_succ_le,
   rw lt_iff_succ_le,
   intro h,

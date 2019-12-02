@@ -13,7 +13,7 @@ For all naturals $a$ and $b$,
 $\operatorname{succ}(a)\le\operatorname{succ}(b)\implies a\le b.$
 -/
 theorem le_of_succ_le_succ (a b : mynat) : succ a ≤ succ b → a ≤ b :=
-begin [less_leaky]
+begin [nat_num_game]
   intro h,
   cases h with c hc,
   use c,

@@ -61,7 +61,7 @@ $$ a + b = 0, $$
 then $b = 0$.
 -/
 lemma add_left_eq_zero {a b : mynat} (H : a + b = 0) : b = 0 :=
-begin [less_leaky]
+begin [nat_num_game]
   cases b with d,
   { refl},
   { rw add_succ at H,

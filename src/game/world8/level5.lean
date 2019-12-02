@@ -23,7 +23,7 @@ $$ a + t = b + t, $$
 then we have $a = b$.
 -/
 theorem add_right_cancel (a t b : mynat) : a + t = b + t → a = b :=
-begin [less_leaky]
+begin [nat_num_game]
   intro h,
   induction t with d hd,
   rw add_zero at h,

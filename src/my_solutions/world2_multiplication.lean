@@ -19,17 +19,17 @@ namespace mynat
 
 
 lemma zero_mul (m : mynat) : 0 * m = 0 :=
-begin [less_leaky]
+begin [nat_num_game]
   sorry
 end
 
 lemma mul_one (m : mynat) : m * 1 = m :=
-begin [less_leaky]
+begin [nat_num_game]
   sorry
 end
 
 lemma one_mul (m : mynat) : 1 * m = m :=
-begin [less_leaky]
+begin [nat_num_game]
   sorry
 end
 
@@ -39,7 +39,7 @@ end
 -- so let's prove mul_add first.
 
 lemma mul_add (a b c : mynat) : a * (b + c) = a * b + a * c :=
-begin [less_leaky]
+begin [nat_num_game]
   sorry
 end
 
@@ -48,7 +48,7 @@ def left_distrib := mul_add -- stupid field name,
 -- I just don't instinctively know what left_distrib means
 
 lemma mul_assoc (a b c : mynat) : (a * b) * c = a * (b * c) :=
-begin [less_leaky]
+begin [nat_num_game]
   sorry
 end
 
@@ -60,12 +60,12 @@ end
 
 -- I need this for mul_comm
 lemma succ_mul (a b : mynat) : succ a * b = a * b + b :=
-begin [less_leaky]
+begin [nat_num_game]
   sorry
 end
 
 lemma add_mul (a b c : mynat) : (a + b) * c = a * c + b * c :=
-begin [less_leaky]
+begin [nat_num_game]
   sorry
 end
 
@@ -73,29 +73,29 @@ end
 def right_distrib := add_mul -- stupid field name, 
 
 lemma mul_comm (a b : mynat) : a * b = b * a :=
-begin [less_leaky]
+begin [nat_num_game]
   sorry
 end
 
 theorem mul_pos (a b : mynat) : a ≠ 0 → b ≠ 0 → a * b ≠ 0 :=
-begin [less_leaky]
+begin [nat_num_game]
   sorry
 end
 
 theorem eq_zero_or_eq_zero_of_mul_eq_zero ⦃a b : mynat⦄ (h : a * b = 0) : a = 0 ∨ b = 0 :=
-begin [less_leaky]
+begin [nat_num_game]
   sorry
 end
 
 theorem mul_eq_zero_iff : ∀ (a b : mynat), a * b = 0 ↔ a = 0 ∨ b = 0 :=
-begin [less_leaky]
+begin [nat_num_game]
   sorry
 end
 
 instance : comm_semiring mynat := by structure_helper
 
 theorem mul_left_cancel ⦃a b c : mynat⦄ (ha : a ≠ 0) : a * b = a * c → b = c :=
-begin [less_leaky]
+begin [nat_num_game]
   sorry
 end
 

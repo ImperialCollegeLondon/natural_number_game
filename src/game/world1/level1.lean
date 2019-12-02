@@ -61,7 +61,7 @@ tutorial world, where we'll learn about the `rw` tactic.
 For all natural numbers $x$, $y$ and $z$, we have $xy + z = xy + z$.
 -/
 lemma example1 (x y z : mynat) : x * y + z = x * y + z :=
-begin [less_leaky]
+begin [nat_num_game]
   refl
 
 

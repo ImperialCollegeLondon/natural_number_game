@@ -1,5 +1,5 @@
 import tactic.structure_helper
-import tactic.less_leaky
+import tactic.nat_num_game
 /-
 
   mynat/definition.lean -- definition of mynat.

@@ -57,7 +57,7 @@ For all natural numbers $m$, we have
 $$ 0 \times m = 0. $$
 -/
 lemma zero_mul (m : mynat) : 0 * m = 0 :=
-begin [less_leaky]
+begin [nat_num_game]
   induction m with d hd,
   {
     rw mul_zero,

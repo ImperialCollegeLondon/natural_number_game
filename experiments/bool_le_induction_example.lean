@@ -1,4 +1,4 @@
--- random experiments that predate [less_leaky] approach
+-- random experiments that predate [nat_num_game] approach
 
 import tactic.linarith -- any import is fine
 

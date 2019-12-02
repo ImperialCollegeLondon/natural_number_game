@@ -14,7 +14,7 @@ Another straightforward one.
 ≤ is transitive. In other words, if $a\leq b$ and $b\leq c$ then $a\leq c$. 
 -/
 theorem le_trans (a b c : mynat) (hab : a ≤ b) (hbc : b ≤ c) : a ≤ c :=
-begin [less_leaky]
+begin [nat_num_game]
   cases hab with d hd,
   cases hbc with e he,
   use (d + e),

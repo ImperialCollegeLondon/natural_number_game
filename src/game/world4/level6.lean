@@ -18,7 +18,7 @@ proofs. You'll only lose proofs if you reload the page.
 For all naturals $a$, $b$, $n$, we have $(ab) ^ n = a ^ nb ^ n$.
 -/
 lemma mul_pow (a b n : mynat) : (a * b) ^ n = a ^ n * b ^ n :=
-begin [less_leaky]
+begin [nat_num_game]
   induction n with t Ht,
     rw [pow_zero, pow_zero, pow_zero, mul_one],
     refl,

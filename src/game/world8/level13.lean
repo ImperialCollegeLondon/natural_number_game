@@ -19,7 +19,7 @@ For any natural number $n$, we have
 $$ n \neq \operatorname{succ}(n). $$
 -/
 lemma ne_succ_self (n : mynat) : n ≠ succ n :=
-begin [less_leaky]
+begin [nat_num_game]
   induction n with d hd,
     apply zero_ne_succ,
   intro hs,

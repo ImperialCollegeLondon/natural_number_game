@@ -21,7 +21,7 @@ But how do we get to that proof? Use the `intro` tactic.
 For all naturals $a$ and $b$, $a=b\implies succ(a)=succ(b)$. 
 -/
 theorem succ_eq_succ_of_eq {a b : mynat} : a = b → succ(a) = succ(b) :=
-begin [less_leaky]
+begin [nat_num_game]
   intro h,
   rw h,
   refl,

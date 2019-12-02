@@ -14,7 +14,7 @@ if `h1 : a + c = 0`.
 For all naturals $a$, if $a\le 0$ then $a = 0$.
 -/
 lemma le_zero (a : mynat) (h : a ≤ 0) : a = 0 :=
-begin [less_leaky]
+begin [nat_num_game]
   cases h with c hc,
   symmetry at hc,
   exact add_right_eq_zero _ _ hc,

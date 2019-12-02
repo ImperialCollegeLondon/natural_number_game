@@ -22,7 +22,7 @@ For all naturals $a$ and $b$, if we assume $succ(succ(a))=succ(succ(b))$, then w
 deduce $a=b$. 
 -/
 theorem succ_succ_inj {a b : mynat} (h : succ(succ(a)) = succ(succ(b))) :  a = b := 
-begin [less_leaky]
+begin [nat_num_game]
     have h2 : succ(a)=succ(b),
       exact succ_inj(h),
     exact succ_inj(h2),

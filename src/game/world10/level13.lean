@@ -26,7 +26,7 @@ Look carefully at the commas.
 For all naturals $a$, $\operatorname{succ}(a)$ is not at most $a$.
 -/
 theorem not_succ_le_self (a : mynat) : ¬ (succ a ≤ a) :=
-begin [less_leaky]
+begin [nat_num_game]
   intro h,
   induction a with d hd,
     cases h with c hc,

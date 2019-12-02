@@ -23,7 +23,7 @@ namespace mynat
 #exit
 -- example
 theorem le_refl (a : mynat) : a ≤ a :=
-begin [less_leaky]
+begin [nat_num_game]
   rw le_def,
   use 0,
   rw add_zero,  
@@ -36,7 +36,7 @@ example : one ≤ one := le_refl one
 attribute [_refl_lemma] le_refl
 
 theorem le_succ {a b : mynat} (h : a ≤ b) : a ≤ (succ b) :=
-begin [less_leaky]
+begin [nat_num_game]
   rw le_def at h,
   cases h with c hc,
   use succ(c),
@@ -47,7 +47,7 @@ end
 
 
 lemma zero_le (a : mynat) : 0 ≤ a :=
-begin [less_leaky]
+begin [nat_num_game]
   rw le_def,
   use a,
   rw zero_add,
@@ -56,7 +56,7 @@ end
 
 -- advanced
 lemma le_zero {a : mynat} (h : a ≤ 0) : a = 0 :=
-begin [less_leaky]
+begin [nat_num_game]
   cases h with c hc,
   -- this is in world 2 advanced, I don't know how to do it without
   -- using zero_ne_succ
@@ -100,7 +100,7 @@ end
 
 -- beginner
 lemma succ_le_succ {a b : mynat} (h : a ≤ b) : succ a ≤ succ b :=
-begin [less_leaky]
+begin [nat_num_game]
   cases h with c hc,
   use c,
   rw hc,

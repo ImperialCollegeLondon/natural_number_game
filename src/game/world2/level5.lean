@@ -30,7 +30,7 @@ For any natural number $n$, we have
 $$ \operatorname{succ}(n) = n+1. $$
 -/
 theorem succ_eq_add_one (n : mynat) : succ n = n + 1 :=
-begin [less_leaky]
+begin [nat_num_game]
   rw one_eq_succ_zero,
   rw add_succ,
   rw add_zero,

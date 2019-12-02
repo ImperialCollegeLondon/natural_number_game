@@ -1,7 +1,7 @@
 import game.world4.level7 -- hide
 -- incantation for importing ring into framework -- hide
 import tactic.ring -- hide
-meta def less_leaky.interactive.ring := tactic.interactive.ring -- hide
+meta def nat_num_game.interactive.ring := tactic.interactive.ring -- hide
 namespace mynat -- hide
 
 def two_eq_succ_one : (2 : mynat) = succ 1 := rfl -- hide
@@ -38,7 +38,7 @@ $$(a+b)^2=a^2+b^2+2ab.$$
 -/
 lemma add_squared (a b : mynat) :
   (a + b) ^ (2 : mynat) = a ^ (2 : mynat) + b ^ (2 : mynat) + 2 * a * b :=
-begin [less_leaky]
+begin [nat_num_game]
   rw two_eq_succ_one,
   rw one_eq_succ_zero,
   repeat {rw pow_succ},

@@ -31,7 +31,7 @@ For all natural numbers $a, b$, we have
 $$ \operatorname{succ}(a) + b = \operatorname{succ}(a + b). $$
 -/
 lemma succ_add (a b : mynat) : succ a + b = succ (a + b) :=
-begin [less_leaky]
+begin [nat_num_game]
   induction b with d hd,
   {
     refl

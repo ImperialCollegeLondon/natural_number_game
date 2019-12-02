@@ -15,7 +15,7 @@ Boss level! What will the collectible be?
 For all naturals $a$, $m$, $n$, we have $(a ^ m) ^ n = a ^ {mn}$.
 -/
 lemma pow_pow (a m n : mynat) : (a ^ m) ^ n = a ^ (m * n) :=
-begin [less_leaky]
+begin [nat_num_game]
   induction' n with t Ht,
     rw [mul_zero, pow_zero, pow_zero],
     refl,

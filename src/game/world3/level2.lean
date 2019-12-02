@@ -26,7 +26,7 @@ For any natural number $m$, we have
 $$ m \times 1 = m. $$
 -/
 lemma mul_one (m : mynat) : m * 1 = m :=
-begin [less_leaky]
+begin [nat_num_game]
   rw one_eq_succ_zero,
   rw mul_succ,
   rw mul_zero,

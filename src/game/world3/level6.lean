@@ -30,7 +30,7 @@ For all natural numbers $a$ and $b$, we have
 $$ \operatorname{succ}(a) \times b = ab + b. $$
 -/
 lemma succ_mul (a b : mynat) : succ a * b = a * b + b :=
-begin [less_leaky]
+begin [nat_num_game]
   induction b with d hd,
   {
     rw mul_zero,

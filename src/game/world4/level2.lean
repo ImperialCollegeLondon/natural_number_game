@@ -12,7 +12,7 @@ namespace mynat -- hide
 For all naturals $m$, $0 ^{succ (m)} = 0$.
 -/
 lemma zero_pow_succ (m : mynat) : (0 : mynat) ^ (succ m) = 0 :=
-begin [less_leaky]
+begin [nat_num_game]
   rw pow_succ,
   rw mul_zero,
   refl,

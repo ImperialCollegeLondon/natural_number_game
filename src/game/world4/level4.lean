@@ -12,7 +12,7 @@ namespace mynat -- hide
 For all naturals $m$, $1 ^ m = 1$.
 -/
 lemma one_pow (m : mynat) : (1 : mynat) ^ m = 1 :=
-begin [less_leaky]
+begin [nat_num_game]
   induction m with t ht,
     rw pow_zero,
     refl,
