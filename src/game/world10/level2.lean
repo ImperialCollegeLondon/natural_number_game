@@ -24,11 +24,11 @@ end
 ## Upgrading the `refl` tactic 
 
 Now with the following incantation (NB thanks to master wizard Reid Barton
-for correcting my spell) :
+for correcting my spell)...
 -/
 attribute [refl] mynat.le_refl
 /-
-...we now find that the `refl` tactic will close all goals
+...we find that the `refl` tactic will close all goals
 of the form `a ≤ a` as well as all goals of the form `a = a`.
 -/
 example : (0 : mynat) ≤ 0 := begin
@@ -39,9 +39,16 @@ end
 ## Pro tip
 
 Did you skip `rw le_iff_exists_add` in your proof of `le_refl` above?
-Instead of `rw add_zero` or `ring` at the end there,
+Instead of `rw add_zero` or `ring` or `exact add_zero x` at the end there,
 what happens if you just try `refl`? The *definition* of `x + 0` is `x`,
-so you don't need to `rw add_zero` either!
+so you don't need to `rw add_zero` either! The proof
+
+```
+use 0,
+refl,
+```
+
+works.
 
 The same remarks are true of
 `add_succ`, `mul_zero`, `mul_succ`, `pow_zero` and `pow_succ`. All of those

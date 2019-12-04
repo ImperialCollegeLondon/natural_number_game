@@ -135,3 +135,27 @@ levels = [
 	"src/game/world9/level3.lean",
 	"src/game/world9/level4.lean",
 ]
+
+[[worlds]]
+name = "Inequality world"
+id = 10
+parents = [9]
+levels = [
+	"src/game/world10/level1.lean",
+	"src/game/world10/level2.lean",
+	"src/game/world10/level3.lean",
+	"src/game/world10/level4.lean",
+	"src/game/world10/level5.lean",
+	"src/game/world10/level6.lean",
+	"src/game/world10/level7.lean",
+	"src/game/world10/level8.lean",
+	"src/game/world10/level9.lean",
+	"src/game/world10/level10.lean",
+	"src/game/world10/level11.lean",
+	"src/game/world10/level12.lean",
+	"src/game/world10/level13.lean",
+	"src/game/world10/level14.lean",
+	"src/game/world10/level15.lean",
+	"src/game/world10/level16.lean",
+	"src/game/world10/level17.lean",
+]

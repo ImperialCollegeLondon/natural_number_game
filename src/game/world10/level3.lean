@@ -4,7 +4,7 @@ namespace mynat -- hide
 
 # Inequality world. 
 
-## Level 3: le_succ_of_le
+## Level 3: `le_succ_of_le`
 
 We have seen how the `use` tactic makes progress on goals of the form `⊢ ∃ c, ...`.
 But what do we do when we have a *hypothesis* of the form `h : ∃ c, ...`?
