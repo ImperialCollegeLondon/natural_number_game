@@ -36,7 +36,7 @@ try this instead:
 `by_cases p : P; by_cases q : Q,`
 
 **Note the semicolon**! It means "do the next tactic to all the goals, not just the top one".
-After it, there are four goals, one for each of the four possibilities PQ=TT, TF, FT, TF.
+After it, there are four goals, one for each of the four possibilities PQ=TT, TF, FT, FF.
 You can see that `p` is a proof of `P` in some of the goals, and a proof of `¬ P` in others.
 Similar comments apply to `q`. 
 
