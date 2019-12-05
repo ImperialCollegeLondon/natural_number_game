@@ -1,3 +1,4 @@
+import game.world7.level5 -- hide
 /- 
 # Advanced proposition world. 
 

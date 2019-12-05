@@ -22,7 +22,7 @@ lemma add_right_eq_zero (a b : mynat) : a + b = 0 → a = 0 :=
 begin [nat_num_game]
   intro H,
   rw add_comm at H,
-  exact add_left_eq_zero H,
+  exact add_left_eq_zero _ _ H,
 end
 
 end mynat -- hide

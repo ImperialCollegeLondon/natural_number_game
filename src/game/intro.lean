@@ -27,7 +27,16 @@ hit "main menu" in the top left to get back here.
 
 # What's new?
 
-Pretty much all the <= levels of inequality world. I've <a href="https://github.com/ImperialCollegeLondon/natural_number_game/blob/master/src/game/world10/level18a.lean" target="blank">written all the Lean code for "strictly less than"</a>  but am really busy with real life right now. In my dreams -- even/odd world. Feel free to fork and add your name to the list of authors. Instructions on how to build new worlds is on <a href="https://github.com/mpedramfar/Lean-game-maker" target="blank">Mohammad's Lean Game Maker site</a>. Any Imperial 1st year maths or JMC students -- do you want to help make <a href="https://github.com/ImperialCollegeLondon/real-number-game" target="blank">the real number game in Lean so you can prove $\operatorname{Sup}(X+Y)=\operatorname{Sup}(X)+\operatorname{Sup}(Y)$ *rigorously*? I've <a href="https://github.com/ImperialCollegeLondon/real-number-game/blob/a420eecef62209b729c910c2170d1dd27b74bc9f/world_plans/supinf.lean#L188" target="blank">done the Lean proof</a> and the only tactics you need to know are the ones in this game.
+Pretty much all the <= levels of inequality world. I've
+<a href="https://github.com/ImperialCollegeLondon/natural_number_game/blob/master/src/game/world10/level18a.lean" target="blank">
+written all the Lean code for "strictly less than"</a>  but am really busy with real life right now.
+In my dreams -- even/odd world. Feel free to fork and add your name to the list of authors.
+Instructions on how to build new worlds is on <a href="https://github.com/mpedramfar/Lean-game-maker" target="blank">
+Mohammad's Lean Game Maker site</a>. Any Imperial 1st year maths or JMC students -- do you want to help make
+<a href="https://github.com/ImperialCollegeLondon/real-number-game" target="blank">the real number game</a> in Lean
+so you can teach yourself and others how to prove $\operatorname{Sup}(X+Y)=\operatorname{Sup}(X)+\operatorname{Sup}(Y)$ *rigorously*? I've
+<a href="https://github.com/ImperialCollegeLondon/real-number-game/blob/a420eecef62209b729c910c2170d1dd27b74bc9f/world_plans/supinf.lean#L188" target="blank">
+done the Lean proof</a> and most of the tactics you need to know to understand the proof are the ones in the natural number game anyway.
 
 # Thanks
 

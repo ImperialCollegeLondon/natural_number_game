@@ -1,4 +1,4 @@
-import game.world6.level8 -- hide
+import game.world7.level8 -- hide
 import tactic.tauto -- useful high-powered tactic
 local attribute [instance, priority 10] classical.prop_decidable -- we are mathematicians
 /- 

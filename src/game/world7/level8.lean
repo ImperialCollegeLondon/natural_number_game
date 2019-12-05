@@ -1,4 +1,4 @@
-import tactic.finish
+import tactic.finish game.world7.level7 -- hide
 namespace mynat -- hide
 /- 
 # Advanced proposition world. 
