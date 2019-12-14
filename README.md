@@ -27,7 +27,7 @@ First, you will have to [install Lean, its maths library mathlib, and Visual Stu
 
 Once you have done this, you can clone and compile this repository with the following code:
 ```
-git clone git@github.com:ImperialCollegeLondon/natural_number_game.git
+git clone https://github.com/ImperialCollegeLondon/natural_number_game.git
 cd natural_number_game
 leanpkg configure
 update-mathlib
