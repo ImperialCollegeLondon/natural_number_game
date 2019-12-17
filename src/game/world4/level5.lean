@@ -9,7 +9,7 @@ namespace mynat -- hide
 -/
 
 /- Lemma
-For all naturals $m$, $a$, $b$, we have $a^{m + n} = a ^ m  a ^ n$.
+For all naturals $a$, $m$, $n$, we have $a^{m + n} = a ^ m  a ^ n$.
 -/
 lemma pow_add (a m n : mynat) : a ^ (m + n) = a ^ m * a ^ n :=
 begin [nat_num_game]
