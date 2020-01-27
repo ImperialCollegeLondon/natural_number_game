@@ -35,7 +35,7 @@ update-mathlib
 
 Next, in VS Code, select File -> Open Folder and open the `natural number game` directory.
 
-Finally, open src/my_solutions/world1_addition.lean and now you're playing the game.
+Finally, open src/natural_number_game/src/game/world1/level1.lean and now you're playing the game.
 
 ## Option 3: playing the game on CoCalc.com
 
