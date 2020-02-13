@@ -6,7 +6,7 @@ local attribute [instance, priority 10] classical.prop_decidable -- hide
 
 ## Level 10: `exfalso` and proof by contradiction. 
 
-It's certainly true that $(P\land(\lnot P)\implies Q$ for any propositions $P$
+It's certainly true that $P\land(\lnot P)\implies Q$ for any propositions $P$
 and $Q$, because the left hand side of the implication is false. But how do
 we prove that `false` implies any proposition $Q$? A cheap way of doing it in
 Lean is using the `exfalso` tactic, which changes any goal at all to `false`. 
