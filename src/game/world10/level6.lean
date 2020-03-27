@@ -14,7 +14,7 @@ This might be useful in this level.
 -/
 
 /- Lemma
-≤ is antisymmetric. In other words, if a ≤ b and b ≤ a then a = b. 
+$\le$ is antisymmetric. In other words, if $a\le b$ and $b\le a$ then $a = b$. 
 -/
 theorem le_antisymm (a b : mynat) (hab : a ≤ b) (hba : b ≤ a) : a = b :=
 begin [nat_num_game]

@@ -23,8 +23,8 @@ The goal is an implication so we clearly want to start with
 `rw le_iff_exists_add at h ⊢,`
 
 (get the sideways T with `\|-` then space). This changes the `≤` into
-its `∃` form in `h` and the goal -- but if you are happy of just *seeing*
-the `∃` whenever you read a `≤` then you don't need to do this line.
+its `∃` form in `h` and the goal -- but if you are happy with just
+*imagining* the `∃` whenever you read a `≤` then you don't need to do this line.
 
 Our hypothesis `h` is now `∃ (c : mynat), b = a + c` (or `a ≤ b` if you
 elected not to do the definitional rewriting) so

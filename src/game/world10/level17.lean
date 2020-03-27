@@ -1,4 +1,3 @@
---import mynat.lt -- definition of <
 import game.world10.level16 -- hide
 namespace mynat -- hide
 /- 
