@@ -3,7 +3,7 @@ import mynat.add -- hide
 import game.world2.level6 -- hide
 namespace mynat -- hide
 
-/- Axiom : succ_inj (a b : mynat) :
+/- Axiom : succ_inj {a b : mynat} :
   succ(a) = succ(b) → a = b
 -/
 
@@ -17,7 +17,7 @@ Peano's original collection of axioms for the natural numbers contained two furt
 assumptions, which have not yet been mentioned in the game:
 
 ```
-succ_inj (a b : mynat) :
+succ_inj {a b : mynat} :
   succ(a) = succ(b) → a = b
 
 zero_ne_succ (a : mynat) :
