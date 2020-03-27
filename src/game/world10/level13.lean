@@ -4,7 +4,7 @@ namespace mynat -- hide
 
 # Inequality world. 
 
-## Level 12: `not_succ_le_self`
+## Level 13: `not_succ_le_self`
 
 Turns out that `¬ P` is *by definition* `P → false`, so you can just
 start this one with `intro h` if you like. 

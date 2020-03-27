@@ -31,7 +31,7 @@ elected not to do the definitional rewriting) so
 
 `cases h with c hc,`
 
-gives you the natural number `c` and the hypothesis `hc : b = a + d`.
+gives you the natural number `c` and the hypothesis `hc : b = a + c`.
 Now use `use` wisely and you're home.
 
 -/
