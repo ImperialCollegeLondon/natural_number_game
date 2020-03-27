@@ -19,26 +19,16 @@ a\le b\land\lnot(b\le a).$$
 lemma lt_aux_two (a b : mynat) : succ a ≤ b → a ≤ b ∧ ¬ (b ≤ a) :=
 begin [nat_num_game]
   intro h,
-  cases h with c hc,
   split,
-    use succ c,
-    rw hc,
-    rw succ_add,
-    rw add_succ,
-    refl,
-  intro h,
-  cases h with d hd,
-  rw hc at hd,
-  rw succ_eq_add_one at hd,
-  have h : a + 1 + c + d = a + (c + d + 1),
-    ring,
-  rw h at hd,
-  symmetry at hd,
-  have h2 := eq_zero_of_add_right_eq_self _ _ hd,
-  rw ←succ_eq_add_one at h2,
-  exact succ_ne_zero _ h2,
+  apply le_trans a (succ a) b,
+  exact le_succ_self a,
+  exact h,
 
-
+  intro nh,
+  apply ne_succ_self a,
+  apply le_antisymm a (succ a),
+  exact le_succ_self a,
+  exact le_trans (succ a) b a h nh,
 
 end
 
