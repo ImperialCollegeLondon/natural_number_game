@@ -1,5 +1,5 @@
 /-
-# The Natural Number Game, version 1.1beta
+# The Natural Number Game, version 1.1
 
 ## By Kevin Buzzard and Mohammad Pedramfar. 
 
@@ -27,16 +27,18 @@ hit "main menu" in the top left to get back here.
 
 # What's new?
 
-Pretty much all the <= levels of inequality world. I've
-<a href="https://github.com/ImperialCollegeLondon/natural_number_game/blob/master/src/game/world10/level18a.lean" target="blank">
-written all the Lean code for "strictly less than"</a>  but am really busy with real life right now.
-In my dreams -- even/odd world. Feel free to fork and add your name to the list of authors.
-Instructions on how to build new worlds is on <a href="https://github.com/mpedramfar/Lean-game-maker" target="blank">
-Mohammad's Lean Game Maker site</a>. Any Imperial 1st year maths or JMC students -- do you want to help make
-<a href="https://github.com/ImperialCollegeLondon/real-number-game" target="blank">the real number game</a> in Lean
-so you can teach yourself and others how to prove $\operatorname{Sup}(X+Y)=\operatorname{Sup}(X)+\operatorname{Sup}(Y)$ *rigorously*? I've
-<a href="https://github.com/ImperialCollegeLondon/real-number-game/blob/a420eecef62209b729c910c2170d1dd27b74bc9f/world_plans/supinf.lean#L188" target="blank">
-done the Lean proof</a> and most of the tactics you need to know to understand the proof are the ones in the natural number game anyway.
+Lots of typo fixes. Thank you, all the people who made PR's. This is my first
+ever open source project.
+
+# What's to come?
+
+Still haven't ported the <a href="https://github.com/ImperialCollegeLondon/natural_number_game/blob/master/src/game/world10/level18a.lean" target="blank">
+less-than worlds</a>.
+
+# Hey, real Lean works slightly differently to this Lean. What is going on?
+
+Here is a <a href="https://github.com/ImperialCollegeLondon/natural_number_game/blob/master/technical.md">
+technical explanation</a> of how it all works.
 
 # Thanks
 
