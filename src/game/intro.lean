@@ -3,6 +3,10 @@
 
 ## By Kevin Buzzard and Mohammad Pedramfar. 
 
+Works in Chrome. Usually works in other browsers. If you see "Lean is busy" and it hasn't gone
+away after about 20 seconds, try Chrome. Recent Firefox works fine. Safari is hit and miss.
+Cookies need to be enabled to make Lean work in your browser.
+
 # What is this game?
 
 Welcome to the natural number game -- a part-book part-game which shows the power of induction.
@@ -37,7 +41,7 @@ less-than worlds</a>.
 
 # Hey, real Lean works slightly differently to this Lean. What is going on?
 
-Here is a <a href="https://github.com/ImperialCollegeLondon/natural_number_game/blob/master/technical.md">
+Here is a <a href="https://github.com/ImperialCollegeLondon/natural_number_game/blob/master/technical.md" target="blank">
 technical explanation</a> of how it all works.
 
 # Thanks
