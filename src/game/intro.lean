@@ -4,7 +4,8 @@
 ## By Kevin Buzzard and Mohammad Pedramfar. 
 
 Works in Chrome. Usually works in other browsers. If you see "Lean is busy" and it hasn't gone
-away after about 20 seconds, try Chrome. Recent Firefox works fine. Safari is hit and miss.
+away after about 20 seconds, try Chrome. Recent Firefox works fine. Safari
+13.0.3 has been reported not to work, but Safari 13.1 apparently works fine.
 Cookies need to be enabled to make Lean work in your browser.
 
 # What is this game?
