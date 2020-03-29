@@ -5,7 +5,7 @@ docs: informational documents
 experiments: possible future levels, e.g. primality, factorials, binominal coefficients, gcd, congruence
 
 levels: an early version of the game written in plain Lean so I could
-test things easily in VS Code.
+test things easily in VS Code. No longer supported.
 
 src/game: The Lean code for the worlds in the game, plus some LaTeX used to generate the diagrams because it was easier than figuring out how to make a LaTeX diagrams package work in this set-up.
 
@@ -20,4 +20,17 @@ world8 is then advanced addition world
 world9 advanced multiplcation world
 world10 inequality world (17 levels so far, but more have been written)
 
-src/my_solutions
+src/mynat: the definitions of the naturals, addition, multiplication, exponentiation and <=. These files are never seen by the user.
+
+src/tactic: the modifications of the tactic framework (meaning that rw and induction and a couple of other things behave slightly differently -- see docs/technical.md for more explanation of this) and the definition of `structure_helper`, a tactic which attempts to fill fields of a class by attempting to define field `F` with `mynat.F`. 
+
+LICENSE -- the Apache 2 license.
+
+compile.sh, run_locally.sh, ship.sh -- these won't work for you.
+Local scripts which run on my machine to compile, run the code
+locally, and to ship it to the web server.
+
+leanpkg.toml -- settings file for this Lean project.
+
+game_config.toml -- settings file for Lean game maker (the graph of the game).
+
