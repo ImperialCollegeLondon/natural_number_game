@@ -65,12 +65,11 @@ of $P$ to proofs of $Q$, so the rather surprising approach
 works to close the goal.
 
 Note that `exact h(P),` (with a capital P) won't work;
-this is a common error I see from beginners. "We're trying to solve P
-so it's exactly P". The goal states the *theorem*, your job is to
+this is a common error I see from beginners. "We're trying to solve `P`
+so it's exactly `P`". The goal states the *theorem*, your job is to
 construct the *proof*. $P$ is not a proof of $P$, it's $p$ that is a proof of $P$. 
 
-In Lean, Propositions are types, like sets, and proofs are terms,
-like elements of sets.
+In Lean, Propositions, like sets, are types, and proofs, like elements of sets, are terms.
 
 ## Level 1: the `exact` tactic.
 -/

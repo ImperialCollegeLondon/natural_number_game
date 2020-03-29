@@ -34,8 +34,9 @@ end
 /-
 ## Sample solutions to this level. 
 
-Make sure you understand them all. And remember that `rw` is no use to us here,
-`rw` works only with equalities or `↔` statements, not implications or functions.
+Make sure you understand them all. And remember that `rw` should not be used
+with `succ_inj` -- `rw` works only with equalities or `↔` statements,
+not implications or functions.
 
 -/
 example {a b : mynat} (h : succ(succ(a)) = succ(succ(b))) :  a = b := 

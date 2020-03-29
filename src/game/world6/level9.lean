@@ -3,8 +3,8 @@
 
 ## Level 9: a big maze. 
 
-Lean's "congruence closure" tactic `cc` is good at mazes. Perhaps I should have
-mentioned it earlier.
+Lean's "congruence closure" tactic `cc` is good at mazes. You might want to try it now.
+Perhaps I should have mentioned it earlier.
 -/
 
 /- Lemma : no-side-bar
@@ -31,7 +31,7 @@ You will need to learn five more tactics: `split`, `cases`,
 but they are all straightforward, and furthermore they are
 essentially the last tactics you
 need to learn in order to complete all the levels of the Natural Number Game,
-including all the (20 or so?) levels of Inequality World. 
+including all the 17 levels of Inequality World. 
 -/
 
 /- Tactic : cc

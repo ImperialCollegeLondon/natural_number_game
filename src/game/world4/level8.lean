@@ -10,8 +10,6 @@ def two_eq_succ_one : (2 : mynat) = succ 1 := rfl -- hide
 # Power World
 -/
 
-instance : comm_semiring mynat := by structure_helper -- you just levelled up
-
 /-
 ## Level 8: `add_squared`
 

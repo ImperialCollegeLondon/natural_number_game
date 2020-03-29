@@ -29,5 +29,14 @@ begin [nat_num_game]
 
 
 end
+/-
+For now -- that's it. In V1.2 of the natural number game we will go on and make
+the natural numbers into an `ordered_cancel_comm_monoid`, which is the most
+exotic of all the structures defined on the natural numbers in Lean 3.4.2.
+
+Interested in learning more? Join us on the
+<a href="https://leanprover.zulipchat.com/" target="blank">Zulip Lean chat</a>
+and ask questions in the `#new members` stream. Real names preferred. Be nice.
+-/
 
 end mynat -- hide

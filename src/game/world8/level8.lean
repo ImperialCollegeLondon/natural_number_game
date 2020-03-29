@@ -16,19 +16,16 @@ If $a$ and $b$ are natural numbers such that
 $$ a + b = a, $$
 then $b = 0$.
 -/
+
 lemma eq_zero_of_add_right_eq_self (a b : mynat) : a + b = a → b = 0 :=
 begin [nat_num_game]
   intro h,
-  induction a with a ha,
-  { 
-    rw zero_add at h,
-    assumption
-  },
-  { apply ha,
-    apply succ_inj,
-    rw succ_add at h,
-    assumption,
-  }
+  apply add_left_cancel a,
+  rw h,
+  rw add_zero,
+  refl,
+
+
 
 
 end

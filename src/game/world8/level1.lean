@@ -28,7 +28,7 @@ The reason they have not been used yet is that they are both implications,
 that is,
 of the form $P\implies Q$. This is clear for `succ_inj a b`, which
 says that for all $a$ and $b$ we have $succ(a)=succ(b)\implies a=b$.
-For `zero_ne_succ` the trick is that `X ≠ Y` is *defined to mean*
+For `zero_ne_succ` the trick is that $X\ne Y$ is *defined to mean*
 $X = Y\implies{\tt false}$. If you have played through Proposition world,
 you now have the required Lean skills (i.e., you know the required
 tactics) to work with these implications.
@@ -54,6 +54,8 @@ end
 
 You can rewrite proofs of *equalities*. If `h : A = B` then `rw h` changes `A`s to `B`s.
 But you *cannot rewrite proofs of implications*. `rw succ_inj` will *never work*
-because `succ_inj` isn't of the form $A = B$, it's of the form $A\implies B$.
+because `succ_inj` isn't of the form $A = B$, it's of the form $A\implies B$. This is one
+of the most common mistakes I see from beginners. $\implies$ and $=$ are *two different things*
+and you need to be clear about which one you are using.
 -/
 end mynat -- hide
