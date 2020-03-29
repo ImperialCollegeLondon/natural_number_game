@@ -19,9 +19,9 @@ strategy involves changing the goal to the statement of `add_right_cancel` someh
 
 /- Theorem
 On the set of natural numbers, addition has the left cancellation property.
-In other words, if there are natural numbers $a, b$ and $c$ such that
-$$ a + b = a + c, $$
-then we have $b = c$.
+In other words, if there are natural numbers $a, b$ and $t$ such that
+$$ t + a = t + b, $$
+then we have $a = b$.
 -/
 theorem add_left_cancel (t a b : mynat) : t + a = t + b → a = b :=
 begin [nat_num_game]
