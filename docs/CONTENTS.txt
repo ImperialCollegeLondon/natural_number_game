@@ -1,0 +1,23 @@
+Directories:
+
+docs: informational documents
+
+experiments: possible future levels, e.g. primality, factorials, binominal coefficients, gcd, congruence
+
+levels: an early version of the game written in plain Lean so I could
+test things easily in VS Code.
+
+src/game: The Lean code for the worlds in the game, plus some LaTeX used to generate the diagrams because it was easier than figuring out how to make a LaTeX diagrams package work in this set-up.
+
+world1 = Tutorial World
+world2 = basic addition world
+world3 = basic multiplication world
+world4 = power world
+world5 is now function world
+world6 proposition world but we have 0 levels
+world7 advanced prop world
+world8 is then advanced addition world
+world9 advanced multiplcation world
+world10 inequality world (17 levels so far, but more have been written)
+
+src/my_solutions
