@@ -24,7 +24,7 @@ begin [nat_num_game]
   rw add_assoc at hd,
   symmetry at hd,
   have h := eq_zero_of_add_right_eq_self _ _ hd,
-  have h2 := add_right_eq_zero _ _ h,
+  have h2 := add_right_eq_zero h,
   rw h2 at hc,
   rw hc,
   exact add_zero a,
