@@ -79,7 +79,7 @@ hd : P d
 
 Example:
 
-`induction' n with d Hd,`
+`induction n with d Hd,`
 
 takes
 
@@ -93,7 +93,7 @@ to
 
 ```
 2 goals
-case mnat.zero
+case mynat.zero
 ⊢ 0 + 0 = 0
 
 case mynat.succ
@@ -110,17 +110,16 @@ A "weaker" variant of induction, where we do not get an inductive hypothesis; th
 rw
 ---
 
-Does a "rewrite". If `H : a = b` then `rw' H` changes all `a`'s in the goal to `b`'s. Note that in contrast to core Lean, `rw` does not try to close the goal with `refl`.
+Does a "rewrite". If `H : a = b` then `rw H` changes all `a`'s in the goal to `b`'s. Note that in contrast to core Lean, 
+the natural number game's `rw` does not try to close the goal with `refl`.
 If you want Lean 3.4.2's `rw`, use `rewrite`.
 
-Variant: if you want to change all `b`'s to `a`'s then `rw' ←H` works (use `\l` to get the left arrow)
+Variant: if you want to change all `b`'s to `a`'s then `rw ←H` works (use `\l` to get the left arrow)
 
-Variant: if you want to change all `a`'s to `b`'s in hypothesis `H2` then `rw' H at H2` works.
+Variant: if you want to change all `a`'s to `b`'s in hypothesis `H2` then `rw H at H2` works.
 
 The tactic also works with true/false statements; it will rewrite "iff"s. For example `le_def a b : a ≤ b ↔ ∃ (c : mynat), b = a + c`, so `rw le_def` will change `a ≤ b` to `∃ (c : mynat), b = a + c`.
 
-Technical note: in contrast to core Lean, `rw` does not try to close the goal with `refl`.
-If you want Lean 3.4.2's `rw`, use `rewrite`.
 
 
 Example:
@@ -172,7 +171,7 @@ and you want to change it into
 ⊢ a + b = d + c
 ```
 
-you can type `rw' add_comm c`. Just typing `rw' add_comm` will rewrite `a + b` to `b + a`.
+you can type `rw add_comm c`. Just typing `rw add_comm` will rewrite `a + b` to `b + a`.
 
 
 symmetry
@@ -180,7 +179,7 @@ symmetry
 
 The `symmetry` tactic will change a goal of the form `a = b` to the goal `b = a`. It will also change a goal of the form `a ≠ b` to a goal of the form `b ≠ a`.
 
-Rather annoyingly, `symmetry` only works on the goal. To change `H : a = b` to `H : b = a` try `rw' eq_comm at H`.
+`symmetry at H` will change `H : a = b` to `H : b = a`.
 
 
 split
@@ -381,8 +380,6 @@ then `congr'` changes it to
 ⊢ a = b
 ```
 
--- tactics needed for the \le stuff because of the exists statement
-
 use
 ---
 
@@ -409,13 +406,13 @@ then `use 2` will change the goal into
 Tricks
 ------
 
-`rw' [h1, h2, h3]` is the same as
+`rw [h1, h2, h3]` is the same as
 
 ```
-rw' h1,
-rw' h2,
-rw' h3
+rw h1,
+rw h2,
+rw h3
 ```
 
-and `rwa h` is the same as `rw h, assumption`
+and `rwa h` is the same as `rw h, try {refl}, try {assumption}`.
 
