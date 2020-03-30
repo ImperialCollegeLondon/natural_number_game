@@ -32,8 +32,8 @@ hit "main menu" in the top left to get back here.
 
 # What's new?
 
-Lots of typo fixes. Thank you, all the people who made PR's. This is my first
-ever open source project.
+Lots of typo fixes. Thank you, all the people who made PR's and opened issues. This is Kevin's
+first ever open source project and it is an amazing experience.
 
 # What's to come?
 
@@ -44,6 +44,10 @@ less-than worlds</a>.
 
 Here is a <a href="https://github.com/ImperialCollegeLondon/natural_number_game/blob/master/technical.md" target="blank">
 technical explanation</a> of how it all works.
+
+# I love these levels! Where can I get more of this stuff?
+
+Read about <a href="https://github.com/ImperialCollegeLondon/natural_number_game/blob/master/WHATS_NEXT.md" target="blank">what's next</a> here.
 
 # Thanks
 
