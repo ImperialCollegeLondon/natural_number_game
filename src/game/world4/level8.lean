@@ -98,6 +98,12 @@ to build what we know, or at least build enough to state what we
 mathematicians believe. If you want to get involved, come and join
 us at the <a href="https://leanprover.zulipchat.com" target="blank">Zulip Lean chat</a>.
 The #new members stream is a great place to start asking questions.
+
+To come (possibly): the real number game, the group theory game,
+the integer game, the natural number game 2,... . Alternatively
+[see here](https://github.com/ImperialCollegeLondon/natural_number_game/blob/master/WHATS_NEXT.md)
+for some more ideas about what to do next.
+
 -/
 
 end mynat -- hide
