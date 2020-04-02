@@ -1,5 +1,5 @@
 /-
-# The Natural Number Game, version 1.1
+# The Natural Number Game, version 1.2rc2
 
 ## By Kevin Buzzard and Mohammad Pedramfar. 
 
@@ -32,8 +32,7 @@ hit "main menu" in the top left to get back here.
 
 # What's new?
 
-Lots of typo fixes. Thank you, all the people who made PR's and opened issues. This is Kevin's
-first ever open source project and it is an amazing experience.
+Lots of typo fixes. Thank you, all the people who made PR's and opened issues. This is Kevin's first ever open source project and it is an amazing experience.
 
 # What's to come?
 
@@ -42,7 +41,7 @@ less-than worlds</a>.
 
 # Hey, real Lean works slightly differently to this Lean. What is going on?
 
-Here is a <a href="https://github.com/ImperialCollegeLondon/natural_number_game/blob/master/technical.md" target="blank">
+Here is a <a href="https://github.com/ImperialCollegeLondon/natural_number_game/blob/master/docs/technical.md" target="blank">
 technical explanation</a> of how it all works.
 
 # I love these levels! Where can I get more of this stuff?
