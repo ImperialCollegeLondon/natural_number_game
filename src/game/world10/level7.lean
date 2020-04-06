@@ -6,7 +6,7 @@ namespace mynat -- hide
 ## Level 7: `le_zero`
 
 We proved `add_right_eq_zero` back in advanced addition world.
-Note that you can do things like `have h2 := add_right_eq_zero _ _ h1`
+Note that you can do things like `have h2 := add_right_eq_zero h1`
 if `h1 : a + c = 0`.
 -/
 
