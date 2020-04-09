@@ -30,7 +30,7 @@ The main reasons we chose to modify `cases` and `induction` was the following. L
 level of syntactic equality, not definitonal equality. However Lean's `induction m` and `cases m` tactics insist
 on replacing `m` with the exact constructurs used to define the type of `m`, so using Lean's induction will leave
 you with goals containing `mynat.zero`, and rewrite lemmas referring to `0`, which is syntax sugar for
-`has_zero.zero`. The terms mynat.zero` and `(has_zero.zero : mynat)` are definitionally but not syntactically
+`has_zero.zero`. The terms `mynat.zero` and `(has_zero.zero : mynat)` are definitionally but not syntactically
 equivalent and this makes rewrites fail, which is very confusing for beginner users. We fix this problem by using
 a targetted `dsimp` to rewrite mynat.zero, mynat.le and mynat.lt to their canonical forms after Lean's actual
 `induction` or `cases` tactic has run.
