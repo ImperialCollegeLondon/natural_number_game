@@ -41,7 +41,6 @@ begin [nat_num_game]
     rw hc,
   end,
   rw ←succ_add,
-  rw ←hc,
   refl,
 
 
