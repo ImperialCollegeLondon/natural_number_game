@@ -23,7 +23,7 @@ begin [nat_num_game]
   rw hc at hd,
   rw add_assoc at hd,
   symmetry at hd,
-  have h := eq_zero_of_add_right_eq_self _ _ hd,
+  have h := eq_zero_of_add_right_eq_self hd,
   have h2 := add_right_eq_zero h,
   rw h2 at hc,
   rw hc,
@@ -31,7 +31,6 @@ begin [nat_num_game]
 
 
 end
-
 /-
 Congratulations -- you just proved that the natural numbers are a partial order!
 -/

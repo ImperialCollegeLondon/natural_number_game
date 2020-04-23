@@ -17,7 +17,7 @@ $$ a + b = a, $$
 then $b = 0$.
 -/
 
-lemma eq_zero_of_add_right_eq_self (a b : mynat) : a + b = a → b = 0 :=
+lemma eq_zero_of_add_right_eq_self {a b : mynat} : a + b = a → b = 0 :=
 begin [nat_num_game]
   intro h,
   apply add_left_cancel a,
