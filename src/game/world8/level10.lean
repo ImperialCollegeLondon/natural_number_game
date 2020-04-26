@@ -17,7 +17,7 @@ The following lemma, $a+b=0\implies b=0$, will be useful in inequality world.
 Let me go through the proof, because it introduces several new
 concepts: 
 
-* `cases b` with `b : mynat`
+* `cases b`, where `b : mynat`
 * `exfalso`
 * `apply succ_ne_zero`
 
