@@ -1,4 +1,5 @@
 import game.world10.level17 -- every level of the natural number game on the web
+import game.world3.level7 -- semiring instance
 namespace mynat
 
 /-
@@ -73,16 +74,22 @@ begin [nat_num_game]
   sorry
 end 
 
--- First achievements unlocked!
-
--- Don't mind this:
-def bot := 0
-def bot_le := zero_le
-
 -- and now we get three achievements!
-instance : canonically_ordered_monoid mynat := by structure_helper
-instance : ordered_comm_monoid mynat := by structure_helper
-instance : ordered_cancel_comm_monoid mynat := by structure_helper
+instance : ordered_comm_monoid mynat := 
+{ add_le_add_left := λ _ _, add_le_add_left,
+  lt_of_add_lt_add_left := lt_of_add_lt_add_left,
+  ..mynat.add_comm_monoid, ..mynat.partial_order}
+instance : canonically_ordered_monoid mynat := 
+{ le_iff_exists_add := le_iff_exists_add,
+  bot := 0,
+  bot_le := zero_le,
+  ..mynat.ordered_comm_monoid,
+  }
+instance : ordered_cancel_comm_monoid mynat := 
+{ add_left_cancel := add_left_cancel,
+  add_right_cancel := add_right_cancel,
+  le_of_add_le_add_left := le_of_add_le_add_left,
+  ..mynat.ordered_comm_monoid}
 
 -- But these are all about the relation between < and +; we now need to
 -- understand the difference between < and *.
@@ -116,8 +123,14 @@ begin [nat_num_game]
 end
 
 -- And now another achievement! The naturals are an ordered semiring.
-instance : ordered_semiring mynat := by structure_helper
-
+instance : ordered_semiring mynat := 
+{ mul_le_mul_of_nonneg_left := mul_le_mul_of_nonneg_left,
+  mul_le_mul_of_nonneg_right := mul_le_mul_of_nonneg_right,
+  mul_lt_mul_of_pos_left := mul_lt_mul_of_pos_left,
+  mul_lt_mul_of_pos_right := mul_lt_mul_of_pos_right,
+  ..mynat.semiring,
+  ..mynat.ordered_cancel_comm_monoid
+}
 -- a couple more bits and bobs just for fun
 lemma le_mul (a b c d : mynat) : a ≤ b → c ≤ d → a * c ≤ b * d :=
 begin [nat_num_game]

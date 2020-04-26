@@ -186,11 +186,22 @@ begin [nat_num_game]
 
 end 
 
-def bot := 0 -- hide
-def bot_le := zero_le -- hide
-instance : canonically_ordered_monoid mynat := by structure_helper
-instance : ordered_comm_monoid mynat := by structure_helper
-instance : ordered_cancel_comm_monoid mynat := by structure_helper
+-- and now we get three achievements!
+instance : ordered_comm_monoid mynat := 
+{ add_le_add_left := λ _ _, add_le_add_left,
+  lt_of_add_lt_add_left := lt_of_add_lt_add_left,
+  ..mynat.add_comm_monoid, ..mynat.partial_order}
+instance : canonically_ordered_monoid mynat := 
+{ le_iff_exists_add := le_iff_exists_add,
+  bot := 0,
+  bot_le := zero_le,
+  ..mynat.ordered_comm_monoid,
+  }
+instance : ordered_cancel_comm_monoid mynat := 
+{ add_left_cancel := add_left_cancel,
+  add_right_cancel := add_right_cancel,
+  le_of_add_le_add_left := le_of_add_le_add_left,
+  ..mynat.ordered_comm_monoid}
 
 def succ_lt_succ_iff (a b : mynat) : succ a < succ b ↔ a < b :=
 begin [nat_num_game]
@@ -259,7 +270,15 @@ begin [nat_num_game]
   assumption
 end
 
-instance : ordered_semiring mynat := by structure_helper
+-- And now another achievement! The naturals are an ordered semiring.
+instance : ordered_semiring mynat := 
+{ mul_le_mul_of_nonneg_left := mul_le_mul_of_nonneg_left,
+  mul_le_mul_of_nonneg_right := mul_le_mul_of_nonneg_right,
+  mul_lt_mul_of_pos_left := mul_lt_mul_of_pos_left,
+  mul_lt_mul_of_pos_right := mul_lt_mul_of_pos_right,
+  ..mynat.semiring,
+  ..mynat.ordered_cancel_comm_monoid
+}
 
 lemma le_mul (a b c d : mynat) : a ≤ b → c ≤ d → a * c ≤ b * d :=
 begin [nat_num_game]
