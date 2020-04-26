@@ -48,7 +48,7 @@ numbers are a semiring. This sounds like a respectable result.
 -/
 
 def right_distrib := add_mul -- alternative name
-def collectible_05 : semiring mynat := by structure_helper
+instance : semiring mynat := by structure_helper
 
 /-
 Lean would add that you have also proved that they are a `distrib`. 
@@ -59,6 +59,6 @@ declining Lean's offer of a `distrib` collectible.
 You are dreaming of the big collectible at the end of power world.
 -/
 
-example : distrib mynat := by structure_helper -- 
+instance : distrib mynat := by structure_helper -- 
 
 end mynat -- hide
