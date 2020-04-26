@@ -65,8 +65,9 @@ namespace tactic.interactive
 
 open tactic.interactive interactive.types expr lean lean.parser tactic interactive
 
-meta def induction' (hp : parse cases_arg_p) (ids : parse with_ident_list) : tactic unit :=
-do tactic.interactive.induction hp none ids none,
+meta def induction' (hp : parse cases_arg_p) (rec_name : parse using_ident) 
+  (ids : parse with_ident_list) (revert : parse $ (tk "generalizing" *> ident*)?) : tactic unit :=
+do tactic.interactive.induction hp rec_name ids revert,
 all_goals `[try { dsimp only with leakage at * }]
 
 --meta def induction' (hp : parse cases_arg_p) (ids : parse with_ident_list) : tactic unit :=
