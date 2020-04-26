@@ -14,7 +14,7 @@ line is "so let $t$ be arbitrary". The way to do this in Lean is `intro t`.
 For all naturals $a$ and $b$, $a\le b$ implies that for all naturals $t$,
 $a+t\le b+t$.
 -/
-theorem add_le_add_right (a b : mynat) : a ≤ b → ∀ t, (a + t) ≤ (b + t) :=
+theorem add_le_add_right {a b : mynat} : a ≤ b → ∀ t, (a + t) ≤ (b + t) :=
 begin [nat_num_game]
   intro h,
   cases h with c hc,
