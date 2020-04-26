@@ -43,7 +43,7 @@ level in this world.
 If $x$ and $y$ are natural numbers, 
 and $y=x+7$, then $2y=2(x+7)$. 
 -/
-lemma example2 (x y z : mynat) (h : y = x + 7) : 2 * y = 2 * (x + 7) :=
+lemma example2 (x y : mynat) (h : y = x + 7) : 2 * y = 2 * (x + 7) :=
 begin [nat_num_game]
   rw h,
   refl
@@ -94,19 +94,19 @@ Pro tip 1: If `h : A = B` and you want to change
 If it looks like this in the top right hand box:
 ```
 x y : mynat
-h : x = z + z
-⊢ succ (x + 0) = succ (z + z)
+h : x = y + y
+⊢ succ (x + 0) = succ (y + y)
 ```
 
 then
 
 `rw add_zero,`
 
-will change the goal into `⊢ succ x = succ (z + z)`, and then
+will change the goal into `⊢ succ x = succ (y + y)`, and then
 
 `rw h,`
 
-will change the goal into `⊢ succ (z + z) = succ (z + z)`, which
+will change the goal into `⊢ succ (y + y) = succ (y + y)`, which
 can be solved with `refl,`.
 
 ### Example: 
