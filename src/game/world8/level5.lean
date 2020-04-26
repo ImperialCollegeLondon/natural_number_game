@@ -9,7 +9,7 @@ namespace mynat -- hide
 
 ## Level 5: `add_right_cancel`
 
-The theorem `add_right_cancel` is the theorem that you can cancel on the left
+The theorem `add_right_cancel` is the theorem that you can cancel on the right
 when you're doing addition -- if `a + t = b + t` then `a = b`. After `intro h`
 I'd recommend induction on `t`. Don't forget that `rw add_zero at h` can be used
 to do rewriting of hypotheses rather than the goal.
