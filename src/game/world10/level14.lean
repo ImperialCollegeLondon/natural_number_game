@@ -17,7 +17,7 @@ maths library already, for Lean's inbuilt natural numbers.
 /- Lemma
 If $a\le b$ then for all $t$, $t+a\le t+b$. 
 -/
-theorem add_le_add_left (a b : mynat) (h : a ≤ b) (t : mynat) :
+theorem add_le_add_left {a b : mynat} (h : a ≤ b) (t : mynat) :
   t + a ≤ t + b :=
 begin [nat_num_game]
   cases h with c hc,
