@@ -13,6 +13,7 @@ The below code will be *invisible to the player*
 -/
 
 -- definition of "the natural numbers"
+@[derive decidable_eq]
 inductive mynat
 | zero : mynat
 | succ (n : mynat) : mynat
@@ -33,8 +34,5 @@ lemma zero_ne_succ (m : mynat) : (0 : mynat) ≠ succ m := λ h, by cases h
 lemma succ_inj {m n : mynat} (h : succ m = succ n) : m = n := by cases h; refl
 
 end mynat
-
-theorem ne_iff_implies_false ⦃a b : mynat⦄ :
-a ≠ b ↔ (a = b) → false := iff.rfl
 
 attribute [symm] ne.symm
