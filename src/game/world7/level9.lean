@@ -1,6 +1,9 @@
 import game.world7.level8 -- hide
 import tactic.tauto -- useful high-powered tactic
 local attribute [instance, priority 10] classical.prop_decidable -- we are mathematicians
+
+lemma not_iff_imp_false (P : Prop) : ¬ P ↔ P → false := iff.rfl -- hide
+
 /- 
 # Advanced proposition world.
 
