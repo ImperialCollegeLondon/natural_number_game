@@ -33,8 +33,8 @@ $X = Y\implies{\tt false}$. If you have played through Proposition world,
 you now have the required Lean skills (i.e., you know the required
 tactics) to work with these implications.
 Let's finally learn how to use `succ_inj`. You should know a couple
-of ways to prove the below -- one directly using an `exact`, and one which uses an
-`apply` first.
+of ways to prove the below -- one directly using an `exact`,
+and one which uses an `apply` first. But either way you'll need to use `succ_inj`.
 -/
 
 /- Theorem : no-side-bar
