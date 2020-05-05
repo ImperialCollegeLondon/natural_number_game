@@ -71,8 +71,10 @@ As the boss lies smouldering, you notice on the dungeon wall that
 <a href="https://twitter.com/XenaProject/status/1190453646904958976?s=20/" target="blank">
 two more lines of code are now visible under the first three...</a> (Twitter.com)
 
-I just beat this level with 27 rewrites followed by a `refl`. 
-Can you do any better? If you beat it then well done. Do you
+I just beat this level with 27 single rewrites followed by a `refl`. 
+Can you do any better? (The current rewrite record is 25 -- see <a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/function.20with.20random.20definition/near/179723073" target="blank">here</a>
+(needs zulip login)).
+If you beat it then well done! Do you
 fancy doing $(a+b)^3$ now? You might want to read 
 <a href="https://xenaproject.wordpress.com/2018/06/13/ab3/" target="blank">
 this Xena Project blog post</a> before you start though.
@@ -101,7 +103,7 @@ The #new members stream is a great place to start asking questions.
 
 To come (possibly): the real number game, the group theory game,
 the integer game, the natural number game 2,... . Alternatively
-[see here](https://github.com/ImperialCollegeLondon/natural_number_game/blob/master/WHATS_NEXT.md)
+see <a href="http://wwwf.imperial.ac.uk/~buzzard/xena/natural_number_game/FAQ.html" target="blank">the FAQ</a>
 for some more ideas about what to do next.
 
 -/
