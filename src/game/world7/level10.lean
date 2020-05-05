@@ -1,67 +1,127 @@
-import game.world6.level8 -- hide
-import tactic.tauto
-local attribute [instance, priority 10] classical.prop_decidable -- hide
+import game.world7.level9 -- hide
+import tactic.tauto 
+local attribute [instance, priority 10] classical.prop_decidable -- we are mathematicians
 /- 
-# Advanced proposition world. 
+# Advanced proposition world.
 
-## Level 10: `exfalso` and proof by contradiction. 
 
-It's certainly true that $P\land(\lnot P)\implies Q$ for any propositions $P$
-and $Q$, because the left hand side of the implication is false. But how do
-we prove that `false` implies any proposition $Q$? A cheap way of doing it in
-Lean is using the `exfalso` tactic, which changes any goal at all to `false`. 
-You might think this is a step backwards, but if you have a hypothesis `h : ¬ P`
-then after `rw not_iff_imp_false at h,` you can `apply h,` to make progress. 
-Try solving this level without using `cc` or `tauto`, but using `exfalso` instead.
+
+## Level 10: the law of the excluded middle.
+
+We proved earlier that `(P → Q) → (¬ Q → ¬ P)`. The converse,
+that `(¬ Q → ¬ P) → (P → Q)` is certainly true, but trying to prove
+it using what we've learnt so far is impossible (because it is not provable in
+constructive logic). For example, after
+
+```
+intro h,
+intro p,
+repeat {rw not_iff_imp_false at h},
+```
+
+in the below, you are left with
+```
+P Q : Prop,
+h : (Q → false) → P → false
+p : P
+⊢ Q
+```
+
+The tools you have are not sufficient to continue. But you can just
+prove this, and any other basic lemmas of this form like `¬ ¬ P → P`,
+using the `by_cases` tactic. Instead of starting with all the `intro`s,
+try this instead:
+
+`by_cases p : P; by_cases q : Q,`
+
+**Note the semicolon**! It means "do the next tactic to all the goals, not just the top one".
+After it, there are four goals, one for each of the four possibilities PQ=TT, TF, FT, FF.
+You can see that `p` is a proof of `P` in some of the goals, and a proof of `¬ P` in others.
+Similar comments apply to `q`. 
+
+`repeat {cc}` then finishes the job.
+
+This approach assumed that `P ∨ ¬ P` was true; the `by_cases` tactic just does `cases` on
+this result. This is called the law of the excluded middle, and it cannot be proved just
+using tactics such as `intro` and `apply`.
 
 -/
-
-
-
 /- Lemma : no-side-bar
 If $P$ and $Q$ are true/false statements, then
-$$(P\land(\lnot P))\implies Q.$$
+$$(\lnot Q\implies \lnot P)\implies(P\implies Q).$$ 
 -/
-lemma contra (P Q : Prop) : (P ∧ ¬ P) → Q :=
+lemma contrapositive2 (P Q : Prop) : (¬ Q → ¬ P) → (P → Q) :=
 begin
-  intro h,
-  cases h with p np,
-  rw not_iff_imp_false at np,
-  exfalso,
-  apply np,
-  exact p,
+  by_cases p : P; by_cases q : Q,
+  repeat {cc}, 
 
 
 end
+
 
 /-
 OK that's enough logic -- now perhaps it's time to go on to Advanced Addition World!
 Get to it via the main menu.
 -/
 
-/-
-## Pro tip.
 
-`¬ P` is actually `P → false` *by definition*. Try
-commenting out `rw not_iff_imp_false at ...` by putting two minus signs `--`
-before the `rw`. Does it still compile?
+/-
+## Pro tip
+
+In fact the tactic `tauto!` just kills this goal (and many other logic goals) immediately.
 -/
 
-/- Tactic : exfalso
+/- Tactic : by_cases
 
 ## Summary
 
-`exfalso` changes your goal to `false`. 
+`by_cases h : P` does a cases split on whether `P` is true or false.
 
 ## Details
 
-We know that `false` implies `P` for any proposition `P`, and so if your goal is `P`
-then you should be able to `apply` `false → P` and reduce your goal to `false`. This
-is what the `exfalso` tactic does. The theorem that `false → P` is called `false.elim`
-so one can achieve the same effect with `apply false.elim`. 
+Some logic goals cannot be proved with `intro` and `apply` and `exact`.
+The simplest example is the law of the excluded middle `¬ ¬ P → P`.
+You can prove this using truth tables but not with `intro`, `apply` etc.
+To do a truth table proof, the tactic `by_cases h : P` will turn a goal of
+`⊢ ¬ ¬ P → P` into two goals
 
-This tactic can be used in a proof by contradiction, where the hypotheses are enough
-to deduce a contradiction and the goal happens to be some random statement (possibly
-a false one) which you just want to simplify to `false`.
+```
+P : Prop,
+h : P
+⊢ ¬¬P → P
+
+P : Prop,
+h : ¬P
+⊢ ¬¬P → P
+```
+
+Each of these can now be proved using `intro`, `apply`, `exact` and `exfalso`.
+Remember though that in these simple logic cases, high-powered logic
+tactics like `cc` and `tauto!` will just prove everything.
+
+
+
 -/
 
+/- Tactic : tauto
+
+## Summary
+
+The `tauto` tactic (and its variant `tauto!`) will close various logic
+goals.
+
+## Details
+
+`tauto` is an all-purpose logic tactic which will try to solve goals using pure
+logical reasoning -- for example it will close the following goal:
+
+```
+P Q : Prop,
+hP : P,
+hQ : Q
+⊢ P ∧ Q
+```
+
+`tauto` is supposed to only use constructive logic, but its big brother `tauto!` uses classical logic
+and hence closes more goals.
+-/
