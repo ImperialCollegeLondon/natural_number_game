@@ -11,6 +11,13 @@ In Advanced Addition World you proved
 `eq_zero_of_add_right_eq_self (a b : mynat) : a + b = a → b = 0`.
 
 This might be useful in this level.
+
+Another tip: if you want to create a new hypothesis, you can use the `have` tactic.
+For example, if you have a hypothesis `hd : a + (c + d) = a` and you want 
+a hypothesis `h : c + d = 0` then you can write
+
+`have h := eq_zero_of_add_right_eq_self hd,`
+
 -/
 
 /- Lemma
