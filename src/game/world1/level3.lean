@@ -73,7 +73,8 @@ necessary, and `succ b` just means `succ(b)`.
 You may be wondering whether we could have just substituted in the definition of `b`
 and proved the goal that way. To do that, we would want to replace the right hand
 side of `h` with the left hand side. You do this in Lean by writing `rw ← h`. You get the
-left-arrow by typing `\l` and then a space. You can just edit your proof and try it. 
+left-arrow by typing `\l` and then a space; note that this is a small letter L,
+not a number 1. You can just edit your proof and try it. 
 
 You may also be wondering why we keep writing `succ(b)` instead of `b+1`. This
 is because we haven't defined addition yet! On the next level, the final level

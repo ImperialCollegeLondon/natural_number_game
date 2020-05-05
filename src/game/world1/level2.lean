@@ -88,7 +88,8 @@ statement itself, not the proof.
 If `h : P = Q` is its proof, then `rw h` will work.
 
 Pro tip 1: If `h : A = B` and you want to change
-`B`s to `A`s instead, try `rw ←h` (get the arrow with `\l`).
+`B`s to `A`s instead, try `rw ←h` (get the arrow with `\l` and
+note that this is a small letter L, not a number 1).
 
 ### Example:
 If it looks like this in the top right hand box:
