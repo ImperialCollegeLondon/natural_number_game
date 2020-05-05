@@ -1,0 +1,103 @@
+<html> 
+<HEAD> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<TITLE>Natural Number Game FAQ
+</TITLE>
+</HEAD> 
+<BODY> 
+  <H1>FAQ.</H1>
+
+  Contents:
+
+<li><a href="#brokengame">The game doesn't work :-(</a></li>
+<li><a href="#brokenproof">My proof doesn't work :-(</a></li>
+<li><a href="#refl">My proof which shouldn't work, works!</a></li>
+<li><a href="#finished">I finished the game. What do I do now?</a></li>
+<li><a href="#lean">How come real Lean is a bit different to this?</a></li>
+<li><a href="#future">Will there be any more of this game?</a></li>
+<li><a href="#moregames">Will there be any other games like this?</a></li>
+<li><a href="#sourcecode">Where is the source code to this game, and how did you make it?</a></li>
+
+
+<a><a name="brokengame"><hr></a><p>
+<h2>The game doesn't work :-(</h2>
+
+This game needs cookies to work, so it will not work in e.g. private browsing or incognito mode. The reason it needs cookies is that it downloads a javascript version of an entire computer proof verification system onto your computer.
+
+Some browsers sometime have issues. Last time I checked the game worked fine in Chrome and Firefox. It usually works in other browsers too. If you see "Lean is busy" and it hasn't gone away after about 20 seconds, it's not working -- try another browser or try enabling cookies. There was a problem with Safari 13.0.3, but Safari 13.1 apparently works fine.
+
+<p>
+
+<a><a name="brokenproof"><hr></a><p>
+<h2>My proof doesn't work :-(</h2>
+	
+This is hard to diagnose. There are two problems: syntax errors (where you missed a comma, or typed "induction wit" instead of "induction with"), and errors with your Lean code (a rewrite failing). 
+
+For syntax errors: look at the first error in the bottom right hand box. It will probably have a red "33:2 error:" warning above it. That is the line number, and the character number on that line, of the first error. The character there is your problem.
+
+For errors in your Lean code, well, Lean is very picky. You might have to ask at the <a href="https://leanprover.zulipchat.com/" target="blank">Zulip Lean chat</a>.
+
+<p>
+
+<a><a name="refl"><hr></a><p>
+<h2>My proof which shouldn't work, works!</h2>
+
+The <code>refl</code> tactic is more powerful than you think. <code>refl</code> will close a goal of the form <code>X = Y</code> if <code>X</code> and <code>Y</code> are <it>definitionally equal</it>. For example, <code>n + 0</code> is <it>defined to be</it> <code>n</code>, so the goal <code>n + 0 = n</code> can actually be proved by <code>refl</code>. However <code>0 + n = n</code> is only true because of a theorem (proved by induction), so you cannot close this goal with <code>refl</code>.
+
+<p>
+
+<a><a name="finished"><hr></a><p>
+<h2>I finished the game, what do I do now?</h2>
+
+You can try the **Lean maths challenges** [on cocalc](https://share.cocalc.com/share/f014cd1885a22e8665a728be825e563fc79b7e1f/Maths_Challenges/?viewer=share) or using the [Lean web editor](https://github.com/kbuzzard/xena/blob/master/Maths_Challenges/README.md). These are undergraduate level mathemamatics challenges involving equivalence relations, group theory and so on. 
+
+To go further you should <a href="https://github.com/leanprover-community/mathlib#installation" target="blank">install Lean on your own computer</a> and then create a project of your own, or <a href="https://github.com/leanprover-community/tutorials" target="blank">download the tutorial project</a>. The tutorial project contains, for example, a step-by-step guide to proving the <a href="https://github.com/leanprover-community/tutorials/blob/a1b5620e098deb0c06c902b1151b02aca5f46033/src/exercises/09_limits_final.lean#L255-L256">intermediate value theorem in Lean</a>.
+
+I (Kevin Buzzard) teach an undergraduate maths course to 1st years at Imperial, and I have been
+<a href="https://github.com/ImperialCollegeLondon/M40001_lean" target="blank">
+formalising the example sheets</a>. You can try these if you know undergraduate level mathematics.
+
+At the time of writing there are still around 30
+<a href="https://github.com/leanprover-community/lean-perfectoid-spaces/issues/33" target="blank">
+  perfectoid space levels
+  </a>. You'll need to know a whole bunch of Lean and also a whole bunch of commutative algebra to do these. Once we've done all of them, we will get a formally verified example of a non-empty perfectoid space. This is a research project.
+
+<p>
+  More of my hopes and dreams are
+
+<a href="https://github.com/kbuzzard/xena/blob/master/many_maths_challenges.txt" target="blank">
+listed here</a>
+  . This list gets added to far more often than things are removed from it. That is the nature of the game at this point in time. Things will change.
+
+<p>
+  Finally, there are often problems kicking around on the
+  <a href="https://leanprover.zulipchat.com" target="blank">
+    Zulip Lean chat</a>
+    . Login required, real names preferred, be nice. 
+
+<p>
+  
+<a><a name="lean"><hr></a><p>
+<h2>How come real Lean is different to this?</h2>
+
+If you want more efficient Lean experience, e.g. you want to go beyond the natural number game and do more mathematics in Lean, then you can <a href="https://github.com/leanprover-community/mathlib#installation" target="blank">install Lean on your own computer</a> and then create a project of your own, or <a href="https://github.com/leanprover-community/tutorials" target="blank">download the tutorial project</a>.
+
+If you do this, then you might notice that real Lean is slightly different. For example, the <code>rw</code> tactic in real Lean actually tries <code>refl</code> afterwards, so some goals get closed quicker than you think. I disabled this in the natural number game because I felt it was confusing for beginners. Other tactics I beefed up a little -- for example the <code>induction</code> and <code>cases</code> tactics in real Lean might leave you with goals mentioning <code>mynat.zero</code>, and in natural number game Lean these automatically get converted to <code>0</code>. The meta code which enabled me to do this was written by Rob Lewis and you can take a look at how he did it <a href="https://github.com/ImperialCollegeLondon/natural_number_game/blob/master/src/tactic/nat_num_game.lean#L10" target="blank">here</a>.
+
+<a><a name="future"><hr></a><p>
+<h2>Will there be any more of this game?</h2>
+
+There are a few more levels which I haven't added yet; they will come in v1.4, which will be the final version of this game. It is basically 15 or so more levels about less-than, which will culminate in a proof that the natural numbers are an ordered semiring, and strong induction works.
+
+<a><a name="moregames"><hr></a><p>
+<h2>Will there be any more games like this?</h2>
+
+Hopefully. The integer game, the real number game, the group theory game are all ideas which are in various stages of completion as I write. The one in active development right now is the <a href="https://github.com/ImperialCollegeLondon/real-number-game" target="blank">real number game</a>.
+
+<a><a name="sourcecode"><hr></a><p>
+<h2>Where is the source code to this game, and how did you make it?</h2>
+
+The Lean source code is <a href="https://github.com/ImperialCollegeLondon/natural_number_game" target="blank">at this github repo</a>, and the tool we used to turn it from Lean code to a browser game is the <a href="https://github.com/mpedramfar/Lean-game-maker" target="blank">Lean Game Maker</a>.
+
+</BODY> 
+</html> 
