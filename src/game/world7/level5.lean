@@ -4,7 +4,7 @@
 
 ## Level 5: `iff_trans` easter eggs.
 
-Let's try ``iff_trans` again. Try proving it in other ways.
+Let's try `iff_trans` again. Try proving it in other ways.
 
 ### A trick.
 
