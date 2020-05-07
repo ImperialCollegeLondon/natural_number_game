@@ -28,9 +28,10 @@ hit "main menu" in the top left to get back here.
 
 For more info, see the <a href="http://wwwf.imperial.ac.uk/~buzzard/xena/natural_number_game/FAQ.html" target="blank">FAQ</a>.
 
-# What's new in v1.3?
+# What's new in v1.3.2?
 
-You should be able to save your state!
+The game now saves your progress! Thanks to everyone who asked for it,
+and to Mohammad for making it happen :-)
 
 # Thanks
 
