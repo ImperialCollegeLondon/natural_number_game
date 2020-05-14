@@ -10,3 +10,5 @@
 /src/game/LaTeX/*.tex~
 
 *~
+*.mo
+.python-version
