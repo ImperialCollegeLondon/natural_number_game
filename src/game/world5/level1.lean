@@ -1,4 +1,3 @@
--- World name : Function world
 /- 
 
 # Function world. 

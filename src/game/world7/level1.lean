@@ -1,4 +1,3 @@
--- World name : Advanced Proposition world
 /- 
 
 # Advanced proposition world. 

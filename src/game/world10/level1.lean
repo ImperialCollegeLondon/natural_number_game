@@ -23,7 +23,6 @@ form, `use 0` will turn the goal into `⊢ P(0)`, `use x + y` (assuming
 the goal into `P(x + y)` and so on.
 -/
 
--- World name : Inequality world
 /- 
 
 # Inequality world. 

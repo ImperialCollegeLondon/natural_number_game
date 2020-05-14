@@ -1,4 +1,3 @@
--- World name : Proposition world
 /- 
 
 # Proposition world. 

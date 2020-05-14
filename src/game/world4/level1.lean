@@ -2,7 +2,6 @@ import game.world3.level9 -- hide
 import mynat.pow -- new import
 namespace mynat -- hide
 
--- World name : Power world
 
 /- Axiom : pow_zero (a : mynat) :
 a ^ 0 = 1
