@@ -3,7 +3,6 @@ import mynat.add -- imports definition of addition on the natural numbers.
 import mynat.mul -- imports definition of multiplication on the natural numbers.
 namespace mynat -- hide
 
--- World name : Tutorial world
 
 /- 
 # Tutorial World
