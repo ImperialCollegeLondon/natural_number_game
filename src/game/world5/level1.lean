@@ -64,7 +64,7 @@ uses the `exact` tactic.
 
 ## The `exact` tactic. 
 
-If you can explicitly see how to make an element of of your goal set,
+If you can explicitly see how to make an element of your goal set,
 i.e. you have a formula for it, then you can just write `exact <formula>` 
 and this will close the goal. 
 
