@@ -17,9 +17,8 @@ everything works for general sets.
 
 So our notation for this level is: $P$, $Q$, $R$ and so on denote general sets,
 and $h$, $j$, $k$ and so on denote general
-functions between them. What we will learn in this world is how to use Lean
-to move elements around between these sets using the functions
-we are given, and the tactics we will learn. A word of warning &ndash; 
+functions between them. What we will learn in this world is how to use functions
+in Lean to push elements from set to set. A word of warning &ndash; 
 even though there's no harm at all in thinking of $P$ being a set and $p$
 being an element, you will not see Lean using the notation $p\in P$, because
 internally Lean stores $P$ as a "Type" and $p$ as a "term", and it uses `p : P`
