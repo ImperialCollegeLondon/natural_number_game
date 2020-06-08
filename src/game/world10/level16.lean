@@ -25,10 +25,10 @@ begin [nat_num_game]
     exact h,
   },
   intro nh,
-  apply ne_succ_self a,
-  apply le_antisymm a (succ a),
-  exact le_succ_self a,
+  apply not_succ_le_self a,
   exact le_trans (succ a) b a h nh,
+
+
 
 
 
