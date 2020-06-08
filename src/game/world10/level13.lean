@@ -28,17 +28,17 @@ For all naturals $a$, $\operatorname{succ}(a)$ is not at most $a$.
 -/
 theorem not_succ_le_self (a : mynat) : ¬ (succ a ≤ a) :=
 begin [nat_num_game]
-  intro h,
-  cases h with c h,
-  induction a with d hd,
-  { rw succ_add at h,
-    exact zero_ne_succ _ h,
-  },
-  { rw succ_add at h,
-    apply hd,
-    apply succ_inj,
-    exact h,
-  }
+  intro nh,
+  apply ne_succ_self a,
+  apply le_antisymm a (succ a),
+  exact le_succ_self a,
+  exact nh,
+
+
+
+
+
+
 
 
 
@@ -46,6 +46,3 @@ begin [nat_num_game]
 end
 
 end mynat -- hide
-
--- thanks to Filip Szczepański for this proof (nicer than the original; I was doing -- hide
--- induction a before cases h) -- hide
