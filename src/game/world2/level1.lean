@@ -128,7 +128,7 @@ Remember that `add_zero` (the proof we have already) is the proof of `x + 0 = x`
 
 `rw add_zero,`
 
-. What do you think the goal will
+What do you think the goal will
 change to? Remember to just keep
 focussing on the top goal, ignore the other one for now, it's not changing
 and we're not working on it. You should be able to solve the top goal yourself
