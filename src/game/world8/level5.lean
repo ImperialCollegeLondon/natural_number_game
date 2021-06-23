@@ -18,7 +18,7 @@ to do rewriting of hypotheses rather than the goal.
 
 /- Theorem
 On the set of natural numbers, addition has the right cancellation property.
-In other words, if there are natural numbers $a, b$ and $c$ such that
+In other words, if there are natural numbers $a, b$ and $t$ such that
 $$ a + t = b + t, $$
 then we have $a = b$.
 -/
