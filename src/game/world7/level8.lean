@@ -1,4 +1,5 @@
 import tactic.finish game.world7.level7 -- hide
+import tactic.tauto -- useful high-powered tactic
 namespace mynat -- hide
 /- 
 # Advanced proposition world. 
