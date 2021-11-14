@@ -15,7 +15,7 @@ Computers are currently being taught mathematics by mathematicians, and this gam
 
 [Play here.](http://wwwf.imperial.ac.uk/~buzzard/xena/natural_number_game/)
 
-Note: in recent months Imperial College have been increasingly sloppy about keeping www.ma.imperial.ac.uk online. Thanks to Chris Birkbeck for hosting a mirror of the game [here](https://cbirkbeck.github.io/natural_number_game/).
+Note: in recent months Imperial College have been increasingly sloppy about keeping www.ma.imperial.ac.uk online (as I write the site has been down for three days and all I can do is file an issue, which thus far has been ignored). Thanks to Chris Birkbeck for hosting a mirror of the game [here](https://cbirkbeck.github.io/natural_number_game/).
 
 # Authors
 
