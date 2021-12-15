@@ -19,7 +19,7 @@ just try `simp`.
 -/
 
 /- Lemma
-Addition is distributive over multiplication.
+Multiplication is right distributive over addition.
 In other words, for all natural numbers $a$, $b$ and $t$, we have
 $$ (a + b) \times t = at + bt. $$
 -/

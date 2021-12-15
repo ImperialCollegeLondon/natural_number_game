@@ -23,7 +23,7 @@ an alternative name for the proof of this lemma.
 -/
 
 /- Lemma
-Multiplication is distributive over addition.
+Multiplication is left distributive over addition.
 In other words, for all natural numbers $a$, $b$ and $t$, we have
 $$ t(a + b) = ta + tb. $$
 -/
