@@ -1,5 +1,5 @@
 /-
-# Function world. 
+# Proposition world. 
 
 ## Level 7: `(P → Q) → ((Q → R) → (P → R))` 
 
