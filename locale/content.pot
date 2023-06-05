@@ -1,8 +1,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.3.2\n"
-"POT-Creation-Date: 2020-05-14 16:24:03.177467\n"
+"Project-Id-Version: 1.3.3\n"
+"POT-Creation-Date: 2023-06-05 15:00:09.645725\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 
@@ -12,7 +12,7 @@ msgstr ""
 
 #: intro
 msgid ""
-"# The Natural Number Game, version 1.3.2\n"
+"# The Natural Number Game, version 1.3.3\n"
 "\n"
 "## By Kevin Buzzard and Mohammad Pedramfar. \n"
 "\n"
@@ -56,10 +56,12 @@ msgid ""
 "For more info, see the <a href=\"http://wwwf.imperial.ac.uk/~buzzard/xena/"
 "natural_number_game/FAQ.html\" target=\"blank\">FAQ</a>.\n"
 "\n"
-"# What's new in v1.3.2?\n"
+"# What's new in v1.3?\n"
 "\n"
 "The game now saves your progress! Thanks to everyone who asked for it,\n"
 "and to Mohammad for making it happen :-)\n"
+"\n"
+"Cute little clipboard to copy your solutions.\n"
 "\n"
 "# Thanks\n"
 "\n"
@@ -105,10 +107,6 @@ msgstr ""
 msgid ""
 "import mynat.mul -- imports definition of multiplication on the natural "
 "numbers."
-msgstr ""
-
-#: Tutorial world level 1
-msgid "-- World name : Tutorial world"
 msgstr ""
 
 #: Tutorial world level 1
@@ -170,9 +168,9 @@ msgid ""
 "common mistake that beginner users make -- **every line must end with a "
 "comma**.\n"
 "If things go weird and you don't understand why the top right box is empty,\n"
-"check for missing commas. Also check you've spelt `refl` correctly: it's "
+"check for missing commas. Also check if you've spelt `refl` correctly: it's "
 "REFL\n"
-"for \"reflexivity\".\n"
+"for \"reflexivity\"!\n"
 "\n"
 "For each level, the idea is to get Lean into this state: with the top right\n"
 "box saying \"Proof complete!\" and the bottom right box empty (i.e. with no "
@@ -180,7 +178,7 @@ msgid ""
 "\n"
 "If you want to be reminded about the `refl` tactic, you can click on the "
 "\"Tactics\" drop\n"
-"down menu on the left. Resize the window if it's too small. \n"
+"down menu on the left. Resize the window if it's too small! \n"
 "\n"
 "Now click on \"next level\" in the top right of your browser to go onto the "
 "second level of\n"
@@ -615,10 +613,6 @@ msgstr ""
 
 #: Addition world level 1
 msgid "import mynat.add -- imports addition."
-msgstr ""
-
-#: Addition world level 1
-msgid "-- World name : Addition world"
 msgstr ""
 
 #: Addition world level 1
@@ -1150,10 +1144,6 @@ msgid "import mynat.mul -- import the definition of multiplication on mynat"
 msgstr ""
 
 #: Multiplication world level 1
-msgid "-- World name : Multiplication world"
-msgstr ""
-
-#: Multiplication world level 1
 msgid ""
 "\n"
 "# Multiplication World\n"
@@ -1480,10 +1470,6 @@ msgid "import mynat.pow -- new import"
 msgstr ""
 
 #: Power world level 1
-msgid "-- World name : Power world"
-msgstr ""
-
-#: Power world level 1
 msgid ""
 "\n"
 "# Power World\n"
@@ -1703,10 +1689,6 @@ msgid "Function world"
 msgstr ""
 
 #: Function world level 1
-msgid "-- World name : Function world"
-msgstr ""
-
-#: Function world level 1
 msgid ""
 "\n"
 "# Function world. \n"
@@ -1728,9 +1710,9 @@ msgid ""
 "So our notation for this level is: $P$, $Q$, $R$ and so on denote general "
 "sets,\n"
 "and $h$, $j$, $k$ and so on denote general\n"
-"functions between them. What we will learn in this world is how to use Lean\n"
-"to move elements around between these sets using the functions\n"
-"we are given, and the tactics we will learn. A word of warning &ndash; \n"
+"functions between them. What we will learn in this world is how to use "
+"functions\n"
+"in Lean to push elements from set to set. A word of warning &ndash; \n"
 "even though there's no harm at all in thinking of $P$ being a set and $p$\n"
 "being an element, you will not see Lean using the notation $p\\in P$, "
 "because\n"
@@ -1783,7 +1765,7 @@ msgid ""
 "\n"
 "## The `exact` tactic. \n"
 "\n"
-"If you can explicitly see how to make an element of of your goal set,\n"
+"If you can explicitly see how to make an element of your goal set,\n"
 "i.e. you have a formula for it, then you can just write `exact <formula>` \n"
 "and this will close the goal. \n"
 "\n"
@@ -2424,10 +2406,6 @@ msgid "Proposition world"
 msgstr ""
 
 #: Proposition world level 1
-msgid "-- World name : Proposition world"
-msgstr ""
-
-#: Proposition world level 1
 msgid ""
 "\n"
 "# Proposition world. \n"
@@ -2923,10 +2901,6 @@ msgstr ""
 
 #: world_config
 msgid "Advanced Proposition world"
-msgstr ""
-
-#: Advanced Proposition world level 1
-msgid "-- World name : Advanced Proposition world"
 msgstr ""
 
 #: Advanced Proposition world level 1
@@ -4073,10 +4047,6 @@ msgid ""
 "form, `use 0` will turn the goal into `⊢ P(0)`, `use x + y` (assuming\n"
 "`x` and `y` are natural numbers in your local context) will turn\n"
 "the goal into `P(x + y)` and so on.\n"
-msgstr ""
-
-#: Inequality world level 1
-msgid "-- World name : Inequality world"
 msgstr ""
 
 #: Inequality world level 1
