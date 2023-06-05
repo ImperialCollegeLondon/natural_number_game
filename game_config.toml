@@ -55,6 +55,7 @@ levels = [
 	"src/game/world4/level6.lean",
 	"src/game/world4/level7.lean",
 	"src/game/world4/level8.lean",
+	"src/game/world4/level9.lean", 
 ]
 
 [[worlds]]
