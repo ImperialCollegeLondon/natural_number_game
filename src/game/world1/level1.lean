@@ -50,7 +50,7 @@ For each level, the idea is to get Lean into this state: with the top right
 box saying "Proof complete!" and the bottom right box empty (i.e. with no errors in).
 
 If you want to be reminded about the `refl` tactic, you can click on the "Tactics" drop
-down menu on the left. Resize the window if it's too small. 
+down menu on the left. Resize the window if it's too small! 
 
 Now click on "next level" in the top right of your browser to go onto the second level of
 tutorial world, where we'll learn about the `rw` tactic.
