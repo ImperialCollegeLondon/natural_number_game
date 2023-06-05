@@ -1,2 +1,1 @@
-cd html ; http-server ; cd ..
-
+python -m http.server -d html
