@@ -9,12 +9,11 @@ def two_eq_succ_one : (2 : mynat) = succ 1 := rfl -- hide
 /- 
 # Power World
 -/
-hello
 
 /-
 ## Level 9: `random_theorem`
 
-[final boss music] 
+Hello!
 
 You see something written on the stone dungeon wall:
 ```
