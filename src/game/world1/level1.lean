@@ -9,7 +9,7 @@ namespace mynat -- hide
 
 ## Level 1: the `refl` tactic.
 
-Let's learn some tactics! Let's start with the `refl` tactic. `refl` stands for "reflexivity", which is a fancy
+Let's learn some tactics. Let's start with the `refl` tactic. `refl` stands for "reflexivity", which is a fancy
 way of saying that it will prove any goal of the form `A = A`. It doesn't matter how
 complicated `A` is, all that matters is that the left hand side is *exactly equal* to the
 right hand side (a computer scientist would say "definitionally equal"). I really mean
