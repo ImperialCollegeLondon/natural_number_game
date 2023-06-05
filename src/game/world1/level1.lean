@@ -44,7 +44,7 @@ level of the tutorial! And you also learnt how to avoid by *far* the most
 common mistake that beginner users make -- **every line must end with a comma**.
 If things go weird and you don't understand why the top right box is empty,
 check for missing commas. Also check if you've spelt `refl` correctly: it's REFL
-for "reflexivity".
+for "reflexivity"!
 
 For each level, the idea is to get Lean into this state: with the top right
 box saying "Proof complete!" and the bottom right box empty (i.e. with no errors in).
