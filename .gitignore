@@ -1,6 +1,7 @@
 *.olean
 /_target
 /leanpkg.path
+/locale/content.pot
 /scratch/*
 /notes/*
 /html/*
