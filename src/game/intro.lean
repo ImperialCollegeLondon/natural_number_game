@@ -1,7 +1,7 @@
 /-
 # The Linear Algebra Game, version 1.0.0
 
-## By Anoushka Sinha, Annapurna Bhattacharya, Kurt Ma, Ricardo Prado Cunha, Stavan Jain, Yannan Bai
+## By Yannan Bai, Annapurna Bhattacharya, Stavan Jain, Kurt Ma, Ricardo Prado Cunha, Anoushka Sinha
 
 
 

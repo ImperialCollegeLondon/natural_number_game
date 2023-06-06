@@ -10,7 +10,7 @@ html: $(shell find src -not -name '*.olean' | sed 's/ /\\ /g')
 .PHONY: run
 run: html
 	echo 'Ctrl+C to stop'
-	python -m http.server -d html
+	python3 -m http.server -d html
 
 
 .PHONY: clean
