@@ -1,3 +1,7 @@
+# IMPORTANT
+
+This is Lean 3 code so it's end-of-life. This repo is now frozen; development of the natural number game continues in Lean 4 (with more levels and a better user interface) i[here](https://github.com/leanprover-community/NNG4).
+
 <h1><span style='color:#ff8c00'> Natural Number Game
 </span></h1>
 
