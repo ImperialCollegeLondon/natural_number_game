@@ -21,7 +21,7 @@ with `intros f h p`, which introduces three variables at once, although you'd
 better then look at your tactic state to check that you called all those new
 terms sensible things. 
 
-After all the intros, you find that your your goal is `⊢ R`. If you try `have j : Q → R := f p`
+After all the intros, you find that your goal is `⊢ R`. If you try `have j : Q → R := f p`
 now then you can `apply j`. Alternatively you can `apply (f p)` directly.
 What happens if you just try `apply f`? Can you figure out what just happened? This is a little
 `apply` easter egg. Why is it mathematically valid?
