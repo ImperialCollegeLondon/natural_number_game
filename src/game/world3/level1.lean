@@ -26,7 +26,7 @@ with `a * 0` defined to be `0` and, if we know `a * b`, then `a` times
 the number after `b` is defined to be `a * b + a`. 
 
 You can keep all the theorems you proved about addition, but 
-for multiplication, those two results above are you've got right now.
+for multiplication, those two results above are all you've got right now.
 I would recommend that you sort out the bar on the left. Fold up everything,
 and then unfold just Theorem Statements -> Multiplication World. This will
 remind you of your two new theorems, both of which are true by definition.
